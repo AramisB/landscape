@@ -1,0 +1,213 @@
+/* Main container */
+.servicesContainer {
+  @apply bg-white;
+}
+
+/* Hero section */
+.heroSection {
+  @apply relative py-24 sm:py-32;
+  background-color: var(--primary-blue);
+  background-image: url('/services/hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.heroOverlay {
+  @apply absolute inset-0;
+  background: linear-gradient(rgba(47, 82, 51, 0.8), rgba(28, 79, 124, 0.8));
+}
+
+.heroContent {
+  @apply relative mx-auto max-w-2xl text-center z-10;
+}
+
+.heroTitle {
+  @apply text-4xl font-bold tracking-tight sm:text-5xl;
+  color: var(--pure-white);
+}
+
+.heroDescription {
+  @apply mt-6 text-lg leading-8;
+  color: var(--off-white);
+}
+
+/* Services section */
+.servicesSection {
+  @apply py-24 sm:py-32;
+  background-color: var(--pure-white);
+}
+
+.servicesGrid {
+  @apply grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+/* Service card */
+.serviceCard {
+  @apply flex flex-col overflow-hidden rounded-lg transition-all duration-300 hover:-translate-y-2;
+  background-color: var(--off-white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.serviceImageWrapper {
+  @apply relative h-48 w-full overflow-hidden;
+}
+
+.serviceImage {
+  @apply h-full w-full object-cover transition-transform duration-300;
+}
+
+.serviceImageOverlay {
+  @apply absolute inset-0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.serviceCard:hover .serviceImage {
+  @apply scale-110;
+}
+
+.serviceContent {
+  @apply flex flex-col flex-grow p-6;
+}
+
+.serviceTitle {
+  @apply text-xl font-semibold mb-3;
+  color: var(--primary-blue);
+}
+
+.serviceDescription {
+  @apply mb-4 text-base;
+  color: var(--text-dark);
+}
+
+/* Features list */
+.featuresList {
+  @apply space-y-2 mb-6;
+  flex-grow: 1;
+}
+
+.featureItem {
+  @apply flex items-start gap-2 text-sm;
+  color: var(--text-dark);
+}
+
+.featureIcon {
+  @apply text-base;
+  color: var(--primary-green);
+}
+
+.serviceButton {
+  @apply w-full text-center rounded-md px-4 py-2 text-sm font-semibold transition-colors;
+  background-color: var(--primary-green);
+  color: var(--pure-white);
+}
+
+.serviceButton:hover {
+  background-color: var(--secondary-green);
+}
+
+/* CTA section */
+.ctaSection {
+  @apply py-16 sm:py-24;
+  background-color: var(--light-green);
+}
+
+.ctaContent {
+  @apply mx-auto max-w-2xl text-center;
+}
+
+.ctaTitle {
+  @apply text-3xl font-bold tracking-tight sm:text-4xl;
+  color: var(--primary-blue);
+}
+
+.ctaDescription {
+  @apply mt-6 text-lg leading-8;
+  color: var(--text-dark);
+}
+
+.ctaButtons {
+  @apply mt-10 flex items-center justify-center gap-x-6 flex-wrap;
+}
+
+.primaryButton {
+  @apply rounded-md px-5 py-2.5 text-sm font-semibold shadow-sm transition-colors;
+  background-color: var(--primary-green);
+  color: var(--pure-white);
+}
+
+.primaryButton:hover {
+  background-color: var(--secondary-green);
+}
+
+.secondaryButton {
+  @apply text-sm font-semibold leading-6 transition-colors;
+  color: var(--primary-blue);
+}
+
+.secondaryButton:hover {
+  color: var(--secondary-blue);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .heroTitle {
+    @apply text-3xl;
+  }
+
+  .ctaButtons {
+    @apply flex-col gap-y-4;
+  }
+
+  .serviceCard {
+    @apply max-w-sm mx-auto;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.serviceCard {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Hover effects */
+.serviceCard:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.serviceButton:focus {
+  @apply outline-none ring-2 ring-offset-2;
+  ring-color: var(--primary-green);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .serviceCard,
+  .serviceImage {
+    @apply transition-none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .serviceCard {
+    @apply shadow-none break-inside-avoid;
+  }
+
+  .serviceImage {
+    @apply print:hidden;
+  }
+
+  .ctaSection {
+    @apply hidden;
+  }
+}

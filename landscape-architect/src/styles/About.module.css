@@ -1,0 +1,113 @@
+/* Main container */
+.aboutContainer {
+    @apply bg-white;
+  }
+  
+  /* Hero section */
+  .heroSection {
+    @apply relative isolate overflow-hidden py-24 sm:py-32;
+    background-color: var(--primary-blue);
+  }
+  
+  .heroImage {
+    @apply absolute inset-0 -z-10 h-full w-full object-cover opacity-30;
+  }
+  
+  .heroOverlay {
+    @apply absolute inset-0 bg-gradient-to-b from-primary-blue/80 to-primary-green/80;
+  }
+  
+  .heroContent {
+    @apply mx-auto max-w-2xl lg:mx-0;
+  }
+  
+  .heroTitle {
+    @apply text-4xl font-bold tracking-tight text-white sm:text-6xl;
+  }
+  
+  .heroDescription {
+    @apply mt-6 text-lg leading-8 text-gray-300;
+  }
+  
+  /* Stats section */
+  .statsSection {
+    @apply py-24 sm:py-32;
+  }
+  
+  .statsGrid {
+    @apply mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2;
+  }
+  
+  .statsContent {
+    @apply lg:pr-8;
+  }
+  
+  .statsWrapper {
+    @apply grid grid-cols-2 gap-8 sm:grid-cols-2;
+  }
+  
+  .statCard {
+    @apply flex flex-col p-6 rounded-lg transition-transform hover:-translate-y-1;
+    background-color: var(--off-white);
+  }
+  
+  .statLabel {
+    @apply text-base leading-7;
+    color: var(--text-dark);
+  }
+  
+  .statValue {
+    @apply text-3xl font-bold leading-9 tracking-tight;
+    color: var(--primary-green);
+  }
+  
+  /* Team section */
+  .teamSection {
+    @apply bg-gray-100 py-24 sm:py-32;
+  }
+  
+  .teamHeader {
+    @apply mx-auto max-w-2xl text-center;
+  }
+  
+  .sectionTitle {
+    @apply text-3xl font-bold tracking-tight sm:text-4xl;
+    color: var(--primary-blue);
+  }
+  
+  .sectionDescription {
+    @apply mt-6 text-lg leading-8;
+    color: var(--text-dark);
+  }
+  
+  .teamGrid {
+    @apply mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3;
+  }
+  
+  .teamCard {
+    @apply flex flex-col items-center text-center transition-transform hover:-translate-y-2;
+  }
+  
+  .teamImageWrapper {
+    @apply relative w-full mb-6;
+  }
+  
+  .teamImage {
+    @apply aspect-square w-full rounded-2xl object-cover;
+  }
+  
+  .teamMemberName {
+    @apply mt-6 text-lg font-semibold leading-8 tracking-tight;
+    color: var(--primary-blue);
+  }
+  
+  .teamMemberRole {
+    @apply text-base leading-7;
+    color: var(--primary-green);
+  }
+  
+  .teamMemberBio {
+    @apply mt-4 text-base leading-7;
+    color: var(--text-dark);
+  }
+  

@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import ProjectCard from '../components/projects/ProjectCard';
+import styles from '../styles/Projects.module.css';
 
 const categories = ['all', 'residential', 'commercial', 'public'];
 
@@ -29,37 +31,80 @@ export default function Projects() {
     : sampleProjects.filter(project => project.category === selectedCategory);
 
   return (
-    <div className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Projects</h1>
-          <p className="mt-2 text-lg leading-8 text-gray-600">
+    <div className={styles.projectsContainer}>
+      <div className={styles.heroSection}>
+        <div className={styles.heroContent}>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className={styles.heroTitle}
+          >
+            Our Projects
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className={styles.heroDescription}
+          >
             Explore our portfolio of landscape architecture projects
-          </p>
+          </motion.p>
         </div>
+      </div>
 
-        {/* Category Filter */}
-        <div className="mt-8 flex justify-center gap-4">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium ${
-                selectedCategory === category
-                  ? 'bg-gray-900 text-white'
-                  : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-              }`}
-            >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
-            </button>
-          ))}
-        </div>
+      <div className={styles.projectsSection}>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Category Filter */}
+          <div className={styles.filterSection}>
+            {categories.map((category) => (
+              <motion.button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`${styles.filterButton} ${
+                  selectedCategory === category ? styles.filterButtonActive : ''
+                }`}
+              >
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </motion.button>
+            ))}
+          </div>
 
-        {/* Projects Grid */}
-        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+          {/* Projects Grid */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className={styles.projectsGrid}
+          >
+            {filteredProjects.map((project) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className={styles.projectCard}
+              >
+                <div className={styles.imageWrapper}>
+                  <img
+                    src={project.thumbnailUrl}
+                    alt={project.title}
+                    className={styles.projectImage}
+                  />
+                  <div className={styles.imageOverlay} />
+                </div>
+                <div className={styles.projectContent}>
+                  <h3 className={styles.projectTitle}>{project.title}</h3>
+                  <p className={styles.projectCategory}>
+                    {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
+                  </p>
+                  <p className={styles.projectDescription}>{project.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </div>
