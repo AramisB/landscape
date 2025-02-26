@@ -1,0 +1,94 @@
+/* Main container styles */
+.blogContainer {
+    @apply bg-white py-24 sm:py-32;
+  }
+  
+  /* Header section styles */
+  .headerSection {
+    @apply mx-auto max-w-2xl text-center;
+  }
+  
+  .mainTitle {
+    @apply text-3xl font-bold tracking-tight sm:text-4xl;
+    color: var(--primary-blue);
+  }
+  
+  .mainDescription {
+    @apply mt-2 text-lg leading-8;
+    color: var(--text-dark);
+  }
+  
+  /* Blog grid styles */
+  .blogGrid {
+    @apply mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3;
+  }
+  
+  /* Blog card styles */
+  .blogCard {
+    @apply flex flex-col items-start transition-all duration-300 hover:-translate-y-2;
+  }
+  
+  .imageWrapper {
+    @apply relative w-full;
+  }
+  
+  .blogImage {
+    @apply aspect-[16/9] w-full rounded-2xl object-cover sm:aspect-[2/1] lg:aspect-[3/2];
+  }
+  
+  .imageOverlay {
+    @apply absolute inset-0 rounded-2xl ring-1 ring-inset;
+    background: linear-gradient(rgba(47, 82, 51, 0.1), rgba(28, 79, 124, 0.1));
+  }
+  
+  /* Blog content styles */
+  .blogContent {
+    @apply max-w-xl;
+  }
+  
+  .metaInfo {
+    @apply mt-8 flex items-center gap-x-4 text-xs;
+  }
+  
+  .blogDate {
+    color: var(--secondary-blue);
+  }
+  
+  .blogCategory {
+    @apply relative z-10 rounded-full px-3 py-1.5 font-medium;
+    background-color: var(--light-green);
+    color: var(--primary-green);
+  }
+  
+  .titleGroup {
+    @apply group relative;
+  }
+  
+  .blogTitle {
+    @apply mt-3 text-lg font-semibold leading-6 transition-colors;
+    color: var(--primary-blue);
+  }
+  
+  .blogTitle:hover {
+    color: var(--secondary-blue);
+  }
+  
+  .blogDescription {
+    @apply mt-5 line-clamp-3 text-sm leading-6;
+    color: var(--text-dark);
+  }
+  
+  /* Author section styles */
+  .authorSection {
+    @apply relative mt-8 flex items-center gap-x-4;
+  }
+  
+  .authorImage {
+    @apply h-10 w-10 rounded-full bg-gray-100;
+  }
+  
+  .authorName {
+    @apply text-sm font-semibold leading-6;
+    color: var(--primary-green);
+  }
+  

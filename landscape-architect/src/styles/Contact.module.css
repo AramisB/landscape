@@ -1,0 +1,118 @@
+/* Main container */
+.contactContainer {
+    @apply bg-white;
+  }
+  
+  /* Contact section */
+  .contactSection {
+    @apply relative isolate;
+    background-color: var(--primary-blue);
+  }
+  
+  /* Info section */
+  .infoSection {
+    @apply relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48;
+  }
+  
+  .infoContent {
+    @apply mx-auto max-w-xl lg:mx-0 lg:max-w-lg;
+  }
+  
+  .sectionTitle {
+    @apply text-3xl font-bold tracking-tight text-white sm:text-4xl;
+  }
+  
+  .sectionDescription {
+    @apply mt-6 text-lg leading-8;
+    color: var(--off-white);
+  }
+  
+  /* Contact information */
+  .contactInfo {
+    @apply mt-10 space-y-4 text-base leading-7;
+  }
+  
+  .infoItem {
+    @apply flex gap-x-4 items-center;
+  }
+  
+  .infoIcon {
+    @apply h-7 w-6;
+    color: var(--light-green);
+  }
+  
+  .infoText {
+    color: var(--off-white);
+  }
+  
+  /* Form section */
+  .formSection {
+    @apply px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48;
+    background-color: var(--pure-white);
+  }
+  
+  .formGrid {
+    @apply grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2;
+  }
+  
+  .formField {
+    @apply sm:col-span-2;
+  }
+  
+  .formLabel {
+    @apply block text-sm font-semibold leading-6;
+    color: var(--primary-blue);
+  }
+  
+  .formInput {
+    @apply mt-2.5 block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset transition-colors;
+    background-color: var(--off-white);
+    color: var(--text-dark);
+    border-color: var(--light-green);
+  }
+  
+  .formInput:focus {
+    @apply ring-2 ring-inset;
+    border-color: var(--primary-green);
+  }
+  
+  .formTextarea {
+    @apply mt-2.5 block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset transition-colors;
+    background-color: var(--off-white);
+    color: var(--text-dark);
+    border-color: var(--light-green);
+  }
+  
+  .formTextarea:focus {
+    @apply ring-2 ring-inset;
+    border-color: var(--primary-green);
+  }
+  
+  .formActions {
+    @apply mt-8 flex justify-start;
+  }
+  
+  .submitButton {
+    @apply rounded-md px-3.5 py-2.5 text-center text-sm font-semibold shadow-sm transition-colors;
+    background-color: var(--primary-green);
+    color: var(--pure-white);
+  }
+  
+  .submitButton:hover {
+    background-color: var(--secondary-green);
+  }
+  
+  /* Map section */
+  .mapSection {
+    @apply h-96 w-full;
+  }
+  
+  .mapPlaceholder {
+    @apply h-full w-full flex items-center justify-center;
+    background-color: var(--off-white);
+  }
+  
+  .mapText {
+    color: var(--text-dark);
+  }
+  

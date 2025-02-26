@@ -1,0 +1,98 @@
+/* Main container */
+.homeContainer {
+    @apply relative;
+  }
+  
+  /* Hero section */
+  .heroSection {
+    @apply relative h-screen;
+  }
+  
+  .heroImageWrapper {
+    @apply absolute inset-0;
+  }
+  
+  .heroImage {
+    @apply w-full h-full object-cover;
+  }
+  
+  .heroOverlay {
+    @apply absolute inset-0;
+    background: linear-gradient(rgba(47, 82, 51, 0.7), rgba(28, 79, 124, 0.7));
+  }
+  
+  .heroContent {
+    @apply relative pt-32 pb-16 sm:pb-24;
+  }
+  
+  .heroTextContent {
+    @apply mx-auto max-w-2xl text-center text-white;
+  }
+  
+  .heroTitle {
+    @apply text-4xl font-bold tracking-tight sm:text-6xl;
+    color: var(--pure-white);
+  }
+  
+  .heroDescription {
+    @apply mt-6 text-lg leading-8;
+    color: var(--off-white);
+  }
+  
+  .heroButtons {
+    @apply mt-10 flex items-center justify-center gap-x-6;
+  }
+  
+  .primaryButton {
+    @apply rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors;
+    background-color: var(--primary-green);
+    color: var(--pure-white);
+  }
+  
+  .primaryButton:hover {
+    background-color: var(--secondary-green);
+  }
+  
+  .secondaryButton {
+    @apply text-sm font-semibold leading-6 transition-colors;
+    color: var(--pure-white);
+  }
+  
+  .secondaryButton:hover {
+    color: var(--light-green);
+  }
+  
+  /* Featured Projects Section */
+  .featuredSection {
+    @apply py-24 sm:py-32;
+    background-color: var(--pure-white);
+  }
+  
+  .sectionHeader {
+    @apply mx-auto max-w-2xl text-center;
+  }
+  
+  .sectionTitle {
+    @apply text-3xl font-bold tracking-tight sm:text-4xl;
+    color: var(--primary-blue);
+  }
+  
+  .sectionDescription {
+    @apply mt-2 text-lg leading-8;
+    color: var(--text-dark);
+  }
+  
+  .projectsGrid {
+    @apply mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:mx-0 lg:max-w-none;
+  }
+  
+  /* Services Section */
+  .servicesSection {
+    @apply py-24 sm:py-32;
+    background-color: var(--off-white);
+  }
+  
+  .servicesGrid {
+    @apply mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:mx-0 lg:max-w-none;
+  }
+  

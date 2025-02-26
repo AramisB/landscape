@@ -1,0 +1,94 @@
+/* Main container */
+.projectsContainer {
+    @apply bg-white;
+  }
+  
+  /* Hero section */
+  .heroSection {
+    @apply relative py-24 sm:py-32;
+    background-color: var(--primary-blue);
+  }
+  
+  .heroContent {
+    @apply mx-auto max-w-2xl text-center;
+  }
+  
+  .heroTitle {
+    @apply text-4xl font-bold tracking-tight sm:text-5xl;
+    color: var(--pure-white);
+  }
+  
+  .heroDescription {
+    @apply mt-6 text-lg leading-8;
+    color: var(--off-white);
+  }
+  
+  /* Projects section */
+  .projectsSection {
+    @apply py-16 sm:py-24;
+  }
+  
+  /* Filter section */
+  .filterSection {
+    @apply mt-8 flex justify-center gap-4 flex-wrap;
+  }
+  
+  .filterButton {
+    @apply px-4 py-2 rounded-full text-sm font-medium transition-all duration-300;
+    background-color: var(--light-green);
+    color: var(--primary-green);
+  }
+  
+  .filterButton:hover {
+    background-color: var(--secondary-green);
+    color: var(--pure-white);
+  }
+  
+  .filterButtonActive {
+    background-color: var(--primary-green);
+    color: var(--pure-white);
+  }
+  
+  /* Projects grid */
+  .projectsGrid {
+    @apply mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3;
+  }
+  
+  /* Project card */
+  .projectCard {
+    @apply flex flex-col overflow-hidden rounded-lg transition-all duration-300 hover:-translate-y-2;
+    background-color: var(--pure-white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .imageWrapper {
+    @apply relative aspect-[16/9];
+  }
+  
+  .projectImage {
+    @apply h-full w-full object-cover;
+  }
+  
+  .imageOverlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/20 to-transparent;
+  }
+  
+  .projectContent {
+    @apply p-6;
+  }
+  
+  .projectTitle {
+    @apply text-xl font-semibold;
+    color: var(--primary-blue);
+  }
+  
+  .projectCategory {
+    @apply mt-2 text-sm;
+    color: var(--secondary-green);
+  }
+  
+  .projectDescription {
+    @apply mt-3 text-base;
+    color: var(--text-dark);
+  }
+  
