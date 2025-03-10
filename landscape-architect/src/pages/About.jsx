@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import styles from '../styles/About.module.css';
+import '../styles/About.css'; // Corrected import
 
 const team = [
   {
@@ -28,22 +28,22 @@ const stats = [
 
 export default function About() {
   return (
-    <div className={styles.aboutContainer}>
+    <div className="aboutContainer">
       {/* Hero Section */}
-      <div className={styles.heroSection}>
+      <div className="heroSection">
         <img
           src="/placeholder-about-hero.jpg"
           alt="About hero"
-          className={styles.heroImage}
+          className="heroImage"
         />
-        <div className={styles.heroOverlay} />
+        <div className="heroOverlay" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className={styles.heroContent}>
+          <div className="heroContent">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className={styles.heroTitle}
+              className="heroTitle"
             >
               About Us
             </motion.h1>
@@ -51,7 +51,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className={styles.heroDescription}
+              className="heroDescription"
             >
               We are passionate about creating sustainable, beautiful landscapes that enhance both the
               natural environment and human experience.
@@ -61,29 +61,29 @@ export default function About() {
       </div>
 
       {/* Stats Section */}
-      <div className={styles.statsSection}>
+      <div className="statsSection">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className={styles.statsGrid}>
-            <div className={styles.statsContent}>
-              <h2 className={styles.sectionTitle}>
+          <div className="statsGrid">
+            <div className="statsContent">
+              <h2 className="sectionTitle">
                 Our Impact
               </h2>
-              <p className={styles.sectionDescription}>
+              <p className="sectionDescription">
                 For over two decades, we've been transforming spaces and creating lasting impact through
                 innovative landscape design.
               </p>
             </div>
-            <dl className={styles.statsWrapper}>
+            <dl className="statsWrapper">
               {stats.map((stat) => (
                 <motion.div
                   key={stat.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className={styles.statCard}
+                  className="statCard"
                 >
-                  <dt className={styles.statLabel}>{stat.name}</dt>
-                  <dd className={styles.statValue}>{stat.value}</dd>
+                  <dt className="statLabel">{stat.name}</dt>
+                  <dd className="statValue">{stat.value}</dd>
                 </motion.div>
               ))}
             </dl>
@@ -92,40 +92,40 @@ export default function About() {
       </div>
 
       {/* Team Section */}
-      <div className={styles.teamSection}>
+      <div className="teamSection">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className={styles.teamHeader}>
-            <h2 className={styles.sectionTitle}>
+          <div className="teamHeader">
+            <h2 className="sectionTitle">
               Meet Our Team
             </h2>
-            <p className={styles.sectionDescription}>
+            <p className="sectionDescription">
               Our talented team brings together years of experience and passion for landscape
               architecture.
             </p>
           </div>
-          <div className={styles.teamGrid}>
+          <div className="teamGrid">
             {team.map((member) => (
               <motion.div
                 key={member.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className={styles.teamCard}
+                className="teamCard"
               >
-                <div className={styles.teamImageWrapper}>
+                <div className="teamImageWrapper">
                   <img
-                    className={styles.teamImage}
+                    className="teamImage"
                     src={member.imageUrl}
                     alt={member.name}
                   />
                 </div>
-                <h3 className={styles.teamMemberName}>
+                <h3 className="teamMemberName">
                   {member.name}
                 </h3>
-                <p className={styles.teamMemberRole}>
+                <p className="teamMemberRole">
                   {member.role}
                 </p>
-                <p className={styles.teamMemberBio}>
+                <p className="teamMemberBio">
                   {member.bio}
                 </p>
               </motion.div>

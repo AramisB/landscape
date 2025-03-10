@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import styles from '../styles/Contact.module.css';
+import '../styles/Contact.css'; // Corrected import
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -21,41 +21,41 @@ export default function Contact() {
   };
 
   return (
-    <div className={styles.contactContainer}>
-      <div className={styles.contactSection}>
+    <div className="contactContainer">
+      <div className="contactSection">
         <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
           {/* Contact Information */}
-          <div className={styles.infoSection}>
-            <div className={styles.infoContent}>
+          <div className="infoSection">
+            <div className="infoContent">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h1 className={styles.sectionTitle}>Get in Touch</h1>
-                <p className={styles.sectionDescription}>
+                <h1 className="sectionTitle">Get in Touch</h1>
+                <p className="sectionDescription">
                   Ready to transform your space? Contact us to discuss your project or schedule a
                   consultation.
                 </p>
-                <dl className={styles.contactInfo}>
-                  <div className={styles.infoItem}>
+                <dl className="contactInfo">
+                  <div className="infoItem">
                     <dt className="sr-only">Address</dt>
-                    <dd className={styles.infoText}>
-                      <svg className={styles.infoIcon} /* Add SVG properties here */ />
+                    <dd className="infoText">
+                      <svg className="infoIcon" /* Add SVG properties here */ />
                       123 Design Street<br />City, State 12345
                     </dd>
                   </div>
-                  <div className={styles.infoItem}>
+                  <div className="infoItem">
                     <dt className="sr-only">Phone</dt>
-                    <dd className={styles.infoText}>
-                      <svg className={styles.infoIcon} /* Add SVG properties here */ />
+                    <dd className="infoText">
+                      <svg className="infoIcon" /* Add SVG properties here */ />
                       +1 (555) 123-4567
                     </dd>
                   </div>
-                  <div className={styles.infoItem}>
+                  <div className="infoItem">
                     <dt className="sr-only">Email</dt>
-                    <dd className={styles.infoText}>
-                      <svg className={styles.infoIcon} /* Add SVG properties here */ />
+                    <dd className="infoText">
+                      <svg className="infoIcon" /* Add SVG properties here */ />
                       contact@example.com
                     </dd>
                   </div>
@@ -70,11 +70,11 @@ export default function Contact() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             onSubmit={handleSubmit}
-            className={styles.formSection}
+            className="formSection"
           >
-            <div className={styles.formGrid}>
-              <div className={styles.formField}>
-                <label htmlFor="name" className={styles.formLabel}>
+            <div className="formGrid">
+              <div className="formField">
+                <label htmlFor="name" className="formLabel">
                   Name
                 </label>
                 <input
@@ -83,11 +83,11 @@ export default function Contact() {
                   id="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={styles.formInput}
+                  className="formInput"
                 />
               </div>
-              <div className={styles.formField}>
-                <label htmlFor="email" className={styles.formLabel}>
+              <div className="formField">
+                <label htmlFor="email" className="formLabel">
                   Email
                 </label>
                 <input
@@ -96,11 +96,11 @@ export default function Contact() {
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={styles.formInput}
+                  className="formInput"
                 />
               </div>
-              <div className={styles.formField}>
-                <label htmlFor="phone" className={styles.formLabel}>
+              <div className="formField">
+                <label htmlFor="phone" className="formLabel">
                   Phone
                 </label>
                 <input
@@ -109,11 +109,11 @@ export default function Contact() {
                   id="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className={styles.formInput}
+                  className="formInput"
                 />
               </div>
-              <div className={styles.formField}>
-                <label htmlFor="message" className={styles.formLabel}>
+              <div className="formField">
+                <label htmlFor="message" className="formLabel">
                   Message
                 </label>
                 <textarea
@@ -122,12 +122,12 @@ export default function Contact() {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className={styles.formTextarea}
+                  className="formTextarea"
                 />
               </div>
             </div>
-            <div className={styles.formActions}>
-              <button type="submit" className={styles.submitButton}>
+            <div className="formActions">
+              <button type="submit" className="submitButton">
                 Send Message
               </button>
             </div>
@@ -136,10 +136,10 @@ export default function Contact() {
       </div>
 
       {/* Map Section */}
-      <div className={styles.mapSection}>
+      <div className="mapSection">
         {/* Add your map component here */}
-        <div className={styles.mapPlaceholder}>
-          <p className={styles.mapText}>Map will be integrated here</p>
+        <div className="mapPlaceholder">
+          <p className="mapText">Map will be integrated here</p>
         </div>
       </div>
     </div>

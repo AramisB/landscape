@@ -7,13 +7,7 @@ export default {
     "./src/styles/**/*.css",      // Include CSS files
   ],
   theme: {
-    extend: {
-      colors: {
-        'primary-blue': 'rgba(0, 0, 255, 1)',  // Define colors explicitly
-        'primary-green': 'rgba(0, 255, 0, 1)',
-      },
-    },
+    extend: {},
   },
   plugins: [],
-}
-
+};

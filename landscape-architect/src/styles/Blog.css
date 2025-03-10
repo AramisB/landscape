@@ -60,10 +60,6 @@
     color: var(--primary-green);
   }
   
-  .titleGroup {
-    @apply group relative;
-  }
-  
   .blogTitle {
     @apply mt-3 text-lg font-semibold leading-6 transition-colors;
     color: var(--primary-blue);

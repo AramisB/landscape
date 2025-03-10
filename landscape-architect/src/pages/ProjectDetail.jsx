@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import styles from '../styles/ProjectDetail.module.css';
+import '../styles/ProjectDetail.css'; // Import the CSS file directly
 
 // Sample project data (would typically come from an API)
 const projectData = {
@@ -26,22 +26,22 @@ export default function ProjectDetail() {
   const project = projectData; // In a real app, fetch based on id
 
   return (
-    <div className={styles.projectDetailContainer}>
+    <div className="projectDetailContainer">
       {/* Hero Section */}
-      <div className={styles.heroSection}>
-        <div className={styles.heroImageWrapper}>
+      <div className="heroSection">
+        <div className="heroImageWrapper">
           <img
             src={project.images[0]}
             alt={project.title}
-            className={styles.heroImage}
+            className="heroImage"
           />
-          <div className={styles.heroOverlay} />
+          <div className="heroOverlay" />
         </div>
-        <div className={styles.heroContent}>
+        <div className="heroContent">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className={styles.heroTitle}
+            className="heroTitle"
           >
             {project.title}
           </motion.h1>
@@ -49,7 +49,7 @@ export default function ProjectDetail() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className={styles.heroCategory}
+            className="heroCategory"
           >
             {project.category}
           </motion.p>
@@ -57,61 +57,61 @@ export default function ProjectDetail() {
       </div>
 
       {/* Project Details */}
-      <div className={styles.detailsSection}>
+      <div className="detailsSection">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className={styles.contentGrid}>
+          <div className="contentGrid">
             {/* Project Information */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className={styles.projectInfo}
+              className="projectInfo"
             >
-              <p className={styles.projectDescription}>{project.description}</p>
+              <p className="projectDescription">{project.description}</p>
               
-              <dl className={styles.projectMeta}>
-                <div className={styles.metaItem}>
+              <dl className="projectMeta">
+                <div className="metaItem">
                   <dt>Location</dt>
                   <dd>{project.location}</dd>
                 </div>
-                <div className={styles.metaItem}>
+                <div className="metaItem">
                   <dt>Year</dt>
                   <dd>{project.year}</dd>
                 </div>
-                <div className={styles.metaItem}>
+                <div className="metaItem">
                   <dt>Size</dt>
                   <dd>{project.size}</dd>
                 </div>
-                <div className={styles.metaItem}>
+                <div className="metaItem">
                   <dt>Client</dt>
                   <dd>{project.client}</dd>
                 </div>
               </dl>
 
-              <div className={styles.projectChallenge}>
+              <div className="projectChallenge">
                 <h3>Challenge</h3>
                 <p>{project.challenge}</p>
               </div>
 
-              <div className={styles.projectSolution}>
+              <div className="projectSolution">
                 <h3>Solution</h3>
                 <p>{project.solution}</p>
               </div>
             </motion.div>
 
             {/* Project Gallery */}
-            <div className={styles.galleryGrid}>
+            <div className="galleryGrid">
               {project.images.slice(1).map((image, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2 }}
-                  className={styles.galleryItem}
+                  className="galleryItem"
                 >
                   <img
                     src={image}
                     alt={`Project view ${index + 2}`}
-                    className={styles.galleryImage}
+                    className="galleryImage"
                   />
                 </motion.div>
               ))}

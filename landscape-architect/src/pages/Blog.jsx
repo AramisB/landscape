@@ -1,64 +1,76 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import styles from '../styles/Blog.module.css';
+import '../styles/Blog.css'; // Corrected import
+
+const posts = [
+  {
+    id: 1,
+    title: "Example Blog",
+    imageUrl: "/example.jpg",
+    date: "2024-02-25",
+    category: "Design",
+    description: "A brief description of the blog.",
+    author: "John Doe",
+  },
+];
 
 export default function Blog() {
   return (
-    <div className={styles.blogContainer}>
+    <div className="blogContainer">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className={styles.headerSection}>
-          <h1 className={styles.mainTitle}>
+        <div className="headerSection">
+          <h1 className="mainTitle">
             Our Blog
           </h1>
-          <p className={styles.mainDescription}>
+          <p className="mainDescription">
             Insights, updates, and inspiration from our landscape architecture practice
           </p>
         </div>
-        <div className={styles.blogGrid}>
+        <div className="blogGrid">
           {posts.map((post) => (
             <motion.article
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className={styles.blogCard}
+              className="blogCard"
             >
-              <div className={styles.imageWrapper}>
+              <div className="imageWrapper">
                 <img
                   src={post.imageUrl}
                   alt={post.title}
-                  className={styles.blogImage}
+                  className="blogImage"
                 />
-                <div className={styles.imageOverlay} />
+                <div className="imageOverlay" />
               </div>
-              <div className={styles.blogContent}>
-                <div className={styles.metaInfo}>
-                  <time dateTime={post.date} className={styles.blogDate}>
+              <div className="blogContent">
+                <div className="metaInfo">
+                  <time dateTime={post.date} className="blogDate">
                     {post.date}
                   </time>
-                  <span className={styles.blogCategory}>
+                  <span className="blogCategory">
                     {post.category}
                   </span>
                 </div>
-                <div className={styles.titleGroup}>
-                  <h3 className={styles.blogTitle}>
+                <div className="titleGroup">
+                  <h3 className="blogTitle">
                     <Link to={`/blog/${post.id}`}>
                       <span className="absolute inset-0" />
                       {post.title}
                     </Link>
                   </h3>
-                  <p className={styles.blogDescription}>
+                  <p className="blogDescription">
                     {post.description}
                   </p>
                 </div>
-                <div className={styles.authorSection}>
+                <div className="authorSection">
                   <img
                     src={`/placeholder-avatar${post.id}.jpg`}
                     alt={post.author}
-                    className={styles.authorImage}
+                    className="authorImage"
                   />
                   <div className="text-sm leading-6">
-                    <p className={styles.authorName}>
+                    <p className="authorName">
                       {post.author}
                     </p>
                   </div>

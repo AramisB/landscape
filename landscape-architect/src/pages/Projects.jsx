@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/projects/ProjectCard';
-import styles from '../styles/Projects.module.css';
+import '../styles/Projects.css';
 
 const categories = ['all', 'residential', 'commercial', 'public'];
 
@@ -31,14 +31,14 @@ export default function Projects() {
     : sampleProjects.filter(project => project.category === selectedCategory);
 
   return (
-    <div className={styles.projectsContainer}>
-      <div className={styles.heroSection}>
-        <div className={styles.heroContent}>
+    <div className="projectsContainer">
+      <div className="heroSection">
+        <div className="heroContent">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className={styles.heroTitle}
+            className="heroTitle"
           >
             Our Projects
           </motion.h1>
@@ -46,25 +46,25 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className={styles.heroDescription}
+            className="heroDescription"
           >
             Explore our portfolio of landscape architecture projects
           </motion.p>
         </div>
       </div>
 
-      <div className={styles.projectsSection}>
+      <div className="projectsSection">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Category Filter */}
-          <div className={styles.filterSection}>
+          <div className="filterSection">
             {categories.map((category) => (
               <motion.button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`${styles.filterButton} ${
-                  selectedCategory === category ? styles.filterButtonActive : ''
+                className={`filterButton ${
+                  selectedCategory === category ? 'filterButtonActive' : ''
                 }`}
               >
                 {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -77,7 +77,7 @@ export default function Projects() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className={styles.projectsGrid}
+            className="projectsGrid"
           >
             {filteredProjects.map((project) => (
               <motion.div
@@ -85,22 +85,22 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className={styles.projectCard}
+                className="projectCard"
               >
-                <div className={styles.imageWrapper}>
+                <div className="imageWrapper">
                   <img
                     src={project.thumbnailUrl}
                     alt={project.title}
-                    className={styles.projectImage}
+                    className="projectImage"
                   />
-                  <div className={styles.imageOverlay} />
+                  <div className="imageOverlay" />
                 </div>
-                <div className={styles.projectContent}>
-                  <h3 className={styles.projectTitle}>{project.title}</h3>
-                  <p className={styles.projectCategory}>
+                <div className="projectContent">
+                  <h3 className="projectTitle">{project.title}</h3>
+                  <p className="projectCategory">
                     {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
                   </p>
-                  <p className={styles.projectDescription}>{project.description}</p>
+                  <p className="projectDescription">{project.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -108,5 +108,5 @@ export default function Projects() {
         </div>
       </div>
     </div>
-  );
+  )
 }

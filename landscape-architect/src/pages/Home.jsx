@@ -1,28 +1,28 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import styles from '../styles/Home.module.css';
+import '../styles/Home.css'; // Import the CSS file directly
 
 export default function Home() {
   return (
-    <div className={styles.homeContainer}>
+    <div className="homeContainer">
       {/* Hero Section */}
-      <div className={styles.heroSection}>
-        <div className={styles.heroImageWrapper}>
+      <div className="heroSection">
+        <div className="heroImageWrapper">
           <img
             src="/placeholder-hero.jpg"
             alt="Hero background"
-            className={styles.heroImage}
+            className="heroImage"
           />
-          <div className={styles.heroOverlay} />
+          <div className="heroOverlay" />
         </div>
-        <div className={styles.heroContent}>
+        <div className="heroContent">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className={styles.heroTextContent}>
+            <div className="heroTextContent">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className={styles.heroTitle}
+                className="heroTitle"
               >
                 Creating Sustainable Landscapes
               </motion.h1>
@@ -30,7 +30,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className={styles.heroDescription}
+                className="heroDescription"
               >
                 We design and build innovative outdoor spaces that harmonize with nature and enhance
                 people's lives.
@@ -39,18 +39,12 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className={styles.heroButtons}
+                className="heroButtons"
               >
-                <Link
-                  to="/projects"
-                  className={styles.primaryButton}
-                >
+                <Link to="/projects" className="primaryButton">
                   View Portfolio
                 </Link>
-                <Link
-                  to="/contact"
-                  className={styles.secondaryButton}
-                >
+                <Link to="/contact" className="secondaryButton">
                   Contact Us <span aria-hidden="true">→</span>
                 </Link>
               </motion.div>
@@ -60,34 +54,30 @@ export default function Home() {
       </div>
 
       {/* Featured Projects Section */}
-      <div className={styles.featuredSection}>
+      <div className="featuredSection">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
-              Featured Projects
-            </h2>
-            <p className={styles.sectionDescription}>
+          <div className="sectionHeader">
+            <h2 className="sectionTitle">Featured Projects</h2>
+            <p className="sectionDescription">
               Discover our latest and most impactful landscape designs.
             </p>
           </div>
-          <div className={styles.projectsGrid}>
+          <div className="projectsGrid">
             {/* Add featured projects grid here */}
           </div>
         </div>
       </div>
 
       {/* Services Overview Section */}
-      <div className={styles.servicesSection}>
+      <div className="servicesSection">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
-              Our Services
-            </h2>
-            <p className={styles.sectionDescription}>
+          <div className="sectionHeader">
+            <h2 className="sectionTitle">Our Services</h2>
+            <p className="sectionDescription">
               Comprehensive landscape architecture and design services.
             </p>
           </div>
-          <div className={styles.servicesGrid}>
+          <div className="servicesGrid">
             {/* Add services grid here */}
           </div>
         </div>
