@@ -4,26 +4,30 @@
   }
   
   /* Hero section */
-  .heroSection {
-    @apply relative h-screen;
-  }
-  
-  .heroImageWrapper {
-    @apply absolute inset-0;
-  }
-  
-  .heroImage {
-    @apply w-full h-full object-cover;
-  }
-  
-  .heroOverlay {
-    @apply absolute inset-0;
-    background: linear-gradient(rgba(47, 82, 51, 0.7), rgba(28, 79, 124, 0.7));
-  }
-  
-  .heroContent {
-    @apply relative pt-32 pb-16 sm:pb-24;
-  }
+  /* Hero section */
+.heroSection {
+  @apply relative flex flex-col items-center text-center h-auto;
+}
+
+/* Ensure text content comes first */
+.heroContent {
+  @apply relative pt-32 pb-16 sm:pb-24 z-10;
+}
+
+/* Adjust hero image placement */
+.heroImageWrapper {
+  @apply w-full h-[500px] relative;
+}
+
+.heroImage {
+  @apply w-full h-full object-cover;
+}
+
+/* Keep overlay effect */
+.heroOverlay {
+  @apply absolute inset-0;
+  background: linear-gradient(rgba(47, 82, 51, 0.7), rgba(28, 79, 124, 0.7));
+}
   
   .heroTextContent {
     @apply mx-auto max-w-2xl text-center text-white;

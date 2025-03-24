@@ -7,14 +7,6 @@ export default function Home() {
     <div className="homeContainer">
       {/* Hero Section */}
       <div className="heroSection">
-        <div className="heroImageWrapper">
-          <img
-            src="/placeholder-hero.jpg"
-            alt="Hero background"
-            className="heroImage"
-          />
-          <div className="heroOverlay" />
-        </div>
         <div className="heroContent">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="heroTextContent">
@@ -50,6 +42,14 @@ export default function Home() {
               </motion.div>
             </div>
           </div>
+        </div>
+        <div className="heroImageWrapper">
+          <img
+            src="/placeholder-hero.jpg"
+            alt="Hero background"
+            className="heroImage"
+          />
+          <div className="heroOverlay" />
         </div>
       </div>
 
