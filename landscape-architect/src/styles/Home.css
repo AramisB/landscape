@@ -1,93 +1,135 @@
 /* Main container */
 .homeContainer {
-  @apply relative;
+  display: flex;
+  flex-direction: column;
+  background-image: url('/placeholder-hero-background.jpg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 /* Hero section */
 .heroSection {
-  @apply relative bg-primary-blue;
+  position: relative;
+  height: 200vh;
+  display: flex;
+  flex-direction: column; /* Ensures vertical stacking */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
 }
 
-.heroContent {
-  @apply relative z-10 py-16 sm:py-24;
-  background-color: var(--primary-blue);
-}
-
-.heroTextContent {
-  @apply mx-auto max-w-2xl text-center;
-}
-
-.heroTitle {
-  @apply text-4xl font-bold tracking-tight sm:text-6xl;
-  color: var(--pure-white);
-}
-
-.heroDescription {
-  @apply mt-6 text-lg leading-8;
-  color: var(--off-white);
-}
-
-.heroButtons {
-  @apply mt-10 flex items-center justify-center gap-x-6;
-}
-
-.heroImageContainer {
-  @apply relative w-full h-[400px] sm:h-[500px];
+.heroImageWrapper {
+  position: absolute;
+  inset: 0;
 }
 
 .heroImage {
-  @apply w-full h-full object-cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .heroOverlay {
-  @apply absolute inset-0;
-  background: linear-gradient(rgba(47, 82, 51, 0.4), rgba(28, 79, 124, 0.4));
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* Adjust overlay color and opacity */
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  color: var(--pure-white);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 3rem; /* 48px */
+  font-weight: 700;
+  margin-bottom: 1rem; /* 16px */
+}
+
+.heroDescription {
+  font-size: 1.25rem; /* 20px */
+  margin-bottom: 2rem; /* 32px */
+}
+
+.heroButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* 16px */
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem; /* 12px 24px */
+  text-decoration: none;
+  border-radius: 0.25rem; /* 4px */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .primaryButton {
-  @apply rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors;
-  background-color: var(--primary-green);
+  background-color: var(--primary-blue);
   color: var(--pure-white);
 }
 
 .primaryButton:hover {
-  background-color: var(--secondary-green);
+  background-color: var(--primary-blue-dark);
 }
 
 .secondaryButton {
-  @apply text-sm font-semibold leading-6 transition-colors;
+  background-color: transparent;
+  border: 2px solid var(--pure-white);
   color: var(--pure-white);
 }
 
 .secondaryButton:hover {
-  color: var(--light-green);
+  background-color: var(--pure-white);
+  color: var(--primary-blue);
 }
-  
-  .sectionHeader {
-    @apply mx-auto max-w-2xl text-center;
-  }
-  
-  .sectionTitle {
-    @apply text-3xl font-bold tracking-tight sm:text-4xl;
-    color: var(--primary-blue);
-  }
-  
-  .sectionDescription {
-    @apply mt-2 text-lg leading-8;
-    color: var(--text-dark);
-  }
-  
-  .projectsGrid {
-    @apply mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:mx-0 lg:max-w-none;
-  }
-  
-  /* Services Section */
-  .servicesSection {
-    @apply py-24 sm:py-32;
-    background-color: var(--off-white);
-  }
-  
-  .servicesGrid {
-    @apply mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:mx-0 lg:max-w-none;
-  }
-  
+
+/* Featured Projects Section */
+.featuredSection {
+  padding: 4rem 0; /* 64px */
+  text-align: center;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 2rem; /* 32px */
+}
+
+.sectionTitle {
+  font-size: 2rem; /* 32px */
+  font-weight: 700;
+  margin-bottom: 0.5rem; /* 8px */
+}
+
+.sectionDescription {
+  font-size: 1.125rem; /* 18px */
+  color: var(--text-dark);
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem; /* 32px */
+}
+
+/* Services Overview Section */
+.servicesSection {
+  padding: 4rem 0; /* 64px */
+  background-color: var(--off-white);
+  text-align: center;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem; /* 32px */
+}
