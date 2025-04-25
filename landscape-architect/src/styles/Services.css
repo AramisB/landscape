@@ -4,31 +4,20 @@
 }
 
 /* Hero section */
-.heroSection {
-  @apply relative py-24 sm:py-32;
-  background-color: var(--primary-blue);
-  background-image: url('/services/hero-background.jpg');
-  background-size: cover;
-  background-position: center;
+.servicesContainer .heroSection {
+  @apply relative flex items-center justify-center text-center overflow-hidden w-full h-96 bg-[#f8f2f2];
 }
 
-.heroOverlay {
-  @apply absolute inset-0;
-  background: linear-gradient(rgba(47, 82, 51, 0.8), rgba(28, 79, 124, 0.8));
+.servicesContainer .heroContent {
+  @apply max-w-3xl mx-auto px-4 flex flex-col items-center justify-center z-10 text-center h-full w-full;
 }
 
-.heroContent {
-  @apply relative mx-auto max-w-2xl text-center z-10;
+.servicesContainer .heroTitle {
+  @apply text-4xl sm:text-3xl font-bold mb-4 mx-auto text-center text-[var(--pure-white)];
 }
 
-.heroTitle {
-  @apply text-4xl font-bold tracking-tight sm:text-5xl;
-  color: var(--pure-white);
-}
-
-.heroDescription {
-  @apply mt-6 text-lg leading-8;
-  color: var(--off-white);
+.servicesContainer .heroDescription {
+  @apply text-lg sm:text-xl max-w-2xl mb-8 mx-auto text-center text-[var(--off-white)];
 }
 
 /* Services section */
@@ -71,7 +60,7 @@
 
 .serviceTitle {
   @apply text-xl font-semibold mb-3;
-  color: var(--primary-blue);
+  color: var(--orange);
 }
 
 .serviceDescription {
@@ -117,7 +106,7 @@
 
 .ctaTitle {
   @apply text-3xl font-bold tracking-tight sm:text-4xl;
-  color: var(--primary-blue);
+  color: var(--orange);
 }
 
 .ctaDescription {
@@ -141,7 +130,7 @@
 
 .secondaryButton {
   @apply text-sm font-semibold leading-6 transition-colors;
-  color: var(--primary-blue);
+  color: var(--orange);
 }
 
 .secondaryButton:hover {

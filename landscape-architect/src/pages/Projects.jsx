@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import ProjectCard from '../components/projects/ProjectCard';
+import ProjectCardSlider from '../components/projects/ProjectCardSlider';
 import '../styles/Projects.css';
 
 const categories = ['all', 'residential', 'commercial', 'public'];
@@ -10,17 +10,38 @@ const sampleProjects = [
     id: '1',
     title: 'Modern Residential Garden',
     category: 'residential',
-    thumbnailUrl: '/placeholder-project1.jpg',
+    images: [
+      '/placeholder-project1.jpg',
+      '/residential/image1.jpg',
+      '/residential/image2.jpg',
+      '/residential/image3.jpg'
+    ],
     description: 'A contemporary garden design for urban living.',
   },
   {
     id: '2',
     title: 'City Park Renovation',
     category: 'public',
-    thumbnailUrl: '/placeholder-project2.jpg',
+    images: [
+      '/placeholder-project2.jpg',
+      '/park1.jpg',
+      '/park2.jpg',
+      '/park3.jpg'
+    ],
     description: 'Revitalization of a public park space.',
   },
-  // Add more sample projects as needed
+  {
+    id: '3',
+    title: 'Mall',
+    category: 'commercial',
+    images: [
+      '/placeholder-project3.jpg',
+      '/mall1.jpg',
+      '/mall2.jpg',
+      '/mall3.jpg'
+    ],
+    description: 'Blending retail with social spaces, featuring event areas, play zones, and garden retreats.'
+  }
 ];
 
 export default function Projects() {
@@ -85,23 +106,8 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="projectCard"
               >
-                <div className="imageWrapper">
-                  <img
-                    src={project.thumbnailUrl}
-                    alt={project.title}
-                    className="projectImage"
-                  />
-                  <div className="imageOverlay" />
-                </div>
-                <div className="projectContent">
-                  <h3 className="projectTitle">{project.title}</h3>
-                  <p className="projectCategory">
-                    {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
-                  </p>
-                  <p className="projectDescription">{project.description}</p>
-                </div>
+                <ProjectCardSlider project={project} />
               </motion.div>
             ))}
           </motion.div>

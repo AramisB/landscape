@@ -1,26 +1,35 @@
 /* Main container */
 .projectsContainer {
-    @apply bg-[var(--pure-white)];
+  @apply flex flex-col bg-cover bg-center bg-no-repeat min-h-screen;
   }
   
   /* Hero section */
-  .heroSection {
-    @apply relative py-24 sm:py-32;
-    background-color: var(--primary-blue);
+  .projectsContainer .heroSection {
+    @apply relative flex items-center justify-center text-center overflow-hidden w-full h-96 bg-[#f8f2f2];
   }
   
-  .heroContent {
-    @apply mx-auto max-w-2xl text-center;
+  .projectsContainer .heroContent {
+    @apply max-w-3xl mx-auto px-4 flex flex-col items-center justify-center z-10 text-center h-full w-full;
   }
   
-  .heroTitle {
-    @apply text-4xl font-bold tracking-tight sm:text-5xl;
-    color: var(--pure-white);
+  .projectsContainer .heroTitle {
+    @apply text-4xl sm:text-3xl font-bold mb-4 mx-auto text-center;
   }
   
-  .heroDescription {
-    @apply mt-6 text-lg leading-8;
-    color: var(--off-white);
+  .projectsContainer .heroDescription {
+    @apply text-lg sm:text-xl max-w-2xl mb-8 mx-auto text-center;
+  }
+  
+  .projectsContainer .heroImageWrapper {
+    @apply absolute inset-0 z-0;
+  }
+  
+  .projectsContainer .heroImage {
+    @apply w-full h-full object-cover;
+  }
+  
+  .projectsContainer .heroOverlay {
+    @apply absolute inset-0 bg-black/50 z-0;
   }
   
   /* Projects section */
@@ -62,11 +71,11 @@
   }
   
   .imageWrapper {
-    @apply relative aspect-[16/9];
+    @apply relative aspect-[16/9] overflow-hidden;
   }
   
   .projectImage {
-    @apply h-full w-full object-cover;
+    @apply absolute inset-0 h-full w-full object-cover;
   }
   
   .imageOverlay {

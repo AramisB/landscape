@@ -4,18 +4,18 @@
 }
 
 /* Hero Section */
-.heroSection {
-  @apply relative flex items-center justify-center text-center overflow-hidden w-full h-64 bg-[#f8f2f2];
+.homeContainer .heroSection {
+  @apply relative flex items-center justify-center text-center overflow-hidden w-full h-96 bg-[#f8f2f2];
 }
-.heroContent {
-  @apply max-w-3xl px-4 flex flex-col items-center justify-center z-10 text-center;
+.homeContainer .heroContent {
+  @apply max-w-3xl mx-auto flex flex-col items-center justify-center z-10 text-center h-full w-full;
 }
-.heroTitle {
-  @apply text-4xl sm:text-xl font-bold mb-4 mx-auto;
+.homeContainer .heroTitle {
+  @apply text-4xl sm:text-3xl font-bold mb-4 mx-auto text-center;
 }
 
-.heroDescription {
-  @apply text-lg sm:text-xl max-w-2xl mb-8 mx-auto;
+.homeContainer .heroDescription {
+  @apply text-lg sm:text-xl max-w-2xl mb-8 mx-auto text-center;
 }
 
 .heroButtons {

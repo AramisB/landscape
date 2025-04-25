@@ -10,7 +10,7 @@
   
   .mainTitle {
     @apply text-3xl font-bold tracking-tight sm:text-4xl;
-    color: var(--primary-blue);
+    color: var(--orange);
   }
   
   .mainDescription {
@@ -62,7 +62,7 @@
   
   .blogTitle {
     @apply mt-3 text-lg font-semibold leading-6 transition-colors;
-    color: var(--primary-blue);
+    color: var(--orange);
   }
   
   .blogTitle:hover {

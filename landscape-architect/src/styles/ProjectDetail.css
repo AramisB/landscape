@@ -64,7 +64,7 @@
   
   .metaItem dt {
     @apply text-sm font-medium;
-    color: var(--primary-blue);
+    color: var(--orange);
   }
   
   .metaItem dd {
@@ -80,7 +80,7 @@
   .projectChallenge h3,
   .projectSolution h3 {
     @apply text-xl font-semibold;
-    color: var(--primary-blue);
+    color: var(--orange);
   }
   
   .projectChallenge p,

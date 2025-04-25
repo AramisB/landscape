@@ -3,10 +3,27 @@
     @apply bg-[var(--pure-white)];
   }
   
+  /* Hero section */
+  .contactContainer .heroSection {
+    @apply relative flex items-center justify-center text-center overflow-hidden w-full h-96 bg-[#f8f2f2];
+  }
+  
+  .contactContainer .heroContent {
+    @apply max-w-3xl mx-auto px-4 flex flex-col items-center justify-center z-10 text-center h-full w-full;
+  }
+  
+  .contactContainer .heroTitle {
+    @apply text-4xl sm:text-3xl font-bold mb-4 mx-auto text-center text-[var(--pure-white)];
+  }
+  
+  .contactContainer .heroDescription {
+    @apply text-lg sm:text-xl max-w-2xl mb-8 mx-auto text-center text-[var(--off-white)];
+  }
+  
   /* Contact section */
   .contactSection {
     @apply relative isolate;
-    background-color: var(--primary-blue);
+    background-color: rgb(41, 78, 138);
   }
   
   /* Info section */
@@ -61,7 +78,7 @@
   
   .formLabel {
     @apply block text-sm font-semibold leading-6;
-    color: var(--primary-blue);
+    color: var(--orange);
   }
   
   .formInput {
