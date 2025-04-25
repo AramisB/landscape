@@ -8,54 +8,49 @@ export default function Home() {
       {/* Hero Section */}
       <div className="heroSection">
         <div className="heroContent">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="heroTextContent">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="heroTitle"
-              >
-                Creating Sustainable Landscapes
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="heroDescription"
-              >
-                We design and build innovative outdoor spaces that harmonize with nature and enhance
-                people's lives.
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="heroButtons"
-              >
-                <Link to="/projects" className="primaryButton">
-                  View Portfolio
-                </Link>
-                <Link to="/contact" className="secondaryButton">
-                  Contact Us <span aria-hidden="true">→</span>
-                </Link>
-              </motion.div>
-            </div>
-          </div>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="heroTitle"
+          >
+            Creating Sustainable Landscapes
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="heroDescription"
+          >
+            We design and build innovative outdoor spaces that harmonize with nature and enhance
+            people's lives.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="heroButtons"
+          >
+            <Link to="/projects" className="primaryButton">
+              View Portfolio
+            </Link>
+            <Link to="/contact" className="secondaryButton">
+              Contact Us <span aria-hidden="true">→</span>
+            </Link>
+          </motion.div>
         </div>
         <div className="heroImageWrapper">
-          <img
+          {/*<img
             src="/placeholder-hero.jpg"
             alt="Hero background"
             className="heroImage"
-          />
+          />*/}
           <div className="heroOverlay" />
         </div>
       </div>
-
-      {/* Featured Projects Section */}
-      <div className="featuredSection">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      { /* Diagonal Split Section */}
+      <div className="diagonalSplitSection">
+        <div className="diagonalContent featuredContent">
           <div className="sectionHeader">
             <h2 className="sectionTitle">Featured Projects</h2>
             <p className="sectionDescription">
@@ -66,11 +61,8 @@ export default function Home() {
             {/* Add featured projects grid here */}
           </div>
         </div>
-      </div>
 
-      {/* Services Overview Section */}
-      <div className="servicesSection">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="diagonalContent servicesContent">
           <div className="sectionHeader">
             <h2 className="sectionTitle">Our Services</h2>
             <p className="sectionDescription">
@@ -82,6 +74,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

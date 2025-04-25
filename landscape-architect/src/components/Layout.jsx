@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import '../styles/Footer.css';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -82,38 +83,44 @@ export default function Layout() {
       <main>
         <Outlet />
       </main>
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-              <p>123 Design Street</p>
-              <p>City, State 12345</p>
-              <p>Phone: (555) 123-4567</p>
-              <p>Email: info@landscapestudio.com</p>
+      <footer className="footer">
+        <div className="footer-container">
+          <div className="footer-grid">
+            <div className="footer-column">
+              <h3 className="footer-heading">Contact Us</h3>
+              <ul className="footer-list">
+                <li>123 Design Street</li>
+                <li>City, State 12345</li>
+                <li>Phone: (555) 123-4567</li>
+                <li>Email: info@landscapestudio.com</li>
+              </ul>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
+
+            <div className="footer-column">
+              <h3 className="footer-heading">Quick Links</h3>
+              <ul className="footer-list">
                 {navigation.map((item) => (
                   <li key={item.name}>
-                    <Link to={item.href} className="hover:text-gray-300">
+                    <Link to={item.href} className="footer-link">
                       {item.name}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-              <div className="flex space-x-4">
-                {/* Add social media icons/links here */}
+
+            <div className="footer-column">
+              <h3 className="footer-heading">Follow Us</h3>
+              <div className="footer-socials">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
               </div>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-gray-800 text-center">
-            <p>&copy; 2024 Landscape Studio. All rights reserved.</p>
-          </div>
+        </div>
+        <div className="footer-bottom">
+          &copy; {new Date().getFullYear()} Landscape Studio. All rights reserved.
         </div>
       </footer>
     </div>
