@@ -1,6 +1,15 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import '../styles/Services.css'; // Import the CSS file directly
+import { 
+  FaLeaf, 
+  FaBuilding, 
+  FaTree, 
+  FaWater, 
+  FaSun, 
+  FaSeedling,
+  FaHome 
+} from 'react-icons/fa';
+import '../styles/Services.css';
 
 const services = [
   {
@@ -8,6 +17,7 @@ const services = [
     title: 'Residential Design',
     description: 'Creating beautiful, functional outdoor spaces for homes.',
     image: '/services/residential.jpg',
+    icon: <FaHome className="w-8 h-8" />,
     features: [
       'Custom garden design',
       'Outdoor living spaces',
@@ -22,6 +32,7 @@ const services = [
     title: 'Commercial Landscapes',
     description: 'Professional landscape solutions for businesses and institutions.',
     image: '/services/commercial.jpg',
+    icon: <FaBuilding className="w-8 h-8" />,
     features: [
       'Corporate campus design',
       'Hotel and resort landscaping',
@@ -36,6 +47,7 @@ const services = [
     title: 'Public Spaces',
     description: 'Designing engaging public environments that bring communities together.',
     image: '/services/public.jpg',
+    icon: <FaTree className="w-8 h-8" />,
     features: [
       'Park design',
       'Urban plazas',
@@ -50,6 +62,7 @@ const services = [
     title: 'Environmental Planning',
     description: 'Sustainable solutions that protect and enhance natural environments.',
     image: '/services/environmental.jpg',
+    icon: <FaLeaf className="w-8 h-8" />,
     features: [
       'Ecological restoration',
       'Native plant design',
@@ -64,6 +77,7 @@ const services = [
     title: 'Master Planning',
     description: 'Comprehensive planning for large-scale landscape projects.',
     image: '/services/master-planning.jpg',
+    icon: <FaWater className="w-8 h-8" />,
     features: [
       'Site analysis',
       'Development planning',
@@ -78,6 +92,7 @@ const services = [
     title: 'Consultation Services',
     description: 'Expert advice and planning for your landscape projects.',
     image: '/services/consultation.jpg',
+    icon: <FaSun className="w-8 h-8" />,
     features: [
       'Site evaluation',
       'Design consultation',
@@ -94,13 +109,13 @@ export default function Services() {
     <div className="servicesContainer">
       {/* Hero Section */}
       <div className="heroSection">
-        <div className="heroOverlay" />
+        <div className="heroOverlay nature-gradient" />
         <div className="heroContent">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="heroTitle"
+            className="heroTitle gradient-text"
           >
             Our Services
           </motion.h1>
@@ -125,6 +140,7 @@ export default function Services() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
                 className="serviceCard"
               >
                 <div className="serviceImageWrapper">
@@ -134,6 +150,9 @@ export default function Services() {
                     className="serviceImage"
                   />
                   <div className="serviceImageOverlay" />
+                  <div className="serviceIconWrapper">
+                    {service.icon}
+                  </div>
                 </div>
                 <div className="serviceContent">
                   <h3 className="serviceTitle">{service.title}</h3>
@@ -141,7 +160,9 @@ export default function Services() {
                   <ul className="featuresList">
                     {service.features.map((feature, index) => (
                       <li key={index} className="featureItem">
-                        <span className="featureIcon">•</span>
+                        <span className="featureIcon">
+                          <FaSeedling className="w-4 h-4" />
+                        </span>
                         {feature}
                       </li>
                     ))}
@@ -164,7 +185,7 @@ export default function Services() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="ctaTitle"
+              className="ctaTitle gradient-text"
             >
               Ready to Start Your Project?
             </motion.h2>

@@ -1,29 +1,33 @@
 /* Main container */
 .servicesContainer {
-  @apply bg-[var(--pure-white)];
+  @apply bg-[var(--off-white)];
 }
 
 /* Hero section */
-.servicesContainer .heroSection {
-  @apply relative flex items-center justify-center text-center overflow-hidden w-full h-96 bg-[#f8f2f2];
+.heroSection {
+  @apply relative flex items-center justify-center text-center overflow-hidden w-full min-h-[60vh] bg-[var(--off-white)];
 }
 
-.servicesContainer .heroContent {
-  @apply max-w-3xl mx-auto px-4 flex flex-col items-center justify-center z-10 text-center h-full w-full;
+.heroContent {
+  @apply max-w-4xl mx-auto px-4 flex flex-col items-center justify-center z-10 text-center h-full w-full;
 }
 
-.servicesContainer .heroTitle {
-  @apply text-4xl sm:text-3xl font-bold mb-4 mx-auto text-center text-[var(--pure-white)];
+.heroTitle {
+  @apply text-5xl md:text-6xl font-bold mb-6 mx-auto text-center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.servicesContainer .heroDescription {
-  @apply text-lg sm:text-xl max-w-2xl mb-8 mx-auto text-center text-[var(--off-white)];
+.heroDescription {
+  @apply text-xl md:text-2xl max-w-2xl mb-8 mx-auto text-center text-white;
+}
+
+.heroOverlay {
+  @apply absolute inset-0 z-0 opacity-80;
 }
 
 /* Services section */
 .servicesSection {
-  @apply py-24 sm:py-32;
-  background-color: var(--pure-white);
+  @apply py-16 sm:py-24 bg-[var(--off-white)];
 }
 
 .servicesGrid {
@@ -32,9 +36,8 @@
 
 /* Service card */
 .serviceCard {
-  @apply flex flex-col overflow-hidden rounded-lg transition-all duration-300 hover:-translate-y-2;
-  background-color: var(--off-white);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  @apply flex flex-col overflow-hidden rounded-xl transition-all duration-300 
+         hover:-translate-y-2 hover:shadow-xl bg-white;
 }
 
 .serviceImageWrapper {
@@ -42,12 +45,17 @@
 }
 
 .serviceImage {
-  @apply h-full w-full object-cover transition-transform duration-300;
+  @apply h-full w-full object-cover transition-transform duration-500;
 }
 
 .serviceImageOverlay {
-  @apply absolute inset-0;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  @apply absolute inset-0 bg-gradient-to-t from-black/60 to-transparent;
+}
+
+.serviceIconWrapper {
+  @apply absolute top-4 right-4 bg-white/90 p-3 rounded-full 
+         text-[var(--primary-green)] transition-all duration-300
+         hover:bg-white hover:scale-110;
 }
 
 .serviceCard:hover .serviceImage {
@@ -59,13 +67,11 @@
 }
 
 .serviceTitle {
-  @apply text-xl font-semibold mb-3;
-  color: var(--orange);
+  @apply text-xl font-semibold mb-3 text-[var(--primary-green)];
 }
 
 .serviceDescription {
-  @apply mb-4 text-base;
-  color: var(--text-dark);
+  @apply mb-4 text-base text-[var(--text-dark)];
 }
 
 /* Features list */
@@ -75,80 +81,72 @@
 }
 
 .featureItem {
-  @apply flex items-start gap-2 text-sm;
-  color: var(--text-dark);
+  @apply flex items-start gap-2 text-sm text-[var(--text-dark)];
 }
 
 .featureIcon {
-  @apply text-base;
-  color: var(--primary-green);
+  @apply text-[var(--vibrant-green)] mt-1;
 }
 
 .serviceButton {
-  @apply w-full text-center rounded-md px-4 py-2 text-sm font-semibold transition-colors;
-  background-color: var(--primary-green);
-  color: var(--pure-white);
-}
-
-.serviceButton:hover {
-  background-color: var(--secondary-green);
+  @apply w-full text-center rounded-full px-6 py-3 text-sm font-medium
+         transition-all duration-300 bg-[var(--primary-green)] 
+         text-white hover:bg-[var(--secondary-green)] hover:shadow-md;
 }
 
 /* CTA section */
 .ctaSection {
-  @apply py-16 sm:py-24;
-  background-color: var(--light-green);
+  @apply py-16 sm:py-24 bg-gradient-to-r from-[var(--primary-green)] to-[var(--secondary-green)];
 }
 
 .ctaContent {
-  @apply mx-auto max-w-2xl text-center;
+  @apply mx-auto max-w-4xl text-center;
 }
 
 .ctaTitle {
-  @apply text-3xl font-bold tracking-tight sm:text-4xl;
-  color: var(--orange);
+  @apply text-4xl md:text-5xl font-bold mb-6 text-white;
 }
 
 .ctaDescription {
-  @apply mt-6 text-lg leading-8;
-  color: var(--text-dark);
+  @apply mt-6 text-xl leading-8 text-white;
 }
 
 .ctaButtons {
-  @apply mt-10 flex items-center justify-center gap-x-6 flex-wrap;
+  @apply mt-10 flex items-center justify-center gap-6 flex-wrap;
 }
 
 .primaryButton {
-  @apply rounded-md px-5 py-2.5 text-sm font-semibold shadow-sm transition-colors;
-  background-color: var(--primary-green);
-  color: var(--pure-white);
-}
-
-.primaryButton:hover {
-  background-color: var(--secondary-green);
+  @apply rounded-full px-8 py-3 text-sm font-medium bg-white 
+         text-[var(--primary-green)] transition-all duration-300
+         hover:bg-[var(--off-white)] hover:shadow-lg;
 }
 
 .secondaryButton {
-  @apply text-sm font-semibold leading-6 transition-colors;
-  color: var(--orange);
-}
-
-.secondaryButton:hover {
-  color: var(--secondary-blue);
+  @apply rounded-full px-8 py-3 text-sm font-medium border-2 
+         border-white text-white transition-all duration-300
+         hover:bg-white hover:text-[var(--primary-green)];
 }
 
 /* Responsive adjustments */
 @media (max-width: 640px) {
   .heroTitle {
-    @apply text-3xl;
+    @apply text-4xl;
+  }
+
+  .heroDescription {
+    @apply text-lg;
   }
 
   .ctaButtons {
-    @apply flex-col gap-y-4;
+    @apply flex-col gap-4;
   }
 
   .serviceCard {
     @apply max-w-sm mx-auto;
+  }
+  
+  .serviceIconWrapper {
+    @apply p-2;
   }
 }
 
@@ -164,24 +162,11 @@
   }
 }
 
-.serviceCard {
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-/* Hover effects */
-.serviceCard:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.serviceButton:focus {
-  @apply outline-none ring-2 ring-offset-2;
-  ring-color: var(--primary-green);
-}
-
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .serviceCard,
-  .serviceImage {
+  .serviceImage,
+  .serviceIconWrapper {
     @apply transition-none;
   }
 }

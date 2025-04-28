@@ -1,6 +1,6 @@
 /* Main container */
 .contactContainer {
-    @apply bg-[var(--pure-white)];
+    @apply bg-[var(--off-white)];
   }
   
   /* Hero section */
@@ -22,114 +22,150 @@
   
   /* Contact section */
   .contactSection {
-    @apply relative isolate;
-    background-color: rgb(41, 78, 138);
+    @apply py-16 sm:py-24;
   }
   
   /* Info section */
   .infoSection {
-    @apply relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48;
+    @apply px-6 lg:px-8;
   }
   
   .infoContent {
-    @apply mx-auto max-w-xl lg:mx-0 lg:max-w-lg;
+    @apply max-w-xl mx-auto lg:mx-0;
   }
   
   .sectionTitle {
-    @apply text-3xl font-bold tracking-tight text-white sm:text-4xl;
+    @apply text-4xl md:text-5xl font-bold mb-6 text-[var(--primary-green)];
   }
   
   .sectionDescription {
-    @apply mt-6 text-lg leading-8;
-    color: var(--off-white);
+    @apply text-xl text-[var(--text-dark)] mb-8;
   }
   
   /* Contact information */
   .contactInfo {
-    @apply mt-10 space-y-4 text-base leading-7;
+    @apply space-y-6;
   }
   
   .infoItem {
-    @apply flex gap-x-4 items-center;
+    @apply flex items-start gap-4;
   }
   
   .infoIcon {
-    @apply h-7 w-6;
-    color: var(--light-green);
+    @apply h-6 w-6 text-[var(--primary-green)] mt-1;
   }
   
   .infoText {
-    color: var(--off-white);
+    @apply text-base text-[var(--text-dark)];
   }
   
   /* Form section */
   .formSection {
-    @apply px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48;
-    background-color: var(--pure-white);
+    @apply px-6 lg:px-8;
   }
   
   .formGrid {
-    @apply grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2;
+    @apply grid grid-cols-1 gap-6 sm:grid-cols-2;
   }
   
   .formField {
-    @apply sm:col-span-2;
+    @apply space-y-2;
   }
   
   .formLabel {
-    @apply block text-sm font-semibold leading-6;
-    color: var(--orange);
+    @apply block text-sm font-medium text-[var(--text-dark)];
   }
   
   .formInput {
-    @apply mt-2.5 block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset transition-colors;
-    background-color: var(--off-white);
-    color: var(--text-dark);
-    border-color: var(--light-green);
+    @apply block w-full rounded-xl border-0 px-4 py-3 text-[var(--text-dark)] 
+           shadow-sm ring-1 ring-inset ring-[var(--off-white)] 
+           focus:ring-2 focus:ring-inset focus:ring-[var(--primary-green)];
   }
   
-  .formInput:focus {
-    @apply ring-2 ring-inset;
-    border-color: var(--primary-green);
+  .formInput::placeholder {
+    color: #666;
+    opacity: 0.5;
   }
   
   .formTextarea {
-    @apply mt-2.5 block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset transition-colors;
-    background-color: var(--off-white);
-    color: var(--text-dark);
-    border-color: var(--light-green);
+    @apply block w-full rounded-xl border-0 px-4 py-3 text-[var(--text-dark)] 
+           shadow-sm ring-1 ring-inset ring-[var(--off-white)] 
+           focus:ring-2 focus:ring-inset focus:ring-[var(--primary-green)];
   }
   
-  .formTextarea:focus {
-    @apply ring-2 ring-inset;
-    border-color: var(--primary-green);
+  .formTextarea::placeholder {
+    color: #666;
+    opacity: 0.5;
   }
   
   .formActions {
-    @apply mt-8 flex justify-start;
+    @apply mt-8;
   }
   
   .submitButton {
-    @apply rounded-md px-3.5 py-2.5 text-center text-sm font-semibold shadow-sm transition-colors;
-    background-color: var(--primary-green);
-    color: var(--pure-white);
-  }
-  
-  .submitButton:hover {
-    background-color: var(--secondary-green);
+    @apply w-full rounded-xl bg-[var(--primary-green)] px-6 py-3 text-sm font-medium 
+           text-white shadow-sm transition-all duration-300
+           hover:bg-[var(--secondary-green)] hover:shadow-md
+           focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:ring-offset-2;
   }
   
   /* Map section */
   .mapSection {
-    @apply h-96 w-full;
+    @apply relative h-[400px] w-full overflow-hidden;
   }
   
   .mapPlaceholder {
-    @apply h-full w-full flex items-center justify-center;
-    background-color: var(--off-white);
+    @apply absolute inset-0 flex items-center justify-center bg-[var(--off-white)];
   }
   
   .mapText {
-    color: var(--text-dark);
+    @apply text-lg text-[var(--text-dark)];
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .sectionTitle {
+      @apply text-3xl;
+    }
+  
+    .sectionDescription {
+      @apply text-lg;
+    }
+  
+    .formGrid {
+      @apply grid-cols-1;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .formInput,
+    .formTextarea,
+    .submitButton {
+      @apply transition-none;
+    }
+  }
+  
+  /* Print styles */
+  @media print {
+    .mapSection {
+      @apply hidden;
+    }
+  
+    .formSection {
+      @apply break-inside-avoid;
+    }
   }
   

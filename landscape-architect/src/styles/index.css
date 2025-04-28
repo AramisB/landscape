@@ -3,13 +3,81 @@
 @tailwind utilities;
 
 :root {
+  /* Primary Colors */
   --primary-green: #2F5233;
+  --primary-green-rgb: 47, 82, 51;
   --secondary-green: #4A7856;
+  --secondary-green-rgb: 74, 120, 86;
   --light-green: #678b19;
+  --light-green-rgb: 103, 139, 25;
+  --vibrant-green: #7AB730;
+  --vibrant-green-rgb: 122, 183, 48;
+  
+  /* Accent Colors */
   --orange: #ee982e;
+  --orange-rgb: 238, 152, 46;
+  --warm-yellow: #FFD700;
+  --warm-yellow-rgb: 255, 215, 0;
+  --terracotta: #E2725B;
+  --terracotta-rgb: 226, 114, 91;
+  
+  /* Blues */
   --secondary-blue: #397AB7;
+  --secondary-blue-rgb: 57, 122, 183;
   --light-blue: #8BB8E8;
+  --light-blue-rgb: 139, 184, 232;
+  --sky-blue: #87CEEB;
+  --sky-blue-rgb: 135, 206, 235;
+  
+  /* Neutrals */
   --off-white: #F5F7F4;
+  --off-white-rgb: 245, 247, 244;
   --pure-white: #FFFFFF;
+  --pure-white-rgb: 255, 255, 255;
   --text-dark: #333333;
+  --text-dark-rgb: 51, 51, 51;
+  --soft-gray: #E8E8E8;
+  --soft-gray-rgb: 232, 232, 232;
+}
+
+/* Modern Design Elements */
+@layer components {
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-green)] to-[var(--vibrant-green)];
+  }
+  
+  .nature-gradient {
+    @apply bg-gradient-to-br from-[var(--primary-green)] via-[var(--secondary-green)] to-[var(--light-green)];
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--soft-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-green);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-green);
 }

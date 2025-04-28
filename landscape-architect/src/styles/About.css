@@ -1,112 +1,162 @@
 /* Main container */
 .aboutContainer {
-    @apply bg-[var(--pure-white)];
+    @apply bg-[var(--off-white)];
   }
   
   /* Hero section */
-  .aboutContainer .heroSection {
-    @apply relative flex items-center justify-center text-center overflow-hidden w-full h-96 bg-[#f8f2f2];
-  }
-  
-  .aboutContainer .heroContent {
-    @apply max-w-3xl mx-auto px-4 flex flex-col items-center justify-center z-10 text-center h-full w-full;
-  }
-  
-  .aboutContainer .heroTitle {
-    @apply text-4xl sm:text-3xl font-bold mb-4 mx-auto text-center text-[var(--pure-white)];
-  }
-  
-  .aboutContainer .heroDescription {
-    @apply text-lg sm:text-xl max-w-2xl mb-8 mx-auto text-center text-[var(--off-white)];
+  .heroSection {
+    @apply relative flex items-center justify-center text-center overflow-hidden w-full min-h-[60vh] bg-[var(--off-white)];
   }
   
   .heroImage {
-    @apply absolute inset-0 -z-10 h-full w-full object-cover opacity-30;
+    @apply absolute inset-0 w-full h-full object-cover;
   }
   
   .heroOverlay {
-    @apply absolute inset-0 bg-gradient-to-b from-primary-blue/80 to-primary-green/80;
+    @apply absolute inset-0 bg-gradient-to-t from-black/60 to-transparent;
+  }
+  
+  .heroContent {
+    @apply max-w-4xl mx-auto px-4 flex flex-col items-center justify-center z-10 text-center h-full w-full;
+  }
+  
+  .heroTitle {
+    @apply text-5xl md:text-6xl font-bold mb-6 mx-auto text-center text-white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .heroDescription {
+    @apply text-xl md:text-2xl max-w-2xl mb-8 mx-auto text-center text-white;
   }
   
   /* Stats section */
   .statsSection {
-    @apply py-24 sm:py-32;
+    @apply py-16 sm:py-24 bg-white;
   }
   
   .statsGrid {
-    @apply mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2;
+    @apply grid grid-cols-1 gap-12 lg:grid-cols-2;
   }
   
   .statsContent {
-    @apply lg:pr-8;
+    @apply max-w-2xl;
+  }
+  
+  .sectionTitle {
+    @apply text-3xl md:text-4xl font-bold mb-4 text-[var(--primary-green)];
+  }
+  
+  .sectionDescription {
+    @apply text-lg text-[var(--text-dark)];
   }
   
   .statsWrapper {
-    @apply grid grid-cols-2 gap-8 sm:grid-cols-2;
+    @apply grid grid-cols-2 gap-8;
   }
   
   .statCard {
-    @apply flex flex-col p-6 rounded-lg transition-transform hover:-translate-y-1;
-    background-color: var(--off-white);
+    @apply p-6 rounded-xl bg-[var(--off-white)] transition-all duration-300 
+           hover:shadow-lg hover:-translate-y-1;
   }
   
   .statLabel {
-    @apply text-base leading-7;
-    color: var(--text-dark);
+    @apply text-sm font-medium text-[var(--text-dark)];
   }
   
   .statValue {
-    @apply text-3xl font-bold leading-9 tracking-tight;
-    color: var(--primary-green);
+    @apply mt-2 text-3xl font-bold text-[var(--primary-green)];
   }
   
   /* Team section */
   .teamSection {
-    @apply bg-gray-100 py-24 sm:py-32;
+    @apply py-16 sm:py-24 bg-[var(--off-white)];
   }
   
   .teamHeader {
-    @apply mx-auto max-w-2xl text-center;
-  }
-  
-  .sectionTitle {
-    @apply text-3xl font-bold tracking-tight sm:text-4xl;
-    color: var(--primary-blue);
-  }
-  
-  .sectionDescription {
-    @apply mt-6 text-lg leading-8;
-    color: var(--text-dark);
+    @apply max-w-2xl mx-auto text-center mb-12;
   }
   
   .teamGrid {
-    @apply mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3;
+    @apply grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3;
   }
   
   .teamCard {
-    @apply flex flex-col items-center text-center transition-transform hover:-translate-y-2;
+    @apply flex flex-col overflow-hidden rounded-xl transition-all duration-300 
+           hover:-translate-y-2 hover:shadow-xl bg-white;
   }
   
   .teamImageWrapper {
-    @apply relative w-full mb-6;
+    @apply relative h-64 w-full overflow-hidden;
   }
   
   .teamImage {
-    @apply aspect-square w-full rounded-2xl object-cover;
+    @apply h-full w-full object-cover transition-transform duration-500;
+  }
+  
+  .teamCard:hover .teamImage {
+    @apply scale-110;
   }
   
   .teamMemberName {
-    @apply mt-6 text-lg font-semibold leading-8 tracking-tight;
-    color: var(--primary-blue);
+    @apply text-xl font-semibold mb-1 p-6 pb-0 text-[var(--primary-green)];
   }
   
   .teamMemberRole {
-    @apply text-base leading-7;
-    color: var(--primary-green);
+    @apply text-sm font-medium text-[var(--text-dark)] px-6;
   }
   
   .teamMemberBio {
-    @apply mt-4 text-base leading-7;
-    color: var(--text-dark);
+    @apply text-base text-[var(--text-dark)] p-6 pt-2;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .heroTitle {
+      @apply text-4xl;
+    }
+  
+    .heroDescription {
+      @apply text-lg;
+    }
+  
+    .statsWrapper {
+      @apply grid-cols-1;
+    }
+  
+    .teamCard {
+      @apply max-w-sm mx-auto;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .teamCard,
+    .teamImage,
+    .statCard {
+      @apply transition-none;
+    }
+  }
+  
+  /* Print styles */
+  @media print {
+    .teamCard {
+      @apply shadow-none break-inside-avoid;
+    }
+  
+    .teamImage {
+      @apply print:hidden;
+    }
   }
   
