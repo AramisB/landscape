@@ -43,11 +43,11 @@ export default function Home() {
           </motion.div>
         </div>
         <div className="heroImageWrapper">
-          {/*<img
+          <img
             src="/placeholder-hero.jpg"
             alt="Hero background"
             className="heroImage"
-          />*/}
+          />
           <div className="heroOverlay nature-gradient" />
         </div>
       </div>

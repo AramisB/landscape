@@ -22,12 +22,13 @@
   --terracotta-rgb: 226, 114, 91;
   
   /* Blues */
-  --secondary-blue: #397AB7;
+  --secondary-blue: #1a3c5c;
   --secondary-blue-rgb: 57, 122, 183;
-  --light-blue: #8BB8E8;
+  --light-blue: #6ba8e8;
   --light-blue-rgb: 139, 184, 232;
   --sky-blue: #87CEEB;
   --sky-blue-rgb: 135, 206, 235;
+  
   
   /* Neutrals */
   --off-white: #F5F7F4;
