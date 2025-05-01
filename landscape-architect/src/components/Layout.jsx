@@ -22,7 +22,7 @@ export default function Layout() {
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link to="/" className="-m-1.5 p-1.5">
-              <span className="text-xl font-bold">Landscape Studio</span>
+              <span className="text-xl font-bold">UScape Designs</span>
             </Link>
           </div>
           <div className="flex lg:hidden">
