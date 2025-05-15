@@ -5,11 +5,11 @@
 
 /* Hero Section */
 .heroSection {
-  @apply relative flex items-center justify-center text-center overflow-hidden w-full min-h-[80vh] bg-[var(--off-white)];
+  @apply relative flex items-center justify-center text-center overflow-hidden w-full h-screen bg-[var(--off-white)];
 }
 
 .heroContent {
-  @apply max-w-4xl mx-auto flex flex-col items-center justify-center z-10 text-center h-full w-full px-4;
+  @apply max-w-4xl mx-auto flex flex-col items-center justify-center z-20 text-center h-full w-full px-4;
 }
 
 .heroTitle {
@@ -38,15 +38,16 @@
 
 .heroImageWrapper {
   @apply absolute inset-0 z-0;
+  pointer-events: none;
 }
 
 .heroOverlay {
-  @apply absolute inset-0 z-0 opacity-80;
+  @apply absolute inset-0 z-10 opacity-70 bg-gradient-to-b from-black/30 to-black/50;
 }
 
 /* Featured Projects Section */
 .featuredProjects {
-  @apply bg-[var(--off-white)] py-20;
+  @apply bg-[var(--off-white)] py-20 relative z-10;
 }
 
 .projectsGrid {
@@ -54,19 +55,19 @@
 }
 
 .projectCard {
-  @apply bg-white rounded-xl overflow-hidden shadow-md;
+  @apply bg-white rounded-xl overflow-hidden shadow-md relative z-10 h-[450px] flex flex-col;
 }
 
 .projectImage {
-  @apply relative h-64 overflow-hidden;
+  @apply relative h-64 overflow-hidden z-0;
 }
 
 .projectImage img {
-  @apply w-full h-full object-cover transition-transform duration-500 hover:scale-110;
+  @apply w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-110 relative z-0;
 }
 
 .projectInfo {
-  @apply p-6;
+  @apply p-6 relative z-10 bg-white;
 }
 
 .projectInfo h3 {

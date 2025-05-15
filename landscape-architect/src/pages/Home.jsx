@@ -17,7 +17,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="heroTitle gradient-text"
           >
-            Creating Sustainable Landscapes
+            Transforming Spaces and Enhancing Lives
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -44,7 +44,7 @@ export default function Home() {
         </div>
         <div className="heroImageWrapper">
           <img
-            src="/placeholder-hero.jpg"
+            src="/hero.jpg"
             alt="Hero background"
             className="heroImage"
           />
@@ -67,7 +67,7 @@ export default function Home() {
             transition={{ duration: 0.3 }}
           >
             <div className="projectImage">
-              <img src="/projects/modern-garden.jpg" alt="Modern Garden Design" />
+              <img src="/home/garden.jpg" alt="Modern Garden Design" />
             </div>
             <div className="projectInfo">
               <h3>Modern Garden Design</h3>
@@ -81,7 +81,7 @@ export default function Home() {
             transition={{ duration: 0.3 }}
           >
             <div className="projectImage">
-              <img src="/projects/water-feature.jpg" alt="Water Feature Installation" />
+              <img src="/home/water-feature.jpg" alt="Water Feature Installation" />
             </div>
             <div className="projectInfo">
               <h3>Water Feature Installation</h3>
@@ -95,7 +95,7 @@ export default function Home() {
             transition={{ duration: 0.3 }}
           >
             <div className="projectImage">
-              <img src="/projects/rooftop-garden.jpg" alt="Rooftop Garden" />
+              <img src="/home/rooftop-garden.jpg" alt="Rooftop Garden" />
             </div>
             <div className="projectInfo">
               <h3>Rooftop Garden</h3>
