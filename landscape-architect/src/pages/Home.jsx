@@ -1,6 +1,7 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import '../styles/Home.css'; // Import the CSS file directly
+import '../styles/Home.css';
 
 // Icons
 import { FaTree, FaWater, FaSun, FaLeaf, FaHome, FaSeedling } from 'react-icons/fa';
@@ -15,7 +16,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="heroTitle gradient-text"
+            className="heroTitle"
           >
             Transforming Spaces and Enhancing Lives
           </motion.h1>
@@ -48,7 +49,6 @@ export default function Home() {
             alt="Hero background"
             className="heroImage"
           />
-          <div className="heroOverlay nature-gradient" />
         </div>
       </div>
 

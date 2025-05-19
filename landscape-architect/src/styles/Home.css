@@ -26,14 +26,15 @@
 }
 
 .primaryButton {
-  @apply inline-block px-8 py-4 rounded-full text-white bg-[var(--vibrant-green)] 
-         transition-all duration-300 hover:bg-[var(--primary-green)] hover:shadow-lg;
+  @apply inline-block px-8 py-4 text-[var(--secondary-blue)] bg-[var(--vibrant-green)] border-2 border-[var(--secondary-blue)] 
+         transition-all duration-300 hover:bg-[var(--light-green)] hover:shadow-lg;
+  border-radius: 0; /* Sharp corners */
 }
 
 .secondaryButton {
-  @apply inline-block px-8 py-4 rounded-full border-2 border-[var(--vibrant-green)] 
-         text-[var(--vibrant-green)] transition-all duration-300 
-         hover:bg-[var(--vibrant-green)] hover:text-white;
+  @apply inline-block px-8 py-4 text-[var(--secondary-blue)] bg-white border-2 border-[var(--secondary-blue)]
+         transition-all duration-300 hover:bg-[var(--light-green)] hover:text-white hover:shadow-lg;
+  border-radius: 0; /* Sharp corners */
 }
 
 .heroImageWrapper {
@@ -136,4 +137,67 @@
 
 .sectionDescription {
   @apply text-lg text-[var(--text-dark)];
+}
+
+/* Contact Strip */
+.contactStrip {
+  @apply flex justify-between items-center bg-white px-4 py-2 border-b;
+  height: auto; /* Reduce the height */
+}
+
+.contactInfo {
+  @apply flex items-center gap-4;
+}
+
+.contactDetails {
+  @apply flex gap-4; /* Make phone and email links horizontal */
+}
+
+.contactLink {
+  @apply text-[var(--primary-green)] no-underline font-normal;
+}
+
+.contactLink:hover {
+  @apply underline;
+}
+
+.socialMedia {
+  @apply flex gap-4; /* Align social icons horizontally */
+}
+
+.socialIcon {
+  @apply text-[var(--primary-green)] text-xl; /* Adjust icon size */
+}
+
+.socialIcon:hover {
+  @apply text-[var(--secondary-green)];
+}
+
+.locationLink {
+  @apply text-[var(--primary-green)] no-underline font-bold;
+}
+
+.locationLink:hover {
+  @apply underline;
+}
+
+/* Header Section */
+.pageHeader {
+  @apply bg-white shadow-md py-4 px-8;
+}
+
+.navBar {
+  @apply flex justify-center;
+}
+
+.navLinks {
+  @apply flex gap-8 list-none;
+}
+
+.navLink {
+  @apply text-[var(--primary-green)] text-lg no-underline font-semibold;
+}
+
+.navLink:hover {
+  @apply underline;
 }

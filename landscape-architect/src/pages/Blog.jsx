@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import '../styles/Blog.css'; // Corrected import
+import '../styles/Blog.css';
 
 const posts = [
   {
