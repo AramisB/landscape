@@ -22,7 +22,6 @@ export default function Layout() {
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link to="/" className="-m-1.5 p-1.5">
-<<<<<<< HEAD
               <span className="text-xl font-bold">YouLandscape Architects</span>
 =======
               <img 
@@ -30,7 +29,6 @@ export default function Layout() {
             alt="Youlandscape Logo" 
             className="h-16 w-auto mb-2"
               />
->>>>>>> fe4f8af2281f9bfce3063d5908861303dba8a5f2
             </Link>
           </div>
           <div className="flex lg:hidden">
@@ -120,15 +118,9 @@ export default function Layout() {
             <div className="footer-column">
               <h3 className="footer-heading">Follow Us</h3>
               <div className="footer-socials">
-                <a href="#">
-                  <img src="/icons/linkedin.png" alt="LinkedIn" />
-                </a>
-                <a href="#">
-                  <img src="/icons/x.png" alt="X" />
-                </a>
-                <a href="#">
-                  <img src="/icons/instagram.png" alt="Instagram" />
-                </a>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
               </div>
             </div>
           </div>
