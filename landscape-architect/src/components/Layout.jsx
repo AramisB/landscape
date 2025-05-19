@@ -22,7 +22,7 @@ export default function Layout() {
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link to="/" className="-m-1.5 p-1.5">
-              <span className="text-xl font-bold">UScape Designs</span>
+              <span className="text-xl font-bold">YouLandscape Architects</span>
             </Link>
           </div>
           <div className="flex lg:hidden">
@@ -92,7 +92,7 @@ export default function Layout() {
                 <li>123 Design Street</li>
                 <li>City, State 12345</li>
                 <li>Phone: (555) 123-4567</li>
-                <li>Email: info@landscapestudio.com</li>
+                <li>Email: info@youlandscapearchitects.com</li>
               </ul>
             </div>
 
@@ -112,15 +112,21 @@ export default function Layout() {
             <div className="footer-column">
               <h3 className="footer-heading">Follow Us</h3>
               <div className="footer-socials">
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">LinkedIn</a>
+                <a href="#">
+                  <img src="/icons/linkedin.png" alt="LinkedIn" />
+                </a>
+                <a href="#">
+                  <img src="/icons/x.png" alt="X" />
+                </a>
+                <a href="#">
+                  <img src="/icons/instagram.png" alt="Instagram" />
+                </a>
               </div>
             </div>
           </div>
         </div>
         <div className="footer-bottom">
-          &copy; {new Date().getFullYear()} Landscape Studio. All rights reserved.
+          &copy; {new Date().getFullYear()} YouLandscape Architects. All rights reserved.
         </div>
       </footer>
     </div>
