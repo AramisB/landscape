@@ -22,7 +22,15 @@ export default function Layout() {
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link to="/" className="-m-1.5 p-1.5">
+<<<<<<< HEAD
               <span className="text-xl font-bold">YouLandscape Architects</span>
+=======
+              <img 
+            src="/logo.jpeg" 
+            alt="Youlandscape Logo" 
+            className="h-16 w-auto mb-2"
+              />
+>>>>>>> fe4f8af2281f9bfce3063d5908861303dba8a5f2
             </Link>
           </div>
           <div className="flex lg:hidden">

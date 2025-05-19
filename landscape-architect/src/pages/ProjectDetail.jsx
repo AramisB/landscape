@@ -23,7 +23,7 @@ const projectData = {
 
 export default function ProjectDetail() {
   const { id } = useParams();
-  const project = projectData; // In a real app, fetch based on id
+  const project = projectData;
 
   return (
     <div className="projectDetailContainer">
