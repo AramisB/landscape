@@ -5,11 +5,11 @@
 
 /* Hero Section */
 .heroSection {
-  @apply relative flex items-center justify-center text-center overflow-hidden w-full h-screen bg-[var(--off-white)];
+  @apply relative flex items-center justify-center text-center overflow-hidden w-screen h-[50vh] bg-[var(--off-white)];
 }
 
 .heroContent {
-  @apply max-w-4xl mx-auto flex flex-col items-center justify-center z-20 text-center h-full w-full px-4;
+  @apply max-w-4xl mx-auto flex flex-col items-center justify-center z-20 text-center h-full w-screen px-4;
 }
 
 .heroTitle {
@@ -22,19 +22,25 @@
 }
 
 .heroButtons {
-  @apply flex flex-wrap justify-center gap-6 mx-auto;
+  @apply flex flex-wrap justify-center gap-8 mx-auto mt-6;
 }
 
-.primaryButton {
-  @apply inline-block px-8 py-4 text-[var(--secondary-blue)] bg-[var(--vibrant-green)] border-2 border-[var(--secondary-blue)] 
-         transition-all duration-300 hover:bg-[var(--light-green)] hover:shadow-lg;
-  border-radius: 0; /* Sharp corners */
-}
-
+.primaryButton,
 .secondaryButton {
-  @apply inline-block px-8 py-4 text-[var(--secondary-blue)] bg-white border-2 border-[var(--secondary-blue)]
-         transition-all duration-300 hover:bg-[var(--light-green)] hover:text-white hover:shadow-lg;
-  border-radius: 0; /* Sharp corners */
+  @apply inline-block px-8 py-4 font-semibold transition-all duration-300;
+  background-color: white;
+  color: var(--secondary-blue);
+  border: 2px solid var(--secondary-blue);
+  text-decoration: none;
+  border-radius: 0;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  background-color: var(--light-green);
+  color: var(--secondary-blue);
+  border-color: var(--secondary-blue);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .heroImageWrapper {
@@ -79,6 +85,36 @@
   @apply text-[var(--text-dark)];
 }
 
+.projectsAndProcess {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+.projectsGrid {
+  flex: 1 1 60%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.processTree {
+  flex: 1 1 35%;
+  max-width: 400px;
+  position: sticky;
+  top: 6rem;
+}
+
+.processTree img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
 /* Services Section */
 .servicesSection {
   @apply bg-white py-20;
@@ -122,8 +158,7 @@
 }
 
 .ctaButton {
-  @apply inline-block px-8 py-4 rounded-full text-[var(--primary-green)] bg-white 
-         transition-all duration-300 hover:bg-[var(--off-white)] hover:shadow-lg;
+  @apply inline-block px-8 py-4 rounded-full text-[var(--primary-green)] bg-white transition-all duration-300 hover:bg-[var(--off-white)] hover:shadow-lg;
 }
 
 /* Section Headers */
@@ -142,7 +177,8 @@
 /* Contact Strip */
 .contactStrip {
   @apply flex justify-between items-center bg-white px-4 py-2 border-b;
-  height: auto; /* Reduce the height */
+  height: auto;
+  /* Reduce the height */
 }
 
 .contactInfo {
@@ -150,7 +186,8 @@
 }
 
 .contactDetails {
-  @apply flex gap-4; /* Make phone and email links horizontal */
+  @apply flex gap-4;
+  /* Make phone and email links horizontal */
 }
 
 .contactLink {
@@ -162,11 +199,13 @@
 }
 
 .socialMedia {
-  @apply flex gap-4; /* Align social icons horizontally */
+  @apply flex gap-4;
+  /* Align social icons horizontally */
 }
 
 .socialIcon {
-  @apply text-[var(--primary-green)] text-xl; /* Adjust icon size */
+  @apply text-[var(--primary-green)] text-xl;
+  /* Adjust icon size */
 }
 
 .socialIcon:hover {
