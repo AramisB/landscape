@@ -151,7 +151,7 @@ export default function Home() {
               YouLandscape Architects and Consultants is a leading landscape architecture firm in Kenya, specializing in innovative, sustainable outdoor designs, master planning, and eco-conscious landscaping solutions. We blend artistry, engineering, and environmental science to create functional, stunning landscapes for homes, businesses, and public spaces.
             </p>
             <div className='aboutRef'>
-              <a href="/about"> Discover More </a>
+              <a href="/about-us"> Discover More </a>
             </div>
           </div>
 
