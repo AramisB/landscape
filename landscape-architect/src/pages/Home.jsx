@@ -37,7 +37,7 @@ const slides = [
     key: 'services',
     content: (
       <div
-        className="w-screen overflow-hidden min-h-[80vh] flex flex-col items-center justify-center px-4 py-12 border-2 border-[var(--secondary-blue)] shadow-lg rounded-none text-center relative bg-cover bg-center"
+        className="w-screen overflow-hidden min-h-[60vh] flex flex-col items-center justify-center px-4 py-12 border-2 border-[var(--secondary-blue)] shadow-lg rounded-none text-center relative bg-cover bg-center"
         style={{ backgroundImage: "url('/servicesSlider.jpeg')" }}
       >
         {/* Overlay for readability */}
@@ -61,7 +61,7 @@ const slides = [
   {
     key: 'contact',
     content: (
-      <div className="w-screen overflow-hidden px-0 py-8 md:px-0 min-h-[80vh] flex flex-col justify-center rounded-none shadow-lg border-2 border-[var(--secondary-blue)] relative bg-cover bg-center"
+      <div className="w-screen overflow-hidden px-0 py-8 md:px-0 min-h-[60vh] flex flex-col justify-center rounded-none shadow-lg border-2 border-[var(--secondary-blue)] relative bg-cover bg-center"
         style={{ backgroundImage: "url('/contactSlider.jpeg')" }}
       >
         <h1 className="heroTitle mb-4">Get In Touch</h1>
@@ -92,7 +92,7 @@ export default function Home() {
   return (
     <div className="homeContainer">
       {/* Hero Section with Vertical Slider */}
-      <section className="heroSection relative flex items-center justify-center min-h-[60vh] md:min-h-[80vh] w-full bg-[var(--off-white)] overflow-hidden">
+      <section className="heroSection relative flex items-center justify-center min-h-[60vh] md:min-h-[60vh] w-full bg-[var(--off-white)] overflow-hidden">
         {/* Optional: Overlay for readability */}
         {slides[current].key === 'hero' && (
           <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
@@ -131,149 +131,124 @@ export default function Home() {
         ))}
       </div>
 
+      {/* About Section */}
+      <section className="aboutSection py-16 bg-[var(--off-white)]" id="about">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10 max-w-7xl">
+
+          {/* Left Image */}
+          <div className="aboutImage w-full md:w-1/2">
+            <img
+              src="/aboutUs.png"
+              alt="About our landscaping team"
+              className="rounded-xl shadow-lg w-full h-auto object-cover"
+            />
+          </div>
+
+          {/* Right Content */}
+          <div className="aboutContent w-full md:w-1/2 text-center md:text-left">
+            <h2 className="text-3xl font-bold text-[var(--primary-green)] mb-4">About Us</h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              YouLandscape Architects and Consultants is a leading landscape architecture firm in Kenya, specializing in innovative, sustainable outdoor designs, master planning, and eco-conscious landscaping solutions. We blend artistry, engineering, and environmental science to create functional, stunning landscapes for homes, businesses, and public spaces.
+            </p>
+            <div className='aboutRef'>
+              <a href="/about"> Discover More </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* Featured Projects Section */}
       <div className="featuredProjects section-padding">
         <div className="sectionHeader">
-          <h2 className="sectionTitle gradient-text">Featured Projects</h2>
+          <h2 className="sectionTitle gradient-text">Our Professional Services</h2>
           <p className="sectionDescription">
-            Discover our latest and most impactful landscape designs.
+            Discover the range of services we offer to transform your outdoor spaces.
           </p>
         </div>
 
         <div className="projectsAndProcess">
-          {/* Projects Grid */}
+          {/* Services Grid (centered project cards) */}
           <div className="projectsGrid">
-            <motion.div
-              className="projectCard card-hover"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="projectImage">
-                <img src="/home/garden.jpg" alt="Modern Garden Design" />
-              </div>
-              <div className="projectInfo">
-                <h3>Modern Garden Design</h3>
-                <p>Contemporary outdoor living space with sustainable features</p>
-              </div>
-            </motion.div>
+            {[
+              {
+                img: "/home/garden.jpg",
+                title: "Landscape Design",
+                desc: "Custom designs that transform your outdoor space"
+              },
+              {
+                img: "/home/water-feature.jpg",
+                title: "Water Features",
+                desc: "Ponds, fountains, and streams installation"
+              },
+              {
+                img: "/outdoorLighting.jpeg",
+                title: "Outdoor Lighting",
+                desc: "Enhance your landscape at night"
+              },
+              {
+                img: "/plantSelection.jpeg",
+                title: "Plant Selection",
+                desc: "Expert guidance on plant choices"
+              },
+              {
+                img: "/gardenMaintenance.png",
+                title: "Garden Maintenance",
+                desc: "Regular care for your landscape"
+              },
+              {
+                img: "/home/service-sustainable.jpg",
+                title: "Sustainable Design",
+                desc: "Eco-friendly landscape solutions"
+              },
+              {
+                img: "/hardscaping.jpeg",
+                title: "Hardscaping",
+                desc: "Patios, walkways, and retaining walls"
+              },
+              {
+                img: "/home/service-irrigation.jpg",
+                title: "Irrigation Systems",
+                desc: "Efficient watering solutions"
+              },
+              {
+                img: "/home/service-seasonal.jpg",
+                title: "Seasonal Planting",
+                desc: "Colorful displays for every season"
+              },
+              {
+                img: "/home/service-soil.jpg",
+                title: "Soil Improvement",
+                desc: "Soil testing and amendments"
+              },
+              {
+                img: "/home/outdoorLiving.jpeg",
+                title: "Outdoor Living Spaces",
+                desc: "Decks, pergolas, and seating areas"
+              },
+              {
+                img: "/home/service-edible.jpg",
+                title: "Edible Gardens",
+                desc: "Grow your own fruits and vegetables"
+              },
+            ].map((service, idx) => (
+              <motion.div
+                className="projectCard card-hover"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+                key={idx}
+              >
+                <div className="projectInfo">
+                  <h3 className="projectTitle">{service.title}</h3>
+                  <div className="projectImage">
+                    <img className="projectImg" src={service.img} alt={service.title} />
+                  </div>
+                  <p className="projectDesc">{service.desc}</p>
+                </div>
+              </motion.div>
 
-            <motion.div
-              className="projectCard card-hover"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="projectImage">
-                <img src="/home/water-feature.jpg" alt="Water Feature Installation" />
-              </div>
-              <div className="projectInfo">
-                <h3>Water Feature Installation</h3>
-                <p>Serene water elements that transform your garden</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="projectCard card-hover"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="projectImage">
-                <img src="/home/rooftop-garden.jpg" alt="Rooftop Garden" />
-              </div>
-              <div className="projectInfo">
-                <h3>Rooftop Garden</h3>
-                <p>Urban oasis with native plants and sustainable design</p>
-              </div>
-            </motion.div>
+            ))}
           </div>
-
-          {/* Process Tree Image */}
-          <div className="processTree">
-            <img src="/processTree.png" alt="Our Process" />
-          </div>
-        </div>
-      </div>
-
-
-      {/* Services Section */}
-      <div className="servicesSection section-padding">
-        <div className="sectionHeader">
-          <h2 className="sectionTitle gradient-text">Our Services</h2>
-          <p className="sectionDescription">
-            Comprehensive landscape architecture and design services.
-          </p>
-        </div>
-        <div className="servicesGrid">
-          <motion.div
-            className="serviceCard card-hover"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="serviceIcon">
-              <FaTree className="w-12 h-12 text-[var(--vibrant-green)]" />
-            </div>
-            <h3>Landscape Design</h3>
-            <p>Custom designs that transform your outdoor space</p>
-          </motion.div>
-
-          <motion.div
-            className="serviceCard card-hover"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="serviceIcon">
-              <FaWater className="w-12 h-12 text-[var(--vibrant-green)]" />
-            </div>
-            <h3>Water Features</h3>
-            <p>Design and installation of ponds, fountains, and streams</p>
-          </motion.div>
-
-          <motion.div
-            className="serviceCard card-hover"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="serviceIcon">
-              <FaSun className="w-12 h-12 text-[var(--vibrant-green)]" />
-            </div>
-            <h3>Outdoor Lighting</h3>
-            <p>Strategic lighting to enhance your landscape at night</p>
-          </motion.div>
-
-          <motion.div
-            className="serviceCard card-hover"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="serviceIcon">
-              <FaLeaf className="w-12 h-12 text-[var(--vibrant-green)]" />
-            </div>
-            <h3>Plant Selection</h3>
-            <p>Expert guidance on native and sustainable plant choices</p>
-          </motion.div>
-
-          <motion.div
-            className="serviceCard card-hover"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="serviceIcon">
-              <FaHome className="w-12 h-12 text-[var(--vibrant-green)]" />
-            </div>
-            <h3>Garden Maintenance</h3>
-            <p>Regular care to keep your landscape looking its best</p>
-          </motion.div>
-
-          <motion.div
-            className="serviceCard card-hover"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="serviceIcon">
-              <FaSeedling className="w-12 h-12 text-[var(--vibrant-green)]" />
-            </div>
-            <h3>Sustainable Design</h3>
-            <p>Eco-friendly solutions for your outdoor space</p>
-          </motion.div>
         </div>
       </div>
 
