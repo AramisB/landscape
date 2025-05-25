@@ -12,7 +12,7 @@ const navigation = [
   { name: 'Services', href: '/services' },
   { name: 'Contact', href: '/contact' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Get A Quote', href: '#' }, 
+  { name: 'Get A Quote', href: '#' },
 ];
 
 export default function Layout() {
@@ -67,7 +67,7 @@ export default function Layout() {
       </div>
 
       {/* Header */}
-      <header className="bg-white border-b shadow-sm relative z-50">
+      <header className="bg-white border-b shadow-sm relative z-50 sticky top-0">
         <nav className="flex items-center justify-between max-w-7xl mx-auto px-4 py-2">
           {/* Logo */}
           <div className="flex items-center">
@@ -76,7 +76,7 @@ export default function Layout() {
                 <img
                   src="/logo.png"
                   alt="Youlandscape Logo"
-                  className="h-28 w-auto"                />
+                  className="h-28 w-auto" />
               </div>
             </Link>
           </div>
@@ -88,11 +88,10 @@ export default function Layout() {
                 key={item.name}
                 to={item.href}
                 onClick={item.name === 'Get A Quote' ? (e) => { e.preventDefault(); setQuoteModalOpen(true); } : undefined}
-                className={`${
-                  item.name === 'Get A Quote'
+                className={`${item.name === 'Get A Quote'
                     ? 'text-[var(--secondary-blue)] bg-[var(--off-white)] px-4 py-2 text-lg font-semibold border-2 border-[var(--secondary-blue)] hover:bg-[var(--light-green)]'
                     : 'text-[var(--secondary-blue)] font-medium text-base hover:underline hover:text-[var(--secondary-green)]'
-                } transition-colors`}
+                  } transition-colors`}
               >
                 {item.name}
               </Link>
@@ -155,11 +154,11 @@ export default function Layout() {
                   Contact us now to Get A Quote or a site visit.
                 </p>
                 <p className="text-lg flex items-center gap-2">
-                  <FaPhoneAlt className="text-green-700" /> 
+                  <FaPhoneAlt className="text-green-700" />
                   <strong>Phone:</strong> +254707301563
                 </p>
                 <p className="text-lg flex items-center gap-2">
-                  <FaEnvelope className="text-green-700" /> 
+                  <FaEnvelope className="text-green-700" />
                   <strong>Email:</strong> info@youlandscape.com
                 </p>
                 <p className="text-lg">

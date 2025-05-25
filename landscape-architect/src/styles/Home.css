@@ -1,11 +1,12 @@
 /* Main container */
 .homeContainer {
   @apply flex flex-col bg-cover bg-center bg-no-repeat min-h-screen;
+  background-color: var(--off-white);
 }
 
 /* Hero Section */
 .heroSection {
-  @apply relative flex items-center justify-center text-center overflow-hidden w-screen h-[50vh] bg-[var(--off-white)];
+  @apply relative flex items-center justify-center text-center overflow-hidden w-screen h-[60vh] bg-[var(--off-white)];
 }
 
 .heroContent {
@@ -66,7 +67,7 @@
 }
 
 .sectionDescription {
-  @apply text-lg text-[var(--text-dark)];
+  @apply text-lg text-[var(--text-dark)] text-justify w-full px-0 mx-0;
 }
 
 .projectsAndProcess {
@@ -79,9 +80,9 @@
 
 /* === Project Card Styling === */
 .projectCard {
-  @apply bg-white rounded-xl shadow-md relative z-10 text-center flex flex-col;
+  @apply bg-white rounded-xl shadow-md relative z-10 text-center flex flex-col justify-between;
   @apply transition-transform duration-300 ease-in-out;
-  @apply h-[450px] p-6;
+  @apply h-[450px] w-[320px] max-w-full;
 }
 
 /* === Project Info === */
@@ -91,22 +92,20 @@
 
 /* === Project Title === */
 .projectTitle {
-  @apply text-xl font-semibold text-[var(--primary-green)] mb-2;
+  @apply text-xl font-semibold text-[var(--primary-green)] mb-4 py-2;
 }
 
 /* === Project Image Container === */
 .projectImage {
-  @apply w-full h-[160px] flex items-center justify-center overflow-hidden mb-4;
-  padding: 2rem;
+ @apply w-full mb-4 overflow-hidden py-6;
 }
 
-.projectImage img {
-  @apply object-contain w-full h-full;
+/* === Project Card Footer with bottom padding === */
+.projectCardFooter {
+  @apply flex flex-col items-center justify-end flex-grow pb-8;
 }
-
-/* === Project Description === */
 .projectDesc {
-  @apply text-[var(--text-dark)] text-base mt-auto pt-2;
+  @apply text-[var(--text-dark)] text-base mt-4 mb-8 py-4 text-left px-6 whitespace-normal;
 }
 
 /* === Call to Action Section === */
@@ -229,4 +228,13 @@
 .aboutContent a {
   @apply inline-block px-6 py-3 bg-[var(--primary-green)] text-white;
   @apply hover:bg-[var(--secondary-green)] transition;
+}
+
+/* === Blog Card Styling === */
+.blogCard {
+  @apply transition-transform duration-300 ease-in-out overflow-hidden;
+}
+
+.blogCard:hover {
+  @apply -translate-y-1; /* Moves the card up slightly on hover */
 }

@@ -2,9 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
+import {
+  FaChalkboardTeacher,
+  FaDraftingCompass,
+  FaHardHat,
+  FaLeaf,
+  FaProjectDiagram,
+  FaTasks,
+  FaWater,
+  FaSwimmingPool,
+  FaTint,
+  FaRecycle,
+  FaDrawPolygon,
+  FaTools
+} from "react-icons/fa";
 
-// Icons
-import { FaTree, FaWater, FaSun, FaLeaf, FaHome, FaSeedling } from 'react-icons/fa';
 
 const SLIDE_DURATION = 10000;
 
@@ -61,7 +73,7 @@ const slides = [
   {
     key: 'contact',
     content: (
-      <div className="w-screen overflow-hidden px-0 py-8 md:px-0 min-h-[60vh] flex flex-col justify-center rounded-none shadow-lg border-2 border-[var(--secondary-blue)] relative bg-cover bg-center"
+      <div className="w-screen overflow-hidden px-0 py-8 md:px-0 min-h-[60vh] flex flex-col justify-center rounded-none shadow-lg border-2 relative bg-cover bg-center"
         style={{ backgroundImage: "url('/contactSlider.jpeg')" }}
       >
         <h1 className="heroTitle mb-4">Get In Touch</h1>
@@ -70,7 +82,7 @@ const slides = [
           Contact us for a free consultation.
         </p>
         <div className="heroButtons flex justify-center">
-          <div className="bg-white border-2 border-[var(--secondary-blue)] rounded-none px-8 py-4 flex items-center">
+          <div className="bg-white border-2 rounded-none px-8 py-4 flex items-center">
             <Link to="/contact" className="text-[var(--secondary-blue)] font-semibold">Get In Touch</Link>
           </div>
         </div>
@@ -78,6 +90,20 @@ const slides = [
     ),
   },
 ];
+const serviceIcons = {
+  "Landscape Consultation": FaChalkboardTeacher,
+  "Landscape Design": FaDraftingCompass,
+  "Landscape Implementation": FaHardHat,
+  "Landscape Maintenance": FaLeaf,
+  "Master Planning": FaProjectDiagram,
+  "Project Management": FaTasks,
+  "Water Features": FaWater,
+  "Swimming Pools": FaSwimmingPool,
+  "Landscape Irrigation": FaTint,
+  "Garden Renovation": FaRecycle,
+  "Hardscape & Modification": FaDrawPolygon,
+  "Landscape Supplies & Products": FaTools,
+};
 
 export default function Home() {
   const [current, setCurrent] = useState(0);
@@ -92,7 +118,7 @@ export default function Home() {
   return (
     <div className="homeContainer">
       {/* Hero Section with Vertical Slider */}
-      <section className="heroSection relative flex items-center justify-center min-h-[60vh] md:min-h-[60vh] w-full bg-[var(--off-white)] overflow-hidden">
+      <section className="heroSection relative flex items-center justify-center min-h-[50vh] md:min-h-[60vh] w-full bg-[var(--off-white)] overflow-hidden py-8">
         {/* Optional: Overlay for readability */}
         {slides[current].key === 'hero' && (
           <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
@@ -133,7 +159,7 @@ export default function Home() {
 
       {/* About Section */}
       <section className="aboutSection py-16 bg-[var(--off-white)]" id="about">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10 max-w-7xl">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10 max-w-7xl py-8">
 
           {/* Left Image */}
           <div className="aboutImage w-full md:w-1/2">
@@ -172,85 +198,162 @@ export default function Home() {
           <div className="projectsGrid">
             {[
               {
-                img: "/home/garden.jpg",
+                img: "/services/landscape-consultation.jpg",
+                title: "Landscape Consultation",
+                desc: "Receive expert guidance and tailored maintenance plans for vibrant, sustainable gardens across Kenya."
+              },
+              {
+                img: "/services/landscape-design.jpg",
                 title: "Landscape Design",
-                desc: "Custom designs that transform your outdoor space"
+                desc: "Transform your space with eco-conscious designs that boost property value and thrive in Kenya’s climate."
               },
               {
-                img: "/home/water-feature.jpg",
+                img: "/services/landscape-implementation.jpg",
+                title: "Landscape Implementation",
+                desc: "We bring your vision to life with expert installation of plants, patios, lighting, and irrigation systems."
+              },
+              {
+                img: "/services/landscape-maintenance.jpg",
+                title: "Landscape Maintenance",
+                desc: "Keep your outdoor spaces thriving year-round with climate-adapted care, pruning, and soil health solutions."
+              },
+              {
+                img: "/services/master-planning.jpg",
+                title: "Master Planning",
+                desc: "Strategic large-scale landscape plans tailored for long-term success in residential, commercial, or public spaces."
+              },
+              {
+                img: "/services/project-management.jpg",
+                title: "Project Management",
+                desc: "Seamless landscape delivery with integrated teams managing timelines, budgets, and quality from start to finish."
+              },
+              {
+                img: "/services/water-features.jpg",
                 title: "Water Features",
-                desc: "Ponds, fountains, and streams installation"
+                desc: "Elevate your landscape with fountains, waterfalls, and ponds—designed for beauty, sustainability, and serenity."
               },
               {
-                img: "/outdoorLighting.jpeg",
-                title: "Outdoor Lighting",
-                desc: "Enhance your landscape at night"
+                img: "/services/swimming-pools.jpg",
+                title: "Swimming Pools",
+                desc: "Custom-built pools with integrated landscaping, energy-efficient systems, and year-round maintenance plans."
               },
               {
-                img: "/plantSelection.jpeg",
-                title: "Plant Selection",
-                desc: "Expert guidance on plant choices"
+                img: "/services/irrigation.jpg",
+                title: "Landscape Irrigation",
+                desc: "Smart irrigation systems designed to save water and support healthy, lush gardens across diverse Kenyan climates."
               },
               {
-                img: "/gardenMaintenance.png",
-                title: "Garden Maintenance",
-                desc: "Regular care for your landscape"
+                img: "/services/garden-renovation.jpg",
+                title: "Garden Renovation",
+                desc: "Revive aging gardens with expert soil improvement, native planting, and functional layout redesigns."
               },
               {
-                img: "/home/service-sustainable.jpg",
-                title: "Sustainable Design",
-                desc: "Eco-friendly landscape solutions"
+                img: "/services/hardscape.jpg",
+                title: "Hardscape & Modification",
+                desc: "Add structure and style with patios, walls, and outdoor features customized for beauty and durability."
               },
               {
-                img: "/hardscaping.jpeg",
-                title: "Hardscaping",
-                desc: "Patios, walkways, and retaining walls"
-              },
-              {
-                img: "/home/service-irrigation.jpg",
-                title: "Irrigation Systems",
-                desc: "Efficient watering solutions"
-              },
-              {
-                img: "/home/service-seasonal.jpg",
-                title: "Seasonal Planting",
-                desc: "Colorful displays for every season"
-              },
-              {
-                img: "/home/service-soil.jpg",
-                title: "Soil Improvement",
-                desc: "Soil testing and amendments"
-              },
-              {
-                img: "/home/outdoorLiving.jpeg",
-                title: "Outdoor Living Spaces",
-                desc: "Decks, pergolas, and seating areas"
-              },
-              {
-                img: "/home/service-edible.jpg",
-                title: "Edible Gardens",
-                desc: "Grow your own fruits and vegetables"
-              },
+                img: "/services/supplies.jpg",
+                title: "Landscape Supplies & Products",
+                desc: "Access quality plants, stones, lighting, irrigation kits, and décor to elevate your landscape projects."
+              }
             ].map((service, idx) => (
               <motion.div
-                className="projectCard card-hover"
+                className="projectCard"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
                 key={idx}
               >
                 <div className="projectInfo">
-                  <h3 className="projectTitle">{service.title}</h3>
-                  <div className="projectImage">
-                    <img className="projectImg" src={service.img} alt={service.title} />
+                  <h3 className="projectTitle flex items-center gap-2 justify-center">
+                    {serviceIcons[service.title] && (
+                      <span className="text-[var(--primary-green)]">
+                        {React.createElement(serviceIcons[service.title], {
+                          className: "w-5 h-5",
+                        })}
+                      </span>
+                    )}
+                    {service.title}
+                  </h3>
+                  <div className="projectImage max-h-[230px] w-full mx-auto mb-2">
+                    <img
+                      src={service.img}
+                      alt={service.title}
+                      className="w-full h-auto object-cover"
+                    />
                   </div>
+                </div>
+                <div className="projectCardFooter">
                   <p className="projectDesc">{service.desc}</p>
+                  <div className="learnMore">
+                    <Link to="/services" className="bg-[var(--secondary-blue)] text-white px-4 py-4 pt-4 rounded-none">
+                      Learn More
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
-
             ))}
           </div>
         </div>
       </div>
+
+      {/* We Have Worked With Section */}
+      <section className="workedWithSection py-12 bg-[var(--off-white)]">
+        <div className="container mx-auto px-4 max-w-7xl text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--primary-green)] mb-6">
+            We Have Worked With
+          </h2>
+          <p className="text-lg text-gray-700 mb-8">
+            Trusted by leading organizations, businesses, and homeowners across Kenya.
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            <img src="/clients/client1.png" alt="Client 1" className="h-12 object-contain" />
+            <img src="/clients/client2.png" alt="Client 2" className="h-12 object-contain" />
+            <img src="/clients/client3.png" alt="Client 3" className="h-12 object-contain" />
+            <img src="/clients/client4.png" alt="Client 4" className="h-12 object-contain" />
+            <img src="/clients/client5.png" alt="Client 5" className="h-12 object-contain" />
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="blogsSection py-12 bg-[var(--off-white)]">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <h2 className="sectionTitle text-3xl font-bold text-[var(--primary-green)] mb-4 text-center">
+            Latest Blog Posts
+          </h2>
+          <p className="sectionDescription text-center text-gray-600 mb-10">
+            Get tips, insights, and inspiration from our landscaping experts.
+          </p>
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center">
+              {[1, 2, 3].map((blog, idx) => (
+                <div key={idx} className="blogCard bg-white rounded-none shadow-md overflow-hidden flex flex-col w-full max-w-xs">
+                  <img
+                    src={`/blog${idx + 1}.jpg`}
+                    alt={`Blog ${idx + 1}`}
+                    className="h-48 w-full object-cover"
+                  />
+                  <div className="p-4 flex flex-col flex-grow">
+                    <h3 className="text-xl font-semibold text-[var(--primary-green)] mb-2">
+                      Blog Title {idx + 1}
+                    </h3>
+                    <p className="text-gray-600 mb-4 flex-grow">
+                      A short preview or excerpt of the blog content goes here to entice readers.
+                    </p>
+                    <Link
+                      to={`/blog/${idx + 1}`}
+                      className="mt-auto text-[var(--secondary-blue)] font-medium hover:underline"
+                    >
+                      Read More →
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Call to Action Section */}
       <div className="ctaSection">
