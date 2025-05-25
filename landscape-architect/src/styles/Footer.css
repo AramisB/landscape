@@ -1,51 +1,76 @@
+/* Footer Container */
 .footer {
-  @apply bg-gradient-to-br from-[var(--secondary-blue)] to-[var(--light-blue)] 
-         text-white py-12 px-4 sm:px-6 lg:px-8;
+  @apply bg-[var(--secondary-blue)] text-white py-12 px-4 sm:px-6 lg:px-8;
 }
 
+/* Inner Wrapper */
 .footer-container {
   @apply max-w-7xl mx-auto;
 }
 
+/* Grid Layout with 4 Columns on Large Screens */
 .footer-grid {
-  @apply grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3;
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8;
 }
 
+/* Footer Column */
 .footer-column {
   @apply flex flex-col space-y-4;
 }
 
+/* Headings */
 .footer-heading {
-  @apply text-xl font-semibold mb-4 text-white;
+  @apply text-xl font-semibold text-white mb-4;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Text Paragraph */
+.footer-paragraph {
+  @apply text-sm text-white/80;
+}
+
+/* Footer List Items */
 .footer-list {
-  @apply space-y-2;
+  @apply space-y-2 text-sm;
 }
 
 .footer-list li {
-  @apply text-white/90 hover:text-white transition-colors duration-300;
+  @apply text-white/90;
 }
 
+/* Footer Links */
 .footer-link {
   @apply text-white/90 hover:text-white transition-colors duration-300;
 }
 
+/* Social Icons */
 .footer-socials {
-  @apply flex space-x-4;
+  @apply flex space-x-4 mt-2;
 }
 
 .footer-socials a {
-  @apply text-white/90 hover:text-white transition-colors duration-300
-         hover:scale-110 transform;
+  @apply text-white/90 hover:text-white transition-transform transform hover:scale-110;
 }
 
+/* Newsletter Form */
+.footer-form {
+  @apply flex flex-col gap-2;
+}
+
+.footer-input {
+  @apply px-3 py-2 rounded-none text-black;
+}
+
+.footer-button {
+  @apply bg-[var(--primary-green)] text-white px-4 py-2 rounded-none hover:bg-opacity-90 transition;
+}
+
+/* Bottom Footer Text */
 .footer-bottom {
-  @apply mt-12 pt-6 border-t border-white/10 text-center text-sm text-white/80;
+  @apply mt-12 pt-6 border-t border-white/10 text-center text-sm text-white;
 }
 
-/* Responsive adjustments */
+/* Responsive Tweaks */
 @media (max-width: 640px) {
   .footer {
     @apply py-8;
@@ -53,18 +78,6 @@
 
   .footer-heading {
     @apply text-lg;
-  }
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -76,7 +89,7 @@
   }
 }
 
-/* Print styles */
+/* Print */
 @media print {
   .footer {
     @apply bg-white text-black;
@@ -88,7 +101,6 @@
   }
 
   .footer-bottom {
-    @apply border-black/10 text-black/80;
+     @apply mt-12 pt-6 border-t border-white/10 text-center text-sm text-white;
   }
 }
-  

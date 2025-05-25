@@ -1,11 +1,11 @@
 /* Main container */
 .servicesContainer {
-  @apply bg-[var(--off-white)];
+  @apply bg-gray-50;
 }
 
 /* Hero section */
 .heroSection {
-  @apply relative flex items-center justify-center text-center overflow-hidden w-full min-h-[60vh] bg-[var(--off-white)];
+  @apply relative flex items-center justify-center text-center overflow-hidden w-full min-h-[60vh] bg-gradient-to-r from-green-500 to-green-700;
 }
 
 .heroContent {
@@ -13,8 +13,7 @@
 }
 
 .heroTitle {
-  @apply text-5xl md:text-6xl font-bold mb-6 mx-auto text-center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  @apply text-5xl md:text-6xl font-bold mb-6 mx-auto text-center text-white;
 }
 
 .heroDescription {
@@ -22,12 +21,12 @@
 }
 
 .heroOverlay {
-  @apply absolute inset-0 z-0 opacity-80;
+  @apply absolute inset-0 z-0 opacity-80 bg-black;
 }
 
 /* Services section */
 .servicesSection {
-  @apply py-16 sm:py-24 bg-[var(--off-white)];
+  @apply py-16 sm:py-24 bg-gray-50;
 }
 
 .servicesGrid {
@@ -54,7 +53,7 @@
 
 .serviceIconWrapper {
   @apply absolute top-4 right-4 bg-white/90 p-3 rounded-full 
-         text-[var(--primary-green)] transition-all duration-300
+         text-green-500 transition-all duration-300
          hover:bg-white hover:scale-110;
 }
 
@@ -67,11 +66,11 @@
 }
 
 .serviceTitle {
-  @apply text-xl font-semibold mb-3 text-[var(--primary-green)];
+  @apply text-xl font-semibold mb-3 text-green-600;
 }
 
 .serviceDescription {
-  @apply mb-4 text-base text-[var(--text-dark)];
+  @apply mb-4 text-base text-gray-700;
 }
 
 /* Features list */
@@ -81,22 +80,22 @@
 }
 
 .featureItem {
-  @apply flex items-start gap-2 text-sm text-[var(--text-dark)];
+  @apply flex items-start gap-2 text-sm text-gray-700;
 }
 
 .featureIcon {
-  @apply text-[var(--vibrant-green)] mt-1;
+  @apply text-green-500 mt-1;
 }
 
 .serviceButton {
   @apply w-full text-center rounded-full px-6 py-3 text-sm font-medium
-         transition-all duration-300 bg-[var(--primary-green)] 
-         text-white hover:bg-[var(--secondary-green)] hover:shadow-md;
+         transition-all duration-300 bg-green-600 
+         text-white hover:bg-green-700 hover:shadow-md;
 }
 
 /* CTA section */
 .ctaSection {
-  @apply py-16 sm:py-24 bg-gradient-to-r from-[var(--primary-green)] to-[var(--secondary-green)];
+  @apply py-16 sm:py-24 bg-gradient-to-r from-green-600 to-green-700;
 }
 
 .ctaContent {
@@ -117,14 +116,14 @@
 
 .primaryButton {
   @apply rounded-full px-8 py-3 text-sm font-medium bg-white 
-         text-[var(--primary-green)] transition-all duration-300
-         hover:bg-[var(--off-white)] hover:shadow-lg;
+         text-green-600 transition-all duration-300
+         hover:bg-gray-100 hover:shadow-lg;
 }
 
 .secondaryButton {
   @apply rounded-full px-8 py-3 text-sm font-medium border-2 
          border-white text-white transition-all duration-300
-         hover:bg-white hover:text-[var(--primary-green)];
+         hover:bg-white hover:text-green-600;
 }
 
 /* Responsive adjustments */

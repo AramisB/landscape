@@ -1,0 +1,98 @@
+/* General Font Settings */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Main container */
+.serviceDetailsContainer {
+  @apply max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10;
+  min-height: calc(100vh - 12rem);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title */
+.serviceTitle {
+  @apply text-4xl font-extrabold text-green-600 text-center mb-6;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Image */
+.serviceImage {
+  @apply w-full h-auto rounded-lg mb-6 shadow-md;
+}
+
+/* Description */
+.serviceDescription {
+  @apply text-lg text-gray-700 mb-6 leading-relaxed;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.8;
+}
+
+/* Features Section */
+.featuresList {
+  @apply list-disc list-inside space-y-4 mb-6;
+}
+
+.featuresList li {
+  @apply text-gray-800;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.featuresList li strong {
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+.featuresList li p {
+  @apply text-gray-600;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Section Headings */
+h2 {
+  @apply text-3xl font-semibold text-gray-800 mb-4;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* CTA Section */
+.ctaSection {
+  @apply bg-green-600 text-white shadow-md w-[100vw] left-0 mb-0 px-6 sm:px-8 lg:px-12;
+  margin-left: calc(-50vw + 50%);
+}
+
+.ctaContent {
+  @apply mx-auto max-w-7xl px-6 lg:px-8 text-center;
+}
+
+.ctaTitle {
+  @apply text-3xl font-bold mb-4;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ctaDescription {
+  @apply text-lg mb-6;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.8;
+}
+
+.ctaButtons {
+  @apply flex justify-center gap-6;
+}
+
+.primaryButton {
+  @apply bg-white text-green-600 font-medium px-6 py-3 rounded hover:bg-gray-100 transition;
+  font-family: 'Poppins', sans-serif;
+}
+
+.secondaryButton {
+  @apply border-2 border-white text-white font-medium px-6 py-3 rounded hover:bg-white hover:text-green-600 transition;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Paragraphs */
+p {
+  @apply text-base leading-7 text-gray-700;
+}

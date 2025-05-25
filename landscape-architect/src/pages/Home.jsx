@@ -354,19 +354,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Call to Action Section */}
-      <div className="ctaSection">
-        <div className="ctaContent">
-          <h2 className="ctaTitle gradient-text">Ready to Transform Your Space?</h2>
-          <p className="ctaDescription">
-            Let's create something beautiful together. Contact us for a free consultation.
-          </p>
-          <Link to="/contact" className="ctaButton">
-            Get Started
-          </Link>
-        </div>
-      </div>
     </div>
   );
 }
