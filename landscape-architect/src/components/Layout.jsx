@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { FaFacebook, FaTwitter, FaYoutube, FaInstagram, FaLinkedin, FaWhatsapp, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 import { Dialog } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import AboutUsDetails from '../pages/AboutUsDetails';
 import '../styles/Footer.css';
+
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about-us' },
+  { name: 'About Us', href: '/about-us', dropdown: true },
   { name: 'Projects', href: '/projects' },
   { name: 'Products', href: '/products' },
   { name: 'Services', href: '/services' },
@@ -17,7 +19,29 @@ const navigation = [
 
 export default function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [quoteModalOpen, setQuoteModalOpen] = useState(false); // State for the modal
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const aboutDropdownRef = useRef(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        aboutDropdownRef.current &&
+        !aboutDropdownRef.current.contains(event.target)
+      ) {
+        setAboutDropdownOpen(false);
+      }
+    }
+    if (aboutDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [aboutDropdownOpen]);
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -80,19 +104,55 @@ export default function Layout() {
 
           {/* Navigation */}
           <div className="hidden md:flex gap-8 items-center">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                onClick={item.name === 'Get A Quote' ? (e) => { e.preventDefault(); setQuoteModalOpen(true); } : undefined}
-                className={`${item.name === 'Get A Quote'
-                  ? 'text-[var(--secondary-blue)] bg-[var(--off-white)] px-4 py-2 text-lg font-semibold border-2 border-[var(--secondary-blue)] hover:bg-[var(--light-green)]'
-                  : 'text-[var(--secondary-blue)] font-medium text-base hover:underline hover:text-[var(--secondary-green)]'
-                  } transition-colors`}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) =>
+              item.name === 'About Us' ? (
+                <div
+                  key={item.name}
+                  className="relative"
+                  ref={aboutDropdownRef}
+                >
+                  <button
+                    className="flex items-center gap-1 text-[var(--secondary-blue)] font-medium text-base hover:underline hover:text-[var(--secondary-green)] transition-colors"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setAboutDropdownOpen((open) => !open);
+                    }}
+                  >
+                    {item.name}
+                    <ChevronDownIcon className="h-4 w-4" />
+                  </button>
+                  {aboutDropdownOpen && (
+                    <div
+                      className="absolute left-0 mt-2 w-56 bg-white border rounded shadow-lg z-50"
+                      style={{ minWidth: '200px' }}
+                    >
+                      {AboutUsDetails.map((sec) => (
+                        <Link
+                          key={sec.id}
+                          to={`/about-us/${sec.id}`}
+                          className="block px-4 py-2 text-[var(--secondary-blue)] hover:bg-[var(--light-green)] hover:text-white"
+                          onClick={() => setAboutDropdownOpen(false)}
+                        >
+                          {sec.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  onClick={item.name === 'Get A Quote' ? (e) => { e.preventDefault(); setQuoteModalOpen(true); } : undefined}
+                  className={`${item.name === 'Get A Quote'
+                    ? 'text-[var(--secondary-blue)] bg-[var(--off-white)] px-4 py-2 text-lg font-semibold border-2 border-[var(--secondary-blue)] hover:bg-[var(--light-green)]'
+                    : 'text-[var(--secondary-blue)] font-medium text-base hover:underline hover:text-[var(--secondary-green)]'
+                    } transition-colors`}
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Mobile Menu Button */}

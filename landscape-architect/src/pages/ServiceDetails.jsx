@@ -1,7 +1,6 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import '../styles/ServiceDetails.css';
-import { Link } from 'react-router-dom';
 import {
     FaChalkboardTeacher,
     FaDraftingCompass,
@@ -494,34 +493,65 @@ export default function ServiceDetails() {
     }
 
     return (
-        <div className="serviceDetailsContainer max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
-            {/* Service Title */}
-            <h1 className="serviceTitle text-3xl font-bold text-green-600 text-center mb-6">{service.title}</h1>
+        <div>
+            {/* Image with title overlay */}
+            <div className="relative w-full h-72 md:h-96">
+                <img
+                    src={service.image}
+                    alt={service.title}
+                    className="object-cover w-full h-full"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                    <h1 className="text-4xl md:text-5xl font-bold text-white text-center drop-shadow-lg">
+                        {service.title}
+                    </h1>
+                </div>
+            </div>
 
-            {/* Service Image */}
-            <img src={service.image} alt={service.title} className="serviceImage w-full h-auto rounded-lg mb-6 shadow-md" />
+            {/* Description */}
+            <div className="max-w-5xl mx-auto px-4 py-8">
+                {/* Two-column layout */}
+                <div className="flex flex-col md:flex-row gap-8">
+                    {/* Left: Features, How We Can Help, Why Choose Us */}
+                    <div className="md:w-2/3">
+                        {/* Why Choose Us Section */}
+                        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Why Choose Us</h2>
+                        <p className="text-gray-700 mb-6 leading-relaxed">{service.whyChoose}</p>
+                        {/* Features Section */}
+                        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Features</h2>
+                        <ul className="featuresList list-disc list-inside space-y-4 mb-6">
+                            {service.features.map((feature, index) => (
+                                <li key={index} className="text-gray-800">
+                                    <strong>{feature.title}</strong>
+                                    <p className="text-gray-600">{feature.description}</p>
+                                </li>
+                            ))}
+                        </ul>
 
-            {/* Service Description */}
-            <p className="serviceDescription text-lg text-gray-700 mb-6 leading-relaxed">{service.description}</p>
+                        {/* How We Can Help Section */}
+                        <h2 className="text-2xl font-semibold text-gray-800 mb-4">How We Can Help</h2>
+                        <p className="text-gray-700 mb-6 leading-relaxed">{service.howWeCanHelp}</p>
+                    </div>
 
-            {/* Features Section */}
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Features</h2>
-            <ul className="featuresList list-disc list-inside space-y-4 mb-6">
-                {service.features.map((feature, index) => (
-                    <li key={index} className="text-gray-800">
-                        <strong>{feature.title}</strong>
-                        <p className="text-gray-600">{feature.description}</p>
-                    </li>
-                ))}
-            </ul>
-
-            {/* How We Can Help Section */}
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">How We Can Help</h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">{service.howWeCanHelp}</p>
-
-            {/* Why Choose Us Section */}
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Why Choose Us</h2>
-            <p className="text-gray-700 leading-relaxed">{service.whyChoose}</p>
+                    {/* Right: Sidebar with links */}
+                    <div className="sidebar md:w-1/3 p-4 bg-gray-100 shadow-md rounded-lg h-fit">
+                        <h2 className="text-xl font-semibold text-gray-800 mb-4">Our Services</h2>
+                        <ul className="space-y-2">
+                            {services.map((svc) => (
+                                <li key={svc.id}>
+                                    <Link
+                                        to={`/services/${svc.title.toLowerCase().replace(/ /g, '-')}`}
+                                        className={`text-green-600 hover:underline ${svc.title === service.title ? 'font-bold underline' : ''
+                                            }`}
+                                    >
+                                        {svc.title}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
