@@ -116,7 +116,7 @@
 }
 
 .statCard {
-  @apply bg-gray-100 p-6 rounded-xl text-center shadow-md;
+  @apply bg-white p-6 rounded-xl text-center shadow-md;
 }
 
 .statLabel {
@@ -141,7 +141,7 @@
 }
 
 .teamCard {
-  @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 text-center;
+  @apply bg-white p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 text-center;
 }
 
 .teamImageWrapper {
@@ -186,7 +186,7 @@ pre,
   @apply flex flex-col md:flex-row gap-8;
 }
 .aboutSectionMain {
-  @apply flex-1 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200;
+  @apply flex-1 bg-white text-gray-800 dark:text-gray-200;
 }
 .aboutSectionAside {
   @apply w-full md:w-64 shrink-0;
@@ -217,7 +217,7 @@ pre,
 }
 
 .workingProcessStep {
-  @apply flex flex-col md:flex-row items-start gap-6 bg-green-50 dark:bg-gray-800 p-6 rounded-lg shadow-md;
+  @apply flex flex-col md:flex-row items-start gap-6 bg-green-50 bg-white p-6 rounded-lg shadow-md;
 }
 
 .stepImage {
