@@ -341,9 +341,17 @@ export default function Layout() {
             </div>
           </div>
 
-          <div className="footer-bottom">
-            <p className="text-white">© {new Date().getFullYear()} YouLandscape. All rights reserved.</p>
-            <p className="text-white">Designed with care by YouLandscape Architects & Consultants.</p>
+          <div className="footer-bottom flex flex-col md:flex-row justify-between items-center gap-2 mt-6 border-t border-white/30 pt-4">
+            <p className="text-white text-sm md:text-base">
+              © {new Date().getFullYear()} YouLandscape. All rights reserved.
+            </p>
+            <div className="flex gap-4 text-white text-sm md:text-base">
+              <Link to="/terms-of-use" className="hover:underline">Terms of use</Link>
+              <span className="hidden md:inline">|</span>
+              <Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link>
+              <span className="hidden md:inline">|</span>
+              <Link to="/cookie-policy" className="hover:underline">Cookie Policy</Link>
+            </div>
           </div>
         </div>
       </footer>

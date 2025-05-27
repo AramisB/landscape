@@ -31,10 +31,10 @@ const slides = [
             We design and build innovative outdoor spaces that harmonize with nature and enhance people's lives.
           </p>
           <div className="heroButtons flex flex-wrap justify-center gap-8 mx-auto mt-6">
-            <div className="bg-white border-2 border-[var(--secondary-blue)] rounded-none px-8 py-4 flex items-center">
+            <div className="bg-[var(--secondary-blue)] border-2 border-[var(--secondary-blue)] rounded-none px-8 py-4 flex items-center">
               <Link to="/projects">View Portfolio</Link>
             </div>
-            <div className="bg-white border-2 border-[var(--secondary-blue)] rounded-none px-8 py-4 flex items-center">
+            <div className="bg-[var(--secondary-blue)] border-2 border-[var(--secondary-blue)] rounded-none px-8 py-4 flex items-center">
               <Link to="/contact">Contact Us</Link>
             </div>
           </div>
