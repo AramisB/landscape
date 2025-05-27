@@ -236,28 +236,71 @@ pre,
   @apply text-gray-700 dark:text-gray-300 leading-relaxed;
 }
 
-/* Utility Classes */
-.text-center {
-  text-align: center;
+/* === Working Process === */
+.working-process-wrapper {
+  @apply my-12 px-4 md:px-8;
 }
-.text-green-700 {
-  color: #15803d;
+.working-process-section {
+  @apply bg-green-50 dark:bg-gray-800 shadow-md p-8 mb-12 rounded-lg;
 }
-.text-green-800 {
-  color: #166534;
+.working-process-title {
+  @apply text-2xl md:text-3xl font-bold text-green-700 dark:text-green-300 mb-8 text-center;
 }
-.bg-green-50 {
-  background-color: #f0fdf4;
+.working-process-steps {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-8;
 }
-.bg-green-100 {
-  background-color: #dcfce7;
+.working-step-card {
+  @apply flex items-start gap-4 bg-white dark:bg-gray-900 shadow p-6 rounded-lg;
 }
-.rounded-xl {
-  border-radius: 0.75rem;
+.working-step-index {
+  @apply flex-shrink-0;
 }
-.shadow-md {
-  box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+.working-step-index-number {
+  @apply flex items-center justify-center w-10 h-10 rounded-full bg-green-600 text-white font-bold text-lg;
 }
-.shadow-lg {
-  box-shadow: 0 10px 15px rgba(0,0,0,0.08);
+.working-step-title {
+  @apply text-xl font-semibold text-green-700 dark:text-green-300 mb-1;
+}
+.working-step-description {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+/* === Esteemed Clients === */
+.esteemed-clients {
+  @apply bg-white py-16;
+}
+.esteemed-clients-container {
+  @apply max-w-6xl mx-auto px-4 text-center;
+}
+.esteemed-clients-title {
+  @apply text-3xl md:text-4xl font-bold mb-12 text-gray-800;
+}
+.esteemed-clients-logos {
+  @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-center;
+}
+.client-logo {
+  @apply object-contain mx-auto;
+}
+
+/* === Why Choose Us === */
+.why-choose-us-section {
+  @apply bg-gray-50 py-12 px-4 md:px-16 mt-12;
+}
+.why-choose-us-title {
+  @apply text-center text-3xl font-bold text-gray-800 mb-8;
+}
+.why-choose-us-grid {
+  @apply grid md:grid-cols-2 gap-8 items-start;
+}
+.why-choose-us-column {
+  @apply space-y-6;
+}
+.why-choose-us-item {
+  @apply flex items-start space-x-4;
+}
+.why-choose-us-dot {
+  @apply w-4 h-4 mt-2 rounded-full shadow-md;
+}
+.why-choose-us-text {
+  @apply text-lg text-gray-700;
 }

@@ -524,19 +524,37 @@ export default function ServiceDetails() {
     }
 
     // Helper to render feature descriptions as bullet lists if they contain "•"
-    function renderFeatureDescription(desc) {
+    function renderFeatureDescription(desc, plain = false) {
         if (desc.includes('•')) {
-            // Split by bullet, trim, and filter out empty strings
             const items = desc
                 .split('•')
                 .map(item => item.trim())
                 .filter(Boolean);
             return (
-                <ul className="pl-5 list-disc space-y-1 text-gray-600">
-                    {items.map((item, idx) => (
-                        <li key={idx} className="mb-1">{item}</li>
-                    ))}
-                </ul>
+                <div className="space-y-1 text-gray-600">
+                    {items.map((item, idx) => {
+                        const [beforeColon, ...afterColon] = item.split(':');
+                        return (
+                            <div key={idx} className="mb-1 flex items-start">
+                                <span>
+                                    <span
+                                        className={
+                                            plain
+                                                ? ""
+                                                : "font-semibold text-[var(--text-black)]"
+                                        }
+                                    >
+                                        {beforeColon.trim()}
+                                        {afterColon.length ? ':' : ''}
+                                    </span>
+                                    {afterColon.length > 0 && (
+                                        <span className="ml-1">{afterColon.join(':').trim()}</span>
+                                    )}
+                                </span>
+                            </div>
+                        );
+                    })}
+                </div>
             );
         }
         return <p className="text-gray-600">{desc}</p>;
@@ -565,9 +583,9 @@ export default function ServiceDetails() {
                     {/* Left: Features, How We Can Help, Why Choose Us */}
                     <div className="md:w-2/3">
                         {/* Why Choose Us Section */}
-                        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Why Choose Us</h2>
-                        <div className="mb-6">
-                            {renderFeatureDescription(service.whyChoose)}
+                        <h2 className="text-2xl font-semibold text-[var(--text-black)] mb-4">Why Choose Us</h2>
+                        <div className="mb-6 text-[var(--text-black)] leading-relaxed">
+                            {renderFeatureDescription(service.whyChoose, true)}
                         </div>
                         {/* Features Section */}
                         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Features</h2>
