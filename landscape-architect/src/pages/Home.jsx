@@ -16,6 +16,7 @@ import {
   FaDrawPolygon,
   FaTools
 } from "react-icons/fa";
+import { BlogList } from './Blog'; // Adjust the path if needed
 
 
 const SLIDE_DURATION = 10000;
@@ -327,29 +328,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center">
-              {[1, 2, 3].map((blog, idx) => (
-                <div key={idx} className="blogCard bg-white rounded-none shadow-md overflow-hidden flex flex-col w-full max-w-xs">
-                  <img
-                    src={`/blog${idx + 1}.jpg`}
-                    alt={`Blog ${idx + 1}`}
-                    className="h-48 w-full object-cover"
-                  />
-                  <div className="p-4 flex flex-col flex-grow">
-                    <h3 className="text-xl font-semibold text-[var(--primary-green)] mb-2">
-                      Blog Title {idx + 1}
-                    </h3>
-                    <p className="text-gray-600 mb-4 flex-grow">
-                      A short preview or excerpt of the blog content goes here to entice readers.
-                    </p>
-                    <Link
-                      to={`/blog/${idx + 1}`}
-                      className="mt-auto text-[var(--secondary-blue)] font-medium hover:underline"
-                    >
-                      Read More →
-                    </Link>
-                  </div>
-                </div>
-              ))}
+              <BlogList />
             </div>
           </div>
         </div>
