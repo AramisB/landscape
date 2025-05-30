@@ -151,7 +151,7 @@ export default function AboutUsSection() {
                                 <div className="bg-green-50 dark:bg-gray-800 shadow-md p-6 text-align-left max-w-md mx-auto">
                                     <FaBullseye className="text-green-600 text-5xl mb-4 mx-auto" />
                                     <h3 className="text-2xl font-semibold text-green-700 dark:text-green-300 mb-6">Our Core Values</h3>
-                                    <p className="text-gray-700 dark:text-gray-300 text-sm max-w-xs mx-auto">
+                                    <p className="text-gray-700 dark:text--300 text-sm max-w-xs mx-auto">
                                         {section.content.coreValues.join(' \u00B7 ')}
                                     </p>
                                 </div>
@@ -253,7 +253,7 @@ export default function AboutUsSection() {
                     </section>
 
                     {/* Why Choose Us Section */}
-                    <section className="why-choose-us-section bg-gray-50 py-12 px-4 md:px-16 mt-12 max-w-6xl mx-auto">
+                    <section className="why-choose-us-section bg-[var(--pure-white)] py-12 px-4 md:px-16 mt-12 max-w-6xl mx-auto">
                         <h2 className="why-choose-us-title text-center text-3xl font-bold text-gray-800 mb-8">
                             Why <span className="text-primary">Choose</span> Us?
                         </h2>
