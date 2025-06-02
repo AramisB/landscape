@@ -188,21 +188,43 @@ export default function AboutUsSection() {
             )}
 
             {isWorkingProcess && (
-                <div className="workingProcessGrid mx-auto max-w-5xl px-8 py-12">
+                <section className="max-w-6xl mx-auto px-4 py-12 space-y-16">
+                    <motion.h2
+                        className="text-3xl font-bold text-center text-green-700 dark:text-green-300 mb-12"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        Our Working Process
+                    </motion.h2>
+
                     {steps.map((step, index) => (
-                        <div key={index} className="workingProcessStep">
-                            <img
-                                src={step.image}
-                                alt={step.title}
-                                className="stepImage"
-                            />
-                            <div className="stepContent">
-                                <h3 className="stepTitle">{step.title}</h3>
-                                <p className="stepDescription">{step.description}</p>
+                        <div
+                            key={index}
+                            className={`flex flex-col md:flex-row items-center gap-10 ${index % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
+                        >
+                            {/* Step Image with background color */}
+                            <div className={`md:w-1/2 w-full p-6 ${index % 2 === 0 ? "bg-green-50" : "bg-blue-50"}`}>
+                                <img
+                                    src={step.image}
+                                    alt={step.title}
+                                    className="shadow-lg w-full h-64 object-cover"
+                                />
+                            </div>
+
+                            {/* Step Content */}
+                            <div className="md:w-1/2 w-full text-center md:text-left">
+                                <h3 className="text-2xl font-semibold text-green-700 dark:text-green-300 mb-4">
+                                    {step.title}
+                                </h3>
+                                <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed">
+                                    {step.description}
+                                </p>
                             </div>
                         </div>
                     ))}
-                </div>
+                </section>
             )}
 
             {validId === "our-company" && section.content.workingProcess && (
@@ -216,23 +238,28 @@ export default function AboutUsSection() {
                             {section.content.workingProcess.steps.map((step, idx) => (
                                 <div
                                     key={idx}
-                                    className="working-step-card flex items-start gap-4 bg-white dark:bg-gray-900 shadow p-6 bg-white"
+                                    className={`flex flex-col md:flex-row items-center gap-6 mb-10 bg-white dark:bg-gray-900 shadow-md p-6 md:p-8 ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''
+                                        }`}
                                 >
-                                    <div className="working-step-index flex-shrink-0">
-                                        <span className="working-step-index-number flex items-center justify-center w-10 h-10 rounded-full bg-green-600 text-white font-bold text-lg">
+                                    {/* Optional Image or Icon section */}
+                                    <div className="flex-shrink-0 w-full md:w-1/3">
+                                        <div className="w-16 h-16 flex items-center justify-center bg-green-600 text-white text-xl font-bold shadow mx-auto md:mx-0">
                                             {idx + 1}
-                                        </span>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3 className="working-step-title text-xl font-semibold text-green-700 dark:text-green-300 mb-1">
+
+                                    {/* Content Section */}
+                                    <div className="md:w-2/3 text-center md:text-left">
+                                        <h3 className="text-xl md:text-2xl font-semibold text-green-700 dark:text-green-300 mb-2">
                                             {step.title}
                                         </h3>
-                                        <p className="working-step-description text-gray-700 dark:text-gray-300">
+                                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                                             {step.description}
                                         </p>
                                     </div>
                                 </div>
                             ))}
+
                         </div>
                     </section>
 
@@ -266,9 +293,9 @@ export default function AboutUsSection() {
                                 ].map((item, index) => (
                                     <div
                                         key={index}
-                                        className={`why-choose-us-item flex items-start space-x-4 rounded-lg p-4 shadow-md bg-blue-100`}
+                                        className={`why-choose-us-item flex items-start space-x-4 p-4 shadow-md bg-blue-100`}
                                     >
-                                        <div className="why-choose-us-dot w-4 h-4 mt-2 rounded-full bg-pink-500 shadow-md" />
+                                        <div className="why-choose-us-dot w-4 h-4 mt-2 bg-pink-500 shadow-md" />
                                         <p className="why-choose-us-text text-lg text-gray-700">{item.text}</p>
                                     </div>
                                 ))}
@@ -281,9 +308,9 @@ export default function AboutUsSection() {
                                 ].map((item, index) => (
                                     <div
                                         key={index}
-                                        className={`why-choose-us-item flex items-start space-x-4 rounded-lg p-4 shadow-md bg-pink-100`}
+                                        className={`why-choose-us-item flex items-start space-x-4 p-4 shadow-md bg-pink-100`}
                                     >
-                                        <div className="why-choose-us-dot w-4 h-4 mt-2 rounded-full bg-blue-500 shadow-md" />
+                                        <div className="why-choose-us-dot w-4 h-4 mt-2 bg-blue-500 shadow-md" />
                                         <p className="why-choose-us-text text-lg text-gray-700">{item.text}</p>
                                     </div>
                                 ))}
