@@ -13,8 +13,8 @@ export default function AboutUs() {
   return (
     <div className="px-8 py-12 max-w-5xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-4">About Us</h1>
-        <ul className="flex flex-wrap gap-4 text-green-700 text-lg">
+        <h1 className="text-xl font-bold mb-4">About Us</h1>
+        <ul className="flex flex-wrap gap-4 text-green-700 text-base">
           {AboutUsDetails.map((sec) => (
             <li key={sec.id}>
               <Link
@@ -38,11 +38,11 @@ export default function AboutUs() {
               alt={section.title}
               className="w-full h-64 object-cover"
             />
-            <h2 className="absolute inset-0 flex items-center justify-center text-3xl font-bold text-white bg-black bg-opacity-50">
+            <h2 className="absolute inset-0 flex items-center justify-center text-xl font-bold text-white bg-black bg-opacity-50">
               {section.title}
             </h2>
           </div>
-          <pre className="whitespace-pre-wrap text-lg text-gray-800">
+          <pre className="whitespace-pre-wrap text-sm text-gray-800">
             {section.content}
           </pre>
         </div>

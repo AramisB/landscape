@@ -46,7 +46,7 @@ export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Contact Strip */}
-      <div className="contactStrip flex justify-between items-center bg-[var(--light-green)] px-4 py-3 border-b text-white text-sm">
+      <div className="contactStrip flex justify-between items-center bg-[var(--primary-green)] px-4 py-3 border-b text-white text-xs">
         {/* Contact Info */}
         <div className="flex items-center gap-4 flex-wrap">
           <a
@@ -66,22 +66,22 @@ export default function Layout() {
         </div>
         {/* Social Icons */}
         <div className="flex items-center gap-3">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-lg">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
             <FaFacebook />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-lg">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
             <FaTwitter />
           </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-lg">
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
             <FaYoutube />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-lg">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
             <FaInstagram />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-lg">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
             <FaLinkedin />
           </a>
-          <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-lg">
+          <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
             <FaWhatsapp />
           </a>
         </div>
@@ -112,7 +112,7 @@ export default function Layout() {
                   ref={aboutDropdownRef}
                 >
                   <button
-                    className="flex items-center gap-1 text-[var(--secondary-blue)] font-medium text-base hover:underline hover:text-[var(--secondary-green)] transition-colors"
+                    className="flex items-center gap-1 text-[var(--secondary-blue)] font-medium text-sm hover:underline hover:text-[var(--secondary-green)] transition-colors"
                     onClick={(e) => {
                       e.preventDefault();
                       setAboutDropdownOpen((open) => !open);
@@ -145,8 +145,8 @@ export default function Layout() {
                   to={item.href}
                   onClick={item.name === 'Get A Quote' ? (e) => { e.preventDefault(); setQuoteModalOpen(true); } : undefined}
                   className={`${item.name === 'Get A Quote'
-                    ? 'text-[var(--secondary-blue)] bg-[var(--off-white)] px-4 py-2 text-lg font-semibold border-2 border-[var(--secondary-blue)] hover:bg-[var(--light-green)]'
-                    : 'text-[var(--secondary-blue)] font-medium text-base hover:underline hover:text-[var(--secondary-green)]'
+                    ? 'text-[var(--secondary-blue)] bg-[var(--off-white)] px-4 py-2 text-sm font-semibold border-2 border-[var(--secondary-blue)] hover:bg-[var(--light-green)]'
+                    : 'text-[var(--secondary-blue)] font-medium text-sm hover:underline hover:text-[var(--secondary-green)]'
                     } transition-colors`}
                 >
                   {item.name}
@@ -188,7 +188,7 @@ export default function Layout() {
                   key={item.name}
                   to={item.href}
                   onClick={item.name === 'Get A Quote' ? (e) => { e.preventDefault(); setQuoteModalOpen(true); } : undefined}
-                  className="text-green-800 font-semibold text-lg hover:underline transition-colors"
+                  className="text-green-800 font-semibold text-sm hover:underline transition-colors"
                 >
                   {item.name}
                 </Link>
@@ -206,25 +206,25 @@ export default function Layout() {
             <div className="flex flex-col md:flex-row gap-6">
               {/* Left Section */}
               <div className="flex-1 text-gray-800 space-y-6">
-                <h1 className="text-3xl font-bold">Get A Quote Now</h1>
-                <p className="text-lg">
+                <h1 className="text-2xl font-bold">Get A Quote Now</h1>
+                <p className="text-sm">
                   Contact us now to Get A Quote or a site visit.
                 </p>
-                <p className="text-lg flex items-center gap-2">
+                <p className="text-sm flex items-center gap-2">
                   <FaPhoneAlt className="text-green-700" />
                   <strong>Phone:</strong> +254707301563
                 </p>
-                <p className="text-lg flex items-center gap-2">
+                <p className="text-sm flex items-center gap-2">
                   <FaEnvelope className="text-green-700" />
                   <strong>Email:</strong> info@youlandscape.com
                 </p>
-                <p className="text-lg">
+                <p className="text-sm">
                   We are here to help you transform your outdoor space!
                 </p>
               </div>
 
               {/* Right Section */}
-              <div className="flex-1 bg-[var(--light-green)] p-6 shadow-md border-2">
+              <div className="flex-1 bg-[var(--primary-green)] p-6 shadow-md border-2">
                 <h2 className="text-xl font-semibold mb-4 text-white">Request a Quote</h2>
                 <form>
                   <div className="mb-4">
@@ -264,13 +264,13 @@ export default function Layout() {
                     <button
                       type="button"
                       onClick={() => setQuoteModalOpen(false)}
-                      className="mr-2 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300"
+                      className="mr-2 px-4 py-2 text-sm font-medium text-white bg-[var(--light-green)] hover:bg-[var(--orange)]"
                     >
                       Cancel
                     </button>
                     <button
                       type="submit"
-                      className="px-4 py-2 text-sm font-medium text-white bg-green-700 rounded-md hover:bg-green-800"
+                      className="px-4 py-2 text-sm font-medium text-white bg-[var(--light-green)] hover:bg-[var(--orange)]"
                     >
                       Submit
                     </button>
@@ -342,10 +342,10 @@ export default function Layout() {
           </div>
 
           <div className="footer-bottom flex flex-col md:flex-row justify-between items-center gap-2 mt-6 border-t border-white/30 pt-4">
-            <p className="text-white text-sm md:text-base">
+            <p className="text-white text-sm md:text-sm">
               © {new Date().getFullYear()} YouLandscape. All rights reserved.
             </p>
-            <div className="flex gap-4 text-white text-sm md:text-base">
+            <div className="flex gap-4 text-white text-sm md:text-sm">
               <Link to="/terms-of-use" className="hover:underline">Terms of use</Link>
               <span className="hidden md:inline">|</span>
               <Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link>

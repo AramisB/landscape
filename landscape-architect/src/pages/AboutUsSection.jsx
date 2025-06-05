@@ -215,10 +215,10 @@ export default function AboutUsSection() {
 
                             {/* Step Content */}
                             <div className="md:w-1/2 w-full text-center md:text-left">
-                                <h3 className="text-2xl font-semibold text-green-700 dark:text-green-300 mb-4">
+                                <h3 className="text-xl font-semibold text-green-700 dark:text-green-300 mb-4">
                                     {step.title}
                                 </h3>
-                                <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed">
+                                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                                     {step.description}
                                 </p>
                             </div>
@@ -231,7 +231,7 @@ export default function AboutUsSection() {
                 <div className="working-process-wrapper my-12 px-4 md:px-8">
                     {/* Our Working Process Section */}
                     <section className="working-process-section bg-green-50 dark:bg-gray-800 shadow-md p-8 mb-12 bg-white max-w-6xl mx-auto">
-                        <h2 className="working-process-title text-2xl md:text-3xl font-bold text-green-700 dark:text-green-300 mb-8 text-center">
+                        <h2 className="working-process-title text-xl md:text-2xl font-bold text-green-700 dark:text-green-300 mb-8 text-center">
                             Our Working Process
                         </h2>
                         <div className="working-process-steps grid grid-cols-1 md:grid-cols-2 gap-8">

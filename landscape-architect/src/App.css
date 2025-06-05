@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+
+html {
+  font-size: 15px; /* or 14px, or any size you prefer */
+}
+body {
+  font-size: 0.95rem; /* Optional: further reduce for body */
+}

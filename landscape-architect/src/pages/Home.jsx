@@ -26,9 +26,9 @@ const slides = [
     key: 'hero',
     content: (
       <>
-        <div className="heroContent">
-          <h1 className="heroTitle">Transforming Spaces and Enhancing Lives</h1>
-          <p className="heroDescription">
+        <div className="heroContent h-full flex flex-col items-center justify-center text-center relative z-20">
+          <h1 className="heroTitle text-3xl font-extrabold">Transforming Spaces and Enhancing Lives</h1>
+          <p className="heroDescription text-base max-w-3xl mt-4">
             We design and build innovative outdoor spaces that harmonize with nature and enhance people's lives.
           </p>
           <div className="heroButtons flex flex-wrap justify-center gap-8 mx-auto mt-6">
@@ -56,10 +56,10 @@ const slides = [
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-black/40 z-0" />
         <div className="relative z-10 flex flex-col items-center w-full">
-          <h1 className="heroTitle mb-4 text-center text-4xl font-extrabold text-[var(--pure-white)]">
+          <h1 className="heroTitle mb-4 text-center text-3xl font-extrabold text-[var(--pure-white)]">
             Our Services
           </h1>
-          <p className="heroDescription mb-8 text-lg max-w-3xl text-center text-[var(--pure-white)]">
+          <p className="heroDescription mb-8 text-base max-w-3xl text-center text-[var(--pure-white)]">
             Comprehensive landscape architecture and design services tailored to enhance outdoor living experiences:
           </p>
           <div className="heroButtons flex justify-center mt-10">
@@ -77,14 +77,14 @@ const slides = [
       <div className="w-screen overflow-hidden px-0 py-8 md:px-0 min-h-[60vh] flex flex-col justify-center rounded-none shadow-lg border-2 relative bg-cover bg-center"
         style={{ backgroundImage: "url('/contactSlider.jpeg')" }}
       >
-        <h1 className="heroTitle mb-4">Get In Touch</h1>
-        <p className="heroDescription mb-6">
+        <h1 className="heroTitle mb-4 text-center text-3xl font-extrabold">Get In Touch</h1>
+        <p className="heroDescription mb-6 text-base max-w-3xl text-center">
           Let's create something beautiful together.<br />
           Contact us for a free consultation.
         </p>
         <div className="heroButtons flex justify-center">
           <div className="bg-white border-2 rounded-none px-8 py-4 flex items-center">
-            <Link to="/contact" className="text-[var(--secondary-blue)] font-semibold">Get In Touch</Link>
+            <Link to="/contact" className="text-[var(--secondary-blue)] font-semibold text-center text-base">Get In Touch</Link>
           </div>
         </div>
       </div>
@@ -119,7 +119,7 @@ export default function Home() {
   return (
     <div className="homeContainer">
       {/* Hero Section with Vertical Slider */}
-      <section className="heroSection relative flex items-center justify-center min-h-[50vh] md:min-h-[60vh] w-full bg-[var(--off-white)] overflow-hidden py-8">
+      <section className="heroSection relative flex items-center justify-center h-[200px] md:min-h-[40vh] md:min-h-[50vh] w-full bg-[var(--off-white)] overflow-hidden py-4">
         {/* Optional: Overlay for readability */}
         {slides[current].key === 'hero' && (
           <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
@@ -160,24 +160,24 @@ export default function Home() {
 
       {/* About Section */}
       <section className="aboutSection py-16 bg-[var(--off-white)]" id="about">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10 max-w-7xl py-8">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl py-8">
 
           {/* Left Image */}
-          <div className="aboutImage w-full md:w-1/2">
+          <div className="aboutImage w-full md:w-3/4 lg:w-1/3">
             <img
               src="/aboutUs.png"
               alt="About our landscaping team"
-              className="rounded-xl shadow-lg w-full h-auto object-cover"
+              className="shadow-lg w-full h-auto object-cover"
             />
           </div>
 
           {/* Right Content */}
-          <div className="aboutContent w-full md:w-1/2 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-[var(--primary-green)] mb-4">About Us</h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+          <div className="aboutContent w-full md:w-2/5 lg:w-1/3 text-center md:text-left">
+            <h2 className="text-2xl font-bold text-[var(--primary-green)] mb-4">About Us</h2>
+            <p className="text-sm text-gray-700 leading-relaxed mb-6">
               YouLandscape Architects and Consultants is a leading landscape architecture firm in Kenya, specializing in innovative, sustainable outdoor designs, master planning, and eco-conscious landscaping solutions. We blend artistry, engineering, and environmental science to create functional, stunning landscapes for homes, businesses, and public spaces.
             </p>
-            <div className='aboutRef'>
+            <div className="aboutRef">
               <a href="/about-us"> Discover More </a>
             </div>
           </div>
@@ -188,8 +188,8 @@ export default function Home() {
       {/* Featured Projects Section */}
       <div className="featuredProjects section-padding">
         <div className="sectionHeader">
-          <h2 className="sectionTitle gradient-text">Our Professional Services</h2>
-          <p className="sectionDescription">
+          <h2 className="sectionTitle gradient-text text-center text-3xl font-bold">Our Professional Services</h2>
+          <p className="sectionDescription text-xl text-center text-gray-600 mt-4">
             Discover the range of services we offer to transform your outdoor spaces.
           </p>
         </div>
@@ -266,7 +266,7 @@ export default function Home() {
                 key={idx}
               >
                 <div className="projectInfo">
-                  <h3 className="projectTitle flex items-center gap-2 justify-center">
+                  <h3 className="projectTitle flex items-center gap-2 justify-center text-base">
                     {serviceIcons[service.title] && (
                       <span className="text-[var(--primary-green)]">
                         {React.createElement(serviceIcons[service.title], {
@@ -286,8 +286,8 @@ export default function Home() {
                 </div>
                 <div className="projectCardFooter">
                   <p className="projectDesc">{service.desc}</p>
-                  <div className="learnMore">
-                    <Link to="/services" className="bg-[var(--secondary-blue)] text-white px-4 py-4 pt-4 rounded-none">
+                  <div className="learnMore text-sm">
+                    <Link to="/services" className="bg-[var(--secondary-blue)] text-white px-3 py-3 pt-4 rounded-none">
                       Learn More
                     </Link>
                   </div>
@@ -301,10 +301,10 @@ export default function Home() {
       {/* We Have Worked With Section */}
       <section className="workedWithSection py-12 bg-[var(--off-white)]">
         <div className="container mx-auto px-4 max-w-7xl text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-[var(--primary-green)] mb-6">
+          <h2 className="text-2xl md:text-2xl font-bold text-[var(--primary-green)] mb-6">
             We Have Worked With
           </h2>
-          <p className="text-lg text-gray-700 mb-8">
+          <p className="text-base text-gray-700 mb-8">
             Trusted by leading organizations, businesses, and homeowners across Kenya.
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8">
@@ -320,10 +320,10 @@ export default function Home() {
       {/* Blog Section */}
       <section className="blogsSection py-12 bg-[var(--off-white)]">
         <div className="container mx-auto px-4 max-w-7xl">
-          <h2 className="sectionTitle text-3xl font-bold text-[var(--primary-green)] mb-4 text-center">
+          <h2 className="sectionTitle text-2xl font-bold text-[var(--primary-green)] mb-4 text-center">
             Latest Blog Posts
           </h2>
-          <p className="sectionDescription text-center text-gray-600 mb-10">
+          <p className="sectionDescription text-base text-center text-gray-600 mb-10">
             Get tips, insights, and inspiration from our landscaping experts.
           </p>
           <div className="flex justify-center">

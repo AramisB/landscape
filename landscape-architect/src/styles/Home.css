@@ -3,56 +3,6 @@
   @apply flex flex-col bg-cover bg-center bg-no-repeat min-h-screen;
   background-color: var(--off-white);
 }
-
-/* Hero Section */
-.heroSection {
-  @apply relative flex items-center justify-center text-center overflow-hidden w-screen h-[60vh] bg-[var(--off-white)];
-}
-
-.heroContent {
-  @apply max-w-4xl mx-auto flex flex-col items-center justify-center z-20 text-center h-full w-screen px-4;
-}
-
-.heroTitle {
-  @apply text-5xl md:text-6xl font-bold mb-6 mx-auto text-center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.heroDescription {
-  @apply text-xl md:text-2xl max-w-2xl mb-8 mx-auto text-center text-[var(--text-dark)];
-}
-
-.heroButtons {
-  @apply flex flex-wrap justify-center gap-8 mx-auto mt-6;
-}
-
-.primaryButton,
-.secondaryButton {
-  @apply inline-block px-8 py-4 font-semibold transition-all duration-300;
-  background-color: white;
-  color: var(--secondary-blue);
-  border: 2px solid var(--secondary-blue);
-  text-decoration: none;
-  border-radius: 0;
-}
-
-.primaryButton:hover,
-.secondaryButton:hover {
-  background-color: var(--light-green);
-  color: var(--secondary-blue);
-  border-color: var(--secondary-blue);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.heroImageWrapper {
-  @apply absolute inset-0 z-0;
-  pointer-events: none;
-}
-
-.heroOverlay {
-  @apply absolute inset-0 z-10 opacity-70 bg-gradient-to-b from-black/30 to-black/50;
-}
-
 /* === Featured Projects Section === */
 .featuredProjects {
   @apply bg-[var(--off-white)] py-20 relative z-10;
@@ -63,11 +13,11 @@
 }
 
 .sectionTitle {
-  @apply text-3xl md:text-4xl font-bold mb-4 text-[var(--primary-green)];
+  @apply text-xl md:text-4xl font-bold mb-4 text-[var(--primary-green)];
 }
 
 .sectionDescription {
-  @apply text-lg text-[var(--text-dark)] text-justify w-full px-0 mx-0;
+  @apply text-sm text-[var(--text-dark)] text-justify w-full px-0 mx-0;
 }
 
 .projectsAndProcess {
@@ -92,7 +42,7 @@
 
 /* === Project Title === */
 .projectTitle {
-  @apply text-xl font-semibold text-[var(--primary-green)] mb-4 py-2;
+  @apply text-base font-semibold text-[var(--primary-green)] mb-4 py-2;
 }
 
 /* === Project Image Container === */
@@ -105,28 +55,7 @@
   @apply flex flex-col items-center justify-end flex-grow pb-8;
 }
 .projectDesc {
-  @apply text-[var(--text-dark)] text-base mt-4 mb-8 py-4 text-left px-6 whitespace-normal;
-}
-
-/* === Call to Action Section === */
-.ctaSection {
-  @apply bg-gradient-to-r from-[var(--primary-green)] to-[var(--secondary-green)] py-20;
-}
-
-.ctaContent {
-  @apply max-w-4xl mx-auto text-center px-4;
-}
-
-.ctaTitle {
-  @apply text-4xl md:text-5xl font-bold mb-6 text-white;
-}
-
-.ctaDescription {
-  @apply text-xl text-white mb-8;
-}
-
-.ctaButton {
-  @apply inline-block px-8 py-4 rounded-full text-[var(--primary-green)] bg-white transition-all duration-300 hover:bg-[var(--off-white)] hover:shadow-lg;
+  @apply text-[var(--text-dark)] text-sm mt-4 mb-8 py-4 text-left px-6 whitespace-normal;
 }
 
 /* === Section Headers === */
@@ -135,11 +64,11 @@
 }
 
 .sectionTitle {
-  @apply text-3xl md:text-4xl font-bold mb-4;
+  @apply text-xl md:text-xl font-bold mb-4;
 }
 
 .sectionDescription {
-  @apply text-lg text-[var(--text-dark)];
+  @apply text-base text-[var(--text-dark)];
 }
 
 /* === Contact Strip === */
@@ -218,11 +147,11 @@
 }
 
 .aboutContent h2 {
-  @apply text-3xl font-bold text-[var(--primary-green)] mb-4;
+  @apply text-2xl font-bold text-[var(--primary-green)] mb-4;
 }
 
 .aboutContent p {
-  @apply text-lg text-gray-700 leading-relaxed mb-6;
+  @apply text-sm text-gray-700 leading-relaxed mb-6;
 }
 
 .aboutContent a {

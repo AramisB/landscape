@@ -88,7 +88,7 @@ export default function Blog() {
                   <span className="blogCategory">{post.category}</span>
                 </div>
                 <div className="titleGroup flex-grow">
-                  <h3 className="blogTitle">{post.title}</h3>
+                  <h3 className="blogTitle text-2xl">{post.title}</h3>
                   <p className="blogDescription">{post.description}</p>
                 </div>
                 <a

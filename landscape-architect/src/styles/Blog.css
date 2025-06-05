@@ -9,7 +9,7 @@
 }
 
 .mainTitle {
-  @apply text-4xl md:text-5xl font-bold mb-6 text-[var(--primary-green)];
+  @apply text-3xl md:text-4xl font-bold mb-6 text-[var(--primary-green)];
 }
 
 .mainDescription {
@@ -23,7 +23,7 @@
 
 /* Blog card */
 .blogCard {
-  @apply flex flex-col overflow-hidden rounded-xl transition-all duration-300 
+  @apply flex flex-col overflow-hidden transition-all duration-300 
          hover:-translate-y-2 hover:shadow-xl bg-white;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .blogTitle {
-  @apply text-xl font-semibold mb-2 text-[var(--primary-green)];
+  @apply text-lg font-semibold mb-2 text-[var(--primary-green)];
 }
 
 .blogTitle a {
