@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 import categories from './Categories';
 import allProducts from './AllProducts';
 
 const ProductsPage = () => {
   const { category } = useParams();
+  const navigate = useNavigate();
+  const { cart, addToCart } = useCart();
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -114,24 +117,41 @@ const ProductsPage = () => {
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProducts.length > 0 ? (
-                filteredProducts.map((product) => (
-                  <div
-                    key={product.id}
-                    className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col"
-                  >
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="h-40 w-full object-cover rounded mb-3"
-                    />
-                    <h2 className="text-base font-semibold mb-1">{product.name}</h2>
-                    <p className="text-[var(--primary-green)] font-bold mb-1">{product.price}</p>
-                    <p className="text-gray-600 text-sm mb-3">{product.description}</p>
-                    <button className="mt-auto bg-[var(--primary-green)] text-white px-4 py-2 rounded hover:bg-[var(--light-green)] transition text-sm">
-                      Add to Cart
-                    </button>
-                  </div>
-                ))
+                filteredProducts.map((product) => {
+                  const inCart = cart.some((item) => item.id === product.id);
+                  return (
+                    <div
+                      key={product.id}
+                      className="bg-white rounded-lg shadow-lg border border-gray-200 transition p-4 flex flex-col"
+                    >
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="h-40 w-full object-cover rounded mb-3"
+                      />
+                      <h2 className="text-base font-semibold mb-1">{product.name}</h2>
+                      <p className="text-gray-600 text-sm mb-3">{product.description}</p>
+                      <div className="flex items-center justify-between mt-auto border border-gray-100 rounded px-3 py-2 bg-gray-50 shadow-sm">
+                        <span className="text-[var(--primary-green)] font-bold text-sm">{product.price}</span>
+                        {inCart ? (
+                          <button
+                            className="bg-[var(--primary-green)] text-white px-4 py-2 rounded hover:bg-[var(--light-green)] transition text-sm"
+                            onClick={() => navigate('/cart')}
+                          >
+                            View Cart
+                          </button>
+                        ) : (
+                          <button
+                            className="bg-[var(--primary-green)] text-white px-4 py-2 rounded hover:bg-[var(--light-green)] transition text-sm"
+                            onClick={() => addToCart(product)}
+                          >
+                            Add to Cart
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })
               ) : (
                 <div className="col-span-full text-center text-gray-500 py-20">
                   No products found in this category.
