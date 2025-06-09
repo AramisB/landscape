@@ -68,7 +68,7 @@ export default function AboutUsSection() {
             {/* Content for Meet Our Team */}
             {validId === "our-team" && (
                 <div className="px-8 py-6 max-w-5xl mx-auto">
-                    <p className="text-lg text-gray-800 dark:text-gray-300 mb-8">
+                    <p className="text-base text-gray-800 dark:text-gray-300 mb-8">
                         {section.content}
                     </p>
                     <div className="teamGrid mb-10">
@@ -81,9 +81,9 @@ export default function AboutUsSection() {
                                         className="teamImage"
                                     />
                                 </div>
-                                <div className="teamMemberName">{member.name}</div>
-                                <div className="teamMemberRole">{member.role}</div>
-                                <p className="teamMemberBio">{member.bio}</p>
+                                <div className="teamMemberName text-lg">{member.name}</div>
+                                <div className="teamMemberRole text-sm">{member.role}</div>
+                                <p className="teamMemberBio text-sm">{member.bio}</p>
                                 <div className="teamSocials">
                                     <a
                                         href={member.instagram}
@@ -113,7 +113,7 @@ export default function AboutUsSection() {
                 <section id="our-company" className="py-8 bg-white dark:bg-gray-900">
                     <div className="max-w-5xl mx-auto px-4">
                         <motion.h2
-                            className="text-3xl font-bold text-green-700 dark:text-green-300 text-center mb-6"
+                            className="text-2xl font-bold text-green-700 dark:text-green-300 text-center mb-6"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -125,9 +125,13 @@ export default function AboutUsSection() {
                         <div className="text-gray-700 dark:text-gray-300 space-y-6 text-base leading-relaxed">
                             {/* Who We Are */}
                             <div>
-                                <h3 className="text-xl font-semibold text-green-700 dark:text-green-300 mt-6 mb-2">Who We Are</h3>
+                                <h3 className="text-lg font-semibold text-green-700 dark:text-green-300 mt-6 mb-2">Who We Are</h3>
                                 {section.content.whoWeAre.split('\n').map((line, index) =>
-                                    line.trim() ? <p key={index}>{line.trim()}</p> : null
+                                    line.trim() ? (
+                                        <p key={index} className="text-base text-gray-700 dark:text-gray-300">
+                                            {line.trim()}
+                                        </p>
+                                    ) : null
                                 )}
                             </div>
 
@@ -173,10 +177,10 @@ export default function AboutUsSection() {
                                     >
                                         <span className="shrink-0">{reason.icon}</span>
                                         <div>
-                                            <h3 className="text-xl font-semibold text-green-700 dark:text-green-300 mb-1">
+                                            <h3 className="text-lg font-semibold text-green-700 dark:text-green-300 mb-1">
                                                 {reason.title}
                                             </h3>
-                                            <p className="text-gray-700 dark:text-gray-300">
+                                            <p className="text-gray-700 dark:text-gray-300 text-sm">
                                                 {reason.text}
                                             </p>
                                         </div>
@@ -190,7 +194,7 @@ export default function AboutUsSection() {
             {isWorkingProcess && (
                 <section className="max-w-6xl mx-auto px-4 py-12 space-y-16">
                     <motion.h2
-                        className="text-3xl font-bold text-center text-green-700 dark:text-green-300 mb-12"
+                        className="text-2xl font-bold text-center text-green-700 dark:text-green-300 mb-12"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -215,7 +219,7 @@ export default function AboutUsSection() {
 
                             {/* Step Content */}
                             <div className="md:w-1/2 w-full text-center md:text-left">
-                                <h3 className="text-xl font-semibold text-green-700 dark:text-green-300 mb-4">
+                                <h3 className="text-lg font-semibold text-green-700 dark:text-green-300 mb-4">
                                     {step.title}
                                 </h3>
                                 <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
@@ -238,22 +242,22 @@ export default function AboutUsSection() {
                             {section.content.workingProcess.steps.map((step, idx) => (
                                 <div
                                     key={idx}
-                                    className={`flex flex-col md:flex-row items-center gap-6 mb-10 bg-white dark:bg-gray-900 shadow-md p-6 md:p-8 ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''
+                                    className={`flex flex-col md:flex-row items-center gap-6 mb-10 bg-white dark:bg-gray-900 shadow-md p-6 md:p-8 ${idx % 2 !== 0 ? 'md:flex-row-reverse text-sm md:text-base' : ''
                                         }`}
                                 >
                                     {/* Optional Image or Icon section */}
                                     <div className="flex-shrink-0 w-full md:w-1/3">
-                                        <div className="w-16 h-16 flex items-center justify-center bg-green-600 text-white text-xl font-bold shadow mx-auto md:mx-0">
+                                        <div className="w-14 h-14 flex items-center justify-center bg-[var(--primary-green)] text-white text-xl font-bold shadow mx-auto md:mx-0">
                                             {idx + 1}
                                         </div>
                                     </div>
 
                                     {/* Content Section */}
                                     <div className="md:w-2/3 text-center md:text-left">
-                                        <h3 className="text-xl md:text-2xl font-semibold text-green-700 dark:text-green-300 mb-2">
+                                        <h3 className="text-lg md:text-xl font-semibold text-green-700 dark:text-green-300 mb-2">
                                             {step.title}
                                         </h3>
-                                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-xs md:text-sm">
                                             {step.description}
                                         </p>
                                     </div>
@@ -266,7 +270,7 @@ export default function AboutUsSection() {
                     {/* Our Esteemed Clients Section */}
                     <section className="esteemed-clients bg-white py-16">
                         <div className="esteemed-clients-container max-w-6xl mx-auto px-4 text-center">
-                            <h2 className="esteemed-clients-title text-3xl md:text-4xl font-bold mb-12 text-gray-800">
+                            <h2 className="esteemed-clients-title text-2xl md:text-3xl font-bold mb-12 text-gray-800">
                                 Some of our Esteemed Clients
                             </h2>
                             <div className="esteemed-clients-logos grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-center">
@@ -281,7 +285,7 @@ export default function AboutUsSection() {
 
                     {/* Why Choose Us Section */}
                     <section className="why-choose-us-section bg-[var(--pure-white)] py-12 px-4 md:px-16 mt-12 max-w-6xl mx-auto">
-                        <h2 className="why-choose-us-title text-center text-3xl font-bold text-gray-800 mb-8">
+                        <h2 className="why-choose-us-title text-center text-2xl font-bold text-gray-800 mb-8">
                             Why <span className="text-primary">Choose</span> Us?
                         </h2>
                         <div className="why-choose-us-grid grid md:grid-cols-2 gap-8 items-start">
@@ -296,7 +300,7 @@ export default function AboutUsSection() {
                                         className={`why-choose-us-item flex items-start space-x-4 p-4 shadow-md bg-blue-100`}
                                     >
                                         <div className="why-choose-us-dot w-4 h-4 mt-2 bg-pink-500 shadow-md" />
-                                        <p className="why-choose-us-text text-lg text-gray-700">{item.text}</p>
+                                        <p className="why-choose-us-text text-base text-gray-700">{item.text}</p>
                                     </div>
                                 ))}
                             </div>
@@ -311,7 +315,7 @@ export default function AboutUsSection() {
                                         className={`why-choose-us-item flex items-start space-x-4 p-4 shadow-md bg-pink-100`}
                                     >
                                         <div className="why-choose-us-dot w-4 h-4 mt-2 bg-blue-500 shadow-md" />
-                                        <p className="why-choose-us-text text-lg text-gray-700">{item.text}</p>
+                                        <p className="why-choose-us-text text-base text-gray-700">{item.text}</p>
                                     </div>
                                 ))}
                             </div>

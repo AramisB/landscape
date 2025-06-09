@@ -16,7 +16,7 @@ import {
   FaDrawPolygon,
   FaTools
 } from "react-icons/fa";
-import { BlogList } from './Blog'; // Adjust the path if needed
+import { BlogList } from './Blog';
 
 
 const SLIDE_DURATION = 10000;

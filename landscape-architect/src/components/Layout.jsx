@@ -123,14 +123,14 @@ export default function Layout() {
                   </button>
                   {aboutDropdownOpen && (
                     <div
-                      className="absolute left-0 mt-2 w-56 bg-white border rounded shadow-lg z-50"
+                      className="absolute left-0 mt-2 w-54 bg-white border rounded shadow-lg z-50"
                       style={{ minWidth: '200px' }}
                     >
                       {AboutUsDetails.map((sec) => (
                         <Link
                           key={sec.id}
                           to={`/about-us/${sec.id}`}
-                          className="block px-4 py-2 text-[var(--secondary-blue)] hover:bg-[var(--light-green)] hover:text-white"
+                          className="block px-4 py-2 text-[var(--secondary-blue)] hover:bg-[var(--light-green)] hover:text-white text-sm"
                           onClick={() => setAboutDropdownOpen(false)}
                         >
                           {sec.title}

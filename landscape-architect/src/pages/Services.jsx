@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { services } from './ServiceDetails';
 import '../styles/Services.css';
 import '../styles/ServiceDetails.css';
-import { FaSeedling } from 'react-icons/fa';
 
 // Utility function to convert title to URL-friendly format
 const toSlug = (title) => title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');

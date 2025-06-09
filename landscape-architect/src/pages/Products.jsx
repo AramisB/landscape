@@ -1,22 +1,156 @@
-import React from 'react';
-import '../styles/Products.css';
+import React, { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import categories from './Categories';
+import allProducts from './AllProducts';
 
-const Products = () => {
+const ProductsPage = () => {
+  const { category } = useParams();
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const onCategoryPage = !!category;
+
+  const toggleCategory = (slug) => {
+    setSelectedCategories((prev) =>
+      prev.includes(slug)
+        ? prev.filter((cat) => cat !== slug)
+        : [...prev, slug]
+    );
+  };
+
+  const filteredCategories = categories.filter((cat) => {
+    const matchesFilter =
+      selectedCategories.length === 0 || selectedCategories.includes(cat.slug);
+    const matchesSearch = cat.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    return matchesFilter && matchesSearch;
+  });
+
+  const filteredProducts = allProducts.filter((product) => {
+    const matchesRoute = onCategoryPage ? product.categorySlug === category : true;
+    const matchesSidebar =
+      selectedCategories.length === 0 ||
+      selectedCategories.includes(product.categorySlug);
+    return matchesRoute && matchesSidebar;
+  });
+
   return (
-    <div className="productsContainer">
-      <h1>Landscape Supplies Products</h1>
-      <p>Welcome to our Landscape Supplies Products! Here, you can find everything you need to create and maintain a beautiful outdoor space.</p>
-      <ul>
-        <li>High-quality plants and shrubs</li>
-        <li>Decorative stones and pavers</li>
-        <li>Garden tools and equipment</li>
-        <li>Outdoor furniture and lighting</li>
-        <li>Mulch, soil, and fertilizers</li>
-        <li>Custom planters and pots</li>
-      </ul>
-      <p>Whether you're a DIY enthusiast or a professional landscaper, we have the products and expertise to help you succeed. Visit us today and bring your landscape vision to life!</p>
+    <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+      {/* Sidebar */}
+      <aside className="md:col-span-1">
+        <div className="mb-6">
+          <input
+            type="text"
+            placeholder="Search categories..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full p-2 rounded border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)]"
+          />
+        </div>
+        <h2 className="text-lg font-semibold mb-4">Filter by Category</h2>
+        <ul className="space-y-2">
+          {categories.map((cat) => (
+            <li key={cat.slug} className="flex items-center justify-between">
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={selectedCategories.includes(cat.slug)}
+                  onChange={() => toggleCategory(cat.slug)}
+                  className="accent-[var(--primary-green)]"
+                />
+                <span className="text-sm">{cat.name}</span>
+              </label>
+              <span className="text-xs text-gray-500">
+                ({allProducts.filter((p) => p.categorySlug === cat.slug).length})
+              </span>
+            </li>
+          ))}
+        </ul>
+      </aside>
+
+      {/* Main Content */}
+      <section className="md:col-span-3">
+        {!onCategoryPage ? (
+          <>
+            <h1 className="text-xl font-bold text-[var(--secondary-blue)] mb-6">
+              Product Categories
+            </h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredCategories.map((cat) => (
+                <Link
+                  to={`/products/${cat.slug}`}
+                  key={cat.slug}
+                  className="bg-white rounded-lg shadow hover:shadow-lg transition block"
+                >
+                  <img
+                    src={cat.image}
+                    alt={cat.name}
+                    className="h-40 w-full object-cover rounded-t"
+                  />
+                  <div className="p-4">
+                    <h2 className="text-base font-semibold mb-1">{cat.name}</h2>
+                    <p className="text-gray-600 text-sm mb-2">{cat.description}</p>
+                    <span className="text-[var(--primary-green)] text-xs font-medium">
+                      {allProducts.filter((p) => p.categorySlug === cat.slug).length} product
+                      {allProducts.filter((p) => p.categorySlug === cat.slug).length !== 1
+                        ? 's'
+                        : ''}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+              {filteredCategories.length === 0 && (
+                <div className="col-span-full text-center text-gray-500 py-20">
+                  No matching categories found.
+                </div>
+              )}
+            </div>
+          </>
+        ) : (
+          <>
+            <h1 className="text-xl font-bold text-[var(--secondary-blue)] mb-6 capitalize">
+              {category.replace(/-/g, ' ')} Products
+            </h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredProducts.length > 0 ? (
+                filteredProducts.map((product) => (
+                  <div
+                    key={product.id}
+                    className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col"
+                  >
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="h-40 w-full object-cover rounded mb-3"
+                    />
+                    <h2 className="text-base font-semibold mb-1">{product.name}</h2>
+                    <p className="text-[var(--primary-green)] font-bold mb-1">{product.price}</p>
+                    <p className="text-gray-600 text-sm mb-3">{product.description}</p>
+                    <button className="mt-auto bg-[var(--primary-green)] text-white px-4 py-2 rounded hover:bg-[var(--light-green)] transition text-sm">
+                      Add to Cart
+                    </button>
+                  </div>
+                ))
+              ) : (
+                <div className="col-span-full text-center text-gray-500 py-20">
+                  No products found in this category.
+                </div>
+              )}
+            </div>
+            <div className="mt-6">
+              <Link
+                to="/products"
+                className="text-[var(--secondary-blue)] hover:underline text-sm"
+              >
+                &larr; Back to Categories
+              </Link>
+            </div>
+          </>
+        )}
+      </section>
     </div>
   );
 };
 
-export default Products;
+export default ProductsPage;

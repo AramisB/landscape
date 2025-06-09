@@ -1,0 +1,373 @@
+const allProducts = [
+    // Flowers
+    {
+        id: 'flower-1',
+        name: 'Rose Bush',
+        price: 'KSh 1,200',
+        image: '/images/products/rose-bush.jpg',
+        categorySlug: 'flowers',
+    },
+    {
+        id: 'flower-2',
+        name: 'Lavender Plant',
+        price: 'KSh 950',
+        image: '/images/products/lavender.jpg',
+        categorySlug: 'flowers',
+    },
+    {
+        id: 'flower-3',
+        name: 'Sunflower Pack',
+        price: 'KSh 700',
+        image: '/images/products/sunflowers.jpg',
+        categorySlug: 'flowers',
+    },
+    {
+        id: 'flower-4',
+        name: 'Marigold Tray',
+        price: 'KSh 850',
+        image: '/images/products/marigold.jpg',
+        categorySlug: 'flowers',
+    },
+    {
+        id: 'flower-5',
+        name: 'Petunia Bunch',
+        price: 'KSh 500',
+        image: '/images/products/petunia.jpg',
+        categorySlug: 'flowers',
+    },
+
+    // Trees
+    {
+        id: 'tree-1',
+        name: 'Palm Tree',
+        price: 'KSh 2,500',
+        image: '/images/products/palm.jpg',
+        categorySlug: 'trees',
+    },
+    {
+        id: 'tree-2',
+        name: 'Citrus Tree',
+        price: 'KSh 3,200',
+        image: '/images/products/citrus.jpg',
+        categorySlug: 'trees',
+    },
+    {
+        id: 'tree-3',
+        name: 'Maple Tree',
+        price: 'KSh 2,800',
+        image: '/images/products/maple.jpg',
+        categorySlug: 'trees',
+    },
+    {
+        id: 'tree-4',
+        name: 'Jacaranda',
+        price: 'KSh 3,100',
+        image: '/images/products/jacaranda.jpg',
+        categorySlug: 'trees',
+    },
+    {
+        id: 'tree-5',
+        name: 'Bamboo Set',
+        price: 'KSh 2,300',
+        image: '/images/products/bamboo.jpg',
+        categorySlug: 'trees',
+    },
+
+    // Grass
+    {
+        id: 'grass-1',
+        name: 'Bermuda Grass Roll',
+        price: 'KSh 900',
+        image: '/images/products/bermuda.jpg',
+        categorySlug: 'grass',
+    },
+    {
+        id: 'grass-2',
+        name: 'Artificial Turf Mat',
+        price: 'KSh 1,500',
+        image: '/images/products/turf.jpg',
+        categorySlug: 'grass',
+    },
+    {
+        id: 'grass-3',
+        name: 'Fescue Seeds',
+        price: 'KSh 500',
+        image: '/images/products/fescue.jpg',
+        categorySlug: 'grass',
+    },
+    {
+        id: 'grass-4',
+        name: 'Zoysia Grass Plug',
+        price: 'KSh 800',
+        image: '/images/products/zoysia.jpg',
+        categorySlug: 'grass',
+    },
+    {
+        id: 'grass-5',
+        name: 'Lawn Starter Pack',
+        price: 'KSh 1,700',
+        image: '/images/products/lawn-starter.jpg',
+        categorySlug: 'grass',
+    },
+
+    // Herbs
+    {
+        id: 'herb-1',
+        name: 'Basil Plant',
+        price: 'KSh 300',
+        image: '/images/products/basil.jpg',
+        categorySlug: 'herbs',
+    },
+    {
+        id: 'herb-2',
+        name: 'Mint Pot',
+        price: 'KSh 350',
+        image: '/images/products/mint.jpg',
+        categorySlug: 'herbs',
+    },
+    {
+        id: 'herb-3',
+        name: 'Rosemary Bundle',
+        price: 'KSh 450',
+        image: '/images/products/rosemary.jpg',
+        categorySlug: 'herbs',
+    },
+    {
+        id: 'herb-4',
+        name: 'Thyme Tray',
+        price: 'KSh 400',
+        image: '/images/products/thyme.jpg',
+        categorySlug: 'herbs',
+    },
+    {
+        id: 'herb-5',
+        name: 'Parsley Starter',
+        price: 'KSh 380',
+        image: '/images/products/parsley.jpg',
+        categorySlug: 'herbs',
+    },
+
+    // Succulents
+    {
+        id: 'succulent-1',
+        name: 'Aloe Vera Pot',
+        price: 'KSh 750',
+        image: '/images/products/aloe-vera.jpg',
+        categorySlug: 'succulents',
+    },
+    {
+        id: 'succulent-2',
+        name: 'Echeveria Set',
+        price: 'KSh 950',
+        image: '/images/products/echeveria.jpg',
+        categorySlug: 'succulents',
+    },
+    {
+        id: 'succulent-3',
+        name: 'Jade Plant',
+        price: 'KSh 680',
+        image: '/images/products/jade.jpg',
+        categorySlug: 'succulents',
+    },
+    {
+        id: 'succulent-4',
+        name: 'Haworthia Pot',
+        price: 'KSh 600',
+        image: '/images/products/haworthia.jpg',
+        categorySlug: 'succulents',
+    },
+    {
+        id: 'succulent-5',
+        name: 'Cactus Mini Pack',
+        price: 'KSh 850',
+        image: '/images/products/cactus-pack.jpg',
+        categorySlug: 'succulents',
+    },
+
+    // Pebbles & Gravel
+    {
+        id: 'pebble-1',
+        name: 'River Pebbles',
+        price: 'KSh 1,500',
+        image: '/images/products/pebbles-river.jpg',
+        categorySlug: 'pebbles-gravel',
+    },
+    {
+        id: 'pebble-2',
+        name: 'White Marble Chips',
+        price: 'KSh 1,800',
+        image: '/images/products/pebbles-marble.jpg',
+        categorySlug: 'pebbles-gravel',
+    },
+    {
+        id: 'pebble-3',
+        name: 'Crushed Granite',
+        price: 'KSh 1,200',
+        image: '/images/products/pebbles-granite.jpg',
+        categorySlug: 'pebbles-gravel',
+    },
+    {
+        id: 'pebble-4',
+        name: 'Lava Rock Pebbles',
+        price: 'KSh 1,700',
+        image: '/images/products/pebbles-lava.jpg',
+        categorySlug: 'pebbles-gravel',
+    },
+    {
+        id: 'pebble-5',
+        name: 'Mixed Decorative Gravel',
+        price: 'KSh 1,400',
+        image: '/images/products/pebbles-mixed.jpg',
+        categorySlug: 'pebbles-gravel',
+    },
+
+    // Retaining Walls
+    {
+        id: 'wall-1',
+        name: 'Concrete Retaining Blocks',
+        price: 'KSh 3,000',
+        image: '/images/products/wall-concrete.jpg',
+        categorySlug: 'retaining-walls',
+    },
+    {
+        id: 'wall-2',
+        name: 'Natural Stone Slabs',
+        price: 'KSh 4,500',
+        image: '/images/products/wall-stone.jpg',
+        categorySlug: 'retaining-walls',
+    },
+    {
+        id: 'wall-3',
+        name: 'Interlocking Wall Bricks',
+        price: 'KSh 2,800',
+        image: '/images/products/wall-interlock.jpg',
+        categorySlug: 'retaining-walls',
+    },
+    {
+        id: 'wall-4',
+        name: 'Gabion Wall Cages',
+        price: 'KSh 3,200',
+        image: '/images/products/wall-gabion.jpg',
+        categorySlug: 'retaining-walls',
+    },
+    {
+        id: 'wall-5',
+        name: 'Wooden Timber Planks',
+        price: 'KSh 2,000',
+        image: '/images/products/wall-timber.jpg',
+        categorySlug: 'retaining-walls',
+    },
+
+    // Garden Tools
+    {
+        id: 'tool-1',
+        name: 'Stainless Steel Trowel',
+        price: 'KSh 550',
+        image: '/images/products/tool-trowel.jpg',
+        categorySlug: 'garden-tools',
+    },
+    {
+        id: 'tool-2',
+        name: 'Pruning Shears',
+        price: 'KSh 900',
+        image: '/images/products/tool-pruner.jpg',
+        categorySlug: 'garden-tools',
+    },
+    {
+        id: 'tool-3',
+        name: 'Garden Fork',
+        price: 'KSh 1,200',
+        image: '/images/products/tool-fork.jpg',
+        categorySlug: 'garden-tools',
+    },
+    {
+        id: 'tool-4',
+        name: 'Hand Rake',
+        price: 'KSh 800',
+        image: '/images/products/tool-handrake.jpg',
+        categorySlug: 'garden-tools',
+    },
+    {
+        id: 'tool-5',
+        name: 'Watering Can (10L)',
+        price: 'KSh 1,500',
+        image: '/images/products/tool-wateringcan.jpg',
+        categorySlug: 'garden-tools',
+    },
+
+    // Watering Equipment
+    {
+        id: 'watering-1',
+        name: 'Garden Hose (15m)',
+        price: 'KSh 2,000',
+        image: '/images/products/watering-hose.jpg',
+        categorySlug: 'watering-tools',
+    },
+    {
+        id: 'watering-2',
+        name: 'Drip Irrigation Kit',
+        price: 'KSh 3,800',
+        image: '/images/products/watering-drip.jpg',
+        categorySlug: 'watering-tools',
+    },
+    {
+        id: 'watering-3',
+        name: 'Sprinkler Head',
+        price: 'KSh 950',
+        image: '/images/products/watering-sprinkler.jpg',
+        categorySlug: 'watering-tools',
+    },
+    {
+        id: 'watering-4',
+        name: 'Tap Timer',
+        price: 'KSh 2,400',
+        image: '/images/products/watering-timer.jpg',
+        categorySlug: 'watering-tools',
+    },
+    {
+        id: 'watering-5',
+        name: 'Soaker Hose',
+        price: 'KSh 1,900',
+        image: '/images/products/watering-soaker.jpg',
+        categorySlug: 'watering-tools',
+    },
+
+    // Power Tools
+    {
+        id: 'power-1',
+        name: 'Electric Hedge Trimmer',
+        price: 'KSh 5,500',
+        image: '/images/products/power-hedgetrimmer.jpg',
+        categorySlug: 'power-tools',
+    },
+    {
+        id: 'power-2',
+        name: 'Cordless Leaf Blower',
+        price: 'KSh 6,800',
+        image: '/images/products/power-leafblower.jpg',
+        categorySlug: 'power-tools',
+    },
+    {
+        id: 'power-3',
+        name: 'Electric Lawn Mower',
+        price: 'KSh 12,000',
+        image: '/images/products/power-mower.jpg',
+        categorySlug: 'power-tools',
+    },
+    {
+        id: 'power-4',
+        name: 'Chainsaw (Electric)',
+        price: 'KSh 10,500',
+        image: '/images/products/power-chainsaw.jpg',
+        categorySlug: 'power-tools',
+    },
+    {
+        id: 'power-5',
+        name: 'Garden Shredder',
+        price: 'KSh 8,900',
+        image: '/images/products/power-shredder.jpg',
+        categorySlug: 'power-tools',
+    },
+];
+
+export default allProducts;

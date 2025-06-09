@@ -10,7 +10,6 @@ import ProjectDetail from './pages/ProjectDetail';
 import Blog from './pages/Blog';
 import GetAquote from './pages/GetAquote';
 import ServiceDetails from './pages/ServiceDetails';
-import AboutUsDetails from './pages/AboutUsDetails';
 import AboutUsSection from './pages/AboutUsSection';
 import './styles/index.css';
 
@@ -25,10 +24,11 @@ export default function App() {
           <Route path="services" element={<Services />} />
           <Route path="services/:title" element={<ServiceDetails />} />
           <Route path="about-us" element={<AboutUs />} />
-          <Route path="/about-us/:id" element={<AboutUsSection />} />
+          <Route path="about-us/:id" element={<AboutUsSection />} />
           <Route path="contact" element={<Contact />} />
           <Route path="blog" element={<Blog />} />
           <Route path="products" element={<Products />} />
+          <Route path="products/:category" element={<Products />} />
           <Route path="get-a-quote" element={<GetAquote />} />
         </Route>
       </Routes>

@@ -1,10 +1,7 @@
-import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import '../styles/ServiceDetails.css';
 import {
-    FaChalkboardTeacher,
     FaDraftingCompass,
-    FaHardHat,
     FaLeaf,
     FaProjectDiagram,
     FaTasks,
@@ -12,9 +9,7 @@ import {
     FaSwimmingPool,
     FaTint,
     FaRecycle,
-    FaDrawPolygon,
     FaTools,
-    FaSeedling,
     FaComments,
     FaCubes,
     FaBoxes
