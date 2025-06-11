@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { useNavigate } from 'react-router-dom';
+import StripeCardForm from '../components/StripeCardForm';
+import PayPalButton from '../components/PayPalButton';
+import MpesaPayButton from '../components/MpesaPayButton';
 
 const paymentMethods = [
     { id: 'mastercard', label: 'Mastercard', icon: '/icons/mastercard.png' },
@@ -52,42 +55,7 @@ const CheckoutPage = () => {
             case 'mastercard':
             case 'visa':
                 return (
-                    <div className="space-y-4 mt-4">
-                        <input
-                            type="text"
-                            placeholder="Cardholder Name"
-                            className="w-full border p-2 rounded"
-                            value={billing.name}
-                            onChange={e => setBilling({ ...billing, name: e.target.value })}
-                            required
-                        />
-                        <input
-                            type="text"
-                            placeholder="Card Number"
-                            className="w-full border p-2 rounded"
-                            value={billing.cardNumber}
-                            onChange={e => setBilling({ ...billing, cardNumber: e.target.value })}
-                            required
-                        />
-                        <div className="flex gap-4">
-                            <input
-                                type="text"
-                                placeholder="MM/YY"
-                                className="w-1/2 border p-2 rounded"
-                                value={billing.expiry}
-                                onChange={e => setBilling({ ...billing, expiry: e.target.value })}
-                                required
-                            />
-                            <input
-                                type="text"
-                                placeholder="CVV"
-                                className="w-1/2 border p-2 rounded"
-                                value={billing.cvv}
-                                onChange={e => setBilling({ ...billing, cvv: e.target.value })}
-                                required
-                            />
-                        </div>
-                    </div>
+                    <StripeCardForm billing={billing} setBilling={setBilling} totalAmount={total} />
                 );
             case 'paypal':
                 return (
@@ -100,6 +68,7 @@ const CheckoutPage = () => {
                             onChange={e => setBilling({ ...billing, email: e.target.value })}
                             required
                         />
+                        <PayPalButton totalAmount={total} email={billing.email} />
                     </div>
                 );
             case 'mpesa':
@@ -113,14 +82,7 @@ const CheckoutPage = () => {
                             onChange={e => setBilling({ ...billing, phone: e.target.value })}
                             required
                         />
-                        <input
-                            type="text"
-                            placeholder="M-Pesa Transaction Code"
-                            className="w-full border p-2 rounded"
-                            value={billing.mpesaCode}
-                            onChange={e => setBilling({ ...billing, mpesaCode: e.target.value })}
-                            required
-                        />
+                        <MpesaPayButton totalAmount={total} phone={billing.phone} />
                     </div>
                 );
             default:
@@ -129,70 +91,70 @@ const CheckoutPage = () => {
     };
 
     return (
-        <div className="max-w-2xl mx-auto py-10 px-4">
-            <h1 className="text-2xl font-bold mb-6">Checkout</h1>
-            <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6 mb-8">
-                <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
-                <ul className="mb-4">
-                    {cart.map((item) => (
-                        <li key={item.id} className="flex justify-between mb-2">
-                            <span>
-                                {item.name} x {item.quantity || 1}
-                            </span>
-                            <span>
-                                KES {(
-                                    parseInt(item.price.replace(/[^0-9]/g, ''), 10) *
-                                    (item.quantity || 1)
-                                ).toLocaleString()}
-                            </span>
-                        </li>
-                    ))}
-                </ul>
-                <div className="flex justify-between mb-2">
-                    <span>Subtotal</span>
-                    <span>KES {subtotal.toLocaleString()}</span>
-                </div>
-                <div className="flex justify-between mb-2">
-                    <span>Tax (16%)</span>
-                    <span>KES {tax.toLocaleString()}</span>
-                </div>
-                <div className="flex justify-between font-bold text-lg border-t pt-4 mt-4">
-                    <span>Total</span>
-                    <span>KES {total.toLocaleString()}</span>
+        <div className="max-w-4xl mx-auto py-10 px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Order Summary - Left */}
+            <div>
+                <h1 className="text-2xl font-bold mb-6">Checkout</h1>
+                <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6 mb-8">
+                    <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
+                    <ul className="mb-4">
+                        {cart.map((item) => (
+                            <li key={item.id} className="flex justify-between mb-2">
+                                <span>
+                                    {item.name} x {item.quantity || 1}
+                                </span>
+                                <span>
+                                    KES {(
+                                        parseInt(item.price.replace(/[^0-9]/g, ''), 10) *
+                                        (item.quantity || 1)
+                                    ).toLocaleString()}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="flex justify-between mb-2">
+                        <span>Subtotal</span>
+                        <span>KES {subtotal.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between mb-2">
+                        <span>Tax (16%)</span>
+                        <span>KES {tax.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between font-bold text-lg border-t pt-4 mt-4">
+                        <span>Total</span>
+                        <span>KES {total.toLocaleString()}</span>
+                    </div>
                 </div>
             </div>
-            <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6 mb-8">
-                <h2 className="text-lg font-semibold mb-4">Payment Method</h2>
-                <div className="flex flex-wrap gap-4 mb-4">
-                    {paymentMethods.map((method) => (
-                        <label
-                            key={method.id}
-                            className={`flex items-center gap-2 border rounded px-4 py-2 cursor-pointer ${selectedMethod === method.id
-                                ? 'border-[var(--primary-green)] ring-2 ring-[var(--primary-green)]'
-                                : 'border-gray-300'
-                                }`}
-                        >
-                            <input
-                                type="radio"
-                                name="payment"
-                                value={method.id}
-                                checked={selectedMethod === method.id}
-                                onChange={() => setSelectedMethod(method.id)}
-                                className="accent-[var(--primary-green)]"
-                            />
-                            <img src={method.icon} alt={method.label} className="h-6 w-10 object-contain" />
-                            <span>{method.label}</span>
-                        </label>
-                    ))}
+            {/* Payment Method - Right */}
+            <div>
+                <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6 mb-8">
+                    <h2 className="text-lg font-semibold mb-4">Payment Method</h2>
+                    <div className="flex flex-wrap gap-4 mb-4">
+                        {paymentMethods.map((method) => (
+                            <label
+                                key={method.id}
+                                className={`flex items-center gap-2 border rounded px-4 py-2 cursor-pointer ${selectedMethod === method.id
+                                    ? 'border-[var(--primary-green)] ring-2 ring-[var(--primary-green)]'
+                                    : 'border-gray-300'
+                                    }`}
+                            >
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value={method.id}
+                                    checked={selectedMethod === method.id}
+                                    onChange={() => setSelectedMethod(method.id)}
+                                    className="accent-[var(--primary-green)]"
+                                />
+                                <img src={method.icon} alt={method.label} className="h-6 w-10 object-contain" />
+                                <span>{method.label}</span>
+                            </label>
+                        ))}
+                    </div>
+                    {/* Billing details for selected method */}
+                    {renderBillingForm()}
                 </div>
-                {/* Billing details for selected method */}
-                {renderBillingForm()}
-                <button
-                    className="w-full mt-6 bg-[var(--primary-green)] text-white py-3 rounded text-lg font-semibold hover:bg-[var(--light-green)] transition"
-                    onClick={() => alert(`Payment with ${selectedMethod} not implemented`)}
-                >
-                    Pay Now
-                </button>
             </div>
         </div>
     );

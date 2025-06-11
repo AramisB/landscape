@@ -14,7 +14,11 @@ import ServiceDetails from './pages/ServiceDetails';
 import AboutUsSection from './pages/AboutUsSection';
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import './styles/index.css';
+
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
 export default function App() {
   return (
@@ -34,7 +38,14 @@ export default function App() {
             <Route path="products" element={<Products />} />
             <Route path="products/:category" element={<Products />} />
             <Route path="cart" element={<CartPage />} />
-            <Route path="checkout" element={<CheckoutPage />} />
+            <Route
+              path="checkout"
+              element={
+                <Elements stripe={stripePromise}>
+                  <CheckoutPage />
+                </Elements>
+              }
+            />
             <Route path="get-a-quote" element={<GetAquote />} />
           </Route>
         </Routes>
