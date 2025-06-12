@@ -29,12 +29,17 @@ const ProductsPage = () => {
 
   // Always search by product name, filter by selected categories and route
   const filteredProducts = allProducts.filter((product) => {
+    // If user has selected categories, ignore the route category and use only sidebar filters
+    if (selectedCategories.length > 0) {
+      return (
+        selectedCategories.includes(product.categorySlug) &&
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    // If no sidebar filter, use the route category (if any)
     const matchesRoute = onCategoryPage ? product.categorySlug === category : true;
-    const matchesSidebar =
-      selectedCategories.length === 0 ||
-      selectedCategories.includes(product.categorySlug);
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesRoute && matchesSidebar && matchesSearch;
+    return matchesRoute && matchesSearch;
   });
 
   return (
