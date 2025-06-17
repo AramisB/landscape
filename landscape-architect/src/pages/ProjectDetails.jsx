@@ -190,12 +190,13 @@ const projects = [
   // Water Feature and Pools Projects
   {
     id: 'luxury-poolside-garden',
-    category: ['Residential', 'Water Feature and Pools'], // Multiple categories
+    category: 'Water Feature and Pools',
     title: 'Luxury Poolside Garden Design',
     location: 'Joska, Nairobi',
     client: 'Private Residence',
     scope: 'Landscape Design',
-    overview: `This modern residential landscape blends tropical elegance with functional outdoor living. Featuring a sleek freeform swimming pool, palm-lined lounging area, and a stylish cabana, the design offers a resort-like feel ideal for family relaxation and entertainment. Raised stone planters with flowering shrubs, a paved driveway, and a visually integrated water tower complete the layout. The use of drought-tolerant tropical plants ensures low maintenance and year-round appeal.`,
+    overview: `This residential landscape design features a stunning freeform swimming pool as the centerpiece, blending tropical elegance with modern outdoor living. Surrounded by lush palms, flowering shrubs, and stone-paved lounging areas, the pool creates a serene resort-style atmosphere perfect for relaxation and entertainment.
+A poolside cabana and gym, strategically placed garden beds, and ambient lighting enhance the space’s luxury appeal and functionality. Designed for high-end living in Nairobi, the layout connects all zones—driveway, lounge, and upper balcony—around the pool, making it the heart of the outdoor experience.`,
     images: [
       '/images/projects/luxury-poolside-garden/1.jpg',
       '/images/projects/luxury-poolside-garden/2.jpg',
@@ -206,12 +207,13 @@ const projects = [
   },
   {
     id: 'luxury-garden-koi-pond',
-    category: ['Residential', 'Water Feature and Pools'], // Multiple categories
+    category: 'Water Feature and Pools',
     title: 'Luxury Garden with Pool & Koi Pond',
     location: 'Malindi',
-    client: 'Private',
+    client: 'Private Developer',
     scope: 'Landscape Design',
-    overview: `This luxury residential landscape project showcases a sophisticated transformation of a private home into a modern, resort-style sanctuary. The focal point is a contemporary swimming pool seamlessly connected to a koi pond, with elegant stepping stones crossing over the water, blending visual appeal with interactive design. Surrounding the pool are distinct outdoor zones including a pergola lounge with BBQ facilities, a children’s play area, and lush tropical gardens featuring palm trees, flowering plants, and ornamental grasses. Stepping stone walkways and raised planters guide movement through the space, while strategically placed landscape lighting ensures ambiance and safety at night. This design perfectly balances outdoor entertainment, family-friendly spaces, and tranquil garden elements, creating a functional and visually stunning landscape that enhances the property’s value and lifestyle.`,
+    overview: `This project features a striking modern swimming pool seamlessly integrated with a tranquil koi pond water feature, creating a centerpiece that blends luxury with natural beauty. The pool’s clean geometric lines and spacious sun deck provide a sleek, contemporary look ideal for relaxation and entertainment.
+Adjacent to the pool, the koi pond introduces a calming, organic element, complete with aquatic plants and vibrant fish. A standout feature is the stepping stone walkway that crosses the pond, offering a functional and artistic bridge between garden zones. Ambient LED lighting and advanced water filtration ensure year-round clarity and visual appeal. Together, the pool and pond form a serene, resort-style outdoor space that elevates both lifestyle and landscape.`,
     images: [
       '/images/projects/luxury-garden-koi-pond/1.jpg',
       '/images/projects/luxury-garden-koi-pond/2.jpg',
