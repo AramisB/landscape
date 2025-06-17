@@ -1,146 +1,92 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import ProjectCardSlider from '../components/projects/ProjectCardSlider';
-import '../styles/Projects.css';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import projects from './ProjectDetails';
 
+// List of categories
 const categories = [
-  { id: 'all', name: 'All Projects', icon: '🌿' },
-  { id: 'residential', name: 'Residential', icon: '🏠' },
-  { id: 'commercial', name: 'Commercial', icon: '🏢' },
-  { id: 'public', name: 'Public Spaces', icon: '🌳' }
+  { id: 'residential', name: 'Residential', icon: '🏡' },
+  { id: 'installation', name: 'Landscape Installation', icon: '🌱' },
+  { id: 'hospitality', name: 'Hospitality and Recreational Landscape', icon: '🏨' },
+  { id: 'maintenance', name: 'Landscape Maintenance', icon: '🛠️' },
+  { id: 'institutional', name: 'Institutional', icon: '🏫' },
+  { id: 'water', name: 'Water Feature and Pools', icon: '💧' },
+  { id: 'irrigation', name: 'Irrigation Installation', icon: '🚿' },
 ];
 
-const sampleProjects = [
-  {
-    id: '1',
-    title: 'Modern Residential Garden',
-    category: 'residential',
-    images: [
-      '/projects/residential/modern-garden.jpg',
-      '/projects/residential/garden-detail-1.jpg',
-      '/projects/residential/garden-detail-2.jpg',
-      '/projects/residential/garden-detail-3.jpg'
-    ],
-    description: 'A contemporary garden design for urban living, featuring sustainable materials and native plants.',
-    features: ['Sustainable Design', 'Native Plants', 'Water Features', 'Outdoor Living Space']
-  },
-  {
-    id: '2',
-    title: 'City Park Renovation',
-    category: 'public',
-    images: [
-      '/projects/public/city-park.jpg',
-      '/projects/public/park-playground.jpg',
-      '/projects/public/park-walkway.jpg',
-      '/projects/public/park-garden.jpg'
-    ],
-    description: 'Revitalization of a public park space with modern amenities and sustainable landscaping.',
-    features: ['Public Amenities', 'Playground', 'Walking Trails', 'Community Garden']
-  },
-  {
-    id: '3',
-    title: 'Shopping Mall Landscape',
-    category: 'commercial',
-    images: [
-      '/projects/commercial/mall-entrance.jpg',
-      '/projects/commercial/mall-courtyard.jpg',
-      '/projects/commercial/mall-garden.jpg',
-      '/projects/commercial/mall-water.jpg'
-    ],
-    description: 'Blending retail with social spaces, featuring event areas, play zones, and garden retreats.',
-    features: ['Event Spaces', 'Play Zones', 'Garden Retreats', 'Water Features']
-  }
-];
+const ProjectsPage = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
-export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState('all');
-
-  const filteredProjects = selectedCategory === 'all'
-    ? sampleProjects
-    : sampleProjects.filter(project => project.category === selectedCategory);
+  // Filter projects for selected category
+  const filteredProjects =
+    selectedCategory === 'All'
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   return (
-    <div className="projectsContainer">
-      <div className="heroSection">
-        <div className="heroContent">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="heroTitle gradient-text"
+    <div className="max-w-6xl mx-auto px-4 py-10">
+      <h1 className="text-2xl font-bold mb-8 text-center">Featured Projects</h1>
+
+      {/* Category Buttons */}
+      <div className="flex flex-wrap gap-3 justify-center mb-8">
+        <button
+          className={`px-4 py-2 rounded ${selectedCategory === 'All' ? 'bg-[var(--primary-green)] text-white' : 'bg-gray-200'}`}
+          onClick={() => setSelectedCategory('All')}
+        >
+          All
+        </button>
+        {categories.map((cat) => (
+          <button
+            key={cat.id}
+            onClick={() => setSelectedCategory(cat.name)} // Use the category "name" for filtering
+            className={`px-4 py-2 rounded flex items-center gap-2 ${selectedCategory === cat.name ? 'bg-[var(--primary-green)] text-white' : 'bg-gray-200'}`}
           >
-            Our Projects
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="heroDescription"
-          >
-            Explore our portfolio of innovative landscape architecture projects
-          </motion.p>
-        </div>
-        <div className="heroOverlay nature-gradient" />
+            <span>{cat.icon}</span>
+            <span>{cat.name}</span>
+          </button>
+        ))}
       </div>
 
-      <div className="projectsSection">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          {/* Category Filter */}
-          <motion.div 
-            className="filterSection"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            {categories.map((category) => (
-              <motion.button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`filterButton ${
-                  selectedCategory === category.id ? 'filterButtonActive' : ''
-                }`}
-              >
-                <span className="filterIcon">{category.icon}</span>
-                {category.name}
-              </motion.button>
-            ))}
-          </motion.div>
-
-          {/* Projects Grid */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="projectsGrid"
-          >
-            {filteredProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <ProjectCardSlider project={project} />
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* No Projects Message */}
-          {filteredProjects.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="noProjectsMessage"
-            >
-              <h3>No projects found in this category</h3>
-              <p>Please select a different category or check back later for new projects.</p>
-            </motion.div>
-          )}
-        </div>
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredProjects.length > 0 ? (
+          filteredProjects.map((project) => (
+            <div key={project.id} className="bg-white rounded shadow-sm p-0 flex flex-col overflow-hidden">
+              {project.images && project.images.length > 0 && (
+                <img
+                  src={project.images[0]} // Only show the first image
+                  alt={project.title}
+                  className="h-48 w-full object-cover"
+                />
+              )}
+              <div className="p-5">
+                <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                <p className="text-sm text-gray-600 mb-1">
+                  <strong>Location:</strong> {project.location}
+                </p>
+                <p className="text-sm text-gray-600 mb-1">
+                  <strong>Scope:</strong> {project.scope}
+                </p>
+                <p className="text-gray-700 mt-2 mb-4 line-clamp-3">
+                  {project.overview.slice(0, 120)}...
+                </p>
+                <Link
+                  to={`/projects/section/${project.id}`}
+                  className="mt-auto inline-block bg-[var(--primary-green)] text-white px-4 py-2 rounded hover:bg-[var(--light-green)] text-sm"
+                >
+                  Read More
+                </Link>
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="col-span-full text-center text-gray-500 py-20">
+            No projects found in this category. <br />
+            Please select a different category or check back later for new projects.
+          </div>
+        )}
       </div>
     </div>
   );
-}
+};
+
+export default ProjectsPage;

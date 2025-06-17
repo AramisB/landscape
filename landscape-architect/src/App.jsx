@@ -4,10 +4,11 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Projects from './pages/Projects';
+import ProjectsSection from './pages/ProjectsSection';
 import Services from './pages/Services';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
-import ProjectDetail from './pages/ProjectDetail';
+import ProjectDetail from './pages/ProjectDetails';
 import Blog from './pages/Blog';
 import GetAquote from './pages/GetAquote';
 import ServiceDetails from './pages/ServiceDetails';
@@ -29,6 +30,7 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="projects" element={<Projects />} />
             <Route path="projects/:id" element={<ProjectDetail />} />
+            <Route path="projects/section/:id" element={<ProjectsSection />} />
             <Route path="services" element={<Services />} />
             <Route path="services/:title" element={<ServiceDetails />} />
             <Route path="about-us" element={<AboutUs />} />
