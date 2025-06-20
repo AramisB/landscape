@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import categories from './Categories';
-import allProducts from './AllProducts';
+import categories from '../components/Categories';
+import allProducts from '../components/AllProducts';
 
 const ProductsPage = () => {
   const { category } = useParams();
@@ -51,7 +51,7 @@ const ProductsPage = () => {
           placeholder="Search products..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full max-w-md p-2 rounded border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)]"
+          className="w-full max-w-md p-2 border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-green-600 bg-white rounded-none"
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -66,7 +66,7 @@ const ProductsPage = () => {
                     type="checkbox"
                     checked={selectedCategories.includes(cat.slug)}
                     onChange={() => toggleCategory(cat.slug)}
-                    className="accent-[var(--primary-green)]"
+                    className="accent-green-600"
                   />
                   <span className="text-sm">{cat.name}</span>
                 </label>
@@ -82,7 +82,7 @@ const ProductsPage = () => {
         <section className="md:col-span-3">
           {!onCategoryPage && !isSearching ? (
             <>
-              <h1 className="text-xl font-bold text-[var(--secondary-blue)] mb-6">
+              <h1 className="text-xl font-bold text-blue-700 mb-6">
                 Product Categories
               </h1>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -90,17 +90,17 @@ const ProductsPage = () => {
                   <Link
                     to={`/products/${cat.slug}`}
                     key={cat.slug}
-                    className="bg-white rounded-lg shadow hover:shadow-lg transition block"
+                    className="bg-white shadow hover:shadow-lg transition block border border-gray-200 rounded-none"
                   >
                     <img
                       src={cat.image}
                       alt={cat.name}
-                      className="h-40 w-full object-cover rounded-t"
+                      className="h-40 w-full object-cover rounded-none border-b border-gray-200"
                     />
                     <div className="p-4">
                       <h2 className="text-base font-semibold mb-1">{cat.name}</h2>
                       <p className="text-gray-600 text-sm mb-2">{cat.description}</p>
-                      <span className="text-[var(--primary-green)] text-xs font-medium">
+                      <span className="text-green-600 text-xs font-medium">
                         {allProducts.filter((p) => p.categorySlug === cat.slug).length} product
                         {allProducts.filter((p) => p.categorySlug === cat.slug).length !== 1
                           ? 's'
@@ -118,7 +118,7 @@ const ProductsPage = () => {
             </>
           ) : (
             <>
-              <h1 className="text-xl font-bold text-[var(--secondary-blue)] mb-6 capitalize">
+              <h1 className="text-xl font-bold text-blue-700 mb-6 capitalize">
                 {onCategoryPage && !isSearching
                   ? `${category.replace(/-/g, ' ')} Products`
                   : 'Products'}
@@ -130,27 +130,27 @@ const ProductsPage = () => {
                     return (
                       <div
                         key={product.id}
-                        className="bg-white rounded-lg shadow-lg border border-gray-200 transition p-4 flex flex-col"
+                        className="bg-white shadow-lg border border-gray-200 transition p-4 flex flex-col rounded-none hover:shadow-xl"
                       >
                         <img
                           src={product.image}
                           alt={product.name}
-                          className="h-40 w-full object-cover rounded mb-3"
+                          className="h-40 w-full object-cover mb-3 rounded-none border-b border-gray-200"
                         />
                         <h2 className="text-base font-semibold mb-1">{product.name}</h2>
                         <p className="text-gray-600 text-sm mb-3">{product.description}</p>
-                        <div className="flex items-center justify-between mt-auto border border-gray-100 rounded px-3 py-2 bg-gray-50 shadow-sm">
-                          <span className="text-[var(--primary-green)] font-bold text-sm">{product.price}</span>
+                        <div className="flex items-center justify-between mt-auto border border-gray-100 px-3 py-2 bg-gray-50 shadow-sm rounded-none">
+                          <span className="text-green-600 font-bold text-sm">{product.price}</span>
                           {inCart ? (
                             <button
-                              className="bg-[var(--primary-green)] text-white px-4 py-2 rounded hover:bg-[var(--light-green)] transition text-sm"
+                              className="bg-green-600 text-white px-4 py-2 hover:bg-green-500 transition text-sm rounded-none"
                               onClick={() => navigate('/cart')}
                             >
                               View Cart
                             </button>
                           ) : (
                             <button
-                              className="bg-[var(--primary-green)] text-white px-4 py-2 rounded hover:bg-[var(--light-green)] transition text-sm"
+                              className="bg-green-600 text-white px-4 py-2 hover:bg-green-500 transition text-sm rounded-none"
                               onClick={() => addToCart(product)}
                             >
                               Add to Cart
@@ -170,7 +170,7 @@ const ProductsPage = () => {
                 <div className="mt-6">
                   <Link
                     to="/products"
-                    className="text-[var(--secondary-blue)] hover:underline text-sm"
+                    className="text-blue-700 hover:underline text-sm"
                   >
                     &larr; Back to Categories
                   </Link>

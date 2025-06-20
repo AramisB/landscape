@@ -3,8 +3,7 @@ import { FaFacebook, FaTwitter, FaYoutube, FaInstagram, FaLinkedin, FaWhatsapp, 
 import { Link, Outlet } from 'react-router-dom';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
-import AboutUsDetails from '../pages/AboutUsDetails';
-import '../styles/Footer.css';
+import AboutUsDetails from './AboutUsDetails';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -287,70 +286,65 @@ export default function Layout() {
         <Outlet />
       </main>
 
-      <footer className="footer">
-        <div className="footer-container">
-          <div className="footer-grid lg:grid-cols-4">
-
+      <footer className="bg-[var(--primary-green)] text-white mt-12">
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* About Us + Socials */}
-            <div className="footer-column">
-              <h4 className="footer-heading">About Us</h4>
-              <p className="footer-paragraph">
-                YouLandscape is Kenya’s premier landscape architecture firm, creating sustainable, breathtaking outdoor spaces tailored to your vision.
+            <div>
+              <h4 className="text-lg font-bold mb-3">About Us</h4>
+              <p className="mb-4 text-sm leading-relaxed">
+                YouLandscape is Kenya's premier landscape architecture firm, creating sustainable, breathtaking outdoor spaces tailored to your vision.
               </p>
-              <div className="footer-socials">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
-                <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+              <div className="flex gap-3 mt-2">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaFacebook /></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaTwitter /></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaInstagram /></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaLinkedin /></a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaYoutube /></a>
+                <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaWhatsapp /></a>
               </div>
             </div>
-
             {/* Quick Links */}
-            <div className="footer-column">
-              <h4 className="footer-heading">Quick Links</h4>
-              <ul className="footer-list">
-                <li><Link to="/services" className="footer-link">Services</Link></li>
-                <li><Link to="/projects" className="footer-link">Projects</Link></li>
-                <li><Link to="/about-us" className="footer-link">About Us</Link></li>
-                <li><Link to="/contact" className="footer-link">Contact</Link></li>
-                <li><Link to="/privacy-policy" className="footer-link">Privacy Policy</Link></li>
+            <div>
+              <h4 className="text-lg font-bold mb-3">Quick Links</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link to="/services" className="hover:underline hover:text-[var(--orange)] transition">Services</Link></li>
+                <li><Link to="/projects" className="hover:underline hover:text-[var(--orange)] transition">Projects</Link></li>
+                <li><Link to="/about-us" className="hover:underline hover:text-[var(--orange)] transition">About Us</Link></li>
+                <li><Link to="/contact" className="hover:underline hover:text-[var(--orange)] transition">Contact</Link></li>
+                <li><Link to="/privacy-policy" className="hover:underline hover:text-[var(--orange)] transition">Privacy Policy</Link></li>
               </ul>
             </div>
-
             {/* Contact Info */}
-            <div className="footer-column">
-              <h4 className="footer-heading">Contact</h4>
-              <ul className="footer-list">
-                <li>Email: <a href="mailto:info@youlandscape.co.ke" className="footer-link">info@youlandscape.co.ke</a></li>
-                <li>Phone: <a href="tel:+254712345678" className="footer-link">+254 712 345 678</a></li>
+            <div>
+              <h4 className="text-lg font-bold mb-3">Contact</h4>
+              <ul className="space-y-2 text-sm">
+                <li>Email: <a href="mailto:info@youlandscape.co.ke" className="hover:underline hover:text-[var(--orange)] transition">info@youlandscape.co.ke</a></li>
+                <li>Phone: <a href="tel:+254712345678" className="hover:underline hover:text-[var(--orange)] transition">+254 712 345 678</a></li>
                 <li>Location: Nairobi, Kenya</li>
                 <li>Open: Mon - Sat, 8:00am - 6:00pm</li>
               </ul>
             </div>
-
             {/* Newsletter */}
-            <div className="footer-column">
-              <h4 className="footer-heading">Newsletter</h4>
-              <p className="footer-paragraph">Get the latest updates and landscaping tips straight to your inbox.</p>
-              <form className="footer-form">
-                <input type="email" placeholder="Your email address" className="footer-input" />
-                <button type="submit" className="footer-button">Subscribe</button>
+            <div>
+              <h4 className="text-lg font-bold mb-3">Newsletter</h4>
+              <p className="mb-3 text-sm">Get the latest updates and landscaping tips straight to your inbox.</p>
+              <form className="flex flex-col sm:flex-row gap-2">
+                <input type="email" placeholder="Your email address" className="px-3 py-2 rounded-none text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--orange)] w-full sm:w-auto" />
+                <button type="submit" className="bg-[var(--orange)] text-white px-4 py-2 rounded-none font-semibold hover:bg-[var(--light-green)] transition">Subscribe</button>
               </form>
             </div>
           </div>
-
-          <div className="footer-bottom flex flex-col md:flex-row justify-between items-center gap-2 mt-6 border-t border-white/30 pt-4">
-            <p className="text-white text-sm md:text-sm">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-2 mt-10 border-t border-white/30 pt-4">
+            <p className="text-white text-xs md:text-sm">
               © {new Date().getFullYear()} YouLandscape. All rights reserved.
             </p>
-            <div className="flex gap-4 text-white text-sm md:text-sm">
-              <Link to="/terms-of-use" className="hover:underline">Terms of use</Link>
+            <div className="flex gap-4 text-white text-xs md:text-sm">
+              <Link to="/terms-of-use" className="hover:underline hover:text-[var(--orange)] transition">Terms of use</Link>
               <span className="hidden md:inline">|</span>
-              <Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link>
+              <Link to="/privacy-policy" className="hover:underline hover:text-[var(--orange)] transition">Privacy Policy</Link>
               <span className="hidden md:inline">|</span>
-              <Link to="/cookie-policy" className="hover:underline">Cookie Policy</Link>
+              <Link to="/cookie-policy" className="hover:underline hover:text-[var(--orange)] transition">Cookie Policy</Link>
             </div>
           </div>
         </div>

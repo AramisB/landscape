@@ -1,5 +1,4 @@
 import { useParams, Link } from 'react-router-dom';
-import '../styles/ServiceDetails.css';
 import {
     FaDraftingCompass,
     FaLeaf,

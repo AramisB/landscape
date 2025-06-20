@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import '../styles/Contact.css';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -21,41 +20,40 @@ export default function Contact() {
   };
 
   return (
-    <div className="contactContainer">
-      <div className="contactSection">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
+    <div className="min-h-screen bg-[var(--off-white)]">
+      <div className="py-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="infoSection">
-            <div className="infoContent">
+          <div className="px-6 lg:px-8 flex flex-col justify-center">
+            <div className="max-w-xl mx-auto lg:mx-0">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h1 className="sectionTitle">Get in Touch</h1>
-                <p className="sectionDescription">
-                  Ready to transform your space? Contact us to discuss your project or schedule a
-                  consultation.
+                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[var(--primary-green)]">Get in Touch</h1>
+                <p className="text-xl text-[var(--text-dark)] mb-8">
+                  Ready to transform your space? Contact us to discuss your project or schedule a consultation.
                 </p>
-                <dl className="contactInfo">
-                  <div className="infoItem">
+                <dl className="space-y-6">
+                  <div className="flex items-start gap-4">
                     <dt className="sr-only">Address</dt>
-                    <dd className="infoText">
-                      <svg className="infoIcon" /* Add SVG properties here */ />
+                    <dd className="text-base text-[var(--text-dark)] flex items-center gap-2">
+                      <span className="inline-block w-6 h-6 text-[var(--primary-green)]">📍</span>
                       123 Design Street<br />City, State 12345
                     </dd>
                   </div>
-                  <div className="infoItem">
+                  <div className="flex items-start gap-4">
                     <dt className="sr-only">Phone</dt>
-                    <dd className="infoText">
-                      <svg className="infoIcon" /* Add SVG properties here */ />
+                    <dd className="text-base text-[var(--text-dark)] flex items-center gap-2">
+                      <span className="inline-block w-6 h-6 text-[var(--primary-green)]">📞</span>
                       +1 (555) 123-4567
                     </dd>
                   </div>
-                  <div className="infoItem">
+                  <div className="flex items-start gap-4">
                     <dt className="sr-only">Email</dt>
-                    <dd className="infoText">
-                      <svg className="infoIcon" /* Add SVG properties here */ />
+                    <dd className="text-base text-[var(--text-dark)] flex items-center gap-2">
+                      <span className="inline-block w-6 h-6 text-[var(--primary-green)]">✉️</span>
                       contact@example.com
                     </dd>
                   </div>
@@ -70,11 +68,11 @@ export default function Contact() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             onSubmit={handleSubmit}
-            className="formSection"
+            className="px-6 lg:px-8"
           >
-            <div className="formGrid">
-              <div className="formField">
-                <label htmlFor="name" className="formLabel">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="space-y-2">
+                <label htmlFor="name" className="block text-sm font-medium text-[var(--text-dark)]">
                   Name
                 </label>
                 <input
@@ -83,11 +81,12 @@ export default function Contact() {
                   id="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="formInput"
+                  className="block w-full rounded-none border-0 px-4 py-3 text-[var(--text-dark)] shadow-sm ring-1 ring-inset ring-[var(--off-white)] focus:ring-2 focus:ring-inset focus:ring-[var(--primary-green)] placeholder:text-gray-400"
+                  placeholder="Your Name"
                 />
               </div>
-              <div className="formField">
-                <label htmlFor="email" className="formLabel">
+              <div className="space-y-2">
+                <label htmlFor="email" className="block text-sm font-medium text-[var(--text-dark)]">
                   Email
                 </label>
                 <input
@@ -96,11 +95,12 @@ export default function Contact() {
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="formInput"
+                  className="block w-full rounded-none border-0 px-4 py-3 text-[var(--text-dark)] shadow-sm ring-1 ring-inset ring-[var(--off-white)] focus:ring-2 focus:ring-inset focus:ring-[var(--primary-green)] placeholder:text-gray-400"
+                  placeholder="you@email.com"
                 />
               </div>
-              <div className="formField">
-                <label htmlFor="phone" className="formLabel">
+              <div className="space-y-2">
+                <label htmlFor="phone" className="block text-sm font-medium text-[var(--text-dark)]">
                   Phone
                 </label>
                 <input
@@ -109,11 +109,12 @@ export default function Contact() {
                   id="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="formInput"
+                  className="block w-full rounded-none border-0 px-4 py-3 text-[var(--text-dark)] shadow-sm ring-1 ring-inset ring-[var(--off-white)] focus:ring-2 focus:ring-inset focus:ring-[var(--primary-green)] placeholder:text-gray-400"
+                  placeholder="Your Phone Number"
                 />
               </div>
-              <div className="formField">
-                <label htmlFor="message" className="formLabel">
+              <div className="space-y-2 sm:col-span-2">
+                <label htmlFor="message" className="block text-sm font-medium text-[var(--text-dark)]">
                   Message
                 </label>
                 <textarea
@@ -122,12 +123,13 @@ export default function Contact() {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="formTextarea"
+                  className="block w-full rounded-none border-0 px-4 py-3 text-[var(--text-dark)] shadow-sm ring-1 ring-inset ring-[var(--off-white)] focus:ring-2 focus:ring-inset focus:ring-[var(--primary-green)] placeholder:text-gray-400"
+                  placeholder="How can we help you?"
                 />
               </div>
             </div>
-            <div className="formActions">
-              <button type="submit" className="submitButton">
+            <div className="mt-8">
+              <button type="submit" className="w-full rounded-none bg-[var(--primary-green)] px-6 py-3 text-sm font-medium text-white shadow-sm transition-all duration-300 hover:bg-[var(--secondary-green)] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:ring-offset-2">
                 Send Message
               </button>
             </div>
@@ -136,10 +138,10 @@ export default function Contact() {
       </div>
 
       {/* Map Section */}
-      <div className="mapSection">
+      <div className="relative h-[400px] w-full overflow-hidden">
         {/* Add your map component here */}
-        <div className="mapPlaceholder">
-          <p className="mapText">Map will be integrated here</p>
+        <div className="absolute inset-0 flex items-center justify-center bg-[var(--off-white)]">
+          <p className="text-lg text-[var(--text-dark)]">Map will be integrated here</p>
         </div>
       </div>
     </div>

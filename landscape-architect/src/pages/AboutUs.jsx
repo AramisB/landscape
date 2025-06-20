@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import AboutUsDetails from "./AboutUsDetails";
+import AboutUsDetails from '../components/AboutUsDetails';
 
 export default function AboutUs() {
   const { sectionId } = useParams();
@@ -13,14 +13,13 @@ export default function AboutUs() {
   return (
     <div className="px-8 py-12 max-w-5xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-xl font-bold mb-4">About Us</h1>
-        <ul className="flex flex-wrap gap-4 text-green-700 text-base">
+        <h1 className="text-3xl font-bold mb-4 text-[var(--primary-green)] drop-shadow">About Us</h1>
+        <ul className="flex flex-wrap gap-4 text-[var(--primary-green)] text-base">
           {AboutUsDetails.map((sec) => (
             <li key={sec.id}>
               <Link
                 to={`/about-us/${sec.id}`}
-                className={`hover:underline ${currentId === sec.id ? "font-semibold underline" : ""
-                  }`}
+                className={`hover:underline px-2 py-1 rounded-none transition-colors duration-200 ${currentId === sec.id ? "font-semibold underline bg-[var(--off-white)]" : "hover:bg-[var(--secondary-green)] hover:text-white"}`}
               >
                 {sec.title}
               </Link>
@@ -36,13 +35,13 @@ export default function AboutUs() {
             <img
               src={section.image}
               alt={section.title}
-              className="w-full h-64 object-cover"
+              className="w-full h-64 object-cover rounded-none"
             />
-            <h2 className="absolute inset-0 flex items-center justify-center text-xl font-bold text-white bg-black bg-opacity-50">
+            <h2 className="absolute inset-0 flex items-center justify-center text-2xl md:text-3xl font-bold text-white bg-black bg-opacity-50 m-0 p-0 rounded-none">
               {section.title}
             </h2>
           </div>
-          <pre className="whitespace-pre-wrap text-sm text-gray-800">
+          <pre className="whitespace-pre-wrap text-base text-gray-800 bg-white p-6 rounded-none shadow-md">
             {section.content}
           </pre>
         </div>

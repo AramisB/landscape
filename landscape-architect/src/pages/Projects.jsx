@@ -1,44 +1,48 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import projects from './ProjectDetails';
+import projects from '../components/ProjectDetails';
+import WhyChooseUs from "../components/WhyChooseUs";
 
-// List of categories
+// List of categories with slugs
 const categories = [
-  { id: 'residential', name: 'Residential', icon: '🏡' },
-  { id: 'installation', name: 'Landscape Installation', icon: '🌱' },
-  { id: 'hospitality', name: 'Hospitality and Recreational Landscape', icon: '🏨' },
-  { id: 'maintenance', name: 'Landscape Maintenance', icon: '🛠️' },
-  { id: 'institutional', name: 'Institutional', icon: '🏫' },
-  { id: 'water', name: 'Water Feature and Pools', icon: '💧' },
-  { id: 'irrigation', name: 'Irrigation Installation', icon: '🚿' },
+  { id: 'residential', slug: 'residential', name: 'Residential', icon: '🏡' },
+  { id: 'installation', slug: 'landscape-installation', name: 'Landscape Installation', icon: '🌱' },
+  { id: 'hospitality', slug: 'hospitality-recreational', name: 'Hospitality and Recreational Landscape', icon: '🏨' },
+  { id: 'maintenance', slug: 'landscape-maintenance', name: 'Landscape Maintenance', icon: '🛠️' },
+  { id: 'institutional', slug: 'institutional', name: 'Institutional', icon: '🏫' },
+  { id: 'water', slug: 'water-feature-pools', name: 'Water Feature and Pools', icon: '💧' },
+  { id: 'irrigation', slug: 'irrigation-installation', name: 'Irrigation Installation', icon: '🚿' },
 ];
 
 const ProjectsPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
-  // Filter projects for selected category
+  // Filter projects for selected category using slug
   const filteredProjects =
-    selectedCategory === 'All'
+    selectedCategory === 'all'
       ? projects
-      : projects.filter((project) => project.category === selectedCategory);
+      : projects.filter((project) => project.categorySlug === selectedCategory);
+
+  // Debug log
+  console.log('Selected category:', selectedCategory, 'Filtered projects:', filteredProjects.map(p => ({id: p.id, title: p.title, categorySlug: p.categorySlug})));
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
-      <h1 className="text-2xl font-bold mb-8 text-center">Featured Projects</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center text-[var(--primary-green)] drop-shadow">Featured Projects</h1>
 
       {/* Category Buttons */}
       <div className="flex flex-wrap gap-3 justify-center mb-8">
         <button
-          className={`px-4 py-2 rounded ${selectedCategory === 'All' ? 'bg-[var(--primary-green)] text-white' : 'bg-gray-200'}`}
-          onClick={() => setSelectedCategory('All')}
+          className={`px-4 py-2 rounded-none text-sm font-semibold shadow transition-colors duration-300 border border-[var(--primary-green)] ${selectedCategory === 'all' ? 'bg-[var(--primary-green)] text-white' : 'bg-white text-[var(--primary-green)] hover:bg-[var(--secondary-green)] hover:text-white'}`}
+          onClick={() => setSelectedCategory('all')}
         >
           All
         </button>
         {categories.map((cat) => (
           <button
             key={cat.id}
-            onClick={() => setSelectedCategory(cat.name)} // Use the category "name" for filtering
-            className={`px-4 py-2 rounded flex items-center gap-2 ${selectedCategory === cat.name ? 'bg-[var(--primary-green)] text-white' : 'bg-gray-200'}`}
+            onClick={() => setSelectedCategory(cat.slug)}
+            className={`px-4 py-2 rounded-none flex items-center gap-2 text-sm font-semibold shadow transition-colors duration-300 border border-[var(--primary-green)] ${selectedCategory === cat.slug ? 'bg-[var(--primary-green)] text-white' : 'bg-white text-[var(--primary-green)] hover:bg-[var(--secondary-green)] hover:text-white'}`}
           >
             <span>{cat.icon}</span>
             <span>{cat.name}</span>
@@ -50,28 +54,31 @@ const ProjectsPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project) => (
-            <div key={project.id} className="bg-white rounded shadow-sm p-0 flex flex-col overflow-hidden">
+            <div
+              key={project.id}
+              className="bg-white rounded-none shadow-md hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden hover:-translate-y-2 group"
+            >
               {project.images && project.images.length > 0 && (
                 <img
-                  src={project.images[0]} // Only show the first image
+                  src={project.images[0]}
                   alt={project.title}
-                  className="h-48 w-full object-cover"
+                  className="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-none"
                 />
               )}
-              <div className="p-5">
-                <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+              <div className="p-5 flex flex-col flex-1">
+                <h3 className="text-lg font-semibold text-[var(--primary-green)] mb-2">{project.title}</h3>
                 <p className="text-sm text-gray-600 mb-1">
                   <strong>Location:</strong> {project.location}
                 </p>
                 <p className="text-sm text-gray-600 mb-1">
                   <strong>Scope:</strong> {project.scope}
                 </p>
-                <p className="text-gray-700 mt-2 mb-4 line-clamp-3">
+                <p className="text-gray-700 mt-2 mb-4 line-clamp-3 flex-1">
                   {project.overview.slice(0, 120)}...
                 </p>
                 <Link
                   to={`/projects/section/${project.id}`}
-                  className="mt-auto inline-block bg-[var(--primary-green)] text-white px-4 py-2 rounded hover:bg-[var(--light-green)] text-sm"
+                  className="mt-auto inline-block bg-[var(--primary-green)] flex justify-center items-center text-white px-4 py-2 rounded-none hover:bg-[var(--light-green)] text-sm font-semibold max-w-40 shadow transition-colors duration-300"
                 >
                   Read More
                 </Link>
@@ -85,6 +92,7 @@ const ProjectsPage = () => {
           </div>
         )}
       </div>
+      <WhyChooseUs />
     </div>
   );
 };

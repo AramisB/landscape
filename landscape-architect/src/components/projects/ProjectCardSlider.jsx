@@ -8,13 +8,13 @@ export default function ProjectCardSlider({ project }) {
 
   useEffect(() => {
     if (!isHovered) {
-      const timer = setInterval(() => {
-        setCurrentImageIndex((prevIndex) => 
-          prevIndex === project.images.length - 1 ? 0 : prevIndex + 1
-        );
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === project.images.length - 1 ? 0 : prevIndex + 1
+      );
       }, 5000);
 
-      return () => clearInterval(timer);
+    return () => clearInterval(timer);
     }
   }, [project.images.length, isHovered]);
 
