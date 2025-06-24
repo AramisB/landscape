@@ -99,7 +99,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--off-white)]">
       {/* Hero Section with Vertical Slider */}
-      <section className="relative flex items-center justify-center min-h-[60vh] w-full bg-[var(--off-white)] overflow-hidden py-4">
+      <section className="relative flex items-center justify-center min-h-[60vh] w-full bg-[var(--off-white)] overflow-hidden py-4 px-2 sm:px-4">
         {slides[current].key === 'hero' && (
           <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
         )}
@@ -110,7 +110,7 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}
             transition={{ duration: 0.7 }}
-            className="relative z-20 flex flex-col items-center justify-center w-full h-full px-4 py-8"
+            className="relative z-20 flex flex-col items-center justify-center w-full h-full px-2 sm:px-4 py-8"
           >
             {slides[current].content}
           </motion.div>
@@ -130,44 +130,44 @@ export default function Home() {
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
-            className={`w-3 h-3 rounded-full ${current === idx ? 'bg-[var(--secondary-blue)]' : 'bg-gray-300'} transition`}
+            className={`w-4 h-4 sm:w-3 sm:h-3 rounded-full ${current === idx ? 'bg-[var(--secondary-blue)]' : 'bg-gray-300'} transition`}
             aria-label={`Go to slide ${idx + 1}`}
           />
         ))}
       </div>
 
       {/* About Section */}
-      <section className="py-16 bg-[var(--off-white)]" id="about">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-10 max-w-7xl py-8">
+      <section className="py-10 sm:py-16 bg-[var(--off-white)]" id="about">
+        <div className="container mx-auto px-2 sm:px-4 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10 max-w-7xl py-6 sm:py-8">
           {/* Left Image */}
-          <div className="w-full md:w-3/4 lg:w-1/3">
+          <div className="w-full md:w-3/4 lg:w-1/3 mb-6 md:mb-0">
             <img
               src="/aboutUs.png"
               alt="About our landscaping team"
-              className="shadow-lg w-full h-auto object-cover rounded-xl"
+              className="shadow-lg w-full h-auto object-cover rounded-xl max-h-64 sm:max-h-none"
             />
           </div>
           {/* Right Content */}
           <div className="w-full md:w-2/5 lg:w-1/3 text-center md:text-left">
-            <h2 className="text-2xl font-bold text-[var(--primary-green)] mb-4">About Us</h2>
-            <p className="text-sm text-gray-700 leading-relaxed mb-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-[var(--primary-green)] mb-4">About Us</h2>
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-6">
               YouLandscape Architects and Consultants is a leading landscape architecture firm in Kenya, specializing in innovative, sustainable outdoor designs, master planning, and eco-conscious landscaping solutions. We blend artistry, engineering, and environmental science to create functional, stunning landscapes for homes, businesses, and public spaces.
             </p>
             <div>
-              <Link to="/about-us/our-company" className="text-[var(--secondary-blue)] underline hover:text-[var(--primary-green)] transition"> Discover More </Link>
+              <Link to="/about-us/our-company" className="text-[var(--secondary-blue)] underline hover:text-[var(--primary-green)] transition text-base sm:text-lg"> Discover More </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Projects Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold text-[var(--primary-green)] mb-2">Our Professional Services</h2>
-            <p className="text-xl text-gray-600 mt-4">Discover the range of services we offer to transform your outdoor spaces.</p>
+      <section className="py-10 sm:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4">
+          <div className="mb-8 sm:mb-12 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--primary-green)] mb-2">Our Professional Services</h2>
+            <p className="text-base sm:text-xl text-gray-600 mt-4">Discover the range of services we offer to transform your outdoor spaces.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
             {[
               {
                 img: "/services/landscape-consultation.jpg",
@@ -266,27 +266,27 @@ export default function Home() {
       </section>
 
       {/* We Have Worked With Section */}
-      <section className="py-12 bg-[var(--off-white)]">
-        <div className="container mx-auto px-4 max-w-7xl text-center">
-          <h2 className="text-2xl md:text-2xl font-bold text-[var(--primary-green)] mb-6">We Have Worked With</h2>
-          <p className="text-base text-gray-700 mb-8">Trusted by leading organizations, businesses, and homeowners across Kenya.</p>
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            <img src="/clients/client1.png" alt="Client 1" className="h-12 object-contain" />
-            <img src="/clients/client2.png" alt="Client 2" className="h-12 object-contain" />
-            <img src="/clients/client3.png" alt="Client 3" className="h-12 object-contain" />
-            <img src="/clients/client4.png" alt="Client 4" className="h-12 object-contain" />
-            <img src="/clients/client5.png" alt="Client 5" className="h-12 object-contain" />
+      <section className="py-8 sm:py-12 bg-[var(--off-white)]">
+        <div className="container mx-auto px-2 sm:px-4 max-w-7xl text-center">
+          <h2 className="text-xl sm:text-2xl font-bold text-[var(--primary-green)] mb-4 sm:mb-6">We Have Worked With</h2>
+          <p className="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8">Trusted by leading organizations, businesses, and homeowners across Kenya.</p>
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8">
+            <img src="/clients/client1.png" alt="Client 1" className="h-10 sm:h-12 object-contain" />
+            <img src="/clients/client2.png" alt="Client 2" className="h-10 sm:h-12 object-contain" />
+            <img src="/clients/client3.png" alt="Client 3" className="h-10 sm:h-12 object-contain" />
+            <img src="/clients/client4.png" alt="Client 4" className="h-10 sm:h-12 object-contain" />
+            <img src="/clients/client5.png" alt="Client 5" className="h-10 sm:h-12 object-contain" />
           </div>
         </div>
       </section>
 
       {/* Blog Section */}
-      <section className="py-12 bg-[var(--off-white)]">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <h2 className="text-2xl font-bold text-[var(--primary-green)] mb-4 text-center">Latest Blog Posts</h2>
-          <p className="text-base text-center text-gray-600 mb-10">Get tips, insights, and inspiration from our landscaping experts.</p>
+      <section className="py-8 sm:py-12 bg-[var(--off-white)]">
+        <div className="container mx-auto px-2 sm:px-4 max-w-7xl">
+          <h2 className="text-xl sm:text-2xl font-bold text-[var(--primary-green)] mb-4 text-center">Latest Blog Posts</h2>
+          <p className="text-sm sm:text-base text-center text-gray-600 mb-6 sm:mb-10">Get tips, insights, and inspiration from our landscaping experts.</p>
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center w-full">
               <BlogList />
             </div>
           </div>
@@ -294,6 +294,6 @@ export default function Home() {
       </section>
 
       <WhyChooseUs />
-      </div>
+    </div>
   );
 }

@@ -27,11 +27,24 @@ const ProjectsPage = () => {
   console.log('Selected category:', selectedCategory, 'Filtered projects:', filteredProjects.map(p => ({id: p.id, title: p.title, categorySlug: p.categorySlug})));
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-8 text-center text-[var(--primary-green)] drop-shadow">Featured Projects</h1>
+    <div className="max-w-6xl mx-auto px-2 sm:px-4 py-6 sm:py-10">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-[var(--primary-green)] drop-shadow">Featured Projects</h1>
 
-      {/* Category Buttons */}
-      <div className="flex flex-wrap gap-3 justify-center mb-8">
+      {/* Category Dropdown for mobile */}
+      <div className="sm:hidden mb-4">
+        <select
+          className="w-full p-2 border border-gray-300 rounded bg-white text-[var(--primary-green)]"
+          value={selectedCategory}
+          onChange={e => setSelectedCategory(e.target.value)}
+        >
+          <option value="all">All</option>
+          {categories.map((cat) => (
+            <option key={cat.id} value={cat.slug}>{cat.name}</option>
+          ))}
+        </select>
+      </div>
+      {/* Category Buttons for desktop */}
+      <div className="hidden sm:flex flex-wrap gap-2 sm:gap-3 justify-center mb-6 sm:mb-8">
         <button
           className={`px-4 py-2 rounded-none text-sm font-semibold shadow transition-colors duration-300 border border-[var(--primary-green)] ${selectedCategory === 'all' ? 'bg-[var(--primary-green)] text-white' : 'bg-white text-[var(--primary-green)] hover:bg-[var(--secondary-green)] hover:text-white'}`}
           onClick={() => setSelectedCategory('all')}
@@ -51,7 +64,7 @@ const ProjectsPage = () => {
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project) => (
             <div

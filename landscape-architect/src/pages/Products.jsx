@@ -43,9 +43,9 @@ const ProductsPage = () => {
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10">
+    <div className="max-w-7xl mx-auto px-2 sm:px-4 py-6 sm:py-10">
       {/* Search bar at the top, centered */}
-      <div className="flex justify-center mb-8">
+      <div className="flex justify-center mb-6 sm:mb-8">
         <input
           type="text"
           placeholder="Search products..."
@@ -54,9 +54,9 @@ const ProductsPage = () => {
           className="w-full max-w-md p-2 border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-green-600 bg-white rounded-none"
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Sidebar */}
-        <aside className="md:col-span-1">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-8">
+        {/* Sidebar for desktop */}
+        <aside className="hidden md:block md:col-span-1 mb-6 md:mb-0">
           <h2 className="text-lg font-semibold mb-4">Filter by Category</h2>
           <ul className="space-y-2 mb-6">
             {categories.map((cat) => (
@@ -77,6 +77,32 @@ const ProductsPage = () => {
             ))}
           </ul>
         </aside>
+        {/* Dropdown for mobile */}
+        <div className="md:hidden mb-6">
+          <select
+            className="w-full p-2 border border-gray-300 rounded bg-white text-[var(--primary-green)]"
+            value={selectedCategories[0] || ''}
+            onChange={e => {
+              const value = e.target.value;
+              if (value === '') setSelectedCategories([]);
+              else setSelectedCategories([value]);
+            }}
+          >
+            <option value="">All Categories</option>
+            {categories.map((cat) => (
+              <option key={cat.slug} value={cat.slug}>{cat.name}</option>
+            ))}
+          </select>
+          {selectedCategories.length > 0 && (
+            <button
+              className="mt-2 text-xs text-blue-700 underline"
+              onClick={() => setSelectedCategories([])}
+              type="button"
+            >
+              Clear Filters
+            </button>
+          )}
+        </div>
 
         {/* Main Content */}
         <section className="md:col-span-3">

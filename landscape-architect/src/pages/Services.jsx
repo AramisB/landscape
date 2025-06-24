@@ -10,14 +10,14 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-[var(--off-white)]">
       {/* Hero Section */}
-      <div className="relative flex items-center justify-center min-h-[40vh] w-full bg-[var(--off-white)] overflow-hidden py-8">
+      <div className="relative flex items-center justify-center min-h-[40vh] w-full bg-[var(--off-white)] overflow-hidden py-6 px-2 sm:py-8 sm:px-6">
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary-green)] via-[var(--secondary-green)] to-[var(--light-green)] opacity-80 z-0" />
         <div className="relative z-10 flex flex-col items-center w-full text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-extrabold mb-4 text-white drop-shadow-lg"
+            className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-white drop-shadow-lg"
           >
             Our Services
           </motion.h1>
@@ -25,7 +25,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg md:text-xl max-w-2xl mx-auto text-white drop-shadow"
+            className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto text-white drop-shadow"
           >
             Comprehensive landscape architecture solutions tailored to your vision
           </motion.p>
@@ -33,9 +33,9 @@ export default function Services() {
       </div>
 
       {/* Services List Section */}
-      <div className="py-16 bg-[var(--off-white)]">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="py-8 sm:py-16 bg-[var(--off-white)]">
+        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {services.map((service, index) => (
               <motion.li
                 key={service.id}

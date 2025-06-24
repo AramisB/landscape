@@ -21,8 +21,8 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-[var(--off-white)]">
-      <div className="py-16">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="py-8 sm:py-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 px-2 sm:px-0">
           {/* Contact Information */}
           <div className="px-6 lg:px-8 flex flex-col justify-center">
             <div className="max-w-xl mx-auto lg:mx-0">
@@ -138,7 +138,7 @@ export default function Contact() {
       </div>
 
       {/* Map Section */}
-      <div className="relative h-[400px] w-full overflow-hidden">
+      <div className="relative h-60 sm:h-[400px] w-full overflow-hidden">
         {/* Add your map component here */}
         <div className="absolute inset-0 flex items-center justify-center bg-[var(--off-white)]">
           <p className="text-lg text-[var(--text-dark)]">Map will be integrated here</p>

@@ -44,19 +44,19 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-[var(--off-white)]">
       {/* Blog Hero Image Section */}
-      <div className="relative w-full h-64 md:h-80 mb-10">
+      <div className="relative w-full h-48 sm:h-64 md:h-80 mb-6 sm:mb-10">
         <img
           src="/blog-hero.png"
           alt="Landscaping blog header"
           className="w-full h-full object-cover rounded-none"
         />
-        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-4xl md:text-3xl font-bold text-white mb-4 drop-shadow-lg">Our Blog</h1>
-          <p className="text-lg md:text-xl text-white max-w-2xl mx-auto">Insights, updates, and inspiration from our landscape architecture practice</p>
+        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-2 sm:px-4">
+          <h1 className="text-2xl sm:text-4xl md:text-3xl font-bold text-white mb-2 sm:mb-4 drop-shadow-lg">Our Blog</h1>
+          <p className="text-base sm:text-lg md:text-xl text-white max-w-2xl mx-auto">Insights, updates, and inspiration from our landscape architecture practice</p>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {posts.map((post) => (
             <motion.article
               key={post.id}
