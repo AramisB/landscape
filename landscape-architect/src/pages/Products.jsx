@@ -3,6 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import categories from '../components/Categories';
 import allProducts from '../components/AllProducts';
+import GetStartedSection from '../components/GetStartedSection';
 
 const ProductsPage = () => {
   const { category } = useParams();
@@ -206,6 +207,7 @@ const ProductsPage = () => {
           )}
         </section>
       </div>
+      <GetStartedSection />
     </div>
   );
 };

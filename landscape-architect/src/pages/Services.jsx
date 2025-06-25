@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { services } from '../components/ServiceDetails';
 import WhyChooseUs from "../components/WhyChooseUs";
+import GetStartedSection from '../components/GetStartedSection';
 
 // Utility function to convert title to URL-friendly format
 const toSlug = (title) => title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
@@ -71,6 +72,7 @@ export default function Services() {
           </ul>
         </div>
       </div>
+      <GetStartedSection />
       <WhyChooseUs />
     </div>
   );

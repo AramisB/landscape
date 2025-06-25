@@ -17,6 +17,7 @@ import {
 } from "react-icons/fa";
 import { BlogList } from './Blog';
 import WhyChooseUs from '../components/WhyChooseUs';
+import GetStartedSection from '../components/GetStartedSection';
 
 const SLIDE_DURATION = 10000;
 
@@ -170,76 +171,88 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
             {[
               {
-                img: "/services/landscape-consultation.jpg",
+                img: "/home/services/landscape-consultation.jpeg",
                 title: "Landscape Consultation",
                 desc: "Receive expert guidance and tailored maintenance plans for vibrant, sustainable gardens across Kenya."
               },
               {
-                img: "/services/landscape-design.jpg",
+                img: "/home/services/landscape-design.jpg",
                 title: "Landscape Design",
                 desc: "Transform your space with eco-conscious designs that boost property value and thrive in Kenya's climate."
               },
               {
-                img: "/services/landscape-implementation.jpg",
+                img: "/home/services/landscape-implementation.jpg",
                 title: "Landscape Implementation",
                 desc: "We bring your vision to life with expert installation of plants, patios, lighting, and irrigation systems."
               },
               {
-                img: "/services/landscape-maintenance.jpg",
+                img: "/home/services/landscape-maintenance.jpeg",
                 title: "Landscape Maintenance",
                 desc: "Keep your outdoor spaces thriving year-round with climate-adapted care, pruning, and soil health solutions."
               },
               {
-                img: "/services/master-planning.jpg",
+                img: "/home/services/master-planning.jpg",
                 title: "Master Planning",
                 desc: "Strategic large-scale landscape plans tailored for long-term success in residential, commercial, or public spaces."
               },
               {
-                img: "/services/project-management.jpg",
+                img: "/home/services/project-management.png",
                 title: "Project Management",
                 desc: "Seamless landscape delivery with integrated teams managing timelines, budgets, and quality from start to finish."
               },
               {
-                img: "/services/water-features.jpg",
+                img: "/home/services/water-features.jpeg",
                 title: "Water Features",
                 desc: "Elevate your landscape with fountains, waterfalls, and ponds—designed for beauty, sustainability, and serenity."
               },
               {
-                img: "/services/swimming-pools.jpg",
+                img: "/home/services/swimming-pools.jpeg",
                 title: "Swimming Pools",
                 desc: "Custom-built pools with integrated landscaping, energy-efficient systems, and year-round maintenance plans."
               },
               {
-                img: "/services/irrigation.jpg",
+                img: "/home/services/irrigation.jpg",
                 title: "Landscape Irrigation",
                 desc: "Smart irrigation systems designed to save water and support healthy, lush gardens across diverse Kenyan climates."
               },
               {
-                img: "/services/garden-renovation.jpg",
+                img: "/home/services/garden-renovation.jpeg",
                 title: "Garden Renovation",
                 desc: "Revive aging gardens with expert soil improvement, native planting, and functional layout redesigns."
               },
               {
-                img: "/services/hardscape.jpg",
+                img: "/home/services/hardscape.jpeg",
                 title: "Hardscape & Modification",
                 desc: "Add structure and style with patios, walls, and outdoor features customized for beauty and durability."
               },
               {
-                img: "/services/supplies.jpg",
+                img: "/home/services/supplies.jpeg",
                 title: "Landscape Supplies & Products",
                 desc: "Access quality plants, stones, lighting, irrigation kits, and décor to elevate your landscape projects."
               }
             ].map((service, idx) => (
               <motion.div
-                className="bg-[var(--off-white)] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden"
-                whileHover={{ scale: 1.02 }}
+                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden border border-gray-100"
+                whileHover={{ scale: 1.02, y: -4 }}
                 transition={{ duration: 0.3 }}
                 key={idx}
               >
-                <div className="p-4 flex-1 flex flex-col">
-                  <h3 className="flex items-center gap-2 justify-center text-lg font-semibold text-[var(--primary-green)] mb-2">
+                {/* Image Section */}
+                <div className="relative overflow-hidden">
+                  <img
+                    src={service.img}
+                    alt={service.title}
+                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                
+                {/* Content Section */}
+                <div className="p-5 flex-1 flex flex-col">
+                  {/* Title with Icon */}
+                  <h3 className="flex items-center gap-2 text-lg font-bold text-[var(--primary-green)] mb-3">
                     {serviceIcons[service.title] && (
-                      <span>
+                      <span className="text-[var(--secondary-blue)]">
                         {React.createElement(serviceIcons[service.title], {
                           className: "w-5 h-5"
                         })}
@@ -247,17 +260,19 @@ export default function Home() {
                     )}
                     {service.title}
                   </h3>
-                  <div className="max-h-[180px] w-full mx-auto mb-2 flex items-center justify-center">
-                    <img
-                      src={service.img}
-                      alt={service.title}
-                      className="w-full h-auto object-cover rounded"
-                    />
+                  
+                  {/* Description */}
+                  <p className="text-sm text-gray-600 leading-relaxed flex-1 mb-4">{service.desc}</p>
+                  
+                  {/* Button */}
+                  <div className="mt-auto">
+                    <Link 
+                      to="/services" 
+                      className="inline-block w-full bg-[var(--secondary-blue)] text-white px-4 py-3 rounded-lg hover:bg-[var(--primary-green)] transition-colors duration-300 text-center font-semibold text-sm shadow-md hover:shadow-lg"
+                    >
+                      Learn More
+                    </Link>
                   </div>
-                  <p className="text-sm text-gray-700 flex-1">{service.desc}</p>
-                </div>
-                <div className="bg-white p-4 border-t border-gray-100 text-center">
-                  <Link to="/services" className="inline-block bg-[var(--secondary-blue)] text-white px-3 py-2 rounded hover:bg-[var(--primary-green)] transition">Learn More</Link>
                 </div>
               </motion.div>
             ))}
@@ -292,8 +307,13 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <WhyChooseUs />
+
+      {/* Full-width Get Started Section */}
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen" style={{ position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw' }}>
+        <GetStartedSection />
+      </div>
+      
     </div>
   );
 }

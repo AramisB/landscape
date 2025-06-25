@@ -20,6 +20,7 @@ export default function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const [aboutMobileAccordionOpen, setAboutMobileAccordionOpen] = useState(false);
   const aboutDropdownRef = useRef(null);
 
   // Close dropdown when clicking outside
@@ -182,16 +183,45 @@ export default function Layout() {
 
             {/* Mobile Navigation Links */}
             <div className="flex flex-col gap-6">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  onClick={item.name === 'Get A Quote' ? (e) => { e.preventDefault(); setQuoteModalOpen(true); } : undefined}
-                  className="text-green-800 font-semibold text-sm hover:underline transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navigation.map((item) =>
+                item.name === 'About Us' ? (
+                  <div key={item.name}>
+                    <button
+                      className="flex items-center w-full justify-between text-green-800 font-semibold text-sm hover:underline transition-colors focus:outline-none"
+                      onClick={() => setAboutMobileAccordionOpen((open) => !open)}
+                      aria-expanded={aboutMobileAccordionOpen}
+                      aria-controls="about-mobile-accordion"
+                      type="button"
+                    >
+                      <span>About Us</span>
+                      <ChevronDownIcon className={`h-4 w-4 ml-2 transition-transform ${aboutMobileAccordionOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    {aboutMobileAccordionOpen && (
+                      <div id="about-mobile-accordion" className="pl-4 mt-2 flex flex-col gap-2">
+                        {AboutUsDetails.map((sec) => (
+                          <Link
+                            key={sec.id}
+                            to={`/about-us/${sec.id}`}
+                            className="text-green-800 font-normal text-sm hover:underline transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {sec.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    onClick={item.name === 'Get A Quote' ? (e) => { e.preventDefault(); setQuoteModalOpen(true); } : () => setMobileMenuOpen(false)}
+                    className="text-green-800 font-semibold text-sm hover:underline transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                )
+              )}
             </div>
           </Dialog.Panel>
         </Dialog>
@@ -286,7 +316,7 @@ export default function Layout() {
         <Outlet />
       </main>
 
-      <footer className="bg-[var(--primary-green)] text-white mt-12">
+      <footer className="bg-[var(--primary-green)] text-white">
         <div className="max-w-7xl mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* About Us + Socials */}

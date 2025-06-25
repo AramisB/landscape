@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import AboutUsDetails from '../components/AboutUsDetails';
+import GetStartedSection from '../components/GetStartedSection';
 
 export default function AboutUs() {
   const { sectionId } = useParams();
@@ -12,7 +13,7 @@ export default function AboutUs() {
   const section = AboutUsDetails.find((sec) => sec.id === currentId);
 
   return (
-    <div className="px-2 sm:px-8 py-8 sm:py-12 max-w-5xl mx-auto">
+    <div key={currentId} className="px-2 sm:px-8 py-8 sm:py-12 max-w-5xl mx-auto">
       <div className="mb-6 sm:mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-[var(--primary-green)] drop-shadow">About Us</h1>
         {/* Dropdown for mobile */}
@@ -55,13 +56,43 @@ export default function AboutUs() {
               {section.title}
             </h2>
           </div>
-          <pre className="whitespace-pre-wrap text-sm sm:text-base text-gray-800 bg-white p-4 sm:p-6 rounded-none shadow-md">
-            {section.content}
-          </pre>
+          {section.id === "our-company" && typeof section.content === "object" ? (
+            <div className="bg-white p-4 sm:p-6 rounded-none shadow-md space-y-4 text-sm sm:text-base text-gray-800">
+              <p>{section.content.description}</p>
+              <h3 className="font-semibold mt-4">Who We Are</h3>
+              <p>{section.content.whoWeAre}</p>
+              <h3 className="font-semibold mt-4">Core Values</h3>
+              <ul className="list-disc pl-6">
+                {section.content.coreValues.map((value, idx) => (
+                  <li key={idx}>{value}</li>
+                ))}
+              </ul>
+              <h3 className="font-semibold mt-4">Mission</h3>
+              <p>{section.content.mission}</p>
+              <h3 className="font-semibold mt-4">Vision</h3>
+              <p>{section.content.vision}</p>
+              <h3 className="font-semibold mt-4">Slogan</h3>
+              <p className="italic">{section.content.slogan}</p>
+              <h3 className="font-semibold mt-4">Working Process</h3>
+              <p>{section.content.workingProcess.intro}</p>
+              <ol className="list-decimal pl-6">
+                {section.content.workingProcess.steps.map((step, idx) => (
+                  <li key={idx} className="mb-2">
+                    <span className="font-semibold">{step.title}:</span> {step.description}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ) : (
+            <pre className="whitespace-pre-wrap text-sm sm:text-base text-gray-800 bg-white p-4 sm:p-6 rounded-none shadow-md">
+              {section.content}
+            </pre>
+          )}
         </div>
       ) : (
         <div className="text-red-600">Section not found.</div>
       )}
+      <GetStartedSection />
     </div>
   );
 }

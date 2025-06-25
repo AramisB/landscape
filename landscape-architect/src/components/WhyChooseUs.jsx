@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
             <div key={index} className="space-y-6">
               <div className="flex items-start space-x-4 p-6 bg-[var(--off-white)] rounded-xl shadow-md">
                 <span>{item.icon}</span>
-                <p className="text-base text-gray-800 font-medium">{item.text}</p>
+                <p className="text-sm md:text-base text-gray-800 font-normal">{item.text}</p>
               </div>
             </div>
           ))}
@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
             <div key={index} className="space-y-6">
               <div className="flex items-start space-x-4 p-6 bg-[var(--off-white)] rounded-xl shadow-md">
                 <span>{item.icon}</span>
-                <p className="text-base text-gray-800 font-medium">{item.text}</p>
+                <p className="text-sm md:text-base text-gray-800 font-normal">{item.text}</p>
               </div>
             </div>
           ))}

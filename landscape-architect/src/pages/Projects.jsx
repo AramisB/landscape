@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import projects from '../components/ProjectDetails';
 import WhyChooseUs from "../components/WhyChooseUs";
+import GetStartedSection from '../components/GetStartedSection';
 
 // List of categories with slugs
 const categories = [
@@ -17,11 +18,39 @@ const categories = [
 const ProjectsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  // Filter projects for selected category using slug
-  const filteredProjects =
-    selectedCategory === 'all'
-      ? projects
-      : projects.filter((project) => project.categorySlug === selectedCategory);
+  // Filter projects for selected category using slug and ensure uniqueness
+  const getFilteredProjects = () => {
+    if (selectedCategory === 'all') {
+      // For "all" category, show unique projects by ID
+      const uniqueProjects = [];
+      const seenIds = new Set();
+      
+      projects.forEach(project => {
+        if (!seenIds.has(project.id)) {
+          seenIds.add(project.id);
+          uniqueProjects.push(project);
+        }
+      });
+      
+      return uniqueProjects;
+    } else {
+      // For specific categories, filter by categorySlug and ensure uniqueness
+      const categoryProjects = projects.filter((project) => project.categorySlug === selectedCategory);
+      const uniqueProjects = [];
+      const seenIds = new Set();
+      
+      categoryProjects.forEach(project => {
+        if (!seenIds.has(project.id)) {
+          seenIds.add(project.id);
+          uniqueProjects.push(project);
+        }
+      });
+      
+      return uniqueProjects;
+    }
+  };
+
+  const filteredProjects = getFilteredProjects();
 
   // Debug log
   console.log('Selected category:', selectedCategory, 'Filtered projects:', filteredProjects.map(p => ({id: p.id, title: p.title, categorySlug: p.categorySlug})));
@@ -106,6 +135,7 @@ const ProjectsPage = () => {
         )}
       </div>
       <WhyChooseUs />
+      <GetStartedSection />
     </div>
   );
 };
