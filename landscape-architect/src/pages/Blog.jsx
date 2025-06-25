@@ -44,49 +44,50 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-[var(--off-white)]">
       {/* Blog Hero Image Section */}
-      <div className="relative w-full h-48 sm:h-64 md:h-80 mb-6 sm:mb-10">
+      <div className="relative w-full h-72 md:h-96 mb-10">
         <img
           src="/blog-hero.png"
           alt="Landscaping blog header"
-          className="w-full h-full object-cover rounded-none"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-2 sm:px-4">
-          <h1 className="text-2xl sm:text-4xl md:text-3xl font-bold text-white mb-2 sm:mb-4 drop-shadow-lg">Our Blog</h1>
-          <p className="text-base sm:text-lg md:text-xl text-white max-w-2xl mx-auto">Insights, updates, and inspiration from our landscape architecture practice</p>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent flex flex-col items-center justify-center text-center px-2 sm:px-4">
+          <h1 className="text-3xl sm:text-5xl font-bold text-white mb-3">Our Blog</h1>
+          <p className="text-lg sm:text-xl text-white max-w-2xl mx-auto">Insights, updates, and inspiration from our landscape architecture practice</p>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
+      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
             <motion.article
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-none shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col"
+              className="bg-white shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col border border-gray-100"
             >
-              <div className="relative h-64 w-full overflow-hidden">
+              <div className="relative h-72 w-full overflow-hidden">
                 <img
                   src={post.imageUrl}
                   alt={post.title}
-                  className="w-full h-full object-cover rounded-none"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                {/* Category badge */}
+                <span className="absolute top-4 left-4 bg-[var(--primary-green)] text-white text-xs px-3 py-1 font-semibold tracking-wide">{post.category}</span>
               </div>
-              <div className="flex flex-col h-full p-6">
-                <div className="flex items-center gap-4 mb-4 text-sm text-[var(--primary-green)]">
-                  <time dateTime={post.date}>{post.date}</time>
-                  <span className="px-3 py-1 bg-[var(--off-white)] text-[var(--primary-green)] rounded-none">{post.category}</span>
+              <div className="flex flex-col h-full p-8">
+                <div className="flex items-center gap-3 mb-3 text-xs text-gray-500">
+                  <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                  <span className="text-gray-300">|</span>
+                  <span className="font-medium text-[var(--primary-green)]">{post.author}</span>
                 </div>
-                <div className="flex-grow mb-4">
-                  <h3 className="text-xl font-semibold text-[var(--primary-green)] mb-2">{post.title}</h3>
-                  <p className="text-gray-600">{post.description}</p>
-                </div>
+                <h3 className="text-lg font-bold text-[var(--primary-green)] mb-2">{post.title}</h3>
+                <p className="text-gray-600 mb-6 flex-grow">{post.description}</p>
                 <a
                   href={post.externalUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-auto text-[var(--secondary-blue)] font-medium hover:underline block"
+                  className="inline-block mt-auto px-5 py-2 bg-[var(--secondary-blue)] text-white font-semibold shadow hover:bg-[var(--primary-green)] transition text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)]"
                 >
                   Read Full Blog →
                 </a>

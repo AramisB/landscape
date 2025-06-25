@@ -25,20 +25,26 @@ const slides = [
   {
     key: 'hero',
     content: (
-      <>
-        <div className="h-full flex flex-col items-center justify-center text-center relative z-20">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-white drop-shadow-lg">Transforming Spaces and Enhancing Lives</h1>
-          <p className="text-lg md:text-xl max-w-3xl mt-4 text-white drop-shadow">We design and build innovative outdoor spaces that harmonize with nature and enhance people's lives.</p>
-          <div className="flex flex-wrap justify-center gap-8 mx-auto mt-6">
-            <Link to="/projects" className="inline-block px-8 py-4 rounded bg-[var(--secondary-blue)] text-white font-semibold shadow transition hover:bg-[var(--primary-green)]">View Portfolio</Link>
-            <Link to="/contact" className="inline-block px-8 py-4 rounded bg-[var(--secondary-blue)] text-white font-semibold shadow transition hover:bg-[var(--primary-green)]">Contact Us</Link>
+      <div className="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
+        <img src="/hero.jpg" alt="Hero background" className="absolute inset-0 w-full h-full object-cover z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 z-10" />
+        <div className="relative z-20 flex flex-col items-center text-center px-4">
+          <img src="/logo.png" alt="YouLandscape Logo" className="w-24 mb-4" />
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">Transforming Spaces and Enhancing Lives</h1>
+          <p className="text-lg md:text-xl max-w-3xl mt-4 text-white">We design and build innovative outdoor spaces that harmonize with nature and enhance people's lives.</p>
+          <div className="flex flex-wrap justify-center gap-8 mx-auto mt-10">
+            <Link to="/projects" className="px-8 py-4 rounded bg-[var(--secondary-blue)] text-white font-semibold shadow hover:bg-[var(--primary-green)] flex items-center gap-2">
+              View Portfolio
+            </Link>
+            <Link to="/contact" className="px-8 py-4 rounded bg-white text-[var(--secondary-blue)] font-semibold border-2 border-[var(--secondary-blue)] shadow hover:bg-[var(--primary-green)] hover:text-white flex items-center gap-2">
+              Contact Us
+            </Link>
+          </div>
+          <div className="mt-8 animate-bounce">
+            <span className="text-white text-3xl">&#8595;</span>
           </div>
         </div>
-        <div className="absolute inset-0 w-full h-full z-0">
-          <img src="/hero.jpg" alt="Hero background" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-      </>
+      </div>
     ),
   },
   {
@@ -139,23 +145,35 @@ export default function Home() {
 
       {/* About Section */}
       <section className="py-10 sm:py-16 bg-[var(--off-white)]" id="about">
-        <div className="container mx-auto px-2 sm:px-4 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10 max-w-7xl py-6 sm:py-8">
-          {/* Left Image */}
-          <div className="w-full md:w-3/4 lg:w-1/3 mb-6 md:mb-0">
-            <img
-              src="/aboutUs.png"
-              alt="About our landscaping team"
-              className="shadow-lg w-full h-auto object-cover rounded-xl max-h-64 sm:max-h-none"
-            />
+        <div className="container mx-auto px-2 sm:px-4 flex flex-col md:flex-row items-stretch justify-center gap-8 md:gap-12 max-w-5xl py-6 sm:py-8">
+          {/* Left Image - guaranteed to stretch */}
+          <div className="w-full md:w-1/2 flex flex-col h-full">
+            <div className="flex-1 flex">
+              <img
+                src="/aboutUs.png"
+                alt="About our landscaping team"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
-          {/* Right Content */}
-          <div className="w-full md:w-2/5 lg:w-1/3 text-center md:text-left">
-            <h2 className="text-xl sm:text-2xl font-bold text-[var(--primary-green)] mb-4">About Us</h2>
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-6">
-              YouLandscape Architects and Consultants is a leading landscape architecture firm in Kenya, specializing in innovative, sustainable outdoor designs, master planning, and eco-conscious landscaping solutions. We blend artistry, engineering, and environmental science to create functional, stunning landscapes for homes, businesses, and public spaces.
-            </p>
+          {/* Right Content - full height, button at bottom */}
+          <div className="w-full md:w-1/2 flex flex-col justify-between text-center md:text-left h-full">
             <div>
-              <Link to="/about-us/our-company" className="text-[var(--secondary-blue)] underline hover:text-[var(--primary-green)] transition text-base sm:text-lg"> Discover More </Link>
+              <h2 className="text-2xl font-bold text-[var(--primary-green)] mb-4">About Us</h2>
+              <p className="text-base text-gray-700 leading-relaxed mb-4">
+                <span className="font-bold text-[var(--secondary-blue)]">YOU</span>Landscape Architects and Consultants is a leading Kenyan landscaping company with over 10 years of experience. Our team of licensed landscape architects, horticulturists, and environmental design consultants is dedicated to crafting outdoor spaces that reflect <span className="font-bold text-[var(--secondary-blue)]">YOU</span>—your lifestyle, your space, and your unique vision. We transform properties across Kenya using sustainable, innovative design principles.
+              </p>
+              <p className="text-base text-gray-700 leading-relaxed mb-6">
+                We deliver exceptional gardens and landscapes for homes and businesses, blending artistry, engineering, and eco-friendly practices. Our mission is to provide quality, affordable, and personalized landscaping solutions, ensuring your satisfaction from concept to completion.
+              </p>
+            </div>
+            <div>
+              <Link
+                to="/about-us/our-company"
+                className="inline-block bg-[var(--secondary-blue)] text-white px-6 py-3 font-semibold text-lg shadow hover:bg-[var(--primary-green)] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)]"
+              >
+                Discover More
+              </Link>
             </div>
           </div>
         </div>

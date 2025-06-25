@@ -7,6 +7,22 @@ import GetStartedSection from '../components/GetStartedSection';
 // Utility function to convert title to URL-friendly format
 const toSlug = (title) => title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
 
+// Helper to truncate and SEO-optimize service descriptions
+function getSeoDescription(description) {
+  if (description.length <= 180) return description;
+  // Try to end at a sentence or word boundary for SEO
+  let truncated = description.slice(0, 180);
+  const lastPeriod = truncated.lastIndexOf('.');
+  if (lastPeriod > 120) {
+    truncated = truncated.slice(0, lastPeriod + 1);
+  } else {
+    // Otherwise, cut at last space
+    const lastSpace = truncated.lastIndexOf(' ');
+    truncated = truncated.slice(0, lastSpace) + '...';
+  }
+  return truncated;
+}
+
 export default function Services() {
   return (
     <div className="min-h-screen bg-[var(--off-white)]">
@@ -46,7 +62,7 @@ export default function Services() {
                 viewport={{ once: true }}
                 className="bg-white shadow-lg rounded-none overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300"
               >
-                <div className="relative w-full h-48 overflow-hidden">
+                <div className="relative w-full h-64 overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -59,7 +75,7 @@ export default function Services() {
                 </div>
                 <div className="flex-1 flex flex-col p-6">
                   <h3 className="text-lg font-bold mb-2 text-[var(--primary-green)]">{service.title}</h3>
-                  <p className="text-gray-600 mb-4 flex-1">{service.description}</p>
+                  <p className="text-gray-600 mb-4 flex-1">{getSeoDescription(service.description)}</p>
                   <Link
                     to={`/services/${toSlug(service.title)}`}
                     className="inline-block text-white font-medium bg-[var(--primary-green)] px-4 py-2 rounded-none hover:bg-[var(--secondary-green)] transition"

@@ -22,13 +22,13 @@ export const services = [
         id: 1,
         title: 'Landscape Consultation',
         description:
-            'We offer expert landscape consultancy services in Kenya, assisting you the client to make informed decisions delivering tailored garden maintenance strategies and sustainable future development plans for eco-conscious and thriving outdoor spaces.',
-        image: '/services/landscape-consultation.jpg',
+            'We offer expert landscape consultancy services in Kenya, assisting, you, the client to make informed decisions delivering tailored garden maintenance strategies and sustainable future development plans for eco-conscious and thriving outdoor spaces.',
+        image: '/home/services/landscape-consultation.jpeg',
         icon: <FaComments className="w-8 h-8" />,
         features: [
             {
                 title: 'Tailored Garden Maintenance Plans for Kenyan Climates',
-                description: `Every garden has unique needs. Our consultants craft personalized maintenance schedules covering pruning, fertilization, and irrigation tailored to Kenya’s dry seasons and rainy periods. We prioritize drought-resistant native plants and water-saving drip systems, ensuring your garden remains lush while conserving resources. Regular soil health checks and pH balancing safeguard plant vitality, turning high-maintenance lawns into sustainable oases.`,
+                description: `Every garden has unique needs. Our consultants craft personalized maintenance schedules covering pruning, fertilization, and irrigation tailored to Kenya's dry seasons and rainy periods. We prioritize drought-resistant native plants and water-saving drip systems, ensuring your garden remains lush while conserving resources. Regular soil health checks and pH balancing safeguard plant vitality, turning high-maintenance lawns into sustainable oases.`,
             },
             {
                 title: 'Future-Proof Landscape Development & Design',
@@ -44,31 +44,31 @@ export const services = [
             }
         ],
         howWeCanHelp:
-            `At YouLandscape, Kenya’s best landscape consultancy, we empower homeowners and businesses with science-backed solutions to create, maintain, and enhance outdoor spaces that thrive in East Africa’s unique climate. Our team of expert landscape consultants with certified horticulturists combine decades of local expertise with global best practices to deliver actionable strategies for gardens that bloom year-round.`,
+            `At YouLandscape, Kenya's best landscape consultancy, we empower homeowners and businesses with science-backed solutions to create, maintain, and enhance outdoor spaces that thrive in East Africa's unique climate. Our team of expert landscape consultants with certified horticulturists combine decades of local expertise with global best practices to deliver actionable strategies for gardens that bloom year-round.`,
         whyChoose:
             `• Expert Horticultural Insight: Stay ahead with advice from consultants who keep pace with the latest in sustainable landscaping and plant science.
 • Personalized Attention: Enjoy dedicated support, detailed recommendations, and hands-on collaboration from concept through implementation.
-• Proven Success: From robust maintenance routines to inspired landscape transformations, we’re committed to delivering exceptional, enduring results.`
+• Proven Success: From robust maintenance routines to inspired landscape transformations, we're committed to delivering exceptional, enduring results.`,
     },
     {
         id: 2,
         title: 'Landscape Design',
         description:
-            'At YouLandscape, we merge innovative design with sustainable practices to create outdoor spaces that elevate aesthetics and amplify property value. Our client tailored solutions—from drought-resistant native gardens to premium stone hardscapes—are engineered for Kenya’s climate, ensuring beauty thrives year-round. Studies show professionally designed landscapes can boost property value by up to 20%, making your investment as practical as it is breathtaking.',
-        image: '/services/landscape-design.jpg',
+            'At YouLandscape, we merge innovative design with sustainable practices to create outdoor spaces that elevate aesthetics and amplify property value. Our client tailored solutions—from drought-resistant native gardens to premium stone hardscapes—are engineered for Kenya\'s climate, ensuring beauty thrives year-round. Studies show professionally designed landscapes can boost property value by up to 20%, making your investment as practical as it is breathtaking.',
+        image: '/home/services/landscape-design.jpg',
         icon: <FaDraftingCompass className="w-8 h-8" />,
         features: [
             {
                 title: 'Initial Consultation',
-                description: `We start with a free consultation to discuss your goals, style, and budget. Our team conducts a detailed site assessment, analyzing topography, soil quality, sunlight patterns, and existing features to create a design that harmonizes with Kenya’s natural environment.`,
+                description: `We start with a free consultation to discuss your goals, style, and budget. Our team conducts a detailed site assessment, analyzing topography, soil quality, sunlight patterns, and existing features to create a design that harmonizes with Kenya's natural environment.`,
             },
             {
                 title: 'Plant Selection',
-                description: `Our horticultural experts craft plant palettes tailored to your garden’s unique conditions—whether sun-drenched Nairobi plots, coastal Mombasa retreats, or lush highland spaces. We combine native species and exotic varieties, prioritizing aesthetics, climate adaptability, and your lifestyle needs. Every selection optimizes soil health, light exposure, and maintenance preferences, ensuring a thriving, visually captivating garden that aligns with Kenya’s diverse ecosystems.`,
+                description: `Our horticultural experts craft plant palettes tailored to your garden's unique conditions—whether sun-drenched Nairobi plots, coastal Mombasa retreats, or lush highland spaces. We combine native species and exotic varieties, prioritizing aesthetics, climate adaptability, and your lifestyle needs. Every selection optimizes soil health, light exposure, and maintenance preferences, ensuring a thriving, visually captivating garden that aligns with Kenya's diverse ecosystems.`,
             },
             {
                 title: 'Garden Design & Features',
-                description: `Our certified designers craft gardens that masterfully blend beauty and practicality for Kenya’s diverse climates. We integrate natural stone pathways, entertainment-ready seating zones, and eco-conscious water features to create immersive outdoor experiences. Solar-powered lighting enhances safety and ambiance, while focal points like sculptural native trees or vertical gardens add artistic flair. Using 3D modeling tools, we visualize designs tailored to your lifestyle—ensuring every element withstands local weather while boosting property value.`,
+                description: `Our certified designers craft gardens that masterfully blend beauty and practicality for Kenya's diverse climates. We integrate natural stone pathways, entertainment-ready seating zones, and eco-conscious water features to create immersive outdoor experiences. Solar-powered lighting enhances safety and ambiance, while focal points like sculptural native trees or vertical gardens add artistic flair. Using 3D modeling tools, we visualize designs tailored to your lifestyle—ensuring every element withstands local weather while boosting property value.`,
             },
             {
                 title: 'Collaborative Design Refinement',
@@ -76,27 +76,27 @@ export const services = [
             },
             {
                 title: 'Final Design Package',
-                description: `Receive a comprehensive blueprint with plant schedules, hardscape specifications, and irrigation plans. Our designs adhere to Kenya’s eco-standards and include cost estimates for seamless future implementation.`,
+                description: `Receive a comprehensive blueprint with plant schedules, hardscape specifications, and irrigation plans. Our designs adhere to Kenya's eco-standards and include cost estimates for seamless future implementation.`,
             },
             {
                 title: 'Customer Satisfaction',
-                description: `At YouLandscape, Kenya’s leading landscape design firm, your happiness is our ultimate measure of success. We foster open collaboration through every phase of the design journey from initial concept sketches to 3D visualizations and final revisions. Our team keeps you engaged with weekly updates, virtual walkthroughs, and flexible adjustments, ensuring your vision guides every detail. Committed to exceeding expectations, we blend artistic creativity with eco-conscious planning to craft gardens that reflect your personality while thriving in Kenya’s climate.`,
+                description: `At YouLandscape, Kenya's leading landscape design firm, your happiness is our ultimate measure of success. We foster open collaboration through every phase of the design journey from initial concept sketches to 3D visualizations and final revisions. Our team keeps you engaged with weekly updates, virtual walkthroughs, and flexible adjustments, ensuring your vision guides every detail. Committed to exceeding expectations, we blend artistic creativity with eco-conscious planning to craft gardens that reflect your personality while thriving in Kenya's climate.`,
             }
         ],
         howWeCanHelp:
-            `At YouLandscape, we specialize in sustainable, value-driven landscape design tailored to Kenya’s unique climate and your personal vision. Our end-to-end design process transforms ideas into actionable blueprints that enhance aesthetics, functionality, and property value.`,
+            `At YouLandscape, we specialize in sustainable, value-driven landscape design tailored to Kenya's unique climate and your personal vision. Our end-to-end design process transforms ideas into actionable blueprints that enhance aesthetics, functionality, and property value.`,
         whyChoose:
-            `• Innovative, sustainable designs tailored to Kenya’s climate
+            `• Innovative, sustainable designs tailored to Kenya's climate
 • Collaborative process with 3D visualization and client input
 • Plant palettes and features that maximize beauty and value
-• Commitment to customer satisfaction and long-term results`
+• Commitment to customer satisfaction and long-term results`,
     },
     {
         id: 3,
         title: 'Landscape Implementation',
         description:
-            'At YouLandscape, Kenya’s best landscape contractors, we turn visionary designs into reality with professional, eco-conscious installation services. Our certified landscapers and horticulturists combine technical expertise with sustainable practices to transform outdoor spaces into functional, breathtaking environments tailored to Kenya’s climate. From native plant installations and permeable stone pathways to water-smart irrigation systems, every project adheres to strict quality standards, ensuring durability and aesthetic perfection.',
-        image: '/services/landscape-implementation.jpg',
+            'At YouLandscape, Kenya\'s best landscape contractors, we turn visionary designs into reality with professional, eco-conscious installation services. Our certified landscapers and horticulturists combine technical expertise with sustainable practices to transform outdoor spaces into functional, breathtaking environments tailored to Kenya\'s climate. From native plant installations and permeable stone pathways to water-smart irrigation systems, every project adheres to strict quality standards, ensuring durability and aesthetic perfection.',
+        image: '/home/services/landscape-implementation.jpg',
         icon: <FaTools className="w-8 h-8" />,
         features: [
             {
@@ -130,14 +130,14 @@ export const services = [
             `• Expertise: Our team possesses extensive knowledge in horticulture and landscape architecture, ensuring each project is executed with precision.
 • Customized Designs: We tailor each landscape plan to reflect your personal style and the unique characteristics of your property.
 • Quality Materials: Utilizing high-quality materials guarantees longevity and sustainability in every installation.
-• Client-Centric Approach: We prioritize your satisfaction, maintaining open communication throughout the project to ensure your expectations are met.`
+• Client-Centric Approach: We prioritize your satisfaction, maintaining open communication throughout the project to ensure your expectations are met.`,
     },
     {
         id: 4,
         title: 'Landscape Maintenance',
         description:
             'Landscape maintenance involves the regular care and management of outdoor spaces to ensure they remain healthy, attractive, and functional. In Kenya, where climates range from Nairobi\'s dry seasons to Mombasa\'s humidity and the cooler highlands, tailored maintenance practices are essential.',
-        image: '/services/landscape-maintenance.jpg',
+        image: '/home/services/landscape-maintenance.jpeg',
         icon: <FaLeaf className="w-8 h-8" />,
         features: [
             {
@@ -166,23 +166,23 @@ export const services = [
             }
         ],
         howWeCanHelp:
-            `At YouLandscape, the best landscape maintenance provider, we ensure your outdoor spaces remain vibrant, healthy, and visually stunning year-round. Our certified landscape architects and technicians deliver tailored care programs designed for Kenya’s diverse climates, from Nairobi’s seasonal shifts to Mombasa’s coastal humidity.`,
+            `At YouLandscape, the best landscape maintenance provider, we ensure your outdoor spaces remain vibrant, healthy, and visually stunning year-round. Our certified landscape architects and technicians deliver tailored care programs designed for Kenya's diverse climates, from Nairobi's seasonal shifts to Mombasa's coastal humidity.`,
         whyChoose:
             `Our commitment to excellence, sustainability, and client satisfaction sets us apart. By choosing YouLandscape, you're investing in a team that values the health of your garden and the environment. We stay abreast of the latest landscaping practices and technologies to provide you with top-tier landscape maintenance services.
 
-Experience the difference of working with professionals dedicated to enhancing and preserving the natural beauty of your outdoor spaces. Contact YouLandscape Architects & Consultants today to learn more about our landscape maintenance services and how we can help your garden flourish.`
+Experience the difference of working with professionals dedicated to enhancing and preserving the natural beauty of your outdoor spaces. Contact YouLandscape Architects & Consultants today to learn more about our landscape maintenance services and how we can help your garden flourish.`,
     },
     {
         id: 5,
         title: 'Master Planning',
         description:
             'We design large-scale, sustainable outdoor layouts that organize space, resources, and aesthetics into cohesive long-term visions.',
-        image: '/services/master-planning.jpg',
+        image: '/home/services/master-planning.jpg',
         icon: <FaProjectDiagram className="w-8 h-8" />,
         features: [
             {
                 title: 'Initial Consultation and Goal Setting',
-                description: `The process begins with a detailed discussion to understand the client’s vision, goals, budget, and timeline. This step establishes priorities and key objectives for the landscape project.`,
+                description: `The process begins with a detailed discussion to understand the client's vision, goals, budget, and timeline. This step establishes priorities and key objectives for the landscape project.`,
             },
             {
                 title: 'Site Analysis and Survey',
@@ -194,7 +194,7 @@ Experience the difference of working with professionals dedicated to enhancing a
             },
             {
                 title: 'Preliminary Design and Feedback',
-                description: `Initial design drafts or sketches are presented to the client for review. Feedback is gathered to refine the concept, ensuring it aligns with the client’s preferences and practical needs.`,
+                description: `Initial design drafts or sketches are presented to the client for review. Feedback is gathered to refine the concept, ensuring it aligns with the client's preferences and practical needs.`,
             },
             {
                 title: 'Detailed Master Plan Creation',
@@ -212,19 +212,19 @@ Experience the difference of working with professionals dedicated to enhancing a
         howWeCanHelp:
             `At YouLandscape Architects & Consultants, we deliver expert master planning services tailored to your vision and budget. Our team conducts thorough site analysis and creates strategic, sustainable designs that optimize your outdoor space. Whether for residential, commercial, or public projects, we provide clear plans and phased implementation to ensure your landscape thrives over time.`,
         whyChoose:
-            `At YouLandscape, we combine design expertise with sustainable practices to deliver exceptional landscaping solutions across Kenya. Our team of licensed landscape architects and horticulture specialists brings deep knowledge of local climates, soils, and native plant species. We prioritize personalized service, eco-friendly methods, and long-term value—ensuring every project is beautiful, functional, and built to last. From concept to completion, YouLandscape is your trusted partner in creating outdoor spaces that inspire.`
+            `At YouLandscape, we combine design expertise with sustainable practices to deliver exceptional landscaping solutions across Kenya. Our team of licensed landscape architects and horticulture specialists brings deep knowledge of local climates, soils, and native plant species. We prioritize personalized service, eco-friendly methods, and long-term value—ensuring every project is beautiful, functional, and built to last. From concept to completion, YouLandscape is your trusted partner in creating outdoor spaces that inspire.`,
     },
     {
         id: 6,
         title: 'Project Management',
         description:
             'At YouLandscape, our project management approach brings together a multidisciplinary team of experts—including landscape architects, certified project managers, skilled landscapers, electricians, masons, and plumbers. We coordinate every detail of your landscape project, ensuring smooth execution from concept to completion. Our integrated team structure allows us to manage timelines, quality, and budgets effectively delivering functional, aesthetically pleasing outdoor spaces with precision and professionalism.',
-        image: '/services/project-management.jpg',
+        image: '/home/services/project-management.png',
         icon: <FaTasks className="w-8 h-8" />,
         features: [
             {
                 title: 'Integrated Landscape Design & Build Expertise',
-                description: `Our registered landscape architects excel in both creative design and technical planning. Using industry-leading landscape design software, we develop detailed, regulation-compliant plans that bring your vision to life. We blend aesthetics with function, ensuring every design meets Kenya’s environmental conditions and your unique requirements.`,
+                description: `Our registered landscape architects excel in both creative design and technical planning. Using industry-leading landscape design software, we develop detailed, regulation-compliant plans that bring your vision to life. We blend aesthetics with function, ensuring every design meets Kenya's environmental conditions and your unique requirements.`,
             },
             {
                 title: 'Professional Project Coordination',
@@ -246,14 +246,14 @@ Experience the difference of working with professionals dedicated to enhancing a
         howWeCanHelp:
             `At YouLandscape, we offer expert landscape project management services to ensure your outdoor space is transformed seamlessly—on time and within budget. Our multidisciplinary team includes landscape architects, certified project managers, experienced landscapers, electricians, masons, and plumbers—bringing a full range of expertise under one roof for efficient and cohesive project delivery.`,
         whyChoose:
-            `With a fully integrated team and proven project delivery systems, YouLandscape Architects & Consultants is your trusted partner for residential, commercial, and public landscape development. We handle everything—from initial planning to final handover—so you can enjoy a stress-free experience and outstanding results. Contact us today to discuss your project and discover how our end-to-end landscape project management services can bring your vision to life.`
+            `With a fully integrated team and proven project delivery systems, YouLandscape Architects & Consultants is your trusted partner for residential, commercial, and public landscape development. We handle everything—from initial planning to final handover—so you can enjoy a stress-free experience and outstanding results. Contact us today to discuss your project and discover how our end-to-end landscape project management services can bring your vision to life.`,
     },
     {
         id: 7,
         title: 'Water Features',
         description:
-            'We design and install custom water features that enhance your outdoor space’s beauty and tranquility. From concept to completion, our expert team ensures sustainable, efficient, and durable solutions tailored to your vision and site conditions. We also offer maintenance plans to keep your water features looking pristine year-round, making the process hassle-free for you.',
-        image: '/services/water-features.jpg',
+            'We design and install custom water features that enhance your outdoor space\'s beauty and tranquility. From concept to completion, our expert team ensures sustainable, efficient, and durable solutions tailored to your vision and site conditions. We also offer maintenance plans to keep your water features looking pristine year-round, making the process hassle-free for you.',
+        image: '/home/services/water-features.jpeg',
         icon: <FaWater className="w-8 h-8" />,
         features: [
             {
@@ -286,7 +286,7 @@ Experience the difference of working with professionals dedicated to enhancing a
             }
         ],
         howWeCanHelp:
-            `We design and install custom water features that enhance your outdoor space’s beauty and tranquility. From concept to completion, our expert team ensures sustainable, efficient, and durable solutions tailored to your vision and site conditions. We also offer maintenance plans to keep your water features looking pristine year-round, making the process hassle-free for you.`,
+            `We design and install custom water features that enhance your outdoor space\'s beauty and tranquility. From concept to completion, our expert team ensures sustainable, efficient, and durable solutions tailored to your vision and site conditions. We also offer maintenance plans to keep your water features looking pristine year-round, making the process hassle-free for you.`,
         whyChoose:
             `• Custom-designed water features that suit your aesthetic and spatial goals
 • Sustainable engineering for low water and energy use
@@ -295,14 +295,14 @@ Experience the difference of working with professionals dedicated to enhancing a
 • End-to-end service from concept to maintenance
 
 Let Your Garden Flow with Elegance
-Contact YouLandscape Architects & Consultants today for a consultation and discover how a professionally designed water feature can transform your landscape into a serene, living masterpiece.`
+Contact YouLandscape Architects & Consultants today for a consultation and discover how a professionally designed water feature can transform your landscape into a serene, living masterpiece.`,
     },
     {
         id: 8,
         title: 'Swimming Pools',
         description:
             'At YouLandscape Architects & Consultants, we design and build custom swimming pools that elevate your outdoor space into a private oasis. Whether you desire a sleek modern pool, a naturalistic lagoon-style design, or a family-friendly recreational pool, our experts create solutions tailored to your lifestyle, site, and budget.',
-        image: '/services/swimming-pools.jpg',
+        image: '/home/services/swimming-pools.jpeg',
         icon: <FaSwimmingPool className="w-8 h-8" />,
         features: [
             {
@@ -333,19 +333,19 @@ Contact YouLandscape Architects & Consultants today for a consultation and disco
 • Expert construction ensuring durability and safety
 • Eco-friendly, energy-efficient systems for cost savings
 • Integrated landscaping for a complete outdoor experience
-• Comprehensive maintenance and support`
+• Comprehensive maintenance and support`,
     },
     {
         id: 9,
         title: 'Landscape Irrigation',
         description:
-            'At YouLandscape Architects & Consultants, we design and install advanced landscape irrigation systems that conserve water while keeping your garden lush and healthy. Our irrigation solutions are customized to suit Kenya’s diverse climates, ensuring optimal water use for residential and commercial landscapes alike.',
-        image: '/services/landscape-irrigation.jpg',
+            'At YouLandscape Architects & Consultants, we design and install advanced landscape irrigation systems that conserve water while keeping your garden lush and healthy. Our irrigation solutions are customized to suit Kenya\'s diverse climates, ensuring optimal water use for residential and commercial landscapes alike.',
+        image: '/home/services/irrigation.jpg',
         icon: <FaTint className="w-8 h-8" />,
         features: [
             {
                 title: 'Customized Irrigation Design',
-                description: `Our experts assess your garden’s size, soil type, plant species, and sun exposure to develop tailored irrigation plans. We design systems that provide precise water delivery to roots, minimizing waste and promoting plant health.`,
+                description: `Our experts assess your garden's size, soil type, plant species, and sun exposure to develop tailored irrigation plans. We design systems that provide precise water delivery to roots, minimizing waste and promoting plant health.`,
             },
             {
                 title: 'Drip and Sprinkler Systems',
@@ -361,21 +361,21 @@ Contact YouLandscape Architects & Consultants today for a consultation and disco
             }
         ],
         howWeCanHelp:
-            `At YouLandscape Architects & Consultants, we provide expert landscape irrigation solutions tailored to your garden’s unique needs. Our team designs and installs efficient drip and sprinkler systems that conserve water while ensuring your plants receive the right amount of moisture. Using smart technology and sustainable practices, we help you maintain a healthy, thriving landscape with minimal water waste and lower utility costs.`,
+            `At YouLandscape Architects & Consultants, we provide expert landscape irrigation solutions tailored to your garden's unique needs. Our team designs and installs efficient drip and sprinkler systems that conserve water while ensuring your plants receive the right amount of moisture. Using smart technology and sustainable practices, we help you maintain a healthy, thriving landscape with minimal water waste and lower utility costs.`,
         whyChoose:
             `• Expertly tailored irrigation designs for maximum efficiency
 • Advanced drip and sprinkler systems suited to your plants
 • Integration of smart technology for water-saving automation
 • Professional installation and reliable maintenance services
 
-Keep your garden vibrant and water-wise with expert irrigation solutions from YouLandscape Architects & Consultants. Contact us today to design a sustainable irrigation system for your outdoor space.`
+Keep your garden vibrant and water-wise with expert irrigation solutions from YouLandscape Architects & Consultants. Contact us today to design a sustainable irrigation system for your outdoor space.`,
     },
     {
         id: 10,
         title: 'Garden Renovation',
         description:
-            'We specialize in revitalizing tired or neglected gardens into vibrant, functional, and beautiful outdoor living spaces. Whether you want to update your garden’s design, improve plant health, or enhance usability, our renovation services breathe new life into your landscape.',
-        image: '/services/garden-renovation.jpg',
+            'We specialize in revitalizing tired or neglected gardens into vibrant, functional, and beautiful outdoor living spaces. Whether you want to update your garden\'s design, improve plant health, or enhance usability, our renovation services breathe new life into your landscape.',
+        image: '/home/services/garden-renovation.jpeg',
         icon: <FaRecycle className="w-8 h-8" />,
         features: [
             {
@@ -408,14 +408,14 @@ Keep your garden vibrant and water-wise with expert irrigation solutions from Yo
 • Focus on eco-friendly and water-efficient solutions
 • Comprehensive aftercare and maintenance packages
 
-Refresh your outdoor environment with professional garden renovation services from YouLandscape Architects & Consultants. Contact us today to discuss how we can transform your garden into a thriving, beautiful space.`
+Refresh your outdoor environment with professional garden renovation services from YouLandscape Architects & Consultants. Contact us today to discuss how we can transform your garden into a thriving, beautiful space.`,
     },
     {
         id: 11,
         title: 'Hardscape & Modification',
         description:
-            'At YouLandscape Architects & Consultants, we specialize in hardscape design and landscape modifications that bring structure, style, and functionality to your outdoor environment. Whether it’s upgrading an old patio, installing retaining walls, or reconfiguring your layout, we tailor each project to suit your space, lifestyle, and Kenya’s climate.',
-        image: '/services/hardscape-modification.jpg',
+            'At YouLandscape Architects & Consultants, we specialize in hardscape design and landscape modifications that bring structure, style, and functionality to your outdoor environment. Whether it\'s upgrading an old patio, installing retaining walls, or reconfiguring your layout, we tailor each project to suit your space, lifestyle, and Kenya\'s climate.',
+        image: '/home/services/hardscape.jpeg',
         icon: <FaCubes className="w-8 h-8" />,
         features: [
             {
@@ -436,16 +436,16 @@ Refresh your outdoor environment with professional garden renovation services fr
             }
         ],
         howWeCanHelp:
-            `We blend expert craftsmanship with thoughtful design to create hardscape solutions that are both functional and visually appealing. Whether you’re renovating or starting fresh, we’ll help you reimagine your outdoor space with precision and style.`,
+            `We blend expert craftsmanship with thoughtful design to create hardscape solutions that are both functional and visually appealing. Whether you're renovating or starting fresh, we'll help you reimagine your outdoor space with precision and style.`,
         whyChoose:
-            `At YouLandscape Architects & Consultants, we combine innovative design with expert craftsmanship to deliver durable, stylish hardscape and landscape modification solutions. Our team brings deep knowledge of Kenya’s diverse climates and terrain, ensuring every structure—from patios and pathways to retaining walls—is built to last. We use premium materials, tailored designs, and sustainable practices to enhance both the beauty and functionality of your outdoor space. With a client-focused approach, we deliver custom results that match your vision, lifestyle, and long-term needs.`
+            `At YouLandscape Architects & Consultants, we combine innovative design with expert craftsmanship to deliver durable, stylish hardscape and landscape modification solutions. Our team brings deep knowledge of Kenya's diverse climates and terrain, ensuring every structure—from patios and pathways to retaining walls—is built to last. We use premium materials, tailored designs, and sustainable practices to enhance both the beauty and functionality of your outdoor space. With a client-focused approach, we deliver custom results that match your vision, lifestyle, and long-term needs.`,
     },
     {
         id: 12,
         title: 'Landscape Supplies and Products',
         description:
             'At YouLandscape Architects & Consultants, we offer a wide range of landscape supplies and garden products tailored for residential, commercial, and institutional projects across Kenya. Whether you\'re installing a new garden, upgrading your outdoor space, or managing a rooftop or vertical garden, we provide reliable, high-quality materials and expert services to bring your vision to life.',
-        image: '/services/landscape-supplies.jpg',
+        image: '/home/services/supplies.jpeg',
         icon: <FaBoxes className="w-8 h-8" />,
         features: [
             {
@@ -455,31 +455,31 @@ Refresh your outdoor environment with professional garden renovation services fr
 • Trees & Shrubs: Indigenous and exotic species for shade, privacy, and beauty.
 • Climbing Vines: For pergolas, trellises, and wall gardens.
 • Ground Covers & Fillers: For erosion control and visual texture.
-• Grass Varieties: Natural and synthetic turf for lawns, sports fields, and commercial landscapes.`
+• Grass Varieties: Natural and synthetic turf for lawns, sports fields, and commercial landscapes.`,
             },
             {
                 title: 'Hardscape Materials',
                 description: `• Natural Stones: Flagstones, decorative pebbles, and boulders for pathways, water features, and retaining walls.
 • Colored Pebbles: Available in various sizes and tones.
-• Cabro Blocks (Pavers): High-quality paving blocks for driveways, patios, and walkways, with installation services.`
+• Cabro Blocks (Pavers): High-quality paving blocks for driveways, patios, and walkways, with installation services.`,
             },
             {
                 title: 'Irrigation & Water Management',
                 description: `• Irrigation Systems: Design, installation, and repair of drip and sprinkler systems.
-• Rainwater Harvesting Equipment: Tanks, filters, and distribution systems for water conservation.`
+• Rainwater Harvesting Equipment: Tanks, filters, and distribution systems for water conservation.`,
             },
             {
                 title: 'Garden Enhancements & Décor',
                 description: `• Garden Lights Installation: Energy-efficient outdoor lighting.
 • Garden Furniture: Weather-resistant sets for lounging and dining.
 • Vertical Gardens & Living Walls: Green wall systems for urban spaces.
-• Rock Gardens Installation: Drought-tolerant designs using natural stone.`
+• Rock Gardens Installation: Drought-tolerant designs using natural stone.`,
             },
             {
                 title: 'Soils, Fertilizers & Organics',
                 description: `• Topsoil & Compost Soil: Nutrient-rich for planting areas.
 • Fine Manure: Organic manure for fertility and water retention.
-• Fertilizers: Balanced, plant-specific options for vibrant growth.`
+• Fertilizers: Balanced, plant-specific options for vibrant growth.`,
             },
             {
                 title: 'Specialty Green Solutions',
@@ -487,7 +487,7 @@ Refresh your outdoor environment with professional garden renovation services fr
 • Certified Seedlings Supply: For landscaping, reforestation, and agriculture.
 • Roof Top Gardening: Lightweight soil, irrigation, and structural solutions.
 • Herb Gardens & Supply: Culinary and medicinal herb installations.
-• Indoor Plants: Easy-care options for homes and offices.`
+• Indoor Plants: Easy-care options for homes and offices.`,
             },
             {
                 title: 'Maintenance, Tools & Services',
@@ -495,17 +495,17 @@ Refresh your outdoor environment with professional garden renovation services fr
 • Tree Planting & Care: Selection, planting, and maintenance.
 • Live Fence Installation: Natural privacy borders with hedge plants.
 • Pest, Disease Control & Fumigation: Routine inspections and eco-safe treatments.
-• Cleaning & Maintenance Services: Debris removal, pruning, and weeding.`
+• Cleaning & Maintenance Services: Debris removal, pruning, and weeding.`,
             }
         ],
         howWeCanHelp:
-            `Whether you're a homeowner, contractor, or property developer, YouLandscape provides expert advice and dependable delivery of landscaping materials tailored to your site’s needs. Our products are selected for their durability, local suitability, and sustainable impact.`,
+            `Whether you're a homeowner, contractor, or property developer, YouLandscape provides expert advice and dependable delivery of landscaping materials tailored to your site's needs. Our products are selected for their durability, local suitability, and sustainable impact.`,
         whyChoose:
             `• Locally Sourced, Climate-Resilient Materials
 • Eco-Friendly & Sustainable Options
 • Reliable Supply & On-Time Delivery
 • Expert Advice for Product Selection
-• Integrated with Full-Service Landscaping`
+• Integrated with Full-Service Landscaping`,
     }
 ];
 
