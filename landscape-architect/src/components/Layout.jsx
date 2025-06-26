@@ -46,44 +46,46 @@ export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Contact Strip */}
-      <div className="contactStrip flex justify-between items-center bg-[var(--primary-green)] px-4 py-3 border-b text-white text-xs">
-        {/* Contact Info */}
-        <div className="flex items-center gap-4 flex-wrap">
-          <a
-            href="https://www.google.com/maps/place/KUSCCO,+Centre,+Nairobi,+KE"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="locationLink flex items-center gap-1 text-white font-normal"
-          >
-            KUSCCO Centre - Nairobi Region
-          </a>
-          <a href="tel:+254707301563" className="contactLink flex items-center gap-1 text-white font-normal">
-            +254707301563
-          </a>
-          <a href="mailto:info@youlandscape.com" className="contactLink flex items-center gap-1 text-white font-normal">
-            info@youlandscape.com
-          </a>
-        </div>
-        {/* Social Icons */}
-        <div className="flex items-center gap-3">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
-            <FaFacebook />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
-            <FaTwitter />
-          </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
-            <FaYoutube />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
-            <FaInstagram />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
-            <FaLinkedin />
-          </a>
-          <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
-            <FaWhatsapp />
-          </a>
+      <div className="bg-[var(--primary-green)] border-b text-white text-xs">
+        <div className="flex justify-between items-center px-4 py-3 max-w-7xl mx-auto">
+          {/* Contact Info */}
+          <div className="flex items-center gap-4 flex-wrap">
+            <a
+              href="https://www.google.com/maps/place/KUSCCO,+Centre,+Nairobi,+KE"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="locationLink flex items-center gap-1 text-white font-normal"
+            >
+              KUSCCO Centre - Nairobi Region
+            </a>
+            <a href="tel:+254707301563" className="contactLink flex items-center gap-1 text-white font-normal">
+              +254707301563
+            </a>
+            <a href="mailto:info@youlandscape.com" className="contactLink flex items-center gap-1 text-white font-normal">
+              info@youlandscape.com
+            </a>
+          </div>
+          {/* Social Icons */}
+          <div className="flex items-center gap-3">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
+              <FaFacebook />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
+              <FaTwitter />
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
+              <FaYoutube />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
+              <FaInstagram />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
+              <FaLinkedin />
+            </a>
+            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
+              <FaWhatsapp />
+            </a>
+          </div>
         </div>
       </div>
 

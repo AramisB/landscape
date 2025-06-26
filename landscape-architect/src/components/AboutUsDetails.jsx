@@ -3,15 +3,16 @@ const AboutUsDetails = [
     {
         id: "our-company",
         title: "Our Company",
-        image: "/images/about-us/company.jpg",
+        image: "/about-us/company.jpeg",
         content: {
             description: `YouLandscape Architects and Consultants is a leading landscape architecture firm in Kenya, specializing in innovative, sustainable outdoor designs, master planning, and eco-conscious landscaping solutions. We blend artistry, engineering, and environmental science to create functional, stunning landscapes for homes, businesses, and public spaces.`,
 
             whoWeAre: `
-YouLandscape is a registered limited company driven by a team of licensed landscape architects, horticulturists, and environmental design consultants. Our name reflects our mission: to craft landscapes that resonate with you—your lifestyle, your space, and your vision.
+At YouLandscape Architects and Consultants, we believe your outdoor space should be an extension of you. With over a decade of experience, we stand as a leading Kenyan landscaping company, driven by a passionate team of licensed landscape architects, horticulturists, and environmental design consultants. Our name isn't just a label; it's our mission: to craft landscapes that genuinely resonate with your lifestyle, your space, and your unique vision.
 
-With over a decade of expertise, we've transformed countless properties across Kenya, from urban rooftops to sprawling estates, using cutting-edge design principles and sustainable practices. Our goal? To turn underutilized spaces into living, breathing works of art.
-    `,
+Having transformed countless properties across Kenya for over ten years, from residential homes to serene sprawling estates, we achieve this by blending cutting-edge design principles with sustainable practices, consistently turning underutilized areas into living, breathing works of art. Our commitment is to deliver exceptional lawns and gardens, providing both homes and businesses with spaces they'll enjoy for years to come.
+
+We pride ourselves on offering the best landscape architecture and gardening services, utilizing the latest techniques and design innovations. Every project is a close collaboration with you, ensuring your vision becomes a beautiful and functional reality. Your satisfaction is at the heart of everything we do, and we're dedicated to making your landscaping journey seamless and rewarding.    `,
 
             coreValues: [
                 "Customer-centric",
@@ -32,47 +33,47 @@ With over a decade of expertise, we've transformed countless properties across K
                 intro: "From concept to care — we deliver excellence at every stage.",
                 steps: [
                     {
-                        title: "1. Initial Consultation & Vision Alignment",
+                        title: "Initial Consultation & Vision Alignment",
                         description: "We start with a free consultation to align your vision, goals, and budget for your landscape project.",
                         image: "/images/working-process/consultation.jpg"
                     },
                     {
-                        title: "2. Site Assessment",
+                        title: "Site Assessment",
                         description: "Our experts assess your site's unique conditions to inform a climate-adapted, efficient design.",
                         image: "/images/working-process/site-assessment.jpg"
                     },
                     {
-                        title: "3. Design and Planning",
+                        title: "Design and Planning",
                         description: "We create a custom landscape plan with plant, hardscape, and lighting selections for your needs.",
                         image: "/images/working-process/design-planning.jpg"
                     },
                     {
-                        title: "4. Proposal & Agreement",
+                        title: "Proposal & Agreement",
                         description: "You receive a clear proposal with costs, timeline, and eco-friendly materials for full transparency.",
                         image: "/images/working-process/proposal-agreement.jpg"
                     },
                     {
-                        title: "5. Project Execution",
+                        title: "Project Execution",
                         description: "Our team implements your design with quality checks and sustainable practices at every stage.",
                         image: "/images/working-process/execution.jpg"
                     },
                     {
-                        title: "6. Regular Updates",
+                        title: "Regular Updates",
                         description: "We keep you informed with weekly progress reports and adapt quickly to your feedback.",
                         image: "/images/working-process/updates.jpg"
                     },
                     {
-                        title: "7. Quality Assurance: Precision-Driven Excellence",
+                        title: "Quality Assurance: Precision-Driven Excellence",
                         description: "Rigorous inspections ensure every detail meets Kenya's top landscaping standards and your expectations.",
                         image: "/images/working-process/quality-assurance.jpg"
                     },
                     {
-                        title: "8. Project Completion",
+                        title: "Project Completion",
                         description: "We finalize your landscape with a detailed walkthrough and offer ongoing care options.",
                         image: "/images/working-process/completion.jpg"
                     },
                     {
-                        title: "9. Ongoing Support: Lifelong Partnership in Landscape Excellence",
+                        title: "Ongoing Support: Lifelong Partnership in Landscape Excellence",
                         description: "Enjoy tailored maintenance and 24/7 expert support to keep your landscape thriving year-round.",
                         image: "/images/working-process/ongoing-support.jpg"
                     }

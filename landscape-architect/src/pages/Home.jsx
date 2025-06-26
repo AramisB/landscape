@@ -26,10 +26,8 @@ const slides = [
     key: 'hero',
     content: (
       <div className="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
-        <img src="/hero.jpg" alt="Hero background" className="absolute inset-0 w-full h-full object-cover z-0" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 z-10" />
-        <div className="relative z-20 flex flex-col items-center text-center px-4">
-          <img src="/logo.png" alt="YouLandscape Logo" className="w-24 mb-4" />
+        <img src="/hero.jpg" alt="Hero background" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="relative z-20 flex flex-col items-center text-center px-4 w-full">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">Transforming Spaces and Enhancing Lives</h1>
           <p className="text-lg md:text-xl max-w-3xl mt-4 text-white">We design and build innovative outdoor spaces that harmonize with nature and enhance people's lives.</p>
           <div className="flex flex-wrap justify-center gap-8 mx-auto mt-10">
@@ -40,9 +38,6 @@ const slides = [
               Contact Us
             </Link>
           </div>
-          <div className="mt-8 animate-bounce">
-            <span className="text-white text-3xl">&#8595;</span>
-          </div>
         </div>
       </div>
     ),
@@ -50,11 +45,11 @@ const slides = [
   {
     key: 'services',
     content: (
-      <div className="w-screen overflow-hidden min-h-[60vh] flex flex-col items-center justify-center px-4 py-12 border-2 border-[var(--secondary-blue)] shadow-lg rounded-none text-center relative bg-cover bg-center" style={{ backgroundImage: "url('/servicesSlider.jpeg')" }}>
-        <div className="absolute inset-0 bg-black/40 z-0" />
-        <div className="relative z-10 flex flex-col items-center w-full">
-          <h1 className="mb-4 text-center text-3xl font-extrabold text-white drop-shadow-lg">Our Services</h1>
-          <p className="mb-8 text-lg max-w-3xl text-center text-white drop-shadow">Comprehensive landscape architecture and design services tailored to enhance outdoor living experiences:</p>
+      <div className="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
+        <img src="/servicesSlider.jpeg" alt="Services background" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="relative z-20 flex flex-col items-center w-full">
+          <h1 className="mb-4 text-center text-3xl font-extrabold text-white">Our Services</h1>
+          <p className="mb-8 text-lg max-w-3xl text-center text-white">Comprehensive landscape architecture and design services tailored to enhance outdoor living experiences:</p>
           <div className="flex justify-center mt-10">
             <Link to="/services" className="inline-block px-8 py-4 rounded bg-white text-[var(--secondary-blue)] font-semibold border-2 border-[var(--secondary-blue)] shadow transition hover:bg-[var(--primary-green)] hover:text-white">Explore</Link>
           </div>
@@ -65,11 +60,11 @@ const slides = [
   {
     key: 'contact',
     content: (
-      <div className="w-screen overflow-hidden px-0 py-8 md:px-0 min-h-[60vh] flex flex-col justify-center rounded-none shadow-lg border-2 relative bg-cover bg-center" style={{ backgroundImage: "url('/contactSlider.jpeg')" }}>
-        <div className="absolute inset-0 bg-black/40 z-0" />
-        <div className="relative z-10 flex flex-col items-center w-full">
-          <h1 className="mb-4 text-center text-3xl font-extrabold text-white drop-shadow-lg">Get In Touch</h1>
-          <p className="mb-6 text-lg max-w-3xl text-center text-white drop-shadow">Let's create something beautiful together.<br />Contact us for a free consultation.</p>
+      <div className="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
+        <img src="/contactSlider.jpeg" alt="Contact background" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="relative z-20 flex flex-col items-center w-full">
+          <h1 className="mb-4 text-center text-3xl font-extrabold text-white">Get In Touch</h1>
+          <p className="mb-6 text-lg max-w-3xl text-center text-white">Let's create something beautiful together.<br />Contact us for a free consultation.</p>
           <div className="flex justify-center">
             <Link to="/contact" className="inline-block px-8 py-4 rounded bg-white text-[var(--secondary-blue)] font-semibold border-2 border-[var(--secondary-blue)] shadow transition hover:bg-[var(--primary-green)] hover:text-white">Get In Touch</Link>
           </div>
@@ -106,10 +101,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--off-white)]">
       {/* Hero Section with Vertical Slider */}
-      <section className="relative flex items-center justify-center min-h-[60vh] w-full bg-[var(--off-white)] overflow-hidden py-4 px-2 sm:px-4">
-        {slides[current].key === 'hero' && (
-          <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
-        )}
+      <section className="relative flex items-center justify-center min-h-[60vh] w-full bg-white overflow-hidden py-4 px-2 sm:px-4">
         <AnimatePresence mode="wait">
           <motion.div
             key={slides[current].key}
@@ -122,37 +114,18 @@ export default function Home() {
             {slides[current].content}
           </motion.div>
         </AnimatePresence>
-        {slides[current].key === 'hero' && (
-          <img
-            src="/hero.jpg"
-            alt="Hero background"
-            className="absolute inset-0 w-full h-full object-cover z-0"
-            style={{ objectPosition: 'center' }}
-          />
-        )}
       </section>
 
-      <div className="flex justify-center gap-2 mt-4 z-30">
-        {slides.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => setCurrent(idx)}
-            className={`w-4 h-4 sm:w-3 sm:h-3 rounded-full ${current === idx ? 'bg-[var(--secondary-blue)]' : 'bg-gray-300'} transition`}
-            aria-label={`Go to slide ${idx + 1}`}
-          />
-        ))}
-      </div>
-
       {/* About Section */}
-      <section className="py-10 sm:py-16 bg-[var(--off-white)]" id="about">
-        <div className="container mx-auto px-2 sm:px-4 flex flex-col md:flex-row items-stretch justify-center gap-8 md:gap-12 max-w-5xl py-6 sm:py-8">
+      <section className="py-10 sm:py-16 bg-[var(--pure-white)] w-full" id="about">
+        <div className="mx-auto px-2 sm:px-4 flex flex-col md:flex-row items-stretch justify-center gap-8 md:gap-12 max-w-5xl py-6 sm:py-8 w-full">
           {/* Left Image - guaranteed to stretch */}
           <div className="w-full md:w-1/2 flex flex-col h-full">
             <div className="flex-1 flex">
               <img
                 src="/aboutUs.png"
                 alt="About our landscaping team"
-                className="w-full h-full object-cover"
+                className="w-full h-[32rem] object-cover"
               />
             </div>
           </div>
@@ -299,22 +272,22 @@ export default function Home() {
       </section>
 
       {/* We Have Worked With Section */}
-      <section className="py-8 sm:py-12 bg-[var(--off-white)]">
+      <section className="py-8 sm:py-12 bg-[var(--pure-white)]">
         <div className="container mx-auto px-2 sm:px-4 max-w-7xl text-center">
-          <h2 className="text-xl sm:text-2xl font-bold text-[var(--primary-green)] mb-4 sm:mb-6">We Have Worked With</h2>
-          <p className="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8">Trusted by leading organizations, businesses, and homeowners across Kenya.</p>
-          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8">
-            <img src="/clients/client1.png" alt="Client 1" className="h-10 sm:h-12 object-contain" />
-            <img src="/clients/client2.png" alt="Client 2" className="h-10 sm:h-12 object-contain" />
-            <img src="/clients/client3.png" alt="Client 3" className="h-10 sm:h-12 object-contain" />
-            <img src="/clients/client4.png" alt="Client 4" className="h-10 sm:h-12 object-contain" />
-            <img src="/clients/client5.png" alt="Client 5" className="h-10 sm:h-12 object-contain" />
+          <h2 className="text-xl sm:text-2xl font-bold text-[var(--primary-green)] mb-4 sm:mb-6">Some of Our Esteemed Clients</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-center">
+            <img src="/about-us/client-logos/land-and-life-foundation.jpeg" alt="Land and Life Foundation" className="h-16 object-contain mx-auto" />
+            <img src="/about-us/client-logos/pestana-golf-resorts.jpeg" alt="Pestana Golf Resorts" className="h-16 object-contain mx-auto" />
+            <img src="/about-us/client-logos/benedizione.jpeg" alt="Benedizione" className="h-16 object-contain mx-auto" />
+            <img src="/about-us/client-logos/uniques-hotel-lodge-camps.jpeg" alt="Uniques Hotel Lodge Camps" className="h-16 object-contain mx-auto" />
+            <img src="/about-us/client-logos/kisii-county.jpeg" alt="Kisii County" className="h-16 object-contain mx-auto" />
+            <img src="/about-us/client-logos/amref-health-africa.jpeg" alt="AMREF Health Africa" className="h-16 object-contain mx-auto" />
           </div>
         </div>
       </section>
 
       {/* Blog Section */}
-      <section className="py-8 sm:py-12 bg-[var(--off-white)]">
+      <section className="py-8 sm:py-12 bg-[var(--pure-white)]">
         <div className="container mx-auto px-2 sm:px-4 max-w-7xl">
           <h2 className="text-xl sm:text-2xl font-bold text-[var(--primary-green)] mb-4 text-center">Latest Blog Posts</h2>
           <p className="text-sm sm:text-base text-center text-gray-600 mb-6 sm:mb-10">Get tips, insights, and inspiration from our landscaping experts.</p>
@@ -327,8 +300,8 @@ export default function Home() {
       </section>
       <WhyChooseUs />
 
-      {/* Full-width Get Started Section */}
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen" style={{ position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', width: '100vw' }}>
+      {/* Get Started Section with reduced width */}
+      <div className="max-w-6xl mx-auto px-2 sm:px-4 pb-12">
         <GetStartedSection />
       </div>
       
