@@ -1,6 +1,8 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import AboutUsDetails from '../components/AboutUsDetails';
 import GetStartedSection from '../components/GetStartedSection';
+import OptimizedImage from '../components/OptimizedImage';
 
 export default function AboutUs() {
   const { sectionId } = useParams();
@@ -14,8 +16,34 @@ export default function AboutUs() {
 
   return (
     <div key={currentId} className="px-2 sm:px-8 py-8 sm:py-12 max-w-5xl mx-auto">
+      {/* SEO Meta Tags for About Us */}
+      <Helmet>
+        <title>About Us | YouLandscape Architects & Consultants - Kenya's Leading Landscape Design Firm</title>
+        <meta name="description" content="Discover YouLandscape Architects & Consultants - Kenya's premier landscape architecture firm. Learn about our team, mission, and 10+ years of experience in sustainable landscape design." />
+        <meta name="keywords" content="YouLandscape, about us, landscape architects Kenya, landscape design Nairobi, sustainable landscaping, outdoor design, garden design Kenya" />
+        <meta name="author" content="YouLandscape Architects & Consultants" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="About Us | YouLandscape Architects & Consultants" />
+        <meta property="og:description" content="Discover YouLandscape Architects & Consultants - Kenya's premier landscape architecture firm. Learn about our team, mission, and 10+ years of experience in sustainable landscape design." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://youlandscape.co.ke/about-us" />
+        <meta property="og:image" content="https://youlandscape.co.ke/logo.jpeg" />
+        <meta property="og:site_name" content="YouLandscape Architects & Consultants" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us | YouLandscape Architects & Consultants" />
+        <meta name="twitter:description" content="Discover YouLandscape Architects & Consultants - Kenya's premier landscape architecture firm. Learn about our team, mission, and 10+ years of experience in sustainable landscape design." />
+        <meta name="twitter:image" content="https://youlandscape.co.ke/logo.jpeg" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://youlandscape.co.ke/about-us" />
+      </Helmet>
+
       <div className="mb-6 sm:mb-8">
-        <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-[var(--primary-green)] drop-shadow">About Us</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-[var(--primary-green)] drop-shadow">About YouLandscape</h1>
         {/* Dropdown for mobile */}
         <div className="sm:hidden mb-4">
           <select
@@ -47,10 +75,12 @@ export default function AboutUs() {
         <div>
           {/* Full-width image with section title overlay */}
           <div className="relative mb-4 sm:mb-6">
-            <img
+            <OptimizedImage
               src={section.image}
-              alt={section.title}
+              alt={`${section.title} - YouLandscape Professional Services`}
               className="w-full h-40 sm:h-64 object-cover rounded-none"
+              sizes="100vw"
+              priority={true}
             />
             <h2 className="absolute inset-0 flex items-center justify-center text-lg sm:text-2xl md:text-3xl font-bold text-white bg-black bg-opacity-50 m-0 p-0 rounded-none">
               {section.title}
@@ -77,8 +107,20 @@ export default function AboutUs() {
               <p>{section.content.workingProcess.intro}</p>
               <ol className="list-decimal pl-6">
                 {section.content.workingProcess.steps.map((step, idx) => (
-                  <li key={idx} className="mb-2">
-                    <span className="font-semibold">{step.title}:</span> {step.description}
+                  <li key={idx} className="mb-6 flex flex-col sm:flex-row items-start gap-4 text-left">
+                    {step.image && (
+                      <OptimizedImage
+                        src={step.image}
+                        alt={step.title}
+                        className="w-32 h-32 object-cover rounded shadow border border-gray-200"
+                        sizes="(min-width: 640px) 8rem, 100vw"
+                        priority={idx < 2}
+                      />
+                    )}
+                    <div className="w-full text-left">
+                      <span className="font-semibold block mb-1">{step.title}</span>
+                      <span>{step.description}</span>
+                    </div>
                   </li>
                 ))}
               </ol>

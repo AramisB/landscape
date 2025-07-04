@@ -20,7 +20,7 @@ const GetAquote = () => {
         </label>
         <label className="text-base text-gray-800">
           Email:
-          <input type="email" name="email" className="block w-full mt-1 p-2 border border-gray-300 text-base rounded-none focus:outline-none focus:ring-2 focus:ring-green-600" />
+          <input type="email" name="email" placeholder="info@youlandscape.co.ke" className="block w-full mt-1 p-2 border border-gray-300 text-base rounded-none focus:outline-none focus:ring-2 focus:ring-green-600" />
         </label>
         <label className="text-base text-gray-800">
           Project Details:

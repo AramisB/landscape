@@ -13,9 +13,29 @@ import {
     FaCubes,
     FaBoxes
 } from "react-icons/fa";
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
+import OptimizedImage from './OptimizedImage';
+
+// Utility function to convert title to slug
+function toSlug(str) {
+    return str
+        .toLowerCase()
+        .trim()
+        .replace(/&/g, 'and') // Replace & with 'and' for consistency
+        .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric with dash
+        .replace(/^-+|-+$/g, ''); // Remove leading/trailing dashes
+}
 
 // Utility function to convert slug back to title
-const fromSlug = (slug) => slug.replace(/-/g, ' ');
+function fromSlug(slug) {
+    return slug
+        .replace(/-/g, ' ')
+        .replace(/\band\b/g, '&') // Replace 'and' with & for display
+        .replace(/\s+/g, ' ') // Collapse multiple spaces
+        .trim();
+}
 
 export const services = [
     {
@@ -511,7 +531,13 @@ Refresh your outdoor environment with professional garden renovation services fr
 
 export default function ServiceDetails() {
     const { title } = useParams();
-    const service = services.find((service) => service.title.toLowerCase() === fromSlug(title).toLowerCase());
+    const service = services.find(
+        (svc) => toSlug(svc.title) === title
+    );
+
+    // DEBUG: Log slugs for all services
+    console.log('toSlug(Hardscape & Modification):', toSlug('Hardscape & Modification'));
+    services.forEach(svc => console.log('Service:', svc.title, 'Slug:', toSlug(svc.title)));
 
     if (!service) {
         return <div className="text-center text-red-500 text-lg font-semibold mt-10">Service not found</div>;
@@ -556,12 +582,17 @@ export default function ServiceDetails() {
 
     return (
         <div>
+            <Helmet>
+                <title>{`${service.title} - YouLandscape Professional Services`}</title>
+            </Helmet>
             {/* Image with title overlay */}
             <div className="relative w-full h-72 md:h-96">
-                <img
+                <OptimizedImage
                     src={service.image}
-                    alt={service.title}
+                    alt={`${service.title} - YouLandscape Professional Services`}
                     className="object-cover w-full h-full"
+                    sizes="100vw"
+                    priority={true}
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                     <h1 className="text-4xl md:text-5xl font-bold text-white text-center drop-shadow-lg">
@@ -606,9 +637,8 @@ export default function ServiceDetails() {
                             {services.map((svc) => (
                                 <li key={svc.id}>
                                     <Link
-                                        to={`/services/${svc.title.toLowerCase().replace(/ /g, '-')}`}
-                                        className={`text-green-600 hover:underline ${svc.title === service.title ? 'font-bold underline' : ''
-                                            }`}
+                                        to={`/services/${toSlug(svc.title)}`}
+                                        className={`text-green-600 hover:underline ${svc.title === service.title ? 'font-bold underline' : ''}`}
                                     >
                                         {svc.title}
                                     </Link>

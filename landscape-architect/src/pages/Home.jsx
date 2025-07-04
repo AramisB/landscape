@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import {
   FaChalkboardTeacher,
   FaDraftingCompass,
@@ -18,6 +19,7 @@ import {
 import { BlogList } from './Blog';
 import WhyChooseUs from '../components/WhyChooseUs';
 import GetStartedSection from '../components/GetStartedSection';
+import OptimizedImage from '../components/OptimizedImage';
 
 const SLIDE_DURATION = 10000;
 
@@ -92,24 +94,51 @@ export default function Home() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, SLIDE_DURATION);
-    return () => clearInterval(interval);
+
+    return () => clearInterval(timer);
   }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-[var(--off-white)]">
+      {/* SEO Meta Tags for Homepage */}
+      <Helmet>
+        <title>YouLandscape Architects & Consultants - Kenya's Premier Landscape Design Firm</title>
+        <meta name="description" content="YouLandscape Architects & Consultants is Kenya's leading landscape design firm specializing in sustainable, elegant outdoor spaces. Over 10 years of award-winning landscaping expertise in Nairobi and across Kenya." />
+        <meta name="keywords" content="YouLandscape, landscape architects Kenya, landscape design Nairobi, sustainable landscaping, outdoor design, garden design Kenya, landscape consultants, landscape installation, landscape maintenance" />
+        <meta name="author" content="YouLandscape Architects & Consultants" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="YouLandscape Architects & Consultants - Kenya's Premier Landscape Design Firm" />
+        <meta property="og:description" content="YouLandscape Architects & Consultants is Kenya's leading landscape design firm specializing in sustainable, elegant outdoor spaces. Over 10 years of award-winning landscaping expertise." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://youlandscape.co.ke" />
+        <meta property="og:image" content="https://youlandscape.co.ke/logo.jpeg" />
+        <meta property="og:site_name" content="YouLandscape Architects & Consultants" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="YouLandscape Architects & Consultants - Kenya's Premier Landscape Design Firm" />
+        <meta name="twitter:description" content="YouLandscape Architects & Consultants is Kenya's leading landscape design firm specializing in sustainable, elegant outdoor spaces. Over 10 years of award-winning landscaping expertise." />
+        <meta name="twitter:image" content="https://youlandscape.co.ke/logo.jpeg" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://youlandscape.co.ke" />
+      </Helmet>
+
       {/* Hero Section with Vertical Slider */}
-      <section className="relative flex items-center justify-center min-h-[60vh] w-full bg-white overflow-hidden py-4 px-2 sm:px-4">
+      <section className="relative flex items-center justify-center min-h-[60vh] w-full bg-white overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
-            key={slides[current].key}
+            key={current}
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}
             transition={{ duration: 0.7 }}
-            className="relative z-20 flex flex-col items-center justify-center w-full h-full px-2 sm:px-4 py-8"
+            className="relative z-20 flex flex-col items-center justify-center w-full h-full"
           >
             {slides[current].content}
           </motion.div>
@@ -122,10 +151,11 @@ export default function Home() {
           {/* Left Image - guaranteed to stretch */}
           <div className="w-full md:w-1/2 flex flex-col h-full">
             <div className="flex-1 flex">
-              <img
+              <OptimizedImage
                 src="/aboutUs.png"
-                alt="About our landscaping team"
+                alt="YouLandscape Team - Professional Landscape Architects and Consultants in Kenya"
                 className="w-full h-[32rem] object-cover"
+                sizes="(min-width: 768px) 50vw, 100vw"
               />
             </div>
           </div>
@@ -221,52 +251,54 @@ export default function Home() {
                 title: "Landscape Supplies & Products",
                 desc: "Access quality plants, stones, lighting, irrigation kits, and décor to elevate your landscape projects."
               }
-            ].map((service, idx) => (
-              <motion.div
-                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden border border-gray-100"
-                whileHover={{ scale: 1.02, y: -4 }}
-                transition={{ duration: 0.3 }}
-                key={idx}
-              >
-                {/* Image Section */}
-                <div className="relative overflow-hidden">
-                  <img
-                    src={service.img}
-                    alt={service.title}
-                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                
-                {/* Content Section */}
-                <div className="p-5 flex-1 flex flex-col">
-                  {/* Title with Icon */}
-                  <h3 className="flex items-center gap-2 text-lg font-bold text-[var(--primary-green)] mb-3">
-                    {serviceIcons[service.title] && (
-                      <span className="text-[var(--secondary-blue)]">
-                        {React.createElement(serviceIcons[service.title], {
-                          className: "w-5 h-5"
-                        })}
-                      </span>
-                    )}
-                    {service.title}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-sm text-gray-600 leading-relaxed flex-1 mb-4">{service.desc}</p>
-                  
-                  {/* Button */}
-                  <div className="mt-auto">
-                    <Link 
-                      to="/services" 
-                      className="inline-block w-full bg-[var(--secondary-blue)] text-white px-4 py-3 rounded-lg hover:bg-[var(--primary-green)] transition-colors duration-300 text-center font-semibold text-sm shadow-md hover:shadow-lg"
-                    >
-                      Learn More
-                    </Link>
+            ].map((service, idx) => {
+              // Create slug from title
+              const slug = service.title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+              return (
+                <motion.div
+                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden border border-gray-100"
+                  whileHover={{ scale: 1.02, y: -4 }}
+                  transition={{ duration: 0.3 }}
+                  key={idx}
+                >
+                  {/* Image Section */}
+                  <div className="relative overflow-hidden">
+                    <OptimizedImage
+                      src={service.img}
+                      alt={`${service.title} - YouLandscape Professional Services`}
+                      className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                  {/* Content Section */}
+                  <div className="p-5 flex-1 flex flex-col">
+                    {/* Title with Icon */}
+                    <h3 className="flex items-center gap-2 text-lg font-bold text-[var(--primary-green)] mb-3">
+                      {serviceIcons[service.title] && (
+                        <span className="text-[var(--secondary-blue)]">
+                          {React.createElement(serviceIcons[service.title], {
+                            className: "w-5 h-5"
+                          })}
+                        </span>
+                      )}
+                      {service.title}
+                    </h3>
+                    {/* Description */}
+                    <p className="text-sm text-gray-600 leading-relaxed flex-1 mb-4">{service.desc}</p>
+                    {/* Button */}
+                    <div className="mt-auto">
+                      <Link 
+                        to={`/services/${slug}`} 
+                        className="inline-block w-full bg-[var(--secondary-blue)] text-white px-4 py-3 rounded-lg hover:bg-[var(--primary-green)] transition-colors duration-300 text-center font-semibold text-sm shadow-md hover:shadow-lg"
+                      >
+                        Learn More
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -276,12 +308,12 @@ export default function Home() {
         <div className="container mx-auto px-2 sm:px-4 max-w-7xl text-center">
           <h2 className="text-xl sm:text-2xl font-bold text-[var(--primary-green)] mb-4 sm:mb-6">Some of Our Esteemed Clients</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-center">
-            <img src="/about-us/client-logos/land-and-life-foundation.jpeg" alt="Land and Life Foundation" className="h-16 object-contain mx-auto" />
-            <img src="/about-us/client-logos/pestana-golf-resorts.jpeg" alt="Pestana Golf Resorts" className="h-16 object-contain mx-auto" />
-            <img src="/about-us/client-logos/benedizione.jpeg" alt="Benedizione" className="h-16 object-contain mx-auto" />
-            <img src="/about-us/client-logos/uniques-hotel-lodge-camps.jpeg" alt="Uniques Hotel Lodge Camps" className="h-16 object-contain mx-auto" />
-            <img src="/about-us/client-logos/kisii-county.jpeg" alt="Kisii County" className="h-16 object-contain mx-auto" />
-            <img src="/about-us/client-logos/amref-health-africa.jpeg" alt="AMREF Health Africa" className="h-16 object-contain mx-auto" />
+            <OptimizedImage src="/about-us/client-logos/land-and-life-foundation.jpeg" alt="Land and Life Foundation - YouLandscape Client" className="h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
+            <OptimizedImage src="/about-us/client-logos/pestana-golf-resorts.jpeg" alt="Pestana Golf Resorts - YouLandscape Client" className="h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
+            <OptimizedImage src="/about-us/client-logos/benedizione.jpeg" alt="Benedizione - YouLandscape Client" className="h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
+            <OptimizedImage src="/about-us/client-logos/uniques-hotel-lodge-camps.jpeg" alt="Uniques Hotel Lodge Camps - YouLandscape Client" className="h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
+            <OptimizedImage src="/about-us/client-logos/kisii-county.jpeg" alt="Kisii County - YouLandscape Client" className="h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
+            <OptimizedImage src="/about-us/client-logos/amref-health-africa.jpeg" alt="AMREF Health Africa - YouLandscape Client" className="h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
           </div>
         </div>
       </section>
@@ -300,8 +332,8 @@ export default function Home() {
       </section>
       <WhyChooseUs />
 
-      {/* Get Started Section with reduced width */}
-      <div className="max-w-6xl mx-auto px-2 sm:px-4 pb-12">
+      {/* Get Started Section with About Us Our Company width */}
+      <div className="w-full md:w-[900px] lg:w-[1200px] mx-auto px-2 pb-12">
         <GetStartedSection />
       </div>
       

@@ -1,5 +1,8 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import OptimizedImage from '../components/OptimizedImage';
 
 export const posts = [
   {
@@ -66,10 +69,11 @@ export default function Blog() {
               className="bg-white shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col border border-gray-100"
             >
               <div className="relative h-72 w-full overflow-hidden">
-                <img
+                <OptimizedImage
                   src={post.imageUrl}
-                  alt={post.title}
+                  alt={`${post.title} - YouLandscape Blog`}
                   className="w-full h-full object-cover"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 {/* Category badge */}

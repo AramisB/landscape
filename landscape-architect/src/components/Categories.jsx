@@ -48,12 +48,6 @@ const categories = [
         image: '/product-category/pebbles-gravel.jpeg',
     },
     {
-        slug: 'retaining-walls',
-        name: 'Retaining Walls',
-        description: 'Soil support and stylish design elements.',
-        image: '/product-category/retaining-wall.jpeg',
-    },
-    {
         slug: 'garden-tools',
         name: 'Garden Tools',
         description: 'Reliable tools for daily gardening tasks.',

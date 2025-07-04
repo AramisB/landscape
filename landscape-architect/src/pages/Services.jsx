@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { services } from '../components/ServiceDetails';
 import WhyChooseUs from "../components/WhyChooseUs";
 import GetStartedSection from '../components/GetStartedSection';
+import { Helmet } from 'react-helmet-async';
+import OptimizedImage from '../components/OptimizedImage';
 
 // Utility function to convert title to URL-friendly format
 const toSlug = (title) => title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
@@ -26,6 +28,10 @@ function getSeoDescription(description) {
 export default function Services() {
   return (
     <div className="min-h-screen bg-[var(--off-white)]">
+      <Helmet>
+        <title>Services - YouLandscape Professional Services</title>
+        <meta name="description" content="Comprehensive landscape architecture solutions tailored to your vision" />
+      </Helmet>
       {/* Hero Section */}
       <div className="relative flex items-center justify-center min-h-[40vh] w-full bg-[var(--off-white)] overflow-hidden py-6 px-2 sm:py-8 sm:px-6">
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary-green)] via-[var(--secondary-green)] to-[var(--light-green)] opacity-80 z-0" />
@@ -63,10 +69,11 @@ export default function Services() {
                 className="bg-white shadow-lg rounded-none overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300"
               >
                 <div className="relative w-full h-64 overflow-hidden">
-                  <img
+                  <OptimizedImage
                     src={service.image}
-                    alt={service.title}
+                    alt={`${service.title} - YouLandscape Professional Services`}
                     className="w-full h-full object-cover rounded-none"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
                   <div className="absolute top-4 right-4 bg-white/90 p-3 rounded-none text-[var(--primary-green)] z-20">
@@ -88,8 +95,10 @@ export default function Services() {
           </ul>
         </div>
       </div>
-      <GetStartedSection />
       <WhyChooseUs />
+      <div className="max-w-6xl mx-auto px-2 sm:px-4 pb-12">
+        <GetStartedSection />
+      </div>
     </div>
   );
 }

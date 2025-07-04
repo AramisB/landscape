@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import OptimizedImage from '../OptimizedImage';
 
 export default function ProjectCardSlider({ project }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -38,16 +39,21 @@ export default function ProjectCardSlider({ project }) {
     >
       <div className="imageWrapper">
         <AnimatePresence mode='wait'>
-          <motion.img
+          <motion.div
             key={currentImageIndex}
-            src={project.images[currentImageIndex]}
-            alt={`${project.title} - Image ${currentImageIndex + 1}`}
             className="projectImage"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-          />
+          >
+            <OptimizedImage
+              src={project.images[currentImageIndex]}
+              alt={`${project.title} - Image ${currentImageIndex + 1} - YouLandscape Project`}
+              className="w-full h-full object-cover"
+              sizes="(min-width: 1024px) 50vw, (min-width: 768px) 75vw, 100vw"
+            />
+          </motion.div>
         </AnimatePresence>
         <div className="imageOverlay" />
         

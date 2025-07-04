@@ -251,42 +251,6 @@ const allProducts = [
         categorySlug: 'pebbles-gravel',
     },
 
-    // Retaining Walls
-    {
-        id: 'wall-1',
-        name: 'Concrete Retaining Blocks',
-        price: 'KSh 3,000',
-        image: '/images/products/wall-concrete.jpg',
-        categorySlug: 'retaining-walls',
-    },
-    {
-        id: 'wall-2',
-        name: 'Natural Stone Slabs',
-        price: 'KSh 4,500',
-        image: '/images/products/wall-stone.jpg',
-        categorySlug: 'retaining-walls',
-    },
-    {
-        id: 'wall-3',
-        name: 'Interlocking Wall Bricks',
-        price: 'KSh 2,800',
-        image: '/images/products/wall-interlock.jpg',
-        categorySlug: 'retaining-walls',
-    },
-    {
-        id: 'wall-4',
-        name: 'Gabion Wall Cages',
-        price: 'KSh 3,200',
-        image: '/images/products/wall-gabion.jpg',
-        categorySlug: 'retaining-walls',
-    },
-    {
-        id: 'wall-5',
-        name: 'Wooden Timber Planks',
-        price: 'KSh 2,000',
-        image: '/images/products/wall-timber.jpg',
-        categorySlug: 'retaining-walls',
-    },
     // Stones & Pavers
     {
         id: 'stones-1',

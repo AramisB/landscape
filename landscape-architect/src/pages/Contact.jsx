@@ -40,21 +40,21 @@ export default function Contact() {
                     <dt className="sr-only">Address</dt>
                     <dd className="text-base text-[var(--text-dark)] flex items-center gap-2">
                       <span className="inline-block w-6 h-6 text-[var(--primary-green)]">📍</span>
-                      123 Design Street<br />City, State 12345
+                      KUSCCO Centre - Nairobi Region
                     </dd>
                   </div>
                   <div className="flex items-start gap-4">
                     <dt className="sr-only">Phone</dt>
                     <dd className="text-base text-[var(--text-dark)] flex items-center gap-2">
                       <span className="inline-block w-6 h-6 text-[var(--primary-green)]">📞</span>
-                      +1 (555) 123-4567
+                      +254707301563
                     </dd>
                   </div>
                   <div className="flex items-start gap-4">
                     <dt className="sr-only">Email</dt>
                     <dd className="text-base text-[var(--text-dark)] flex items-center gap-2">
                       <span className="inline-block w-6 h-6 text-[var(--primary-green)]">✉️</span>
-                      contact@example.com
+                      info@youlandscape.co.ke
                     </dd>
                   </div>
                 </dl>

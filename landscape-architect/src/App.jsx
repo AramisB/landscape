@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { CartProvider } from './context/CartContext';
 import Layout from './components/Layout';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
-import Products from './pages/Products';
 import Projects from './pages/Projects';
-import ProjectsSection from './components/projects/ProjectsSection';
 import Services from './pages/Services';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
@@ -13,45 +13,46 @@ import Blog from './pages/Blog';
 import GetAquote from './pages/GetAquote';
 import ServiceDetails from './components/ServiceDetails';
 import AboutUsSection from './components/AboutUsSection';
-import CartPage from './components/CartPage';
-import CheckoutPage from './components/CheckoutPage';
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
 import './styles/index.css';
+import ImagePreloader from './components/ImagePreloader';
+import ProductsPage from './pages/Products';
+import ProjectSection from './components/projects/ProjectsSection';
 
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+// Critical images to preload
+const criticalImages = [
+  '/logo.jpeg',
+  '/hero.jpg',
+  '/aboutUs.png',
+  '/servicesSlider.jpeg',
+  '/contactSlider.jpeg'
+];
 
 export default function App() {
   return (
-    <CartProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="projects" element={<Projects />} />
-            <Route path="projects/:id" element={<ProjectDetail />} />
-            <Route path="projects/section/:id" element={<ProjectsSection />} />
-            <Route path="services" element={<Services />} />
-            <Route path="services/:title" element={<ServiceDetails />} />
-            <Route path="about-us" element={<AboutUs />} />
-            <Route path="about-us/:id" element={<AboutUsSection />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="blog" element={<Blog />} />
-            <Route path="products" element={<Products />} />
-            <Route path="products/:category" element={<Products />} />
-            <Route path="cart" element={<CartPage />} />
-            <Route
-              path="checkout"
-              element={
-                <Elements stripe={stripePromise}>
-                  <CheckoutPage />
-                </Elements>
-              }
-            />
-            <Route path="get-a-quote" element={<GetAquote />} />
-          </Route>
-        </Routes>
-      </Router>
-    </CartProvider>
+    <HelmetProvider>
+      <CartProvider>
+        <Router>
+          <ScrollToTop />
+          <ImagePreloader images={criticalImages} />
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="projects" element={<Projects />} />
+              <Route path="projects/:id" element={<ProjectDetail />} />
+              <Route path="projects/section/:id" element={<ProjectSection />} />
+              <Route path="services" element={<Services />} />
+              <Route path="services/:title" element={<ServiceDetails />} />
+              <Route path="products" element={<ProductsPage />} />
+              <Route path="products/:category" element={<ProductsPage />} />
+              <Route path="about-us" element={<AboutUs />} />
+              <Route path="about-us/:id" element={<AboutUsSection />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="blog" element={<Blog />} />
+              <Route path="get-a-quote" element={<GetAquote />} />
+            </Routes>
+          </Layout>
+        </Router>
+      </CartProvider>
+    </HelmetProvider>
   );
 }
