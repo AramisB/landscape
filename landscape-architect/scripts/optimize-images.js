@@ -17,17 +17,16 @@ if (!fs.existsSync(outputDir)) {
 // Image optimization settings
 const optimizationSettings = {
   jpeg: {
-    quality: 85,
+    quality: 75, // Lower quality to reduce size
     progressive: true,
     mozjpeg: true
   },
   png: {
-    quality: 85,
-    progressive: true,
-    compressionLevel: 9
+    compressionLevel: 9, // Max compression
+    palette: true,       // Use indexed colors (greatly reduces size)
   },
   webp: {
-    quality: 85,
+    quality: 70,         // Aggressive but still good quality
     effort: 6
   }
 };
