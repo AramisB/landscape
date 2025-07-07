@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet-async';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import AboutUsDetails from './AboutUsDetails';
-import OptimizedImage from './OptimizedImage';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -180,12 +179,11 @@ export default function Layout({ children }) {
             <div className="flex items-center">
               <Link to="/" aria-label="Home">
                 <img
-                  src="/logo.jpeg"
+                  src="/logo.webp"
                   alt="YouLandscape Logo - Professional Landscape Architecture Services"
-                  className="h-16 w-auto"
+                  className="h-20 w-auto"
                   onError={(e) => {
                     console.error('Logo failed to load:', e.target.src);
-                    // Fallback to logo.png if logo.jpeg fails
                     e.target.src = '/logo.png';
                   }}
                 />

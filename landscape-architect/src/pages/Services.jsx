@@ -4,7 +4,6 @@ import { services } from '../components/ServiceDetails';
 import WhyChooseUs from "../components/WhyChooseUs";
 import GetStartedSection from '../components/GetStartedSection';
 import { Helmet } from 'react-helmet-async';
-import OptimizedImage from '../components/OptimizedImage';
 
 // Utility function to convert title to URL-friendly format
 const toSlug = (title) => title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
@@ -69,7 +68,7 @@ export default function Services() {
                 className="bg-white shadow-lg rounded-none overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300"
               >
                 <div className="relative w-full h-64 overflow-hidden">
-                  <OptimizedImage
+                  <img
                     src={service.image}
                     alt={`${service.title} - YouLandscape Professional Services`}
                     className="w-full h-full object-cover rounded-none"

@@ -2,7 +2,6 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import AboutUsDetails from '../components/AboutUsDetails';
 import GetStartedSection from '../components/GetStartedSection';
-import OptimizedImage from '../components/OptimizedImage';
 
 export default function AboutUs() {
   const { sectionId } = useParams();
@@ -29,14 +28,14 @@ export default function AboutUs() {
         <meta property="og:description" content="Discover YouLandscape Architects & Consultants - Kenya's premier landscape architecture firm. Learn about our team, mission, and 10+ years of experience in sustainable landscape design." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://youlandscape.co.ke/about-us" />
-        <meta property="og:image" content="https://youlandscape.co.ke/logo.jpeg" />
+        <meta property="og:image" content="https://youlandscape.co.ke/logo.webp" />
         <meta property="og:site_name" content="YouLandscape Architects & Consultants" />
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Us | YouLandscape Architects & Consultants" />
         <meta name="twitter:description" content="Discover YouLandscape Architects & Consultants - Kenya's premier landscape architecture firm. Learn about our team, mission, and 10+ years of experience in sustainable landscape design." />
-        <meta name="twitter:image" content="https://youlandscape.co.ke/logo.jpeg" />
+        <meta name="twitter:image" content="https://youlandscape.co.ke/logo.webp" />
         
         {/* Canonical URL */}
         <link rel="canonical" href="https://youlandscape.co.ke/about-us" />
@@ -75,7 +74,7 @@ export default function AboutUs() {
         <div>
           {/* Full-width image with section title overlay */}
           <div className="relative mb-4 sm:mb-6">
-            <OptimizedImage
+            <img
               src={section.image}
               alt={`${section.title} - YouLandscape Professional Services`}
               className="w-full h-40 sm:h-64 object-cover rounded-none"
@@ -109,7 +108,7 @@ export default function AboutUs() {
                 {section.content.workingProcess.steps.map((step, idx) => (
                   <li key={idx} className="mb-6 flex flex-col sm:flex-row items-start gap-4 text-left">
                     {step.image && (
-                      <OptimizedImage
+                      <img
                         src={step.image}
                         alt={step.title}
                         className="w-32 h-32 object-cover rounded shadow border border-gray-200"

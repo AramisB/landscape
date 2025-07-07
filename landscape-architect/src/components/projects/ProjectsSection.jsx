@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import projects from '../ProjectDetails';
-import { motion } from 'framer-motion';
-import OptimizedImage from '../OptimizedImage';
+import { projects } from '../ProjectDetails';
 
 const ProjectSection = () => {
     const { id } = useParams();
@@ -45,7 +43,7 @@ const ProjectSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch min-h-[400px] md:min-h-[500px]">
                 {/* Left: Photo Carousel */}
                 <div className="relative group shadow bg-white flex flex-col h-full">
-                    <OptimizedImage
+                    <img
                         src={project.images[currentImageIndex]}
                         alt={`${project.title} - YouLandscape Project Portfolio`}
                         className="w-full h-full object-cover rounded-none flex-1"

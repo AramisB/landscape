@@ -6,10 +6,10 @@ import PayPalButton from '../components/PayPalButton';
 import MpesaPayButton from '../components/MpesaPayButton';
 
 const paymentMethods = [
-    { id: 'mastercard', label: 'Mastercard', icon: '/icons/mastercard.png' },
-    { id: 'visa', label: 'Visa', icon: '/icons/visa.png' },
-    { id: 'paypal', label: 'PayPal', icon: '/icons/paypal.png' },
-    { id: 'mpesa', label: 'M-Pesa', icon: '/icons/mpesa.png' },
+    { id: 'mastercard', label: 'Mastercard', icon: '/icons/mastercard.webp' },
+    { id: 'visa', label: 'Visa', icon: '/icons/visa.webp' },
+    { id: 'paypal', label: 'PayPal', icon: '/icons/paypal.webp' },
+    { id: 'mpesa', label: 'M-Pesa', icon: '/icons/mpesa.webp' },
 ];
 
 const TAX_RATE = 0.16;

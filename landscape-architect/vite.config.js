@@ -10,6 +10,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp}'],
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // ⬅️ This is the fix (5 MB limit)
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -18,7 +19,7 @@ export default defineConfig({
               cacheName: 'google-fonts-cache',
               expiration: {
                 maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
+                maxAgeSeconds: 60 * 60 * 24 * 365
               }
             }
           },
@@ -29,7 +30,7 @@ export default defineConfig({
               cacheName: 'images-cache',
               expiration: {
                 maxEntries: 100,
-                maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days
+                maxAgeSeconds: 60 * 60 * 24 * 30
               }
             }
           }
@@ -44,12 +45,12 @@ export default defineConfig({
         display: 'standalone',
         icons: [
           {
-            src: '/logo.jpeg',
+            src: '/logo.webp',
             sizes: '192x192',
             type: 'image/jpeg'
           },
           {
-            src: '/logo.jpeg',
+            src: '/logo.webp',
             sizes: '512x512',
             type: 'image/jpeg'
           }

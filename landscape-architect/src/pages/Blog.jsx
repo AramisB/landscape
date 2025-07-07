@@ -2,13 +2,12 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import OptimizedImage from '../components/OptimizedImage';
 
 export const posts = [
   {
     id: 1,
     title: '🌿 Transform Your Small Backyard: Clever Landscape Design Ideas for Urban Spaces',
-    imageUrl: '/small-backyard.png',
+    imageUrl: '/small-backyard.webp',
     date: '2025-05-27',
     category: 'Urban Design',
     description:
@@ -20,7 +19,7 @@ export const posts = [
   {
     id: 2,
     title: '🌱 Beyond Green Grass: Exploring Unique Ground Cover Alternatives for Your Yard',
-    imageUrl: '/ground-cover.png',
+    imageUrl: '/ground-cover.webp',
     date: '2025-05-27',
     category: 'Sustainable Landscaping',
     description:
@@ -32,7 +31,7 @@ export const posts = [
   {
     id: 3,
     title: '🌳 The ROI of Professional Landscape Design: Why Investing Outdoors Pays Off',
-    imageUrl: '/landscape-roi.png',
+    imageUrl: '/landscape-roi.webp',
     date: '2025-05-27',
     category: 'Landscape Investment',
     description:
@@ -49,7 +48,7 @@ export default function Blog() {
       {/* Blog Hero Image Section */}
       <div className="relative w-full h-72 md:h-96 mb-10">
         <img
-          src="/blog-hero.png"
+          src="/blog-hero.webp"
           alt="Landscaping blog header"
           className="w-full h-full object-cover"
         />
@@ -69,7 +68,7 @@ export default function Blog() {
               className="bg-white shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col border border-gray-100"
             >
               <div className="relative h-72 w-full overflow-hidden">
-                <OptimizedImage
+                <img
                   src={post.imageUrl}
                   alt={`${post.title} - YouLandscape Blog`}
                   className="w-full h-full object-cover"

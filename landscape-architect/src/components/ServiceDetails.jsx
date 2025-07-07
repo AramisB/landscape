@@ -16,7 +16,6 @@ import {
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import OptimizedImage from './OptimizedImage';
 
 // Utility function to convert title to slug
 function toSlug(str) {
@@ -43,7 +42,7 @@ export const services = [
         title: 'Landscape Consultation',
         description:
             'We offer expert landscape consultancy services in Kenya, assisting, you, the client to make informed decisions delivering tailored garden maintenance strategies and sustainable future development plans for eco-conscious and thriving outdoor spaces.',
-        image: '/home/services/landscape-consultation.jpeg',
+        image: '/home/services/landscape-consultation.webp',
         icon: <FaComments className="w-8 h-8" />,
         features: [
             {
@@ -75,7 +74,7 @@ export const services = [
         title: 'Landscape Design',
         description:
             'At YouLandscape, we merge innovative design with sustainable practices to create outdoor spaces that elevate aesthetics and amplify property value. Our client tailored solutions—from drought-resistant native gardens to premium stone hardscapes—are engineered for Kenya\'s climate, ensuring beauty thrives year-round. Studies show professionally designed landscapes can boost property value by up to 20%, making your investment as practical as it is breathtaking.',
-        image: '/home/services/landscape-design.jpg',
+        image: '/home/services/landscape-design.webp',
         icon: <FaDraftingCompass className="w-8 h-8" />,
         features: [
             {
@@ -116,7 +115,7 @@ export const services = [
         title: 'Landscape Implementation',
         description:
             'At YouLandscape, Kenya\'s best landscape contractors, we turn visionary designs into reality with professional, eco-conscious installation services. Our certified landscapers and horticulturists combine technical expertise with sustainable practices to transform outdoor spaces into functional, breathtaking environments tailored to Kenya\'s climate. From native plant installations and permeable stone pathways to water-smart irrigation systems, every project adheres to strict quality standards, ensuring durability and aesthetic perfection.',
-        image: '/home/services/landscape-implementation.jpg',
+        image: '/home/services/landscape-implementation.webp',
         icon: <FaTools className="w-8 h-8" />,
         features: [
             {
@@ -157,7 +156,7 @@ export const services = [
         title: 'Landscape Maintenance',
         description:
             'Landscape maintenance involves the regular care and management of outdoor spaces to ensure they remain healthy, attractive, and functional. In Kenya, where climates range from Nairobi\'s dry seasons to Mombasa\'s humidity and the cooler highlands, tailored maintenance practices are essential.',
-        image: '/home/services/landscape-maintenance.jpeg',
+        image: '/home/services/landscape-maintenance.webp',
         icon: <FaLeaf className="w-8 h-8" />,
         features: [
             {
@@ -197,7 +196,7 @@ Experience the difference of working with professionals dedicated to enhancing a
         title: 'Master Planning',
         description:
             'We design large-scale, sustainable outdoor layouts that organize space, resources, and aesthetics into cohesive long-term visions.',
-        image: '/home/services/master-planning.jpg',
+        image: '/home/services/master-planning.webp',
         icon: <FaProjectDiagram className="w-8 h-8" />,
         features: [
             {
@@ -239,7 +238,7 @@ Experience the difference of working with professionals dedicated to enhancing a
         title: 'Project Management',
         description:
             'At YouLandscape, our project management approach brings together a multidisciplinary team of experts—including landscape architects, certified project managers, skilled landscapers, electricians, masons, and plumbers. We coordinate every detail of your landscape project, ensuring smooth execution from concept to completion. Our integrated team structure allows us to manage timelines, quality, and budgets effectively delivering functional, aesthetically pleasing outdoor spaces with precision and professionalism.',
-        image: '/home/services/project-management.png',
+        image: '/home/services/project-management.webp',
         icon: <FaTasks className="w-8 h-8" />,
         features: [
             {
@@ -273,7 +272,7 @@ Experience the difference of working with professionals dedicated to enhancing a
         title: 'Water Features',
         description:
             'We design and install custom water features that enhance your outdoor space\'s beauty and tranquility. From concept to completion, our expert team ensures sustainable, efficient, and durable solutions tailored to your vision and site conditions. We also offer maintenance plans to keep your water features looking pristine year-round, making the process hassle-free for you.',
-        image: '/home/services/water-features.jpeg',
+        image: '/home/services/water-features.webp',
         icon: <FaWater className="w-8 h-8" />,
         features: [
             {
@@ -322,7 +321,7 @@ Contact YouLandscape Architects & Consultants today for a consultation and disco
         title: 'Swimming Pools',
         description:
             'At YouLandscape Architects & Consultants, we design and build custom swimming pools that elevate your outdoor space into a private oasis. Whether you desire a sleek modern pool, a naturalistic lagoon-style design, or a family-friendly recreational pool, our experts create solutions tailored to your lifestyle, site, and budget.',
-        image: '/home/services/swimming-pools.jpeg',
+        image: '/home/services/swimming-pools.webp',
         icon: <FaSwimmingPool className="w-8 h-8" />,
         features: [
             {
@@ -360,7 +359,7 @@ Contact YouLandscape Architects & Consultants today for a consultation and disco
         title: 'Landscape Irrigation',
         description:
             'At YouLandscape Architects & Consultants, we design and install advanced landscape irrigation systems that conserve water while keeping your garden lush and healthy. Our irrigation solutions are customized to suit Kenya\'s diverse climates, ensuring optimal water use for residential and commercial landscapes alike.',
-        image: '/home/services/irrigation.jpg',
+        image: '/home/services/irrigation.webp',
         icon: <FaTint className="w-8 h-8" />,
         features: [
             {
@@ -395,7 +394,7 @@ Keep your garden vibrant and water-wise with expert irrigation solutions from Yo
         title: 'Garden Renovation',
         description:
             'We specialize in revitalizing tired or neglected gardens into vibrant, functional, and beautiful outdoor living spaces. Whether you want to update your garden\'s design, improve plant health, or enhance usability, our renovation services breathe new life into your landscape.',
-        image: '/home/services/garden-renovation.jpeg',
+        image: '/home/services/garden-renovation.webp',
         icon: <FaRecycle className="w-8 h-8" />,
         features: [
             {
@@ -435,7 +434,7 @@ Refresh your outdoor environment with professional garden renovation services fr
         title: 'Hardscape & Modification',
         description:
             'At YouLandscape Architects & Consultants, we specialize in hardscape design and landscape modifications that bring structure, style, and functionality to your outdoor environment. Whether it\'s upgrading an old patio, installing retaining walls, or reconfiguring your layout, we tailor each project to suit your space, lifestyle, and Kenya\'s climate.',
-        image: '/home/services/hardscape.jpeg',
+        image: '/home/services/hardscape.webp',
         icon: <FaCubes className="w-8 h-8" />,
         features: [
             {
@@ -465,7 +464,7 @@ Refresh your outdoor environment with professional garden renovation services fr
         title: 'Landscape Supplies and Products',
         description:
             'At YouLandscape Architects & Consultants, we offer a wide range of landscape supplies and garden products tailored for residential, commercial, and institutional projects across Kenya. Whether you\'re installing a new garden, upgrading your outdoor space, or managing a rooftop or vertical garden, we provide reliable, high-quality materials and expert services to bring your vision to life.',
-        image: '/home/services/supplies.jpeg',
+        image: '/home/services/supplies.webp',
         icon: <FaBoxes className="w-8 h-8" />,
         features: [
             {
@@ -587,7 +586,7 @@ export default function ServiceDetails() {
             </Helmet>
             {/* Image with title overlay */}
             <div className="relative w-full h-72 md:h-96">
-                <OptimizedImage
+                <img
                     src={service.image}
                     alt={`${service.title} - YouLandscape Professional Services`}
                     className="object-cover w-full h-full"

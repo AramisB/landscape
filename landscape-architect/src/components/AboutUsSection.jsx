@@ -6,7 +6,6 @@ import AboutUsDetails from "./AboutUsDetails";
 import WhyChooseUs from "./WhyChooseUs";
 import GetStartedSection from "./GetStartedSection";
 import { motion } from "framer-motion";
-import OptimizedImage from './OptimizedImage';
 
 export default function AboutUsSection() {
     const { id } = useParams();
@@ -40,14 +39,14 @@ export default function AboutUsSection() {
                     <meta property="og:description" content="Discover YouLandscape Architects & Consultants - Kenya's premier landscape architecture firm. Learn about our team, mission, and 10+ years of experience in sustainable landscape design." />
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content="https://youlandscape.co.ke/about-us" />
-                    <meta property="og:image" content="https://youlandscape.co.ke/logo.jpeg" />
+                    <meta property="og:image" content="https://youlandscape.co.ke/logo.webp" />
                     <meta property="og:site_name" content="YouLandscape Architects & Consultants" />
                     
                     {/* Twitter Card Meta Tags */}
                     <meta name="twitter:card" content="summary_large_image" />
                     <meta name="twitter:title" content="About Us | YouLandscape Architects & Consultants" />
                     <meta name="twitter:description" content="Discover YouLandscape Architects & Consultants - Kenya's premier landscape architecture firm. Learn about our team, mission, and 10+ years of experience in sustainable landscape design." />
-                    <meta name="twitter:image" content="https://youlandscape.co.ke/logo.jpeg" />
+                    <meta name="twitter:image" content="https://youlandscape.co.ke/logo.webp" />
                     
                     {/* Canonical URL */}
                     <link rel="canonical" href="https://youlandscape.co.ke/about-us/our-company" />
@@ -59,7 +58,7 @@ export default function AboutUsSection() {
                             "@type": "Organization",
                             "name": "YouLandscape Architects & Consultants",
                             "url": "https://youlandscape.co.ke",
-                            "logo": "https://youlandscape.co.ke/logo.jpeg",
+                            "logo": "https://youlandscape.co.ke/logo.webp",
                             "description": "YouLandscape is Kenya's trusted landscape design firm specializing in consultation, design, and maintenance with over 10 years of experience.",
                             "foundingDate": "2014",
                             "address": {
@@ -118,7 +117,7 @@ export default function AboutUsSection() {
             {/* Banner image and title */}
             {section.image && (
                 <div className="relative mb-0">
-                    <OptimizedImage
+                    <img
                         src={section.image}
                         alt={`${section.title} - YouLandscape Professional Services`}
                         className="w-screen h-48 sm:h-64 md:h-[28rem] object-cover rounded-none"
@@ -142,7 +141,7 @@ export default function AboutUsSection() {
             {/* Team Page */}
             {isTeamPage && (
                 <div className="px-4 sm:px-8 py-6 max-w-5xl mx-auto">
-                    <p className="text-sm sm:text-base text-gray-800 dark:text-gray-300 mb-6 sm:mb-8">{section.content}</p>
+                    <p className="text-sm sm:text-base text-[var(--text-dark)] mb-6 sm:mb-8">{section.content}</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10">
                         {teamMembers.map((member) => (
                             <div className="flex flex-col items-center bg-white shadow-md hover:shadow-lg transition-all duration-300 p-4 sm:p-6 rounded-none" key={member.id}>
@@ -175,7 +174,7 @@ export default function AboutUsSection() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center mb-8 sm:mb-10 mt-24 sm:mt-32 md:mt-40 lg:mt-48">
                             {/* Left: Who We Are image */}
                             <div>
-                                <OptimizedImage
+                                <img
                                     src={section.image}
                                     alt="YouLandscape Architects & Consultants - Our Company"
                                     className="w-full h-48 sm:h-64 md:h-80 lg:h-[32rem] object-cover rounded-none shadow"
@@ -294,12 +293,12 @@ export default function AboutUsSection() {
                                     Some of our Esteemed Clients
                                 </h2>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 items-center justify-center">
-                                    <OptimizedImage src="/about-us/client-logos/land-and-life-foundation.jpeg" alt="Land and Life Foundation - YouLandscape Client" className="h-12 sm:h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
-                                    <OptimizedImage src="/about-us/client-logos/pestana-golf-resorts.jpeg" alt="Pestana Golf Resorts - YouLandscape Client" className="h-12 sm:h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
-                                    <OptimizedImage src="/about-us/client-logos/benedizione.jpeg" alt="Benedizione - YouLandscape Client" className="h-12 sm:h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
-                                    <OptimizedImage src="/about-us/client-logos/uniques-hotel-lodge-camps.jpeg" alt="Uniques Hotel Lodge Camps - YouLandscape Client" className="h-12 sm:h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
-                                    <OptimizedImage src="/about-us/client-logos/kisii-county.jpeg" alt="Kisii County - YouLandscape Client" className="h-12 sm:h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
-                                    <OptimizedImage src="/about-us/client-logos/amref-health-africa.jpeg" alt="AMREF Health Africa - YouLandscape Client" className="h-12 sm:h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
+                                    <img src="/about-us/client-logos/land-and-life-foundation.webp" alt="Land and Life Foundation - YouLandscape Client" className="h-12 sm:h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
+                                    <img src="/about-us/client-logos/pestana-golf-resorts.webp" alt="Pestana Golf Resorts - YouLandscape Client" className="h-12 sm:h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
+                                    <img src="/about-us/client-logos/benedizione.webp" alt="Benedizione - YouLandscape Client" className="h-12 sm:h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
+                                    <img src="/about-us/client-logos/uniques-hotel-lodge-camps.webp" alt="Uniques Hotel Lodge Camps - YouLandscape Client" className="h-12 sm:h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
+                                    <img src="/about-us/client-logos/kisii-county.webp" alt="Kisii County - YouLandscape Client" className="h-12 sm:h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
+                                    <img src="/about-us/client-logos/amref-health-africa.webp" alt="AMREF Health Africa - YouLandscape Client" className="h-12 sm:h-16 object-contain mx-auto" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw" />
                                 </div>
                             </div>
                         </section>

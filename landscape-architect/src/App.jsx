@@ -20,11 +20,11 @@ import ProjectSection from './components/projects/ProjectsSection';
 
 // Critical images to preload
 const criticalImages = [
-  '/logo.jpeg',
-  '/hero.jpg',
-  '/aboutUs.png',
-  '/servicesSlider.jpeg',
-  '/contactSlider.jpeg'
+  '/logo.webp',
+  '/hero.webp',
+  '/aboutUs.webp',
+  '/servicesSlider.webp',
+  '/contactSlider.webp'
 ];
 
 export default function App() {

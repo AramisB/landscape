@@ -3,7 +3,7 @@ const AboutUsDetails = [
     {
         id: "our-company",
         title: "Our Company",
-        image: "/about-us/company.jpeg",
+        image: "/about-us/company.webp",
         content: {
             description: `YouLandscape Architects and Consultants is a leading landscape architecture firm in Kenya, specializing in innovative, sustainable outdoor designs, master planning, and eco-conscious landscaping solutions. We blend artistry, engineering, and environmental science to create functional, stunning landscapes for homes, businesses, and public spaces.`,
 
@@ -76,7 +76,7 @@ We pride ourselves on offering the best landscape architecture and gardening ser
     {
         id: "why-choose-us",
         title: "Why Choose Us",
-        image: "/about-us/why-choose-us.jpg",
+        image: "/about-us/why-choose-us.webp",
         content: [
             {
                 icon: <FaBolt className="text-orange-500 text-3xl" />,
@@ -113,14 +113,14 @@ We pride ourselves on offering the best landscape architecture and gardening ser
     {
         id: "our-team",
         title: "Meet Our Team",
-        image: "/about-us/our-team.jpeg",
+        image: "/about-us/our-team.webp",
         content: "At YouLandscape Architects & Consultants, we're powered by a dynamic team of passionate professionals who combine youthful innovation with years of hands-on experience. Our certified landscape architects, horticulturists, and design specialists share a unified mission: transforming Kenya's outdoor spaces through sustainable, breathtaking designs.",
         members: [
             {
                 id: "carllewis",
                 name: "Carllewis Chweya",
                 role: "Lead Landscape Architect – Head of Design",
-                imageUrl: "/images/team/carllewis.jpg",
+                imageUrl: "/images/team/carllewis.webp",
                 bio: `Carllewis Chweya is a landscape architect with 6 + years of hands- on experience.He holds a BSc in Landscape Architecture from Jomo Kenyatta University of Agriculture and Technology(JKUAT).His expertise spans sustainable design, urban greening, and innovative landscape solutions that blend functionality with aesthetic excellence.`,
                 instagram: "https://instagram.com/carllewis",
                 linkedin: "https://linkedin.com/in/carllewis",
@@ -129,7 +129,7 @@ We pride ourselves on offering the best landscape architecture and gardening ser
                 id: "rogers",
                 name: "Rogers Kirui",
                 role: "Landscape Architect – Head of Implementations",
-                imageUrl: "/images/team/rogers.jpg",
+                imageUrl: "/images/team/rogers.webp",
                 bio: `Rogers Kirui is a certified Landscape Architect with 6 + years' experience, holding a BSc in Landscape Architecture from JKUAT. As our Head of Implementation, he specializes in transforming designs into sustainable, functional landscapes. His expertise covers urban greening, eco-conscious solutions, and precision project execution.`,
                 instagram: "https://instagram.com/rogerskirui",
                 linkedin: "https://linkedin.com/in/rogerskirui",
@@ -138,7 +138,7 @@ We pride ourselves on offering the best landscape architecture and gardening ser
                 id: "brenda",
                 name: "Brenda Aramis",
                 role: "Marketing Manager",
-                imageUrl: "/images/team/brenda.jpg",
+                imageUrl: "/images/team/brenda.webp",
                 bio: `Brenda is our dynamic Marketing Manager with expertise in brand strategy and digital growth for landscape architecture. She drives our market presence through innovative campaigns that connect clients with our sustainable design solutions.`,
                 instagram: "https://instagram.com/brendaaramis",
                 linkedin: "https://linkedin.com/in/brendaaramis",
@@ -149,52 +149,52 @@ We pride ourselves on offering the best landscape architecture and gardening ser
     {
         id: "working-process",
         title: "Our Working Process",
-        image: "/about-us/working-process/working-process.jpeg",
+        image: "/about-us/working-process/working-process.webp",
           steps: [
             {
                 title: "1. Initial Consultation & Vision Alignment",
                 description: `Every project begins with a free, in-depth consultation to understand your vision, budget, and functional needs. Our team listens carefully to your ideas, whether you're envisioning a serene backyard oasis or a dynamic commercial greenspace. We combine your input with our decade of expertise to outline a clear roadmap, ensuring alignment on timelines, sustainability goals, and design aesthetics before proceeding.`,
-                image: "/about-us/working-process/consultation.jpg"
+                image: "/about-us/working-process/consultation.webp"
             },
             {
                 title: "2. Site Assessment",
                 description: `Next, our certified professionals conduct a detailed site evaluation where we analyze topography, drainage patterns, sunlight exposure, and existing vegetation to identify opportunities and challenges unique to your property. This data-driven approach allows us to craft designs that harmonize with Kenya's diverse climates, optimize water efficiency, and select native plants suited to your soil type and nutrient profile.`,
-                image: "/about-us/working-process/site-assessment.jpg"
+                image: "/about-us/working-process/site-assessment.webp"
             },
             {
                 title: "3. Design and Planning",
                 description: `Based on the information gathered from the initial consultation and site assessment, our experienced designers create a customized landscape design plan. This plan includes various elements such as plant selections, hardscape features, irrigation systems, and lighting concepts. We use advanced software and visualization tools to present the design plan to you, giving you a clear picture of the proposed landscape development.`,
-                image: "/about-us/working-process/design-planning.jpg"
+                image: "/about-us/working-process/design-planning.webp"
             },
             {
                 title: "4. Proposal & Agreement",
                 description: `After finalizing your design, we provide a detailed proposal outlining the scope of work, eco-conscious materials (sourced locally for sustainability), realistic timelines, and transparent cost estimates. We prioritize open communication, addressing every query to refine terms until you're fully confident. Once approved, a digital agreement ensures seamless transition to the implementation phase, with no hidden costs and guaranteed accountability.`,
-                image: "/about-us/working-process/proposal-and-agreement.jpeg"
+                image: "/about-us/working-process/proposal-and-agreement.webp"
             },
             {
                 title: "5. Project Execution",
                 description: `Our certified landscape architects, landscapers and technicians execute your project on schedule, merging speed with meticulous attention to detail. Adhering to Kenya's top industry and safety standards, we install eco-friendly hardscapes, drought-resistant native plants, and smart irrigation systems, ensuring every element aligns with your design plan. Quality checks at each phase guarantee durable, visually stunning results—delivered promptly without compromising quality.`,
-                image: "/about-us/working-process/project-execution.jpeg"
+                image: "/about-us/working-process/project-execution.webp"
             },
             {
                 title: "6. Regular Updates",
                 description: `We prioritize real-time communication, ensuring you're informed at every stage via weekly progress reports and photo updates. Open to feedback, we adapt swiftly—whether adjusting plant placements, modifying hardscape materials, or refining timelines—to align with your vision. Our digital collaboration tools (WhatsApp/email updates) and scheduled check-ins foster a partnership-driven approach, guaranteeing your landscape evolves exactly as envisioned, on time and within budget.`,
-                image: "/about-us/working-process/ongoing-updates.jpeg"
+                image: "/about-us/working-process/ongoing-updates.webp"
             },
             {
                 title: "7. Quality Assurance: Precision-Driven Excellence",
                 description: `At YouLandscape, quality is non-negotiable. Our certified team conducts rigorous multi-phase inspections aligned with Kenya's top landscaping standards, ensuring every hardscape, irrigation line, and plant installation meets exacting benchmarks. From soil compaction tests to post-completion durability audits, we validate structural integrity, aesthetic precision, and eco-compliance. Your satisfaction is our ultimate metric, we deliver landscapes that not only meet but exceed expectations, built to thrive in Kenya's unique climate.`,
-                image: "/about-us/working-process/quality-assurance.jpeg"
+                image: "/about-us/working-process/quality-assurance.webp"
             },
             {
                 title: "8. Project Completion",
                 description: `We conclude every project with a meticulous walkthrough, ensuring every detail aligns with your vision and our stringent quality benchmarks. Any final tweaks—from plant repositioning to irrigation calibration—are resolved promptly. Our commitment extends beyond handover: opt for our annual care packages to keep your landscape thriving, or reach out anytime for expert advice.`,
-                image: "/about-us/working-process/project-completion.jpeg"
+                image: "/about-us/working-process/project-completion.webp"
             },
             {
                 title: "9. Ongoing Support: Lifelong Partnership in Landscape Excellence",
                 description: `At YouLandscape, your landscape's journey continues long after installation. Our certified landscape architects, landscapers, horticulturalists and technicians offer tailored maintenance plans—seasonal pruning, soil health optimization, and irrigation system audit—to safeguard your investment against Kenya's climate challenges. Whether you need emergency storm recovery, pest management, or design upgrades, our team provides 24/7 expert support via WhatsApp, email, or onsite visits.`,
-                image: "/about-us/working-process/ongoing-support.jpeg"
+                image: "/about-us/working-process/ongoing-support.webp"
             }
         ]
     }

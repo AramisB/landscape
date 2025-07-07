@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import OptimizedImage from '../OptimizedImage';
 
 export default function ProjectCard({ project }) {
   return (
@@ -12,7 +11,7 @@ export default function ProjectCard({ project }) {
     >
       <Link to={`/projects/${project.id}`}>
         <div className="aspect-h-9 aspect-w-16 w-full overflow-hidden">
-          <OptimizedImage
+          <img
             src={project.thumbnailUrl}
             alt={`${project.title} - YouLandscape Project Portfolio`}
             className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"

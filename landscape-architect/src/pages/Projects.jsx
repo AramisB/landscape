@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import projects from '../components/ProjectDetails';
+import { projects } from '../components/ProjectDetails';
 import WhyChooseUs from "../components/WhyChooseUs";
 import GetStartedSection from '../components/GetStartedSection';
 
