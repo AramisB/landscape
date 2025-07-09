@@ -127,14 +127,6 @@ export default function AboutUsSection() {
                     <h2 className="absolute inset-0 flex items-center justify-center text-xl sm:text-2xl md:text-3xl font-bold text-white bg-black bg-opacity-50 m-0 p-0 rounded-none">
                         {section.title}
                     </h2>
-
-                    {/* Floating Who We Are card - glassmorphism, centered */}
-                    {validId === "our-company" && (
-                        <div className="absolute left-1/2 bottom-0 translate-x-[-50%] translate-y-1/2 bg-white/70 backdrop-blur-md shadow-lg px-6 py-8 rounded-lg w-11/12 max-w-xl mx-auto flex flex-col items-center">
-                            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 text-center text-[var(--primary-green)]">Who We Are</h3>
-                            <span className="text-sm sm:text-base md:text-lg lg:text-xl italic font-medium text-center block">We make landscapes as unique as you.</span>
-                        </div>
-                    )}
                 </div>
             )}
 
@@ -171,7 +163,7 @@ export default function AboutUsSection() {
                 <section id="our-company" className="py-8 sm:py-10 md:py-12 bg-white">
                     <div className="max-w-5xl mx-auto px-4">
                         
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center mb-8 sm:mb-10 mt-24 sm:mt-32 md:mt-40 lg:mt-48">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center mb-8 sm:mb-10 mt-8 sm:mt-12 md:mt-16 lg:mt-20 pb-16">
                             {/* Left: Who We Are image */}
                             <div>
                                 <img
@@ -196,7 +188,7 @@ export default function AboutUsSection() {
                         </div>
 
                         {/* Mission, Vision, Core Values */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-10">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-10 mt-8 sm:mt-12 md:mt-16 lg:mt-20">
                             <div className="group bg-green-50 shadow p-4 sm:p-6 rounded-none flex flex-col items-center hover:bg-[var(--secondary-blue)] hover:text-white transition-all duration-300">
                                 <FaBullseye className="text-green-500 text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 group-hover:text-white transition-colors duration-300" />
                                 <h2 className="text-base sm:text-lg font-semibold text-[var(--primary-green)] mb-2 group-hover:text-white transition-colors duration-300 text-center">Our Mission</h2>
@@ -219,7 +211,7 @@ export default function AboutUsSection() {
                         </div>
 
                         {/* Slogan */}
-                        <div className="flex flex-col items-center mt-6 sm:mt-8">
+                        <div className="flex flex-col items-center mt-8 sm:mt-12 md:mt-16 lg:mt-20">
                             <MdFormatQuote className="text-2xl sm:text-3xl md:text-4xl text-[var(--orange)] mb-2" />
                             <p className="italic text-base sm:text-lg text-[var(--primary-green)] text-center max-w-xl px-4">
                                 "{section.content.slogan}"
@@ -228,7 +220,7 @@ export default function AboutUsSection() {
 
                         {/* Working Process */}
                         {section.content.workingProcess && (
-                            <div className="mt-12 sm:mt-16">
+                            <div className="mt-8 sm:mt-12 md:mt-16 lg:mt-20">
                                 <motion.h2 
                                     className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--primary-green)] text-center mb-3 sm:mb-4"
                                     initial={{ opacity: 0, y: 20 }}
@@ -251,7 +243,7 @@ export default function AboutUsSection() {
                                     {section.content.workingProcess.steps.map((step, idx) => (
                                         <motion.div
                                             key={idx}
-                                            className="group bg-white shadow-lg hover:shadow-2xl p-4 sm:p-6 md:p-8 rounded-lg border-l-4 border-[var(--primary-green)] hover:border-[var(--secondary-blue)] transition-all duration-300 hover:-translate-y-2 relative text-left"
+                                            className="group bg-white shadow-lg hover:shadow-2xl p-4 sm:p-6 md:p-8 hover:border-[var(--secondary-blue)] transition-all duration-300 hover:-translate-y-2 relative text-left"
                                             initial={{ opacity: 0, y: 50 }}
                                             whileInView={{ opacity: 1, y: 0 }}
                                             viewport={{ once: true }}
@@ -265,7 +257,7 @@ export default function AboutUsSection() {
                                             <div className="flex items-start gap-4 sm:gap-6 text-left">
                                                 {/* Enhanced Step Number */}
                                                 <div className="flex-shrink-0">
-                                                    <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center bg-gradient-to-br from-[var(--primary-green)] to-[var(--secondary-blue)] text-white text-sm sm:text-base md:text-xl font-bold shadow-base rounded-full">
+                                                    <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center bg-gradient-to-br from-[var(--primary-green)] to-[var(--secondary-blue)] text-white text-sm sm:text-base md:text-xl font-bold shadow-base rounded-none">
                                                         {idx + 1}
                                                     </div>
                                                 </div>
@@ -302,6 +294,22 @@ export default function AboutUsSection() {
                                 </div>
                             </div>
                         </section>
+
+                        {/* Testimonials Section */}
+                        {section.content.testimonials && section.content.testimonials.length > 0 && (
+                            <section className="py-10 sm:py-14">
+                                <h2 className="text-2xl sm:text-3xl font-bold text-center text-green-700 mb-8">What Our Clients Say</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    {section.content.testimonials.map((t, idx) => (
+                                        <div key={idx} className="bg-white shadow-md rounded-none p-6 flex flex-col items-center text-center">
+                                            <p className="italic text-gray-700 mb-2">"{t.message}"</p>
+                                            <div className="font-semibold text-green-700 mt-2">{t.name}</div>
+                                            <div className="text-sm text-gray-500">{t.location}</div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
+                        )}
 
                         {/* Why Choose Us */}
                         <WhyChooseUs />

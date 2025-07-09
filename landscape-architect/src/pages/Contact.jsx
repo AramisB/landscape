@@ -8,10 +8,31 @@ export default function Contact() {
     phone: '',
     message: '',
   });
+  const [status, setStatus] = useState(null); // success or error message
+  const [isSending, setIsSending] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setStatus(null);
+    setIsSending(true);
+    try {
+      const response = await fetch('https://youlandscape.co.ke/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setStatus({ type: 'success', message: 'Message sent successfully!' });
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        setTimeout(() => setStatus(null), 5000); // Hide after 5s
+      } else {
+        setStatus({ type: 'error', message: data.message || 'Failed to send message.' });
+      }
+    } catch (err) {
+      setStatus({ type: 'error', message: 'Failed to send message. Please try again later.' });
+    }
+    setIsSending(false);
   };
 
   const handleChange = (e) => {
@@ -129,21 +150,34 @@ export default function Contact() {
               </div>
             </div>
             <div className="mt-8">
-              <button type="submit" className="w-full rounded-none bg-[var(--primary-green)] px-6 py-3 text-sm font-medium text-white shadow-sm transition-all duration-300 hover:bg-[var(--secondary-green)] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:ring-offset-2">
-                Send Message
+              <button
+                type="submit"
+                className="w-full rounded-none bg-[var(--primary-green)] px-6 py-3 text-sm font-medium text-white shadow-sm transition-all duration-300 hover:bg-[var(--secondary-green)] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                disabled={isSending}
+              >
+                {isSending ? 'Sending...' : 'Send Message'}
               </button>
+              {status && (
+                <div className={`mt-4 text-center text-sm ${status.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>{status.message}</div>
+              )}
             </div>
           </motion.form>
         </div>
       </div>
 
       {/* Map Section */}
-      <div className="relative h-60 sm:h-[400px] w-full overflow-hidden">
-        {/* Add your map component here */}
-        <div className="absolute inset-0 flex items-center justify-center bg-[var(--off-white)]">
-          <p className="text-lg text-[var(--text-dark)]">Map will be integrated here</p>
-        </div>
-      </div>
-    </div>
-  );
+<div className="w-full px-4 py-6 sm:px-8 sm:py-10">
+  <div className="relative w-full h-60 sm:h-[400px] overflow-hidden shadow-lg rounded-lg">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7977.587616688879!2d36.81383237436127!3d-1.2984609356382746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10e665cf7961%3A0xc0207832bc88d158!2sKUSCCO%20Centre%20-%20Nairobi%20Region!5e0!3m2!1sen!2ske!4v1752045661677!5m2!1sen!2ske"
+      className="w-full h-full border-0"
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</div>
+  </div>
+
+ );
 }

@@ -29,13 +29,13 @@ const slides = [
       <div className="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
         <img src="/hero.webp" alt="Hero background" className="absolute inset-0 w-full h-full object-cover" />
         <div className="relative z-20 flex flex-col items-center text-center px-4 w-full">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">Transforming Spaces and Enhancing Lives</h1>
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-4 text-white">Transforming Spaces and Enhancing Lives</h1>
           <p className="text-lg md:text-xl max-w-3xl mt-4 text-white">We design and build innovative outdoor spaces that harmonize with nature and enhance people's lives.</p>
           <div className="flex flex-wrap justify-center gap-8 mx-auto mt-10">
-            <Link to="/projects" className="px-8 py-4 bg-[var(--secondary-blue)] text-white font-semibold shadow hover:bg-[var(--orange)] hover:text-white flex items-center gap-2">
+            <Link to="/projects" className="px-8 py-4 bg-[var(--secondary-blue)] text-white font-semibold hover:bg-[var(--orange)] hover:text-white flex items-center gap-2">
               View Portfolio
             </Link>
-            <Link to="/contact" className="px-8 py-4 rounded text-white bg-[var(--secondary-blue)] font-semibold border-2 border-[var(--secondary-blue)] shadow hover:bg-[var(--orange)] hover:text-white flex items-center gap-2 h-12">
+            <Link to="/contact" className="px-8 py-4 text-white bg-[var(--secondary-blue)] font-semibold border-2 hover:bg-[var(--orange)] hover:text-white flex items-center gap-2 h-12">
               Contact Us
             </Link>
           </div>
@@ -52,7 +52,7 @@ const slides = [
           <h1 className="mb-4 text-center text-3xl font-extrabold text-white">Our Services</h1>
           <p className="mb-8 text-lg max-w-3xl text-center text-white">Comprehensive landscape architecture and design services tailored to enhance outdoor living experiences:</p>
           <div className="flex justify-center mt-10">
-            <Link to="/services" className="inline-block px-8 py-4 rounded text-white bg-[var(--secondary-blue)] font-semibold shadow transition hover:bg-[var(--orange)] hover:text-white">Explore</Link>
+            <Link to="/services" className="inline-block px-8 py-4 text-white bg-[var(--secondary-blue)] font-semibold transition hover:bg-[var(--orange)] hover:text-white">Explore</Link>
           </div>
         </div>
       </div>

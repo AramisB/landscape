@@ -17,6 +17,7 @@ import './styles/index.css';
 import ImagePreloader from './components/ImagePreloader';
 import ProductsPage from './pages/Products';
 import ProjectSection from './components/projects/ProjectsSection';
+import Testimonials from './components/Testimonials';
 
 // Critical images to preload
 const criticalImages = [
@@ -49,6 +50,7 @@ export default function App() {
               <Route path="contact" element={<Contact />} />
               <Route path="blog" element={<Blog />} />
               <Route path="get-a-quote" element={<GetAquote />} />
+              <Route path="testimonials" element={<Testimonials />} />
             </Routes>
           </Layout>
         </Router>

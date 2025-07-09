@@ -103,14 +103,14 @@ export default function Layout({ children }) {
         <meta property="og:description" content={pageInfo.description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://youlandscape.co.ke${location.pathname}`} />
-        <meta property="og:image" content="https://youlandscape.co.ke/logo.jpeg" />
+        <meta property="og:image" content="https://youlandscape.co.ke/logo.webp" />
         <meta property="og:site_name" content="YouLandscape Architects & Consultants" />
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageInfo.title} />
         <meta name="twitter:description" content={pageInfo.description} />
-        <meta name="twitter:image" content="https://youlandscape.co.ke/logo.jpeg" />
+        <meta name="twitter:image" content="https://youlandscape.co.ke/logo.webp" />
         
         {/* Canonical URL */}
         <link rel="canonical" href={`https://youlandscape.co.ke${location.pathname}`} />
@@ -159,7 +159,7 @@ export default function Layout({ children }) {
               <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
                 <FaYoutube />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
+              <a href="https://www.instagram.com/@youlandscapearc/" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
                 <FaInstagram />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
@@ -184,7 +184,7 @@ export default function Layout({ children }) {
                   className="h-20 w-auto"
                   onError={(e) => {
                     console.error('Logo failed to load:', e.target.src);
-                    e.target.src = '/logo.png';
+                    e.target.src = '/logo.webp';
                   }}
                 />
               </Link>
@@ -418,7 +418,7 @@ export default function Layout({ children }) {
                   <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaTwitter /></a>
                   <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaInstagram /></a>
                   <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaLinkedin /></a>
-                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaYoutube /></a>
+                  <a href="https://youtube.com/@youlandscapearchitect" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaYoutube /></a>
                   <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaWhatsapp /></a>
                 </div>
               </div>

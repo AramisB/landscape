@@ -14,6 +14,33 @@ Having transformed countless properties across Kenya for over ten years, from re
 
 We pride ourselves on offering the best landscape architecture and gardening services, utilizing the latest techniques and design innovations. Every project is a close collaboration with you, ensuring your vision becomes a beautiful and functional reality. Your satisfaction is at the heart of everything we do, and we're dedicated to making your landscaping journey seamless and rewarding.    `,
 
+            testimonials: [
+                {
+                    name: "Wanjiru M.",
+                    location: "Karen, Nairobi",
+                    message:
+                        "We hired YouLandscape to transform our backyard in Karen, and they exceeded every expectation. Their attention to detail and local plant knowledge brought our vision to life. We now have a beautiful, functional space where we relax as a family.",
+                },
+                {
+                    name: "Brian Otieno",
+                    location: "Runda, Nairobi",
+                    message:
+                        "The team at YouLandscape was professional, timely, and incredibly creative. They completely revamped the entrance garden of our home and added a water feature that’s now the highlight of the compound. I highly recommend them!",
+                },
+                {
+                    name: "Fatuma Noor",
+                    location: "Mombasa",
+                    message:
+                        "I appreciated how they tailored the landscape design to suit the coastal climate. The irrigation system and native plant selection have made our garden low-maintenance and lush all year. Excellent service from start to finish.",
+                },
+                {
+                    name: "George K. Kiptoo",
+                    location: "Eldoret",
+                    message:
+                        "YouLandscape delivered a modern, eco-friendly design for our corporate grounds in Eldoret. Their team handled everything from concept to installation with great professionalism. We continue to get compliments from visitors!",
+                },
+            ],
+
             coreValues: [
                 "Customer-centric",
                 "Ecofriendly",
@@ -120,7 +147,7 @@ We pride ourselves on offering the best landscape architecture and gardening ser
                 id: "carllewis",
                 name: "Carllewis Chweya",
                 role: "Lead Landscape Architect – Head of Design",
-                imageUrl: "/images/team/carllewis.webp",
+                imageUrl: "/about-us/our-team/carllewis.webp",
                 bio: `Carllewis Chweya is a landscape architect with 6 + years of hands- on experience.He holds a BSc in Landscape Architecture from Jomo Kenyatta University of Agriculture and Technology(JKUAT).His expertise spans sustainable design, urban greening, and innovative landscape solutions that blend functionality with aesthetic excellence.`,
                 instagram: "https://instagram.com/carllewis",
                 linkedin: "https://linkedin.com/in/carllewis",
@@ -129,7 +156,7 @@ We pride ourselves on offering the best landscape architecture and gardening ser
                 id: "rogers",
                 name: "Rogers Kirui",
                 role: "Landscape Architect – Head of Implementations",
-                imageUrl: "/images/team/rogers.webp",
+                imageUrl: "/about-us/our-team/rogers.webp",
                 bio: `Rogers Kirui is a certified Landscape Architect with 6 + years' experience, holding a BSc in Landscape Architecture from JKUAT. As our Head of Implementation, he specializes in transforming designs into sustainable, functional landscapes. His expertise covers urban greening, eco-conscious solutions, and precision project execution.`,
                 instagram: "https://instagram.com/rogerskirui",
                 linkedin: "https://linkedin.com/in/rogerskirui",
@@ -138,7 +165,7 @@ We pride ourselves on offering the best landscape architecture and gardening ser
                 id: "brenda",
                 name: "Brenda Aramis",
                 role: "Marketing Manager",
-                imageUrl: "/images/team/brenda.webp",
+                imageUrl: "/about-us/our-team/brenda.webp",
                 bio: `Brenda is our dynamic Marketing Manager with expertise in brand strategy and digital growth for landscape architecture. She drives our market presence through innovative campaigns that connect clients with our sustainable design solutions.`,
                 instagram: "https://instagram.com/brendaaramis",
                 linkedin: "https://linkedin.com/in/brendaaramis",
