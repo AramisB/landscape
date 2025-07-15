@@ -35,7 +35,7 @@ const slides = [
             <Link to="/projects" className="px-8 py-4 bg-[var(--secondary-blue)] text-white font-semibold hover:bg-[var(--orange)] hover:text-white flex items-center gap-2">
               View Portfolio
             </Link>
-            <Link to="/contact" className="px-8 py-4 text-white bg-[var(--secondary-blue)] font-semibold border-2 hover:bg-[var(--orange)] hover:text-white flex items-center gap-2 h-12">
+            <Link to="/contact" className="px-8 py-4 bg-[var(--secondary-blue)] text-white font-semibold hover:bg-[var(--orange)] hover:text-white flex items-center gap-2">
               Contact Us
             </Link>
           </div>
@@ -322,10 +322,8 @@ export default function Home() {
         <div className="container mx-auto px-2 sm:px-4 max-w-7xl">
           <h2 className="text-xl sm:text-2xl font-bold text-[var(--primary-green)] mb-4 text-center">Latest Blog Posts</h2>
           <p className="text-sm sm:text-base text-center text-gray-600 mb-6 sm:mb-10">Get tips, insights, and inspiration from our landscaping experts.</p>
-          <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center w-full">
-              <BlogList />
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center w-full">
+            <BlogList />
           </div>
         </div>
       </section>

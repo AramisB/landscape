@@ -42,6 +42,15 @@ export const posts = [
   },
 ];
 
+// Reading time estimator (200 words/minute)
+function estimateReadingTime(html) {
+  if (!html) return '1 min read';
+  const text = html.replace(/<[^>]+>/g, ' ');
+  const words = text.trim().split(/\s+/).length;
+  const mins = Math.max(1, Math.round(words / 200));
+  return `${mins} min read`;
+}
+
 export default function Blog() {
   return (
     <div className="min-h-screen bg-[var(--off-white)]">
@@ -67,7 +76,7 @@ export default function Blog() {
               transition={{ duration: 0.5 }}
               className="bg-white shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col border border-gray-100"
             >
-              <div className="relative h-72 w-full overflow-hidden">
+              <div className="relative h-80 sm:h-96 md:h-[28rem] lg:h-[32rem] w-full overflow-hidden">
                 <img
                   src={post.imageUrl}
                   alt={`${post.title} - YouLandscape Blog`}
@@ -78,19 +87,21 @@ export default function Blog() {
                 {/* Category badge */}
                 <span className="absolute top-4 left-4 bg-[var(--primary-green)] text-white text-xs px-3 py-1 font-semibold tracking-wide">{post.category}</span>
               </div>
-              <div className="flex flex-col h-full p-8">
-                <div className="flex items-center gap-3 mb-3 text-xs text-gray-500">
+              <div className="flex flex-col p-6 md:p-8">
+                <div className="flex items-center gap-3 mb-2 text-xs text-gray-500 flex-wrap">
                   <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                   <span className="text-gray-300">|</span>
                   <span className="font-medium text-[var(--primary-green)]">{post.author}</span>
+                  <span className="text-gray-300">|</span>
+                  <span>{estimateReadingTime(post.description)}</span>
                 </div>
-                <h3 className="text-lg font-bold text-[var(--primary-green)] mb-2">{post.title}</h3>
-                <p className="text-gray-600 mb-6 flex-grow">{post.description}</p>
+                <h3 className="text-lg font-bold text-[var(--primary-green)] mb-2 line-clamp-2">{post.title}</h3>
+                <p className="text-gray-600 mb-4 line-clamp-4">{post.description}</p>
                 <a
                   href={post.externalUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-auto px-5 py-2 bg-[var(--secondary-blue)] text-white font-semibold shadow hover:bg-[var(--primary-green)] transition text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)]"
+                  className="inline-block mt-auto px-4 py-2 bg-[var(--secondary-blue)] text-white font-semibold shadow hover:bg-[var(--primary-green)] transition text-xs rounded focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] w-fit self-end"
                 >
                   Read Full Blog →
                 </a>
@@ -109,26 +120,38 @@ export function BlogList() {
       {posts.map((post) => (
         <div
           key={post.id}
-          className="bg-white rounded-none shadow-md overflow-hidden flex flex-col w-full max-w-xs"
+          className="bg-white shadow-md overflow-hidden flex flex-col w-full max-w-xs border border-gray-100"
         >
-          <img
-            src={post.imageUrl}
-            alt={post.title}
-            className="h-64 w-full object-cover rounded-none"
-          />
-          <div className="p-4 flex flex-col flex-grow">
-            <h3 className="text-xl font-semibold text-[var(--primary-green)] mb-2">
+          <div className="relative h-64 sm:h-80 md:h-96 w-full overflow-hidden">
+            <img
+              src={post.imageUrl}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
+            <span className="absolute top-3 left-3 bg-[var(--primary-green)] text-white text-xs px-2 py-1 font-semibold tracking-wide z-10">{post.category}</span>
+          </div>
+          <div className="p-4 flex flex-col">
+            <h3 className="text-base font-semibold text-[var(--primary-green)] mb-2 line-clamp-2">
               {post.title}
             </h3>
-            <p className="text-gray-600 mb-4 flex-grow">
+            <p className="text-gray-600 mb-3 flex-grow line-clamp-3">
               {post.description}
             </p>
-            <Link
-              to="/blog"
-              className="mt-auto text-[var(--secondary-blue)] font-medium hover:underline"
+            <div className="flex items-center gap-2 text-xs text-gray-500 mb-2 flex-wrap">
+              <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+              <span className="text-gray-300">|</span>
+              <span className="font-medium text-[var(--primary-green)]">{post.author}</span>
+              <span className="text-gray-300">|</span>
+              <span>{estimateReadingTime(post.description)}</span>
+            </div>
+            <a
+              href={post.externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto px-3 py-1 bg-[var(--secondary-blue)] text-white text-xs font-semibold rounded shadow hover:bg-[var(--primary-green)] transition w-fit self-end"
             >
-              Read More →
-            </Link>
+              Read Full Blog →
+            </a>
           </div>
         </div>
       ))}

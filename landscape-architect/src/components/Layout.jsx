@@ -153,16 +153,16 @@ export default function Layout({ children }) {
               <a href="https://www.facebook.com/share/1AeahKt66s/" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
                 <FaFacebook />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
+              <a href="https://x.com/YouLandscapeArc?t=13WdP8KbrnBK8pwm7g-yOQ&s=08" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
                 <FaTwitter />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
+              <a href="https://youtube.com/@youlandscapearchitect?si=1z1QaenWL71j1Ibn" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
                 <FaYoutube />
               </a>
-              <a href="https://www.instagram.com/@youlandscapearc/" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
+              <a href="https://www.instagram.com/youlandscapearc?igsh=MXdtdXN3eWFwb3o2cg==" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
                 <FaInstagram />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
+              <a href="https://www.linkedin.com/in/youlandscape-architects-257980373?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
                 <FaLinkedin />
               </a>
               <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
@@ -415,10 +415,10 @@ export default function Layout({ children }) {
                 </p>
                 <div className="flex gap-3 mt-2">
                   <a href="https://www.facebook.com/share/1AeahKt66s/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaFacebook /></a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaTwitter /></a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaInstagram /></a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaLinkedin /></a>
-                  <a href="https://youtube.com/@youlandscapearchitect" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaYoutube /></a>
+                  <a href="https://x.com/YouLandscapeArc?t=13WdP8KbrnBK8pwm7g-yOQ&s=08" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaTwitter /></a>
+                  <a href="https://www.instagram.com/youlandscapearc?igsh=MXdtdXN3eWFwb3o2cg==" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaInstagram /></a>
+                  <a href="https://www.linkedin.com/in/youlandscape-architects-257980373?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaLinkedin /></a>
+                  <a href="https://youtube.com/@youlandscapearchitect?si=1z1QaenWL71j1Ibn" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaYoutube /></a>
                   <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--orange)] transition"><FaWhatsapp /></a>
                 </div>
               </div>
