@@ -16,7 +16,7 @@ import {
   FaDrawPolygon,
   FaTools
 } from "react-icons/fa";
-import { BlogList } from './Blog';
+import { posts } from './Blog';
 import WhyChooseUs from '../components/WhyChooseUs';
 import GetStartedSection from '../components/GetStartedSection';
 
@@ -323,7 +323,7 @@ export default function Home() {
           <h2 className="text-xl sm:text-2xl font-bold text-[var(--primary-green)] mb-4 text-center">Latest Blog Posts</h2>
           <p className="text-sm sm:text-base text-center text-gray-600 mb-6 sm:mb-10">Get tips, insights, and inspiration from our landscaping experts.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center w-full">
-            <BlogList />
+            <posts />
           </div>
         </div>
       </section>
