@@ -165,9 +165,9 @@ export default function Layout({ children }) {
               <a href="https://www.linkedin.com/in/youlandscape-architects-257980373?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
                 <FaLinkedin />
               </a>
-              <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
+              <a href="https://wa.me/254707301563" target="_blank" rel="noopener noreferrer" className="socialIcon text-white text-sm">
                 <FaWhatsapp />
-              </a>
+              </a> 
             </div>
           </div>
         </div>
@@ -316,88 +316,53 @@ export default function Layout({ children }) {
         </header>
 
         {/* Get A Quote Modal */}
-        <Dialog as="div" open={quoteModalOpen} onClose={() => setQuoteModalOpen(false)} className="relative z-50">
-          <div className="fixed inset-0 bg-black bg-opacity-50" aria-hidden="true" />
-          <div className="fixed inset-0 flex items-center justify-center p-4">
-            <Dialog.Panel className="bg-white rounded-lg shadow-lg max-w-4xl w-full p-6 relative">
-              <div className="flex flex-col md:flex-row gap-6">
-                {/* Left Section */}
-                <div className="flex-1 text-gray-800 space-y-6">
-                  <h1 className="text-2xl font-bold">Get A Quote Now</h1>
-                  <p className="text-sm">
-                    Contact us now to Get A Quote or a site visit.
-                  </p>
-                  <p className="text-sm flex items-center gap-2">
-                    <FaPhoneAlt className="text-green-700" />
-                    <strong>Phone:</strong> +254707301563
-                  </p>
-                  <p className="text-sm flex items-center gap-2">
-                    <FaEnvelope className="text-green-700" />
-                    <strong>Email:</strong> info@youlandscape.co.ke
-                  </p>
-                  <p className="text-sm">
-                    We are here to help you transform your outdoor space!
-                  </p>
-                </div>
+<Dialog as="div" open={quoteModalOpen} onClose={() => setQuoteModalOpen(false)} className="relative z-50">
+  <div className="fixed inset-0 bg-black bg-opacity-50" aria-hidden="true" />
+  <div className="fixed inset-0 flex items-center justify-center p-4">
+    <Dialog.Panel className="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative text-gray-800 space-y-6">
+      <h1 className="text-2xl font-bold text-center">Get A Quote Now</h1>
+      <p className="text-sm text-center">
+        Contact us now to get a quote or book a site visit. We're here to help you transform your outdoor space!
+      </p>
 
-                {/* Right Section */}
-                <div className="flex-1 bg-[var(--primary-green)] p-6 shadow-md border-2">
-                  <h2 className="text-xl font-semibold mb-4 text-white">Request a Quote</h2>
-                  <form>
-                    <div className="mb-4">
-                      <label htmlFor="name" className="block text-sm font-medium text-white">
-                        Name:
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-white focus:border-white"
-                      />
-                    </div>
-                    <div className="mb-4">
-                      <label htmlFor="email" className="block text-sm font-medium text-white">
-                        Email:
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-white focus:border-white"
-                      />
-                    </div>
-                    <div className="mb-4">
-                      <label htmlFor="message" className="block text-sm font-medium text-white">
-                        Message:
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows="4"
-                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-white focus:border-white"
-                      ></textarea>
-                    </div>
-                    <div className="flex justify-end">
-                      <button
-                        type="button"
-                        onClick={() => setQuoteModalOpen(false)}
-                        className="mr-2 px-4 py-2 text-sm font-medium text-white bg-[var(--light-green)] hover:bg-[var(--orange)]"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        type="submit"
-                        className="px-4 py-2 text-sm font-medium text-white bg-[var(--light-green)] hover:bg-[var(--orange)]"
-                      >
-                        Submit
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </Dialog.Panel>
-          </div>
-        </Dialog>
+      <div className="space-y-4">
+        <a
+          href="mailto:info@youlandscape.co.ke"
+          className="flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-white bg-[var(--light-green)] hover:bg-[var(--orange)] rounded"
+        >
+          <FaEnvelope />
+          Email Us
+        </a>
+        <a
+          href="tel:+254707301563"
+          className="flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-white bg-[var(--light-green)] hover:bg-[var(--orange)] rounded"
+        >
+          <FaPhoneAlt />
+          Call Us
+        </a>
+        <a
+          href="https://wa.me/254707301563"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-white bg-[var(--light-green)] hover:bg-[var(--orange)] rounded"
+        >
+          <FaWhatsapp />
+          Message on WhatsApp
+        </a>
+      </div>
+
+      <div className="flex justify-end pt-4">
+        <button
+          onClick={() => setQuoteModalOpen(false)}
+          className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 hover:bg-gray-300 rounded"
+        >
+          Close
+        </button>
+      </div>
+    </Dialog.Panel>
+  </div>
+</Dialog>
+
 
         {/* Main Content */}
         <main className="flex-grow">

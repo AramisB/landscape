@@ -346,15 +346,6 @@ export default function AboutUsSection() {
             {isWorkingProcess && (
                 <>
                     <section className="max-w-6xl mx-auto px-4 py-8 sm:py-12 space-y-12 sm:space-y-16">
-                        <motion.h2
-                            className="text-xl sm:text-2xl font-bold text-[var(--primary-green)] mb-8 sm:mb-12 text-left"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                        >
-                            Our Working Process
-                        </motion.h2>
                         {steps.map((step, index) => (
                             <div
                                 key={index}

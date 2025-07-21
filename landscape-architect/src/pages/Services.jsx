@@ -33,7 +33,7 @@ export default function Services() {
       </Helmet>
       {/* Hero Section */}
       <div className="relative flex items-center justify-center min-h-[40vh] w-full bg-[var(--off-white)] overflow-hidden py-6 px-2 sm:py-8 sm:px-6">
-        <div className="absolute inset-0 opacity-80 z-0 bg-[url('/home/water-feature.webp')] bg-cover bg-center" />
+        <div className="absolute inset-0 opacity-80 z-0 bg-[url('/servicesSlider.webp')] bg-cover bg-center" />
         <div className="relative z-10 flex flex-col items-center w-full text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}

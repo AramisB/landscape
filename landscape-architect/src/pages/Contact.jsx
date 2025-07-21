@@ -69,7 +69,7 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center gap-3">
                   <span role="img" aria-label="Phone" className="text-2xl">📞</span>
-                  <a href="tel:+254707301563" className="hover:underline">+254707301563</a>
+                  <a href="tel:+254790350030" className="hover:underline">+254790350030</a>
                 </div>
                 <div className="flex items-center gap-3">
                   <span role="img" aria-label="Email" className="text-2xl">✉️</span>
@@ -78,7 +78,7 @@ export default function Contact() {
                 <div className="flex items-center gap-3">
                   <span role="img" aria-label="WhatsApp" className="text-2xl">💬</span>
                   <a
-                    href="https://wa.me/254707301563"
+                    href="https://wa.me/254790350030"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:underline"
