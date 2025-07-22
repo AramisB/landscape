@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
-const testimonials = [
+export const testimonials = [
   {
     name: "Wanjiru M.",
     location: "Karen, Nairobi",
@@ -52,4 +52,4 @@ export default function Testimonials() {
       </div>
     </div>
   );
-} 
+}

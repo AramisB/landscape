@@ -19,6 +19,7 @@ import {
 import { posts } from './Blog';
 import WhyChooseUs from '../components/WhyChooseUs';
 import GetStartedSection from '../components/GetStartedSection';
+import { testimonials } from '../components/Testimonials';
 
 const SLIDE_DURATION = 10000;
 
@@ -323,10 +324,56 @@ export default function Home() {
           <h2 className="text-xl sm:text-2xl font-bold text-[var(--primary-green)] mb-4 text-center">Latest Blog Posts</h2>
           <p className="text-sm sm:text-base text-center text-gray-600 mb-6 sm:mb-10">Get tips, insights, and inspiration from our landscaping experts.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center w-full">
-            <posts />
+          {posts.slice(0, 3).map((post) => (
+  <article
+    key={post.id}
+    className="bg-white border border-gray-100 shadow-md hover:shadow-lg transition rounded-lg overflow-hidden flex flex-col"
+  >
+    <div className="h-56 sm:h-64 overflow-hidden">
+      <img
+        src={post.imageUrl}
+        alt={post.title}
+        className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+      />
+    </div>
+    <div className="p-4 flex flex-col flex-1">
+      <span className="text-xs text-[var(--primary-green)] font-medium mb-1">
+        {post.category}
+      </span>
+      <h3 className="text-base font-semibold text-gray-800 mb-2 line-clamp-2">{post.title}</h3>
+      <p className="text-sm text-gray-600 mb-4 line-clamp-3">{post.description}</p>
+      <Link
+        to={`/blog/${post.slug}`}
+        className="mt-auto text-[var(--secondary-blue)] text-sm font-medium hover:underline"
+      >
+        Read More →
+      </Link>
+    </div>
+  </article>
+))}
           </div>
         </div>
       </section>
+      <section className="py-12 bg-[var(--off-white)]">
+  <div className="max-w-6xl mx-auto px-4 text-center">
+    <h2 className="text-2xl sm:text-3xl font-bold text-[var(--primary-green)] mb-6">What Our Clients Say</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {testimonials.slice(0, 2).map((t, idx) => (
+        <div key={idx} className="bg-white p-6 rounded-lg shadow-md">
+          <p className="italic text-gray-700">"{t.message}"</p>
+          <div className="mt-4 font-semibold text-[var(--primary-green)]">{t.name}</div>
+          <div className="text-sm text-gray-500">{t.location}</div>
+        </div>
+      ))}
+    </div>
+    <Link
+      to="/about-us/our-company"
+      className="inline-block mt-6 text-[var(--secondary-blue)] hover:underline font-medium"
+    >
+      Read More Testimonials →
+    </Link>
+  </div>
+</section>
       <WhyChooseUs />
 
       {/* Get Started Section with About Us Our Company width */}

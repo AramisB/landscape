@@ -3,6 +3,49 @@ import { Helmet } from 'react-helmet';
 import { useEffect, useState } from 'react';
 
 const blogPosts = {
+  'top-landscape-companies-kenya': {
+  title: '🏆 Top 10 Landscape Companies in Kenya: Who’s Leading the Green Revolution?',
+  date: '2025-07-22',
+  content: [
+    "Kenya’s landscaping sector has grown immensely, with top firms shaping everything from urban gardens to large institutional spaces. At the forefront are companies combining sustainability, creativity, and technical skill.",
+
+    "Here’s a ranked list of 10 outstanding landscape companies in Kenya, known for their professionalism, experience, and innovative green solutions.",
+
+    "1. YouLandscape Architects & Consultants (Nairobi)",
+    "A leader in sustainable landscape architecture and outdoor design, YouLandscape blends functionality with elegance. With over 10 years of experience, the firm offers everything from master planning and irrigation to maintenance and water features—serving homes, institutions, and resorts across Kenya. Their focus on native planting and climate-adapted designs makes them a favorite among discerning clients.",
+
+    "2. Aquascapes (Nairobi)",
+    "Specialists in water-wise landscaping, Aquascapes offers advanced irrigation, water features, and eco-conscious hardscaping. Their projects balance efficiency with natural aesthetics, making them ideal for modern, sustainable gardens and commercial installations. They are highly rated for smart systems and clean designs ([aquascapes.garden](https://www.aquascapes.garden/?utm_source=chatgpt.com)).",
+
+    "3. Ascentric Design Group (Nairobi)",
+    "With a portfolio that includes large-scale projects for campuses, civic centers, and estates, Ascentric is known for bold yet sustainable designs. They use native species, smart layouts, and context-sensitive planning to enhance function and biodiversity ([ascentricdesign.co.ke](https://www.ascentricdesign.co.ke)).",
+
+    "4. The Landscape Studio (Nairobi & Barcelona)",
+    "Operating in Kenya and Spain, they’re renowned for boutique, high-design gardens and hospitality spaces. Their minimal ecological footprint and artistic approach to outdoor spaces have won several awards and accolades.",
+
+    "5. Unique Landscapes Kenya Limited (Nairobi)",
+    "Offering a mix of landscape installation, irrigation, and maintenance, Unique Landscapes is known for affordability and custom solutions. Their attention to client needs has made them popular in residential and commercial settings ([uniquelandscapes.co.ke](https://uniquelandscapes.co.ke)).",
+
+    "6. Lariak Landscapes Ltd (Nairobi)",
+    "Lariak’s expertise spans landscape design, ecological planning, and restoration. They stand out for their scientific and data-informed approach to projects, integrating green infrastructure into modern spaces ([victormatara.com](https://victormatara.com/list-of-best-landscaping-companies-in-kenya)).",
+
+    "7. Grafa Landscaping & Designers (Nairobi)",
+    "Grafa offers end-to-end services including pathways, lawns, water systems, and lighting. They’re recognized for efficiently executing complex landscaping projects for sports facilities, estates, and hotels ([grafalandscaping.com](https://grafalandscaping.com)).",
+
+    "8. Bliss Flora Limited (Kiambu)",
+    "Bliss Flora combines ornamental plant propagation and landscape design. They’re also a supplier of high-quality plant materials for landscapers across the country.",
+
+    "9. Elgon Kenya Landscaping Division (Nairobi)",
+    "Part of Elgon Kenya’s broader agri-business, their landscaping unit brings technical knowledge and plant expertise to large property beautification and maintenance contracts.",
+
+    "10. UrbanScape Africa (Nairobi)",
+    "A boutique firm gaining recognition for edgy, urban landscape installations in residential and hospitality projects. They focus on native plants, vertical gardens, and functional minimalism.",
+
+    "🌿 Whether you’re designing a high-end estate or a small kitchen garden, these companies represent the best of Kenya’s landscaping scene. Their combined experience and innovation continue to elevate outdoor spaces across the country.",
+
+    "Thinking of transforming your own landscape? Start with Kenya’s top-ranked experts — YouLandscape Architects & Consultants. Reach out today for a tailored consultation and professional project execution."
+  ],
+},
   'transform-your-small-backyard': {
     title: '🌿 Transform Your Small Backyard: Clever Landscape Design Ideas for Urban Spaces',
     date: 'May 27, 2025',
@@ -256,15 +299,25 @@ export default function BlogDetail() {
   const { slug } = useParams();
   const post = blogPosts[slug];
 
-  const [searchTerm, setSearchTerm] = useState('');
   const [relatedPosts, setRelatedPosts] = useState([]);
 
   useEffect(() => {
     if (post) {
-      const filtered = Object.entries(blogPosts)
-        .filter(([key, blog]) => key !== slug && blog.title.toLowerCase().includes(post.title.split(' ')[0].toLowerCase()))
+      const currentTags = post.tags || [];
+      const related = Object.entries(blogPosts)
+        .filter(([key, blog]) => key !== slug)
+        .map(([key, blog]) => {
+          let score = 0;
+          if (blog.category === post.category) score += 2;
+          const sharedTags = (blog.tags || []).filter(tag => currentTags.includes(tag));
+          score += sharedTags.length;
+          return { key, blog, score };
+        })
+        .filter(({ score }) => score > 0)
+        .sort((a, b) => b.score - a.score)
         .slice(0, 3);
-      setRelatedPosts(filtered);
+
+      setRelatedPosts(related);
     }
   }, [slug, post]);
 
@@ -278,16 +331,13 @@ export default function BlogDetail() {
       </Helmet>
 
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-[var(--primary-green)] mb-4">
-          {post.title}
-        </h1>
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-[var(--primary-green)] mb-4">{post.title}</h1>
         <p className="text-sm text-gray-500 mb-8">Published: {post.date}</p>
 
         <div className="prose prose-lg max-w-none space-y-6">
           {post.content.map((paragraph, index) => {
             const isListItem = /^\d+\.\s/.test(paragraph);
             const isHeading = /^[A-Z][a-z]+.*:$/.test(paragraph);
-
             if (isListItem) {
               return (
                 <p key={index} className="pl-4 border-l-4 border-green-300 text-gray-800 font-medium">
@@ -295,7 +345,6 @@ export default function BlogDetail() {
                 </p>
               );
             }
-
             if (isHeading) {
               return (
                 <h2 key={index} className="text-2xl font-semibold text-gray-800 mt-6">
@@ -303,7 +352,6 @@ export default function BlogDetail() {
                 </h2>
               );
             }
-
             return <p key={index}>{paragraph}</p>;
           })}
         </div>
@@ -316,7 +364,7 @@ export default function BlogDetail() {
         <div className="mt-16">
           <h3 className="text-xl font-bold mb-4 text-gray-800">Related Blogs</h3>
           <div className="space-y-4">
-            {relatedPosts.map(([key, related]) => (
+            {relatedPosts.map(({ key, blog: related }) => (
               <Link
                 to={`/blog/${key}`}
                 key={key}
